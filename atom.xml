@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>aafeng</title>
+  <icon>https://www.gravatar.com/avatar/a176a52d9d4ac7d9f90a5204a7d87bcd</icon>
+  <subtitle>aafeng&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://aafenguk.github.io/"/>
+  <updated>2020-04-11T22:42:03.023Z</updated>
+  <id>https://aafenguk.github.io/</id>
+  
+  <author>
+    <name>aafeng</name>
+    <email>aafenguk@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实时推送Hive区块链信息到Telegram客户端（2）</title>
+    <link href="https://aafenguk.github.io/hive-telegram-2/"/>
+    <id>https://aafenguk.github.io/hive-telegram-2/</id>
+    <published>2020-04-11T09:00:00.000Z</published>
+    <updated>2020-04-11T22:42:03.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>在<a href="/hive-telegram-1/">上一篇文章</a>中讲到了整个程序的思路，以及如何读取Hive区块链信息，并回溯N个区块。在这篇文章中讲讲如何在区块信息中过滤信息，并根据自己定义的规则生成待发送的信息。</p><p><img src="/images/hive/hive-telegram-2.jpg" alt></p><p>首先，需要定义一些用于筛选信息的规则。这里的一个基本原则就是所定义的规则一定要和程序代码分离，这样最终的程序才容易维护。任何时候想要更改规则的话，只需要修改定义规则的配置文件，而无需修改程序代码。比如：</p><pre><code>rules:  votes:    any_to_aafeng:      from:       &quot;*&quot;      to:         aafeng      exclude:    aafeng,aafeng.test      min_weight: 20</code></pre><p>上面定义了一组规则：除去’aafeng’和’aafeng.test’之外的任何用户对’aafeng’这个用户的点赞，如果点赞额度&gt;=20%，则符合这个规则。</p><p>再举一个关于转账的规则：</p><pre><code>transfers:  any_to_aafeng:    from:        &quot;*&quot;    to:          aafeng    min_account: 1            aafeng_to_any:    from:        aafeng    to:          &quot;*&quot;    min_account: 0 </code></pre><p>上面规则定义了：任何向’aafeng’转入的金额&gt;=1，符合规则。任何从’aafeng’转出的金额&gt;=0，符合规则。这条规则对于监测账号的资金变化非常有用。</p><p>除了上述的两类关于点赞和转账的规则，你还可以定义很多规则，比如：留言，发帖，提到你等等。道理都非常类似，这里就不一一例举了。</p><p>规则都定义了好了之后，我们需要考虑在程序中如何支持这样的规则，下面是对点赞规则的实现：</p><pre><code>HIVE_BASE_URL = &apos;\https://hive.blog/&apos;# check if there is a matched vote ruledef get_vote_message(vote_rules, transaction):  messages   = &apos;&apos;  try:    t_voter    = transaction[&quot;voter&quot;]     t_author   = transaction[&quot;author&quot;]    t_weight   = transaction[&apos;weight&apos;]/100.00    t_permlink = transaction[&apos;permlink&apos;]    for vr in vote_rules:      # check exclude       if t_voter in vote_rules[vr][&quot;exclude&quot;].split(&quot;,&quot;):        continue      # check if voting weight matches      if t_weight&gt;0 and t_weight &lt; vote_rules[vr][&quot;min_weight&quot;]:        continue      # check voter and votee matches      if (t_voter==vote_rules[vr][&quot;from&quot;] and t_author==vote_rules[vr][&quot;to&quot;]) or \         (&apos;*&apos;==vote_rules[vr][&quot;from&quot;]     and t_author==vote_rules[vr][&quot;to&quot;]) or \         (t_voter==vote_rules[vr][&quot;from&quot;] and &apos;*&apos;==vote_rules[vr][&quot;to&quot;]):        messages = messages + &quot;VOTE: %s --&gt; %s [%.2f]: %s/@%s/%s\n\n&quot; % (t_voter,t_author,t_weight,HIVE_BASE_URL,t_author,t_permlink)  except Exception as e:    traceback.print_exc()    return None  if messages!=&apos;&apos;:    return messages  else:    return None        </code></pre><p>通过上面的程序，就可以从区块链信息中过滤出自己感兴趣的点赞信息了。下一篇讲讲如何配置Telegram。</p>]]></content>
+    
+    <summary type="html">
+    
+      实时推送Hive区块链信息到Telegram客户端（2）
+    
+    </summary>
+    
+      <category term="技术" scheme="https://aafenguk.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="Telegram" scheme="https://aafenguk.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+</feed>
