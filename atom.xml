@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aafenguk.github.io/"/>
-  <updated>2020-04-12T19:34:25.848Z</updated>
+  <updated>2020-04-12T15:20:25.017Z</updated>
   <id>https://aafenguk.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>about</title>
-    <link href="https://aafenguk.github.io/about/"/>
-    <id>https://aafenguk.github.io/about/</id>
-    <published>2020-04-12T19:34:25.848Z</published>
-    <updated>2020-04-12T19:34:25.848Z</updated>
-    
-    <content type="html"><![CDATA[<p>I’m a developer, husband, daddy living in the UK.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I’m a developer, husband, daddy living in the UK.&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>复活节花园寻宝</title>
@@ -107,6 +85,24 @@
       <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
     
       <category term="Telegram" scheme="https://aafenguk.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About</title>
+    <link href="https://aafenguk.github.io/about/"/>
+    <id>https://aafenguk.github.io/about/</id>
+    <published>2017-08-08T09:00:00.000Z</published>
+    <updated>2020-04-12T20:57:36.016Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’m a developer, husband, daddy living in the UK.</p>]]></content>
+    
+    <summary type="html">
+    
+      About me
+    
+    </summary>
+    
     
   </entry>
   
