@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aafenguk.github.io/"/>
-  <updated>2020-04-11T22:42:03.023Z</updated>
+  <updated>2020-04-12T15:12:14.289Z</updated>
   <id>https://aafenguk.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>复活节花园寻宝</title>
+    <link href="https://aafenguk.github.io/easter-egg-hunting/"/>
+    <id>https://aafenguk.github.io/easter-egg-hunting/</id>
+    <published>2020-04-12T15:12:14.289Z</published>
+    <updated>2020-04-12T15:12:14.289Z</updated>
+    
+    <content type="html"><![CDATA[<p>复活节如期而至，其实每年都选择在复活节假期回国和家人团聚。但今年因疫情被迫取消了航班，第一次带着孩子在英国度过复活节。</p><p><img src="/images/life/easter/easter-egg.jpg" alt="复活节彩蛋"><br>图源：pixabay</p><p>不过凡事都尽量往好处想，孩子们一直喜欢复活节时在花园中寻找复活节彩蛋这个游戏，但由于每年的复活节都在中国，因此一直没能满足他们的这个心愿。今年正好满足一下他们的这个小小愿望。</p><p>由于疫情，现在复活节彩蛋都限购，只买到一点点的彩蛋。但孩子们更喜欢的是这个游戏本身，彩蛋的多少应该不是最重要的。</p><p><img src="/images/life/easter/01.jpg" alt="复活节彩蛋"></p><p>其实，在寻找复活节彩蛋游戏中，还有一个主角，就是复活节小兔子。在传说中，复活节小兔子将彩蛋藏起来。之所以是兔子，可能是因为它们强大的生育能力吧，毕竟复活节意味着新生命的诞生。</p><p>我自然就成了客串小兔子的角色，将彩蛋藏在了花园中。</p><p>藏在了苹果树的树枝上：<br><img src alt="复活节彩蛋"><br><img src="/images/life/easter/02.jpg" alt="复活节彩蛋"></p><p>梨树上：<br><img src="/images/life/easter/03.jpg" alt="复活节彩蛋"></p><p>孩子们做游戏的小房子这里：</p><p><img src="/images/life/easter/04.jpg" alt="复活节彩蛋"></p><p>浇水用的小水壶中：<br><img src="/images/life/easter/05.jpg" alt="复活节彩蛋"></p><p>很快，这些彩蛋就都被找到了。彩蛋内部一般都是空的，象征着耶稣复活后空空的坟墓。其实时至今日，复活节的宗教色彩已经慢慢淡化了，成了很多家庭度假的热门时段。期待早日恢复正常，把错过的假期补上。</p>]]></content>
+    
+    <summary type="html">
+    
+      复活节花园寻宝
+    
+    </summary>
+    
+      <category term="生活" scheme="https://aafenguk.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="复活节" scheme="https://aafenguk.github.io/tags/%E5%A4%8D%E6%B4%BB%E8%8A%82/"/>
+    
+      <category term="彩蛋" scheme="https://aafenguk.github.io/tags/%E5%BD%A9%E8%9B%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>实时推送Hive区块链信息到Telegram客户端（2）</title>
