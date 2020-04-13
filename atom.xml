@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aafenguk.github.io/"/>
-  <updated>2020-04-13T12:55:57.575Z</updated>
+  <updated>2020-04-13T21:48:25.693Z</updated>
   <id>https://aafenguk.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将Hive文章备份到静态站点</title>
+    <link href="https://aafenguk.github.io/hive-backup/"/>
+    <id>https://aafenguk.github.io/hive-backup/</id>
+    <published>2020-04-13T20:49:03.000Z</published>
+    <updated>2020-04-13T21:48:25.693Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天做了一件工作：将Hive/Steem上自己发的文章进行了整理，并备份到自己的静态站点上： <a href="https://aafenguk.github.io">https://aafenguk.github.io</a></p><p><img src="/images/blockchain/hive-backup-1.jpg" alt="Hive文章备份"></p><p>之所以这样做的原因是因为已经在Steem/Hive链上坚持把自己生活中的一些琐事记录在区块链上。初始时不觉得，最近越来越觉得对自己来说是件很有纪念意义的事。毕竟上面记录了自己生活中的点点滴滴。万一有一天其依托的区块链挂了，我这些信息怎么办？？？</p><p>我选择了自己最熟悉的 <a href="https://github.com/hexojs/hexo" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>来生成静态站点。主题则选择了 <a href="https://github.com/ppoffice/hexo-theme-icarus" rel="external nofollow noopener noreferrer" target="_blank">Icarus</a>。</p><p>对于我个人而言，使用这个静态站点更为便捷。首先是其分类非常清晰，我自己在每个分类中的文章数一目了然。</p><p><img src="/images/blockchain/hive-backup-2.jpg" alt="Hive文章备份"></p><p>其归档功能也让我能迅速的定位到某个时段的文章。</p><p><img src="/images/blockchain/hive-backup-3.jpg" alt="Hive文章备份"></p><p>同时还有一个时间线：</p><p><img src="/images/blockchain/hive-backup-4.jpg" alt="Hive文章备份"></p><p>这样，无论以后进行浏览还是查找，都非常方便了。更为重要的是，我把自己的数据和图片都备份到了本地（备份图片时还真的有些坑。。。）。万一链真的断了，我也不怕了。当然，还是希望链越做越大的。</p>]]></content>
+    
+    <summary type="html">
+    
+      将Hive文章备份到静态站点
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://aafenguk.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="Hexo" scheme="https://aafenguk.github.io/tags/Hexo/"/>
+    
+      <category term="Icarus" scheme="https://aafenguk.github.io/tags/Icarus/"/>
+    
+  </entry>
   
   <entry>
     <title>断舍离</title>
@@ -469,30 +495,6 @@
       <category term="在家办公" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC/"/>
     
       <category term="停学" scheme="https://aafenguk.github.io/tags/%E5%81%9C%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开始在家办公</title>
-    <link href="https://aafenguk.github.io/5hvaoh/"/>
-    <id>https://aafenguk.github.io/5hvaoh/</id>
-    <published>2020-03-13T11:31:45.000Z</published>
-    <updated>2020-04-13T15:01:01.459Z</updated>
-    
-    <content type="html"><![CDATA[<p>英国疫情一天比一天严重，很多欧洲国家(目前不包含英国)的学校都已经听课，很多英国公司也都鼓励员工在家办公。</p><p>我所在的单位今天开始试运行如何在家办公。在此之前已经做了很多准备，比如：工作如何计划，团队成员之间的协作，沟通方式等等。</p><p><img src="/images/downloaded/5hvaoh_0.jpg" alt="image.png"></p><a id="more"></a><p>但是，在真正试行的时候，还是遇到了一些问题。比如：有的服务器是有访问权限限制的，只有内网中的个别IP地址可以访问，现在远程工作通过VPN连接的话，IP地址发生了变化，虽然有很多方法可以解决，但在实际操作的时候还是有很多事先想不到的问题的。</p><p>对于在家工作这个问题，我真的是很矛盾，就工作效率而言，个人更喜欢在办公室工作。但在目前形势下，尤其是英国目前的疫情下，希望所有的工作还是在家更好吧。</p><p>现在进一步的感受到，岁月静好，能够安安心心的工作，孩子们快快乐乐的上学是多么美好的一件事。</p>]]></content>
-    
-    <summary type="html">
-    
-      开始在家办公
-    
-    </summary>
-    
-      <category term="工作" scheme="https://aafenguk.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
-    
-    
-      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
-    
-      <category term="在家办公" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC/"/>
     
   </entry>
   
