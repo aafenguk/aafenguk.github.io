@@ -353,7 +353,7 @@
     <link href="https://aafenguk.github.io/liker-hexo/"/>
     <id>https://aafenguk.github.io/liker-hexo/</id>
     <published>2020-03-26T11:44:06.000Z</published>
-    <updated>2020-04-13T14:54:52.431Z</updated>
+    <updated>2020-04-13T16:44:07.392Z</updated>
     
     <content type="html"><![CDATA[<p>自从朋友将Hexo推荐给我以来，它就是我非常喜欢的静态网站生成工具了。下面把Liker按钮集成到Hexo中的步骤总结一下，让众多的Hexo网站可以通过点赞获得收益。以下以Hueman主题为例进行说明：</p><p><img src="https://images.hive.blog/DQmZN4mTS22HviH4syk66A8TBCaWbgNSJg11QqkpUcsW9Y9/image.png" alt="image.png"></p><a id="more"></a><p>首先，从官方github获取对应的css并将其转换为styl格式，为了大家方便，我直接把转换好的贴到这里：</p><pre><code>.lc-page-header    display none    height 0px.likecoin-button    position relative    width 100%    max-width 485px    max-height 240px    margin 0 auto    &amp; &gt; div        padding-top 49.48454%    &amp; &gt; iframe        position absolute        top 0        left 0        width 100%        height 100%</code></pre><p>将上面文件保存至：themes/hueman/source/css/liker.styl</p><p>第二步，打开 themes/hueman/source/css/style.styl 文件，并添加如下行：</p><pre><code>@import &quot;liker&quot;</code></pre><p>第三步，打开themes/hueman/layout/common/article.ejs，将如下代码添加到想要的位置（<strong>注意替换成你自己的liker ID</strong>）：</p><pre><code>&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;  &lt;div&gt;&lt;/div&gt;    &lt;iframe scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;https://button.like.co/in/embed/aafeng17936/button?referrer=&lt;%- encodeURIComponent(post.permalink) %&gt;&quot;&gt;&lt;/iframe&gt;                               &lt;/div&gt;</code></pre><p>接下来重新生成网站并发布到服务器就可以了。</p>]]></content>
     
@@ -363,7 +363,7 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://aafenguk.github.io/categories/Hexo/"/>
+      <category term="技术" scheme="https://aafenguk.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="Likecoin" scheme="https://aafenguk.github.io/tags/Likecoin/"/>
