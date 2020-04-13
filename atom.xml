@@ -283,9 +283,9 @@
     <link href="https://aafenguk.github.io/4vss8x/"/>
     <id>https://aafenguk.github.io/4vss8x/</id>
     <published>2020-03-30T19:55:51.000Z</published>
-    <updated>2020-04-13T09:02:34.651Z</updated>
+    <updated>2020-04-13T14:50:07.169Z</updated>
     
-    <content type="html"><![CDATA[<p>最近英国的疫情越来越严重，在家中已经宅了近两个星期。但今天家中的蔬菜水果快吃光了，决定去超市补充一些生活必需品。</p><p><img src="/images/downloaded/4vss8x_0.jpg" alt="image.png"><br>图源：pixabay</p><p>出发前做好了充足的准备，一次性手套，口罩，墨镜一应俱全。嗯，没错，是墨镜。因为没有买到护目镜，所以用墨镜来替代。</p><p>开车到了超市后，发现超市门口已经有很多人在排队了。大家都非常注意，彼此之间保持了两米以上的距离。感觉气氛有些压抑，没有人说话交谈，只是跟着队伍在默默的往前移动。</p><p><img src="/images/downloaded/4vss8x_1.jpg" alt="image.png"><br>图源：pixabay</p><p>超市门口有员工在控制人数，等了快半个小时后终于轮到我了。进去以后，超市里的人很少。这主要是要保证”social distance“吧。相比较于两周前大家纷纷拥堵在超市中囤积生活必需品时，区别简直太大了。超市的物品非常全，可以说是堆积如山。就连两周前的紧俏商品-卫生纸也有很多。由于继续囤积了一些生活必备品，因此，这次消费的金额差不多是平时购物时的两倍。</p><p>到家后并没有对所有物品进行消毒处理，而是把物品全部先放置到了车库中。打算放上三天后再开始使用。对于一些需要在冰箱中保存的物品进行了消毒处理后放在了家中。之后按照专家的推荐边洗手边唱了两遍生日歌。。。</p><p>这次购物应该足够全家人吃上两个礼拜了。下面打算尽量选择网购，老老实实在家中宅上几个星期再说吧。。。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近英国的疫情越来越严重，在家中已经宅了近两个星期。但今天家中的蔬菜水果快吃光了，决定去超市补充一些生活必需品。</p><p><img src="/images/downloaded/4vss8x_0.jpg" alt="image.png"><br>图源：pixabay</p><a id="more"></a><p>出发前做好了充足的准备，一次性手套，口罩，墨镜一应俱全。嗯，没错，是墨镜。因为没有买到护目镜，所以用墨镜来替代。</p><p>开车到了超市后，发现超市门口已经有很多人在排队了。大家都非常注意，彼此之间保持了两米以上的距离。感觉气氛有些压抑，没有人说话交谈，只是跟着队伍在默默的往前移动。</p><p><img src="/images/downloaded/4vss8x_1.jpg" alt="image.png"><br>图源：pixabay</p><p>超市门口有员工在控制人数，等了快半个小时后终于轮到我了。进去以后，超市里的人很少。这主要是要保证”social distance“吧。相比较于两周前大家纷纷拥堵在超市中囤积生活必需品时，区别简直太大了。超市的物品非常全，可以说是堆积如山。就连两周前的紧俏商品-卫生纸也有很多。由于继续囤积了一些生活必备品，因此，这次消费的金额差不多是平时购物时的两倍。</p><p>到家后并没有对所有物品进行消毒处理，而是把物品全部先放置到了车库中。打算放上三天后再开始使用。对于一些需要在冰箱中保存的物品进行了消毒处理后放在了家中。之后按照专家的推荐边洗手边唱了两遍生日歌。。。</p><p>这次购物应该足够全家人吃上两个礼拜了。下面打算尽量选择网购，老老实实在家中宅上几个星期再说吧。。。</p>]]></content>
     
     <summary type="html">
     
@@ -293,10 +293,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="生活" scheme="https://aafenguk.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
+    
+      <category term="超市" scheme="https://aafenguk.github.io/tags/%E8%B6%85%E5%B8%82/"/>
     
   </entry>
   
@@ -305,9 +307,9 @@
     <link href="https://aafenguk.github.io/hive/"/>
     <id>https://aafenguk.github.io/hive/</id>
     <published>2020-03-29T09:43:21.000Z</published>
-    <updated>2020-04-13T09:02:35.367Z</updated>
+    <updated>2020-04-13T14:52:11.324Z</updated>
     
-    <content type="html"><![CDATA[<p>尽管用Resource Credit创建账号已经被很多人讨论过，但自己一直没有尝试。今天在Hive下进行了尝试。下面的操作只是针对那些对编写代码不是很熟悉的朋友们的。对于众多的程序猿们，完全可以自己写一个很简单的程序来实现这个功能。</p><p>首先声明，以下操作是针对一个第三方工具进行的。在操作过程中需要提供自己账户的Active Key，因此建议大家<strong>在操作完成后更改自己的密码</strong>。</p><p>首先访问如下网址：<br><a href="https://www.reazuliqbal.com/AccountCreate/" rel="external nofollow noopener noreferrer" target="_blank">https://www.reazuliqbal.com/AccountCreate/</a></p><p>其源代码在这里：<a href="https://github.com/CodeBull/AccountCreate" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/CodeBull/AccountCreate</a></p><p>至于这个操作需要多少RC,可以在这里查询：<a href="https://beempy.com/resource_costs" rel="external nofollow noopener noreferrer" target="_blank">https://beempy.com/resource_costs</a></p><p>接下来输入自己的用户名和Active Key</p><p><img src="/images/downloaded/hive_3.jpg" alt="image.png"></p><p>然后单击“Claim Account”，界面上就会提示“You have successfully claimed a discounted account!”</p><p>在Hiveblocks上查看操作记录，可以看到已经创建成功；<br><img src="/images/downloaded/hive_4.jpg" alt="image.png"></p><p>同时可以看到我的Resource Credit只剩下一半了。当然，HP越多，消耗的RC百分比越少。HP太少了，甚至无法进行如下的操作。<br><img src="/images/downloaded/hive_5.jpg" alt="image.png"></p><p>接下来就可以创建账户了。输入待创建账号的用户名和密码，以及自己的Active Key，单击“Create Account”，就可以创建账号了：<br><img src="/images/downloaded/hive_6.jpg" alt="image.png"></p><p>在hiveblocks上查看，可以看到新账号已经被创建：<br><img src="/images/downloaded/hive_7.jpg" alt="image.png"></p><p>感觉RC空着也是空着，不如先领取一些”discounted account“，如果真的需要创建账号时就很方便了。</p>]]></content>
+    <content type="html"><![CDATA[<p>尽管用Resource Credit创建账号已经被很多人讨论过，但自己一直没有尝试。今天在Hive下进行了尝试。下面的操作只是针对那些对编写代码不是很熟悉的朋友们的。对于众多的程序猿们，完全可以自己写一个很简单的程序来实现这个功能。</p><a id="more"></a><p>首先声明，以下操作是针对一个第三方工具进行的。在操作过程中需要提供自己账户的Active Key，因此建议大家<strong>在操作完成后更改自己的密码</strong>。</p><p>首先访问如下网址：<br><a href="https://www.reazuliqbal.com/AccountCreate/" rel="external nofollow noopener noreferrer" target="_blank">https://www.reazuliqbal.com/AccountCreate/</a></p><p>其源代码在这里：<a href="https://github.com/CodeBull/AccountCreate" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/CodeBull/AccountCreate</a></p><p>至于这个操作需要多少RC,可以在这里查询：<a href="https://beempy.com/resource_costs" rel="external nofollow noopener noreferrer" target="_blank">https://beempy.com/resource_costs</a></p><p>接下来输入自己的用户名和Active Key</p><p><img src="/images/downloaded/hive_3.jpg" alt="image.png"></p><p>然后单击“Claim Account”，界面上就会提示“You have successfully claimed a discounted account!”</p><p>在Hiveblocks上查看操作记录，可以看到已经创建成功；<br><img src="/images/downloaded/hive_4.jpg" alt="image.png"></p><p>同时可以看到我的Resource Credit只剩下一半了。当然，HP越多，消耗的RC百分比越少。HP太少了，甚至无法进行如下的操作。<br><img src="/images/downloaded/hive_5.jpg" alt="image.png"></p><p>接下来就可以创建账户了。输入待创建账号的用户名和密码，以及自己的Active Key，单击“Create Account”，就可以创建账号了：<br><img src="/images/downloaded/hive_6.jpg" alt="image.png"></p><p>在hiveblocks上查看，可以看到新账号已经被创建：<br><img src="/images/downloaded/hive_7.jpg" alt="image.png"></p><p>感觉RC空着也是空着，不如先领取一些”discounted account“，如果真的需要创建账号时就很方便了。</p>]]></content>
     
     <summary type="html">
     
@@ -315,10 +317,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/categories/Hive/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="账号" scheme="https://aafenguk.github.io/tags/%E8%B4%A6%E5%8F%B7/"/>
     
   </entry>
   
@@ -327,9 +331,9 @@
     <link href="https://aafenguk.github.io/6fbtgr/"/>
     <id>https://aafenguk.github.io/6fbtgr/</id>
     <published>2020-03-27T16:44:33.000Z</published>
-    <updated>2020-04-13T09:02:36.127Z</updated>
+    <updated>2020-04-13T14:53:17.800Z</updated>
     
-    <content type="html"><![CDATA[<p>英国的疫情进一步恶化，最近两天查尔斯王子，Johnson首相，还有卫生大臣先后被检测出新冠状病毒阳性。这也让众多英国民众更加担心接下来几周的英国疫情。</p><p><img src="https://images.hive.blog/DQmSKP2SKMN2JaH53bU8wMhwFBz5Tq2oUMHHLYPZCwcq6SE/image.png" alt="image.png"></p><p>但就在这样的疫情下，依然有着很多温暖人心的瞬间，让大家相信我们是在一起和病毒作斗争。</p><p>首先是昨晚8点钟的时候，众多家庭纷纷走出家门，站在门口和阳台上，为众多在前线工作的NHS医生，护士，及相关工作人员鼓掌加油。尽管，那些医护人员可能听不到这些掌声，但相信他们可以感受到大家对他们的尊重和鼓励。We are together!</p><p><img src="https://images.hive.blog/DQmeEtFbgcq3fUSfz2SVM3N2NUzCsDttZZuboBFyUffhsL8/image.png" alt="image.png"></p><p>还有就是针对前一段时间民众恐慌引发囤积食物而造成的食品短缺，众大超市发表联合声明，确保全部民众的生活必需品，因为这对他们而言，已经不仅仅是他们的工作了，而是一种应尽的责任。而且，很多超市还专门开辟了特殊时段，为众多在一线奋斗的人员提供优先购物通道，让他们在劳作后不用担心买不到生活必需品。</p><p><img src="https://images.hive.blog/DQmR8aW9sM4XBTxTZqXGBMKn4s6bXwP1yqpoFLmt862wbQv/image.png" alt="image.png"></p><p>由于医院的压力越来越大，因此要招募一定数量的志愿者，让人感动的是，众多民众首先想到的是如何共同努力，共度难关，而不是个人的安全，在非常短的时间内报名人数就远远超过所需人数。</p><p>这样温暖的瞬间还有很多很多，让我感受到整个人类在一起和病毒作斗争，相信终有一天我们会彻底战胜病毒。</p>]]></content>
+    <content type="html"><![CDATA[<p>英国的疫情进一步恶化，最近两天查尔斯王子，Johnson首相，还有卫生大臣先后被检测出新冠状病毒阳性。这也让众多英国民众更加担心接下来几周的英国疫情。</p><p><img src="https://images.hive.blog/DQmSKP2SKMN2JaH53bU8wMhwFBz5Tq2oUMHHLYPZCwcq6SE/image.png" alt="image.png"></p><p>但就在这样的疫情下，依然有着很多温暖人心的瞬间，让大家相信我们是在一起和病毒作斗争。</p><a id="more"></a><p>首先是昨晚8点钟的时候，众多家庭纷纷走出家门，站在门口和阳台上，为众多在前线工作的NHS医生，护士，及相关工作人员鼓掌加油。尽管，那些医护人员可能听不到这些掌声，但相信他们可以感受到大家对他们的尊重和鼓励。We are together!</p><p><img src="https://images.hive.blog/DQmeEtFbgcq3fUSfz2SVM3N2NUzCsDttZZuboBFyUffhsL8/image.png" alt="image.png"></p><p>还有就是针对前一段时间民众恐慌引发囤积食物而造成的食品短缺，众大超市发表联合声明，确保全部民众的生活必需品，因为这对他们而言，已经不仅仅是他们的工作了，而是一种应尽的责任。而且，很多超市还专门开辟了特殊时段，为众多在一线奋斗的人员提供优先购物通道，让他们在劳作后不用担心买不到生活必需品。</p><p><img src="https://images.hive.blog/DQmR8aW9sM4XBTxTZqXGBMKn4s6bXwP1yqpoFLmt862wbQv/image.png" alt="image.png"></p><p>由于医院的压力越来越大，因此要招募一定数量的志愿者，让人感动的是，众多民众首先想到的是如何共同努力，共度难关，而不是个人的安全，在非常短的时间内报名人数就远远超过所需人数。</p><p>这样温暖的瞬间还有很多很多，让我感受到整个人类在一起和病毒作斗争，相信终有一天我们会彻底战胜病毒。</p>]]></content>
     
     <summary type="html">
     
@@ -337,10 +341,10 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="生活" scheme="https://aafenguk.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
@@ -349,9 +353,9 @@
     <link href="https://aafenguk.github.io/liker-hexo/"/>
     <id>https://aafenguk.github.io/liker-hexo/</id>
     <published>2020-03-26T11:44:06.000Z</published>
-    <updated>2020-04-13T09:02:36.819Z</updated>
+    <updated>2020-04-13T14:54:52.431Z</updated>
     
-    <content type="html"><![CDATA[<p>自从朋友将Hexo推荐给我以来，它就是我非常喜欢的静态网站生成工具了。下面把Liker按钮集成到Hexo中的步骤总结一下，让众多的Hexo网站可以通过点赞获得收益。以下以Hueman主题为例进行说明：</p><p><img src="https://images.hive.blog/DQmZN4mTS22HviH4syk66A8TBCaWbgNSJg11QqkpUcsW9Y9/image.png" alt="image.png"></p><p>首先，从官方github获取对应的css并将其转换为styl格式，为了大家方便，我直接把转换好的贴到这里：</p><pre><code>.lc-page-header    display none    height 0px.likecoin-button    position relative    width 100%    max-width 485px    max-height 240px    margin 0 auto    &amp; &gt; div        padding-top 49.48454%    &amp; &gt; iframe        position absolute        top 0        left 0        width 100%        height 100%</code></pre><p>将上面文件保存至：themes/hueman/source/css/liker.styl</p><p>第二步，打开 themes/hueman/source/css/style.styl 文件，并添加如下行：</p><pre><code>@import &quot;liker&quot;</code></pre><p>第三步，打开themes/hueman/layout/common/article.ejs，将如下代码添加到想要的位置（<strong>注意替换成你自己的liker ID</strong>）：</p><pre><code>&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;  &lt;div&gt;&lt;/div&gt;    &lt;iframe scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;https://button.like.co/in/embed/aafeng17936/button?referrer=&lt;%- encodeURIComponent(post.permalink) %&gt;&quot;&gt;&lt;/iframe&gt;                               &lt;/div&gt;</code></pre><p>接下来重新生成网站并发布到服务器就可以了。</p>]]></content>
+    <content type="html"><![CDATA[<p>自从朋友将Hexo推荐给我以来，它就是我非常喜欢的静态网站生成工具了。下面把Liker按钮集成到Hexo中的步骤总结一下，让众多的Hexo网站可以通过点赞获得收益。以下以Hueman主题为例进行说明：</p><p><img src="https://images.hive.blog/DQmZN4mTS22HviH4syk66A8TBCaWbgNSJg11QqkpUcsW9Y9/image.png" alt="image.png"></p><a id="more"></a><p>首先，从官方github获取对应的css并将其转换为styl格式，为了大家方便，我直接把转换好的贴到这里：</p><pre><code>.lc-page-header    display none    height 0px.likecoin-button    position relative    width 100%    max-width 485px    max-height 240px    margin 0 auto    &amp; &gt; div        padding-top 49.48454%    &amp; &gt; iframe        position absolute        top 0        left 0        width 100%        height 100%</code></pre><p>将上面文件保存至：themes/hueman/source/css/liker.styl</p><p>第二步，打开 themes/hueman/source/css/style.styl 文件，并添加如下行：</p><pre><code>@import &quot;liker&quot;</code></pre><p>第三步，打开themes/hueman/layout/common/article.ejs，将如下代码添加到想要的位置（<strong>注意替换成你自己的liker ID</strong>）：</p><pre><code>&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;  &lt;div&gt;&lt;/div&gt;    &lt;iframe scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;https://button.like.co/in/embed/aafeng17936/button?referrer=&lt;%- encodeURIComponent(post.permalink) %&gt;&quot;&gt;&lt;/iframe&gt;                               &lt;/div&gt;</code></pre><p>接下来重新生成网站并发布到服务器就可以了。</p>]]></content>
     
     <summary type="html">
     
@@ -359,10 +363,14 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hexo" scheme="https://aafenguk.github.io/categories/Hexo/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Likecoin" scheme="https://aafenguk.github.io/tags/Likecoin/"/>
+    
+      <category term="Hexo" scheme="https://aafenguk.github.io/tags/Hexo/"/>
+    
+      <category term="Liker" scheme="https://aafenguk.github.io/tags/Liker/"/>
     
   </entry>
   
@@ -371,9 +379,9 @@
     <link href="https://aafenguk.github.io/hive-wallet/"/>
     <id>https://aafenguk.github.io/hive-wallet/</id>
     <published>2020-03-24T21:15:51.000Z</published>
-    <updated>2020-04-13T09:02:38.035Z</updated>
+    <updated>2020-04-13T14:56:08.214Z</updated>
     
-    <content type="html"><![CDATA[<p>Hive已经推出好几天了，但其钱包功能一直不能用，每次点击“Wallet”时，都会给出一个很不友好的出错页面：</p><p><img src="https://images.hive.blog/DQmSGE1StLryGD95kbt5ddFepxtswaWAze7EwYKkpr7Av3g/image.png" alt="image.png"></p><p>那么，如果真的需要将自己持有的Hive / HBD等转移到其他账号，或者交易所的话，该如何做呢？其实也很简单，只需要写几行Python代码就可以实现这样的功能。我这里使用的是<a href="https://github.com/pharesim/hive-python/" rel="external nofollow noopener noreferrer" target="_blank">hive-python</a>，但里面有个坑需要填。具体请看这篇文章：<a href="/@aafeng/hive-hivepy">如何在Hive上使用hivepy</a></p><p>具体代码就很简单了：</p><pre><code>import sysfrom hive import Hivefrom hive.account import Accountif len(sys.argv) !=7:  print (&apos;Usage: transfer.py ACCOUNT ACTIVE_KEY TO AMOUNT HBD/HIVE MEMO&apos;)  exit()_from       = sys.argv[1]_active_key = sys.argv[2]_to         = sys.argv[3]_amount     = float(sys.argv[4])_type       = sys.argv[5]_memo       = sys.argv[6]wif = {  &quot;active&quot;: _active_key}hive = Hive(keys=wif)account = Account(_from)hbdbalance  = float(account.balances[&quot;available&quot;][&quot;HBD&quot;])hivebalance = float(account.balances[&quot;available&quot;][&quot;HIVE&quot;])if _type==&apos;HBD&apos; and hbdbalance &lt; _amount:  print(&quot;Account balance low: %s&quot; % (str(hbdbalance)))  exit()if _type==&apos;HIVE&apos; and hivebalance &lt; _amount:  print(&quot;Account balance low: %s&quot; % (str(steembalance)))  exit()hive.transfer(_to, _amount, _type, memo=_memo, account=_from)print (&quot;transferred %s %s to %s&quot; % (str(_amount),_type,_to))</code></pre><p>运行：</p><pre><code>python transfer.py aafeng YOUR_ACTIVE_KEY aafeng.test 0.001 HIVE test</code></pre><p>从hiveblocks可以看到转账已经成功。</p><p><img src="https://images.hive.blog/DQmeo9z4kwDarkA5Cr91FyWfuPV9mYcxgdZKCCGrNo166ui/image.png" alt="image.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>Hive已经推出好几天了，但其钱包功能一直不能用，每次点击“Wallet”时，都会给出一个很不友好的出错页面：</p><p><img src="https://images.hive.blog/DQmSGE1StLryGD95kbt5ddFepxtswaWAze7EwYKkpr7Av3g/image.png" alt="image.png"></p><a id="more"></a><p>那么，如果真的需要将自己持有的Hive / HBD等转移到其他账号，或者交易所的话，该如何做呢？其实也很简单，只需要写几行Python代码就可以实现这样的功能。我这里使用的是<a href="https://github.com/pharesim/hive-python/" rel="external nofollow noopener noreferrer" target="_blank">hive-python</a>，但里面有个坑需要填。具体请看这篇文章：<a href="/@aafeng/hive-hivepy">如何在Hive上使用hivepy</a></p><p>具体代码就很简单了：</p><pre><code>import sysfrom hive import Hivefrom hive.account import Accountif len(sys.argv) !=7:  print (&apos;Usage: transfer.py ACCOUNT ACTIVE_KEY TO AMOUNT HBD/HIVE MEMO&apos;)  exit()_from       = sys.argv[1]_active_key = sys.argv[2]_to         = sys.argv[3]_amount     = float(sys.argv[4])_type       = sys.argv[5]_memo       = sys.argv[6]wif = {  &quot;active&quot;: _active_key}hive = Hive(keys=wif)account = Account(_from)hbdbalance  = float(account.balances[&quot;available&quot;][&quot;HBD&quot;])hivebalance = float(account.balances[&quot;available&quot;][&quot;HIVE&quot;])if _type==&apos;HBD&apos; and hbdbalance &lt; _amount:  print(&quot;Account balance low: %s&quot; % (str(hbdbalance)))  exit()if _type==&apos;HIVE&apos; and hivebalance &lt; _amount:  print(&quot;Account balance low: %s&quot; % (str(steembalance)))  exit()hive.transfer(_to, _amount, _type, memo=_memo, account=_from)print (&quot;transferred %s %s to %s&quot; % (str(_amount),_type,_to))</code></pre><p>运行：</p><pre><code>python transfer.py aafeng YOUR_ACTIVE_KEY aafeng.test 0.001 HIVE test</code></pre><p>从hiveblocks可以看到转账已经成功。</p><p><img src="https://images.hive.blog/DQmeo9z4kwDarkA5Cr91FyWfuPV9mYcxgdZKCCGrNo166ui/image.png" alt="image.png"></p>]]></content>
     
     <summary type="html">
     
@@ -381,10 +389,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/categories/Hive/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="转账" scheme="https://aafenguk.github.io/tags/%E8%BD%AC%E8%B4%A6/"/>
     
   </entry>
   
@@ -393,9 +403,9 @@
     <link href="https://aafenguk.github.io/72etvv/"/>
     <id>https://aafenguk.github.io/72etvv/</id>
     <published>2020-03-23T16:34:24.000Z</published>
-    <updated>2020-04-13T09:02:38.903Z</updated>
+    <updated>2020-04-13T14:57:22.221Z</updated>
     
-    <content type="html"><![CDATA[<p>英国的疫情已经越来越严重了，甚至很多人都感觉英国在步意大利的后尘。自从“全民免疫”的概念提出来之后，英国政府最近的政策完全反转了，提出了一系列严格举措来控制疫情蔓延。</p><p><img src="https://images.hive.blog/DQmbUJAGkfow1ky9mup7vR4E8coyhCmXsj5sgnRiPZEw7BG/image.png" alt="image.png"></p><p>首先是自上周五放学后开始，全英所有大中小学全面停课。同时鼓励所有有可能的单位员工全部在家办公。继而又出台政策，要求所有餐厅，酒吧，剧院等暂停营业。小企业主可以和政府申请财政补助，停业公司中在家的员工则会由政府发放80%的工资而不用工作。</p><p>然而，让我非常不理解的是，由于这个周末的天气很好，众多英国家庭纷纷外出，享受这宝贵的阳光。很多交通干线上纷纷堵车，各种公园，景点人满为患。仿佛全面度假要开始一般。。。</p><p>对于这点，我是真心无语。。。英国NHS的众多医生护士纷纷提出：”I stay at work for you, You stay at home for us.” 的口号，号召大家齐心协力共抗病毒。英国议会也全票通过最新法案，赋予政府更大权限，如有必要，将会采取更加严厉的措施，避免疫情的进一步恶化。</p><p>我和周边的朋友家庭们只能做好我们该做的，好好的宅在家中。期待疫情早日消除，所有人都能尽情享受这无限的春光。</p>]]></content>
+    <content type="html"><![CDATA[<p>英国的疫情已经越来越严重了，甚至很多人都感觉英国在步意大利的后尘。自从“全民免疫”的概念提出来之后，英国政府最近的政策完全反转了，提出了一系列严格举措来控制疫情蔓延。</p><p><img src="https://images.hive.blog/DQmbUJAGkfow1ky9mup7vR4E8coyhCmXsj5sgnRiPZEw7BG/image.png" alt="image.png"></p><a id="more"></a><p>首先是自上周五放学后开始，全英所有大中小学全面停课。同时鼓励所有有可能的单位员工全部在家办公。继而又出台政策，要求所有餐厅，酒吧，剧院等暂停营业。小企业主可以和政府申请财政补助，停业公司中在家的员工则会由政府发放80%的工资而不用工作。</p><p>然而，让我非常不理解的是，由于这个周末的天气很好，众多英国家庭纷纷外出，享受这宝贵的阳光。很多交通干线上纷纷堵车，各种公园，景点人满为患。仿佛全面度假要开始一般。。。</p><p>对于这点，我是真心无语。。。英国NHS的众多医生护士纷纷提出：”I stay at work for you, You stay at home for us.” 的口号，号召大家齐心协力共抗病毒。英国议会也全票通过最新法案，赋予政府更大权限，如有必要，将会采取更加严厉的措施，避免疫情的进一步恶化。</p><p>我和周边的朋友家庭们只能做好我们该做的，好好的宅在家中。期待疫情早日消除，所有人都能尽情享受这无限的春光。</p>]]></content>
     
     <summary type="html">
     
@@ -403,10 +413,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="生活" scheme="https://aafenguk.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
+    
+      <category term="在家工作" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
@@ -415,9 +427,9 @@
     <link href="https://aafenguk.github.io/hive-hivepy/"/>
     <id>https://aafenguk.github.io/hive-hivepy/</id>
     <published>2020-03-22T15:11:51.000Z</published>
-    <updated>2020-04-13T09:02:39.939Z</updated>
+    <updated>2020-04-13T14:58:43.776Z</updated>
     
-    <content type="html"><![CDATA[<p>最近Hive和Steem分家，一直考虑原来在Steem下的一些程序如何能在Hive继续使用的问题。今天正好看到O哥发的<a href="/@oflyhigh/hive-steem-python">这篇文章</a>,很高兴的点进去看了看，原来O哥和我卡在同样的问题上了。</p><p>简而言之，就是提示找不到’hive’这个包。错误提示是：</p><pre><code>File &quot;/home/aaf/environments/myenv/lib/python3.5/site-packages/hive/cli.py&quot;, line 78, in legacyentry    version=pkg_resources.require(&quot;hive&quot;)[0].version))</code></pre><p>其实，导致这个错误的原因是由于这里使用了错误的package名称，只要把这里的”hive”改为”hivepy”就可以了。</p><p>再运行：</p><pre><code>hivepy</code></pre><p>可以看到；</p><p><img src="/images/downloaded/hive-hivepy_0.jpg" alt="image.png"></p><p>需要注意，在调用hivepy库的时候，有些方法的名字发生了变化。必须做出相应调整，下面写了一个检查用户账号的测试程序：</p><pre><code>from sys import argvfrom hive.account import Accountfrom datetime import datetimefrom hive import converteruser = argv[1]user=user.replace(&quot;____&quot;,&quot;-&quot;)account = Account(user)cv = converter.Converter()print(&quot;Rep: %s&quot; % account.reputation(4))print(&quot;HBD: %s, HIVE: %s&quot; % (account.balances[&apos;total&apos;][&apos;HBD&apos;], account.balances[&apos;total&apos;][&apos;HIVE&apos;]))print(&quot;SP: %.2f&quot; % (cv.vests_to_hp(account.balances[&apos;total&apos;][&apos;VESTS&apos;])))print(&quot;reward_hbd_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HBD&quot;])print(&quot;reward_hive_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HIVE&quot;])print(&quot;reward_hp_balance: %.2f&quot; % cv.vests_to_hp(account.balances[&quot;rewards&quot;][&quot;VESTS&quot;]))</code></pre><p>运行：</p><pre><code>python3 checkaccount.py aafeng</code></pre><p>其输出为：</p><pre><code>Rep: 69.8117HBD: 0.433, HIVE: 47.775SP: 5344.49reward_hbd_balance: 0.0reward_hive_balance: 0.0reward_hp_balance: 2.14</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>最近Hive和Steem分家，一直考虑原来在Steem下的一些程序如何能在Hive继续使用的问题。今天正好看到O哥发的<a href="https://hive.blog/@oflyhigh/hive-steem-python" rel="external nofollow noopener noreferrer" target="_blank">这篇文章</a>,很高兴的点进去看了看，原来O哥和我卡在同样的问题上了。</p><a id="more"></a><p>简而言之，就是提示找不到’hive’这个包。错误提示是：</p><pre><code>File &quot;/home/aaf/environments/myenv/lib/python3.5/site-packages/hive/cli.py&quot;, line 78, in legacyentry    version=pkg_resources.require(&quot;hive&quot;)[0].version))</code></pre><p>其实，导致这个错误的原因是由于这里使用了错误的package名称，只要把这里的”hive”改为”hivepy”就可以了。</p><p>再运行：</p><pre><code>hivepy</code></pre><p>可以看到；</p><p><img src="/images/downloaded/hive-hivepy_0.jpg" alt="image.png"></p><p>需要注意，在调用hivepy库的时候，有些方法的名字发生了变化。必须做出相应调整，下面写了一个检查用户账号的测试程序：</p><pre><code>from sys import argvfrom hive.account import Accountfrom datetime import datetimefrom hive import converteruser = argv[1]user=user.replace(&quot;____&quot;,&quot;-&quot;)account = Account(user)cv = converter.Converter()print(&quot;Rep: %s&quot; % account.reputation(4))print(&quot;HBD: %s, HIVE: %s&quot; % (account.balances[&apos;total&apos;][&apos;HBD&apos;], account.balances[&apos;total&apos;][&apos;HIVE&apos;]))print(&quot;SP: %.2f&quot; % (cv.vests_to_hp(account.balances[&apos;total&apos;][&apos;VESTS&apos;])))print(&quot;reward_hbd_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HBD&quot;])print(&quot;reward_hive_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HIVE&quot;])print(&quot;reward_hp_balance: %.2f&quot; % cv.vests_to_hp(account.balances[&quot;rewards&quot;][&quot;VESTS&quot;]))</code></pre><p>运行：</p><pre><code>python3 checkaccount.py aafeng</code></pre><p>其输出为：</p><pre><code>Rep: 69.8117HBD: 0.433, HIVE: 47.775SP: 5344.49reward_hbd_balance: 0.0reward_hive_balance: 0.0reward_hp_balance: 2.14</code></pre>]]></content>
     
     <summary type="html">
     
@@ -425,10 +437,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/categories/Hive/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="Hivepy" scheme="https://aafenguk.github.io/tags/Hivepy/"/>
     
   </entry>
   
@@ -437,9 +451,9 @@
     <link href="https://aafenguk.github.io/293cvd/"/>
     <id>https://aafenguk.github.io/293cvd/</id>
     <published>2020-03-19T11:02:54.000Z</published>
-    <updated>2020-04-13T09:02:41.095Z</updated>
+    <updated>2020-04-13T14:59:53.688Z</updated>
     
-    <content type="html"><![CDATA[<p>跟国内的朋友们聊天得知，很多地方都开始复工了，有些餐厅也陆陆续续开始营业了。可反观英国这边，这周五全英国的大中小学全面听课，孩子们带回了很多作业，课外书，准备开启在家自学的节奏。众多单位也正式要求员工们开始在家办公。这节奏整个比国内滞后了一个多月啊，希望再过几周也能也能同样赶上国内现在的节奏。。。不过目前我接到的信息是要做好在家宅几个月的准备。。。</p><p><img src="/images/downloaded/293cvd_0.jpg" alt="image.png"></p><p>虽然在家办公能够节省在路上的时间，但在家的干扰可能比较多，因此首先需要选择一种让自己注意力集中的方式，比如：Pomodoro番茄钟。<br><img src="/images/downloaded/293cvd_1.jpg" alt="image.png"></p><p>对于在家办公族来说，大多数人选择的都是使用笔记本电脑，这样身体和电脑的距离，角度都和使用台式机不一样，因此时间长了，特别容易引起腰部，颈部肌肉的疲劳。我目前仅仅在家工作了两天，就已经感觉到肌肉酸痛了，因此一定要注意多舒展筋骨。</p><p>还有一个问题就是，在家宅时间长了，都会觉得很难受，这就要注意各种心理疾病，因此单位提议每天两次休息的时候，大家在slack上聊聊天，分享一下好玩的事情等，单位老大首先带头发了自己烘培的蛋糕。。。</p><p><img src="/images/downloaded/293cvd_2.jpg" alt="image.png"></p><p>不知道下周孩子们都在家了会怎样，现在想想就头大。。。</p>]]></content>
+    <content type="html"><![CDATA[<p>跟国内的朋友们聊天得知，很多地方都开始复工了，有些餐厅也陆陆续续开始营业了。可反观英国这边，这周五全英国的大中小学全面听课，孩子们带回了很多作业，课外书，准备开启在家自学的节奏。众多单位也正式要求员工们开始在家办公。这节奏整个比国内滞后了一个多月啊，希望再过几周也能也能同样赶上国内现在的节奏。。。不过目前我接到的信息是要做好在家宅几个月的准备。。。</p><p><img src="/images/downloaded/293cvd_0.jpg" alt="image.png"></p><a id="more"></a><p>虽然在家办公能够节省在路上的时间，但在家的干扰可能比较多，因此首先需要选择一种让自己注意力集中的方式，比如：Pomodoro番茄钟。<br><img src="/images/downloaded/293cvd_1.jpg" alt="image.png"></p><p>对于在家办公族来说，大多数人选择的都是使用笔记本电脑，这样身体和电脑的距离，角度都和使用台式机不一样，因此时间长了，特别容易引起腰部，颈部肌肉的疲劳。我目前仅仅在家工作了两天，就已经感觉到肌肉酸痛了，因此一定要注意多舒展筋骨。</p><p>还有一个问题就是，在家宅时间长了，都会觉得很难受，这就要注意各种心理疾病，因此单位提议每天两次休息的时候，大家在slack上聊聊天，分享一下好玩的事情等，单位老大首先带头发了自己烘培的蛋糕。。。</p><p><img src="/images/downloaded/293cvd_2.jpg" alt="image.png"></p><p>不知道下周孩子们都在家了会怎样，现在想想就头大。。。</p>]]></content>
     
     <summary type="html">
     
@@ -447,10 +461,14 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="生活" scheme="https://aafenguk.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
+    
+      <category term="在家办公" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC/"/>
+    
+      <category term="停学" scheme="https://aafenguk.github.io/tags/%E5%81%9C%E5%AD%A6/"/>
     
   </entry>
   
@@ -459,9 +477,9 @@
     <link href="https://aafenguk.github.io/5hvaoh/"/>
     <id>https://aafenguk.github.io/5hvaoh/</id>
     <published>2020-03-13T11:31:45.000Z</published>
-    <updated>2020-04-13T09:02:41.539Z</updated>
+    <updated>2020-04-13T15:01:01.459Z</updated>
     
-    <content type="html"><![CDATA[<p>英国疫情一天比一天严重，很多欧洲国家(目前不包含英国)的学校都已经听课，很多英国公司也都鼓励员工在家办公。</p><p>我所在的单位今天开始试运行如何在家办公。在此之前已经做了很多准备，比如：工作如何计划，团队成员之间的协作，沟通方式等等。</p><p><img src="/images/downloaded/5hvaoh_0.jpg" alt="image.png"></p><p>但是，在真正试行的时候，还是遇到了一些问题。比如：有的服务器是有访问权限限制的，只有内网中的个别IP地址可以访问，现在远程工作通过VPN连接的话，IP地址发生了变化，虽然有很多方法可以解决，但在实际操作的时候还是有很多事先想不到的问题的。</p><p>对于在家工作这个问题，我真的是很矛盾，就工作效率而言，个人更喜欢在办公室工作。但在目前形势下，尤其是英国目前的疫情下，希望所有的工作还是在家更好吧。</p><p>现在进一步的感受到，岁月静好，能够安安心心的工作，孩子们快快乐乐的上学是多么美好的一件事。</p>]]></content>
+    <content type="html"><![CDATA[<p>英国疫情一天比一天严重，很多欧洲国家(目前不包含英国)的学校都已经听课，很多英国公司也都鼓励员工在家办公。</p><p>我所在的单位今天开始试运行如何在家办公。在此之前已经做了很多准备，比如：工作如何计划，团队成员之间的协作，沟通方式等等。</p><p><img src="/images/downloaded/5hvaoh_0.jpg" alt="image.png"></p><a id="more"></a><p>但是，在真正试行的时候，还是遇到了一些问题。比如：有的服务器是有访问权限限制的，只有内网中的个别IP地址可以访问，现在远程工作通过VPN连接的话，IP地址发生了变化，虽然有很多方法可以解决，但在实际操作的时候还是有很多事先想不到的问题的。</p><p>对于在家工作这个问题，我真的是很矛盾，就工作效率而言，个人更喜欢在办公室工作。但在目前形势下，尤其是英国目前的疫情下，希望所有的工作还是在家更好吧。</p><p>现在进一步的感受到，岁月静好，能够安安心心的工作，孩子们快快乐乐的上学是多么美好的一件事。</p>]]></content>
     
     <summary type="html">
     
@@ -469,10 +487,12 @@
     
     </summary>
     
-      <category term="未分类" scheme="https://aafenguk.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="工作" scheme="https://aafenguk.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
     
     
-      <category term="未分类" scheme="https://aafenguk.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
+    
+      <category term="在家办公" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC/"/>
     
   </entry>
   
