@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>(Part 1) Build Steem blockchain application with Vue.js - installation and first demo - aafeng</title><meta description="(Part 1) Build Steem blockchain application with Vue.js - installation and first demo"><meta property="og:type" content="blog"><meta property="og:title" content="(Part 1) Build Steem blockchain application with Vue.js - installation and first demo"><meta property="og:url" content="https://aafenguk.github.io/"><meta property="og:site_name" content="aafeng"><meta property="og:description" content="(Part 1) Build Steem blockchain application with Vue.js - installation and first demo"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.steemitimages.com/DQmTMavcpq3oapgwc6tewdxXi1jQg2LNEu3gkAEJyJT6YKD/image.png"><meta property="og:image" content="https://cdn.steemitimages.com/DQmeFFC5Z4HJpKR3dhamqXJ1SQEvwSNvwTXyCqQrm6xTFkw/image.png"><meta property="og:image" content="https://cdn.steemitimages.com/DQmRX5e5NWKWLhX2C4DuVT5TptbEupYznrniprbKf6ibMhh/image.png"><meta property="og:image" content="https://cdn.steemitimages.com/DQmUYg5joSmTcrcFT92iCwWWkkqeoBFaLfAyWTu5Nwhb62F/image.png"><meta property="article:published_time" content="2019-02-16T14:05:03.000Z"><meta property="article:modified_time" content="2020-04-13T11:04:13.115Z"><meta property="article:author" content="aafeng"><meta property="article:tag" content="未分类"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://aafenguk.github.io/images/downloaded/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo_0.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aafenguk.github.io/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/"},"headline":"aafeng","image":["https://aafenguk.github.io/images/downloaded/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo_0.jpg","https://cdn.steemitimages.com/DQmTMavcpq3oapgwc6tewdxXi1jQg2LNEu3gkAEJyJT6YKD/image.png","https://cdn.steemitimages.com/DQmeFFC5Z4HJpKR3dhamqXJ1SQEvwSNvwTXyCqQrm6xTFkw/image.png","https://cdn.steemitimages.com/DQmRX5e5NWKWLhX2C4DuVT5TptbEupYznrniprbKf6ibMhh/image.png","https://cdn.steemitimages.com/DQmUYg5joSmTcrcFT92iCwWWkkqeoBFaLfAyWTu5Nwhb62F/image.png"],"datePublished":"2019-02-16T14:05:03.000Z","dateModified":"2020-04-13T11:04:13.115Z","author":{"@type":"Person","name":"aafeng"},"description":"(Part 1) Build Steem blockchain application with Vue.js - installation and first demo"}</script><link rel="canonical" href="https://aafenguk.github.io/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-163432216-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-163432216-1');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logox100.png" alt="aafeng" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Hive" href="https://hive.blog/@aafeng"><i class="fab fa-cube"></i></a><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Steembuzz" href="https://steem.buzz/@aafeng"><i class="fab fa-cube"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" datetime="2019-02-16T14:05:03.000Z" title="2019-02-16T14:05:03.000Z">2019-02-16</time><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></span><span class="level-item">6 分钟 读完 (大约 953 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">(Part 1) Build Steem blockchain application with Vue.js - installation and first demo</h1><div class="content"><p><img src="/images/downloaded/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo_0.jpg" alt></p>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>Vue.js: <a href="https://github.com/vuejs/vue" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/vuejs/vue</a></p>
+<h2 id="What-Will-I-Learn"><a href="#What-Will-I-Learn" class="headerlink" title="What Will I Learn?"></a>What Will I Learn?</h2><ul>
+<li>Vue.js development environment setup</li>
+<li>Build first Vue.js application</li>
+<li>Interact with Steem blockchain in Vue.js application</li>
+</ul>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
+<li>A Node.js environment (Ubuntu 18 + Node.js is used in this tutorial)</li>
+<li>Basic HTML/CSS/Javascript knowledge</li>
+</ul>
+<h2 id="Difficulty"><a href="#Difficulty" class="headerlink" title="Difficulty"></a>Difficulty</h2><p>Basic level</p>
+<h2 id="Preparations"><a href="#Preparations" class="headerlink" title="Preparations"></a>Preparations</h2><p>In order to implement the demo application, you need the Node.js environment. Run this command:</p>
+<pre><code>node -v
+</code></pre><p>The output should look like:</p>
+<pre><code>v11.10.0
+</code></pre><p>If you do not have Node.js installed, make sure get it installed before following this tutorial. <a href="https://github.com/creationix/nvm" rel="external nofollow noopener noreferrer" target="_blank">Node Version Manager</a> is highly recommended to install/manager your Node.js.</p>
+<h2 id="Tutorial-Contents"><a href="#Tutorial-Contents" class="headerlink" title="Tutorial Contents"></a>Tutorial Contents</h2><p>In this tutorial, first you will learn how to setup the Vue.js development environment, then you will learn how to read user profile from Steem blockchain and display these information by using Vue.js (The demo can be seen from: <a href="https://vuejstutorials.herokuapp.com)" rel="external nofollow noopener noreferrer" target="_blank">https://vuejstutorials.herokuapp.com)</a>.</p>
+<h3 id="Install-Vue-cli"><a href="#Install-Vue-cli" class="headerlink" title="Install Vue-cli"></a>Install Vue-cli</h3><p>Run this command to install Vue-cli:</p>
+<pre><code>npm install -g vue-cli
+</code></pre><h3 id="Create-a-project"><a href="#Create-a-project" class="headerlink" title="Create a project:"></a>Create a project:</h3><p>First you need to create a Vue.js project, e.g.</p>
+<pre><code>vue init webpack steemdemo
+</code></pre><p>You will be asked some questions while creating the project, just choose the default values as shown below (Choose ‘No’ for tests as it will be covered later):</p>
+<p><img src="https://cdn.steemitimages.com/DQmTMavcpq3oapgwc6tewdxXi1jQg2LNEu3gkAEJyJT6YKD/image.png" alt></p>
+<p>Now we are ready to test the demo project, type the following command:</p>
+<pre><code>cd steemdemo
+npm run dev
+</code></pre><p>Open your browser and enter <a href="http://localhost:8080" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:8080</a> (OR <a href="http://YOUR_HOST:8080)" rel="external nofollow noopener noreferrer" target="_blank">http://YOUR_HOST:8080)</a>, you will see this page:</p>
+<p><img src="https://cdn.steemitimages.com/DQmeFFC5Z4HJpKR3dhamqXJ1SQEvwSNvwTXyCqQrm6xTFkw/image.png" alt></p>
+<p>You will find the following sub folders have been created in your project folder:</p>
+<ul>
+<li>build: this folder contains the webpack settings</li>
+<li>config: this folder contains project settings</li>
+<li>node_modules: this folder contains all required Node.js modules</li>
+<li>src: this is the source code of your project</li>
+<li>static: the static assets in your project</li>
+</ul>
+<p>The ‘src’ folder will be the main folder you will be working on, type this command:</p>
+<pre><code>tree src
+</code></pre><p>You will see output as shown below:</p>
+<p><img src="https://cdn.steemitimages.com/DQmRX5e5NWKWLhX2C4DuVT5TptbEupYznrniprbKf6ibMhh/image.png" alt></p>
+<p>‘App.vue’ is the main component of your application and ‘main.js’ is the entry point of your application. All routes are defined in router/index.js. A ‘HelloWorld’ component has been generated in components/HelloWorld.vue.</p>
+<h3 id="Read-user-profile-from-Steem-blockchain"><a href="#Read-user-profile-from-Steem-blockchain" class="headerlink" title="Read user profile from Steem blockchain"></a>Read user profile from Steem blockchain</h3><p>Now, the generated Vue.js scaffolds needs to be modified to read a user’s profile from Steem blockchain and show these information in the page, as shown below:</p>
+<p><img src="https://cdn.steemitimages.com/DQmUYg5joSmTcrcFT92iCwWWkkqeoBFaLfAyWTu5Nwhb62F/image.png" alt></p>
+<h4 id="Install-steem-js"><a href="#Install-steem-js" class="headerlink" title="Install steem js"></a>Install steem js</h4><p>First, you need to install steem module</p>
+<pre><code>npm install steem --save
+</code></pre><h4 id="Add-Profile-vue"><a href="#Add-Profile-vue" class="headerlink" title="Add Profile.vue"></a>Add Profile.vue</h4><p>Rename components/HelloWorld.vue to components/Profile.vue and update its content as shown below:</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div  class=&quot;profile_header&quot; v-bind:style=&quot;{backgroundImage: &apos;url(&apos; + profile.cover_image + &apos;)&apos;}&quot;&gt;
+        &lt;img class=&quot;profile_avatar&quot; v-bind:src=&quot;profile.profile_image&quot;/&gt; {{profile.name}} &lt;br/&gt;
+        &lt;div&gt;About: {{ profile.about }}&lt;/div&gt;
+        &lt;div&gt;Location: {{ profile.location }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+let steem = require(&apos;steem&apos;)
+
+export default {
+  name: &apos;Profile&apos;,
+  data () {
+    return {
+      profile: &apos;&apos;
+    }
+  },
+  created () {
+    let names = [&apos;aafeng&apos;]
+    let currentComponent = this
+    steem.api.getAccounts(names, function (err, result) {
+      if (err) {
+        console.log(err.stack)
+      }
+      var jsonMetadata = JSON.parse(result[0].json_metadata)
+      currentComponent.profile = jsonMetadata.profile
+    })
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.profile_header {
+  padding: 10px;
+  background-size: 100%;
+}
+.profile_avatar {
+  height: 30px;
+  width: 30px;
+}
+&lt;/style&gt;
+</code></pre><p>Profile.vue has three parts: template, script, and style. </p>
+<p><strong>template</strong></p>
+<p>The template is mainly HTML tags, plus Vue.js directives to link data to its display elements, and Vue.js interpolation to show some values in the page. </p>
+<p>For example, the following code means that ‘profile_image’ property of ‘profile’ is linked to the img tag’s src property. Whenever the profile is loaded from Steem blockchain, the image will be loaded by Vue.js.</p>
+<pre><code>&lt;img class=&quot;profile_avatar&quot; v-bind:src=&quot;profile.profile_image&quot;/&gt;
+</code></pre><p>Interpolation is used to display texts in the template:</p>
+<pre><code>{{profile.name}}
+{{profile.location}}    
+</code></pre><p><strong>script</strong></p>
+<p>Within the script tag, Vue.js component is defined, e.g. with name, data, and created function. The data defined in the data function can be used in the template. The empty string has been used as the default value of ‘profile’. ‘created’ function is used to initialize the profile, e.g. read user’s profile from Steem blockchain and save jsonMetadata into profile of current component. Note: in this demo, a hardcoded username, e.g. ‘aafeng’ is used, but it will be changed later.</p>
+<p><strong>style</strong></p>
+<p>The style tag’s name explains the purpose of it, e.g. defining the CSS styles which are used in the current component.</p>
+<h4 id="router-index-js"><a href="#router-index-js" class="headerlink" title="router/index.js"></a>router/index.js</h4><p>Now you need to update router/index.js with the following content:</p>
+<pre><code>import Vue from &apos;vue&apos;
+import Router from &apos;vue-router&apos;
+import Profile from &apos;@/components/Profile&apos;
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: &apos;/&apos;,
+      name: &apos;Profile&apos;,
+      component: Profile
+    }
+  ]
+})
+</code></pre><p>In the code above, Profile is registered first:</p>
+<pre><code>import Profile from &apos;@/components/Profile&apos;
+</code></pre><p>Then routes are modified because Profile will be used as the homepage:</p>
+<pre><code>routes: [
+  {
+    path: &apos;/&apos;,
+    name: &apos;Profile&apos;,
+    component: Profile
+  }
+]
+</code></pre><p>Now you can run this command to launch your application:</p>
+<pre><code>npm run dev
+</code></pre><p>Open your browser and access: <a href="http://YOUR_HOST:8080" rel="external nofollow noopener noreferrer" target="_blank">http://YOUR_HOST:8080</a> (In my case, it is <a href="http://localhost:8080" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:8080</a>) and you will see the your first demo!</p>
+<h2 id="Curriculum"><a href="#Curriculum" class="headerlink" title="Curriculum"></a>Curriculum</h2><p>This is the first tutorial. More interesting topics will be covered in the following tutorials!</p>
+<h2 id="Proof-of-Work-Done"><a href="#Proof-of-Work-Done" class="headerlink" title="Proof of Work Done"></a>Proof of Work Done</h2><p>Source code for this tutorial: <a href="https://github.com/aa-feng/VuejsTutorial/tree/v0.11" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/aa-feng/VuejsTutorial/tree/v0.11</a></p>
+<p>Master branch of the source code (will be updated with ongoing tutorials): <a href="https://github.com/aa-feng/VuejsTutorial" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/aa-feng/VuejsTutorial</a></p>
+<p>The live demo of latest iteration: <a href="https://aa-feng.github.io/" rel="external nofollow noopener noreferrer" target="_blank">https://aa-feng.github.io/</a></p>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></div><div class="sharethis-inline-share-buttons"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e936f708faafedb" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/wherein-1550427639652/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">春天来了</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/wherein-1550182071704/"><span class="level-item">难得在英国还能吃到符...</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://aafenguk.github.io/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/';
+            this.page.identifier = 'part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'aafeng' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="aafeng"></figure><p class="title is-size-4 is-block line-height-inherit">aafeng</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>UK</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">241</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">1</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/aafenguk" target="_blank" rel="external nofollow noopener noreferrer">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/aafenguk"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://hive.blog/@aafeng" target="_blank" rel="external nofollow noopener noreferrer"><span class="level-left"><span class="level-item">Hive</span></span><span class="level-right"><span class="level-item tag">hive.blog</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"><span class="level-start"><span class="level-item">未分类</span></span><span class="level-end"><span class="level-item tag">241</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time datetime="2020-04-13T04:50:00.000Z">2020-04-13</time></p><p class="title is-6"><a class="link-muted" href="/5w3nes/">断舍离</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></p></div></article><article class="media"><div class="media-content size-small"><p><time datetime="2020-04-12T04:03:24.000Z">2020-04-12</time></p><p class="title is-6"><a class="link-muted" href="/6da9hx/">复活节花园寻宝</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></p></div></article><article class="media"><div class="media-content size-small"><p><time datetime="2020-04-11T07:44:45.000Z">2020-04-11</time></p><p class="title is-6"><a class="link-muted" href="/hive-telegram-2/">实时推送Hive区块链信息到Telegram客户端（2）</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></p></div></article><article class="media"><div class="media-content size-small"><p><time datetime="2020-04-10T07:44:15.000Z">2020-04-10</time></p><p class="title is-6"><a class="link-muted" href="/6x7r52/">出门放风</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></p></div></article><article class="media"><div class="media-content size-small"><p><time datetime="2020-04-09T07:39:03.000Z">2020-04-09</time></p><p class="title is-6"><a class="link-muted" href="/hive-steem-steem/">Hive和Steem都已经分家了，绝大多数账户的恢复账户还都是Steem意味着什么？</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/01/"><span class="level-start"><span class="level-item">一月 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/09/"><span class="level-start"><span class="level-item">九月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/08/"><span class="level-start"><span class="level-item">八月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/03/"><span class="level-start"><span class="level-item">三月 2019</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/02/"><span class="level-start"><span class="level-item">二月 2019</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/01/"><span class="level-start"><span class="level-item">一月 2019</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/11/"><span class="level-start"><span class="level-item">十一月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/10/"><span class="level-start"><span class="level-item">十月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/08/"><span class="level-start"><span class="level-item">八月 2018</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/06/"><span class="level-start"><span class="level-item">六月 2018</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/04/"><span class="level-start"><span class="level-item">四月 2018</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/02/"><span class="level-start"><span class="level-item">二月 2018</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/12/"><span class="level-start"><span class="level-item">十二月 2017</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/11/"><span class="level-start"><span class="level-item">十一月 2017</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/10/"><span class="level-start"><span class="level-item">十月 2017</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/09/"><span class="level-start"><span class="level-item">九月 2017</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/08/"><span class="level-start"><span class="level-item">八月 2017</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/07/"><span class="level-start"><span class="level-item">七月 2017</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"><span class="tag">未分类</span><span class="tag is-grey-lightest">241</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logox100.png" alt="aafeng" height="28"></a><p class="size-small"><span>&copy; 2020 aafeng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Hive" href="https://hive.blog/@aafeng"><i class="fas fa-cubes"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://aafenguk.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
