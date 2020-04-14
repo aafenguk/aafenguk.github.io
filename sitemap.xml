@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aafenguk.github.io/part-6-build-steem-blockchain-application-with-vue-js-input-forms-and-handling-rest-api-calls/</loc>
+    
+    <lastmod>2020-04-14T22:30:47.714Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/</loc>
+    
+    <lastmod>2020-04-14T22:29:09.378Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/part-2-build-steem-blockchain-application-using-vue-js-components-computed-properties-and-build-deployment-process/</loc>
+    
+    <lastmod>2020-04-14T22:28:20.711Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/part-3-build-steem-blockchain-application-with-vue-js-using-bootstrap-mixins-and-first-iteration-of-posts-component/</loc>
+    
+    <lastmod>2020-04-14T22:27:43.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/part-4-build-steem-blockchain-application-with-vue-js-dynamic-route-and-event-handling/</loc>
+    
+    <lastmod>2020-04-14T22:26:56.944Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/wherein-1551545357643/</loc>
+    
+    <lastmod>2020-04-14T22:25:57.932Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/partiko1000-hirffs6z/</loc>
+    
+    <lastmod>2020-04-14T22:23:52.865Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/part-5-build-steem-blockchain-application-with-vue-js-passing-data-among-components-state-management-via-vuex-and-data/</loc>
+    
+    <lastmod>2020-04-14T22:22:51.158Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://aafenguk.github.io/e5cef92cefb03/</loc>
+    
+    <lastmod>2020-04-14T22:19:09.248Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://aafenguk.github.io/900-chinese-food-recipes-top-1-chinese-food-recipes-in-google-play-store/</loc>
     
     <lastmod>2020-04-14T22:15:49.726Z</lastmod>
@@ -1304,44 +1367,9 @@
   </url>
   
   <url>
-    <loc>https://aafenguk.github.io/part-2-build-steem-blockchain-application-using-vue-js-components-computed-properties-and-build-deployment-process/</loc>
-    
-    <lastmod>2020-04-13T11:04:27.155Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/part-1-build-steem-blockchain-application-using-vue-js-installation-and-first-demo/</loc>
-    
-    <lastmod>2020-04-13T11:04:13.115Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/part-4-build-steem-blockchain-application-with-vue-js-dynamic-route-and-event-handling/</loc>
-    
-    <lastmod>2020-04-13T11:03:44.203Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://aafenguk.github.io/steemit-condenser-cannot-see-voters-count-for-some-posts/</loc>
     
     <lastmod>2020-04-13T11:03:30.799Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/part-3-build-steem-blockchain-application-with-vue-js-using-bootstrap-mixins-and-first-iteration-of-posts-component/</loc>
-    
-    <lastmod>2020-04-13T11:03:00.292Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/part-5-build-steem-blockchain-application-with-vue-js-passing-data-among-components-state-management-via-vuex-and-data/</loc>
-    
-    <lastmod>2020-04-13T11:02:31.192Z</lastmod>
     
   </url>
   
@@ -1472,20 +1500,6 @@
   </url>
   
   <url>
-    <loc>https://aafenguk.github.io/wherein-1551545357643/</loc>
-    
-    <lastmod>2020-04-13T10:35:08.730Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/partiko1000-hirffs6z/</loc>
-    
-    <lastmod>2020-04-13T10:35:06.886Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://aafenguk.github.io/top-utopian-translation-projects/</loc>
     
     <lastmod>2020-04-13T10:08:29.164Z</lastmod>
@@ -1496,13 +1510,6 @@
     <loc>https://aafenguk.github.io/utopianj-utopian-api-java-client/</loc>
     
     <lastmod>2020-04-13T10:08:23.736Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/part-6-build-steem-blockchain-application-with-vue-js-input-forms-and-handling-rest-api-calls/</loc>
-    
-    <lastmod>2020-04-13T09:42:02.613Z</lastmod>
     
   </url>
   
@@ -1608,13 +1615,6 @@
     <loc>https://aafenguk.github.io/3yjgz5/</loc>
     
     <lastmod>2020-04-13T09:13:19.222Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aafenguk.github.io/e5cef92cefb03/</loc>
-    
-    <lastmod>2020-04-13T09:03:42.447Z</lastmod>
     
   </url>
   
