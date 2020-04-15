@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aafenguk.github.io/"/>
-  <updated>2020-04-14T19:52:39.761Z</updated>
+  <updated>2020-04-15T13:46:56.816Z</updated>
   <id>https://aafenguk.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实时推送Hive区块链信息到Telegram客户端（3）</title>
+    <link href="https://aafenguk.github.io/hive-telegram-3/"/>
+    <id>https://aafenguk.github.io/hive-telegram-3/</id>
+    <published>2020-04-15T11:44:45.000Z</published>
+    <updated>2020-04-15T13:46:56.816Z</updated>
+    
+    <content type="html"><![CDATA[<p>在前面两篇文章（<a href="/hive-telegram-1/">第一篇</a>, <a href="/hive-telegram-2/">第二篇</a>）中讲到了如何读取Hive区块链信息，回溯N个区块，如何在区块信息中过滤信息，并根据自己定义的规则生成待发送的信息。下面介绍一下如何配置Python Telegram客户端并发送信息。</p><p><img src="/images/dev/telegram.jpg" alt="telegram-send"></p><a id="more"></a><p>首先需要安装telegram-send这个包：</p><pre><code>pip3 install telegram-send</code></pre><p>接下来需要进行配置，运行：</p><pre><code>telegram-send --configure</code></pre><p>其运行结果如下图所示，提示你访问BotFather页面：<a href="https://telegram.me/BotFather" rel="external nofollow noopener noreferrer" target="_blank">https://telegram.me/BotFather</a> 并创建一个机器人，随后需要将token粘贴过来。</p><p><img src="/images/dev/telegram-2.png" alt="telegram-send"></p><p>打开上面的页面。如果你还没有Telegram账号，需要先创建一个。</p><p><img src="/images/dev/telegram-botfather.jpg" alt="telegram-send"></p><p>这里我通过网页方式访问Telegram。</p><p>依次输入以下命令来创建一个你自己的bot：</p><pre><code>/newbot你的bot名字你的bot用户名</code></pre><p>接下来你就会获得一个token：</p><p><img src="/images/dev/telegram-3.jpg" alt="telegram-send"></p><p>返回Linux命令行界面，粘贴你刚获取的token。</p><p><img src="/images/dev/telegram-4.png" alt="telegram-send"></p><p>打开你的bot页面，我这里就是：<a href="https://telegram.me/aafeng_bot" rel="external nofollow noopener noreferrer" target="_blank">https://telegram.me/aafeng_bot</a></p><p>粘贴刚才命令行中获取的密码，bot就会提示已经配置成功；</p><p><img src="/images/dev/telegram-5.png" alt="telegram-send"></p><p>测试一下，在命令行运行：</p><pre><code>telegram-send &quot;Hello, telegram&quot;</code></pre><p>可以成功收到信息：</p><p><img src="/images/dev/telegram-6.png" alt="telegram-send"></p><p>发送图片：</p><pre><code>Telegram-send --image test.png</code></pre><p>发送文件：</p><pre><code>Telegram-send --file test.txt</code></pre><p>在Python程序中发送Telegram消息：</p><pre><code>import telegram_sendtelegram_send.send(messages=&quot;test message&quot;)</code></pre><p>把telegram部分和前面程序结合起来：</p><pre><code>telegram_messages = []while i&lt;= number_of_blocks_to_check:  for transaction in cb[&quot;transactions&quot;]:    for operation in transaction[&quot;operations&quot;]:      if operation[0] == &quot;vote&quot;:        message = get_vote_message(vote_rules, operation[1])        if message is not None:          telegram_messages.append(message)  previousid = int(cb[&quot;previous&quot;][:8], base=16)  cb = b.hive.get_block(previousid)  i = i+1if len(telegram_messages)&gt;0:  telegram_send.send(messages=telegram_messages)</code></pre><p>然后把这个程序放在cron job中，就可以检测区块链，把感兴趣的内容推送到你Telegram客户端了。</p><p><img src="/images/dev/telegram-7.jpg" alt="telegram-send"></p>]]></content>
+    
+    <summary type="html">
+    
+      实时推送Hive区块链信息到Telegram客户端（3）
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://aafenguk.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
+    
+      <category term="Telegram" scheme="https://aafenguk.github.io/tags/Telegram/"/>
+    
+  </entry>
   
   <entry>
     <title>疫情对生活习惯的改变</title>
@@ -111,9 +135,9 @@
     <link href="https://aafenguk.github.io/hive-telegram-2/"/>
     <id>https://aafenguk.github.io/hive-telegram-2/</id>
     <published>2020-04-11T07:44:45.000Z</published>
-    <updated>2020-04-13T19:28:31.026Z</updated>
+    <updated>2020-04-15T13:27:56.854Z</updated>
     
-    <content type="html"><![CDATA[<p>在<a href="/hive-105017/@aafeng/hive-telegram-1">上一篇文章</a>中讲到了整个程序的思路，以及如何读取Hive区块链信息，并回溯N个区块。在这篇文章中讲讲如何在区块信息中过滤信息，并根据自己定义的规则生成待发送的信息。</p><p><img src="/images/hive/hive-telegram-2.jpg" alt="image.png"><br>图源：pixabay</p><a id="more"></a><p>首先，需要定义一些用于筛选信息的规则。这里的一个基本原则就是所定义的规则一定要和程序代码分离，这样最终的程序才容易维护。任何时候想要更改规则的话，只需要修改定义规则的配置文件，而无需修改程序代码。比如：</p><pre><code>rules:  votes:    any_to_aafeng:      from:       &quot;*&quot;      to:         aafeng      exclude:    aafeng,aafeng.test      min_weight: 20</code></pre><p>上面定义了一组规则：除去’aafeng’和’aafeng.test’之外的任何用户对’aafeng’这个用户的点赞，如果点赞额度&gt;=20%，则符合这个规则。</p><p>再举一个关于转账的规则：</p><pre><code>transfers:  any_to_aafeng:    from:        &quot;*&quot;    to:          aafeng    min_account: 1            aafeng_to_any:    from:        aafeng    to:          &quot;*&quot;    min_account: 0 </code></pre><p>上面规则定义了：任何向’aafeng’转入的金额&gt;=1，符合规则。任何从’aafeng’转出的金额&gt;=0，符合规则。这条规则对于监测账号的资金变化非常有用。</p><p>除了上述的两类关于点赞和转账的规则，你还可以定义很多规则，比如：留言，发帖，提到你等等。道理都非常类似，这里就不一一例举了。</p><p>规则都定义了好了之后，我们需要考虑在程序中如何支持这样的规则，下面是对点赞规则的实现：</p><pre><code>HIVE_BASE_URL = &apos;\https://hive.blog/&apos;# check if there is a matched vote ruledef get_vote_message(vote_rules, transaction):  messages   = &apos;&apos;  try:    t_voter    = transaction[&quot;voter&quot;]     t_author   = transaction[&quot;author&quot;]    t_weight   = transaction[&apos;weight&apos;]/100.00    t_permlink = transaction[&apos;permlink&apos;]    for vr in vote_rules:      # check exclude       if t_voter in vote_rules[vr][&quot;exclude&quot;].split(&quot;,&quot;):        continue      # check if voting weight matches      if t_weight&gt;0 and t_weight &lt; vote_rules[vr][&quot;min_weight&quot;]:        continue      # check voter and votee matches      if (t_voter==vote_rules[vr][&quot;from&quot;] and t_author==vote_rules[vr][&quot;to&quot;]) or \         (&apos;*&apos;==vote_rules[vr][&quot;from&quot;]     and t_author==vote_rules[vr][&quot;to&quot;]) or \         (t_voter==vote_rules[vr][&quot;from&quot;] and &apos;*&apos;==vote_rules[vr][&quot;to&quot;]):        messages = messages + &quot;VOTE: %s --&gt; %s [%.2f]: %s/@%s/%s\n\n&quot; % (t_voter,t_author,t_weight,HIVE_BASE_URL,t_author,t_permlink)  except Exception as e:    traceback.print_exc()    return None  if messages!=&apos;&apos;:    return messages  else:    return None        </code></pre><p>通过上面的程序，就可以从区块链信息中过滤出自己感兴趣的点赞信息了。下一篇讲讲如何配置Telegram。</p>]]></content>
+    <content type="html"><![CDATA[<p>在<a href="/hive-105017/@aafeng/hive-telegram-1">上一篇文章</a>中讲到了整个程序的思路，以及如何读取Hive区块链信息，并回溯N个区块。在这篇文章中讲讲如何在区块信息中过滤信息，并根据自己定义的规则生成待发送的信息。</p><p><img src="/images/hive/hive-telegram-2.jpg" alt="image.png"><br>图源：pixabay</p><a id="more"></a><p>首先，需要定义一些用于筛选信息的规则。这里的一个基本原则就是所定义的规则一定要和程序代码分离，这样最终的程序才容易维护。任何时候想要更改规则的话，只需要修改定义规则的配置文件，而无需修改程序代码。比如：</p><pre><code>rules:  votes:    any_to_aafeng:      from:       &quot;*&quot;      to:         aafeng      exclude:    aafeng,aafeng.test      min_weight: 20</code></pre><p>上面定义了一组规则：除去’aafeng’和’aafeng.test’之外的任何用户对’aafeng’这个用户的点赞，如果点赞额度&gt;=20%，则符合这个规则。</p><p>再举一个关于转账的规则：</p><pre><code>transfers:  any_to_aafeng:    from:        &quot;*&quot;    to:          aafeng    min_account: 1            aafeng_to_any:    from:        aafeng    to:          &quot;*&quot;    min_account: 0 </code></pre><p>上面规则定义了：任何向’aafeng’转入的金额&gt;=1，符合规则。任何从’aafeng’转出的金额&gt;=0，符合规则。这条规则对于监测账号的资金变化非常有用。</p><p>除了上述的两类关于点赞和转账的规则，你还可以定义很多规则，比如：留言，发帖，提到你等等。道理都非常类似，这里就不一一例举了。</p><p>规则都定义了好了之后，我们需要考虑在程序中如何支持这样的规则，下面是对点赞规则的实现：</p><pre><code>HIVE_BASE_URL = &apos;https://hive.blog/&apos;# check if there is a matched vote ruledef get_vote_message(vote_rules, transaction):  messages   = &apos;&apos;  try:    t_voter    = transaction[&quot;voter&quot;]     t_author   = transaction[&quot;author&quot;]    t_weight   = transaction[&apos;weight&apos;]/100.00    t_permlink = transaction[&apos;permlink&apos;]    for vr in vote_rules:      # check exclude       if t_voter in vote_rules[vr][&quot;exclude&quot;].split(&quot;,&quot;):        continue      # check if voting weight matches      if t_weight&gt;0 and t_weight &lt; vote_rules[vr][&quot;min_weight&quot;]:        continue      # check voter and votee matches      if (t_voter==vote_rules[vr][&quot;from&quot;] and t_author==vote_rules[vr][&quot;to&quot;]) or \         (&apos;*&apos;==vote_rules[vr][&quot;from&quot;]     and t_author==vote_rules[vr][&quot;to&quot;]) or \         (t_voter==vote_rules[vr][&quot;from&quot;] and &apos;*&apos;==vote_rules[vr][&quot;to&quot;]):        messages = messages + &quot;VOTE: %s --&gt; %s [%.2f]: %s/@%s/%s\n\n&quot; % (t_voter,t_author,t_weight,HIVE_BASE_URL,t_author,t_permlink)  except Exception as e:    traceback.print_exc()    return None  if messages!=&apos;&apos;:    return messages  else:    return None        </code></pre><p>通过上面的程序，就可以从区块链信息中过滤出自己感兴趣的点赞信息了。下一篇讲讲如何配置Telegram。</p>]]></content>
     
     <summary type="html">
     
@@ -445,30 +469,6 @@
       <category term="疫情" scheme="https://aafenguk.github.io/tags/%E7%96%AB%E6%83%85/"/>
     
       <category term="在家工作" scheme="https://aafenguk.github.io/tags/%E5%9C%A8%E5%AE%B6%E5%B7%A5%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何在Hive上使用hivepy</title>
-    <link href="https://aafenguk.github.io/hive-hivepy/"/>
-    <id>https://aafenguk.github.io/hive-hivepy/</id>
-    <published>2020-03-22T15:11:51.000Z</published>
-    <updated>2020-04-15T08:27:04.125Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近Hive和Steem分家，一直考虑原来在Steem下的一些程序如何能在Hive继续使用的问题。今天正好看到O哥发的<a href="https://hive.blog/@oflyhigh/hive-steem-python" rel="external nofollow noopener noreferrer" target="_blank">这篇文章</a>,很高兴的点进去看了看，原来O哥和我卡在同样的问题上了。</p><a id="more"></a><p>简而言之，就是提示找不到’hive’这个包。错误提示是：</p><pre><code>File &quot;/home/aaf/environments/myenv/lib/python3.5/site-packages/hive/cli.py&quot;, line 78, in legacyentry    version=pkg_resources.require(&quot;hive&quot;)[0].version))</code></pre><p>其实，导致这个错误的原因是由于这里使用了错误的package名称，只要把这里的”hive”改为”hivepy”就可以了。</p><p>再运行：</p><pre><code>hivepy</code></pre><p>可以看到；</p><p><img src="/images/downloaded/hive-hivepy_0.jpg" alt="image.png"></p><p>需要注意，在调用hivepy库的时候，有些方法的名字发生了变化。必须做出相应调整，下面写了一个检查用户账号的测试程序：</p><pre><code>from sys import argvfrom hive.account import Accountfrom datetime import datetimefrom hive import converteruser = argv[1]user=user.replace(&quot;____&quot;,&quot;-&quot;)account = Account(user)cv = converter.Converter()print(&quot;Rep: %s&quot; % account.reputation(4))print(&quot;HBD: %s, HIVE: %s&quot; % (account.balances[&apos;total&apos;][&apos;HBD&apos;], account.balances[&apos;total&apos;][&apos;HIVE&apos;]))print(&quot;SP: %.2f&quot; % (cv.vests_to_hp(account.balances[&apos;total&apos;][&apos;VESTS&apos;])))print(&quot;reward_hbd_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HBD&quot;])print(&quot;reward_hive_balance: %s&quot; % account.balances[&quot;rewards&quot;][&quot;HIVE&quot;])print(&quot;reward_hp_balance: %.2f&quot; % cv.vests_to_hp(account.balances[&quot;rewards&quot;][&quot;VESTS&quot;]))</code></pre><p>运行：</p><pre><code>python3 checkaccount.py aafeng</code></pre><p>其输出为：</p><pre><code>Rep: 69.8117HBD: 0.433, HIVE: 47.775SP: 5344.49reward_hbd_balance: 0.0reward_hive_balance: 0.0reward_hp_balance: 2.14</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      如何在Hive上使用hivepy
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://aafenguk.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://aafenguk.github.io/tags/Hive/"/>
-    
-      <category term="Python" scheme="https://aafenguk.github.io/tags/Python/"/>
     
   </entry>
   
