@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-17T07:13:35.364Z</updated>
+  <updated>2020-04-17T07:15:33.623Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Hive的账户恢复操作及相关工具推荐</title>
     <link href="https://www.aafeng.uk/hive-account-recovery-and-tool/"/>
     <id>https://www.aafeng.uk/hive-account-recovery-and-tool/</id>
-    <published>2020-04-17T20:58:00.000Z</published>
-    <updated>2020-04-17T07:13:35.364Z</updated>
+    <published>2020-04-17T04:58:00.000Z</published>
+    <updated>2020-04-17T07:15:33.623Z</updated>
     
     <content type="html"><![CDATA[<p>在前几天的<a href="/hive-steem-steem/">一篇文章</a>中提到了如何更改恢复账号。那么，如果密码真的被盗，该怎么使用恢复账号来更改自己的密码呢？下面介绍一下账号恢复操作的逻辑，并推荐一个进行账号恢复的工具。</p><p><img src="/images/hive/account-recovery-1.jpg" alt="Hive账户恢复"></p><a id="more"></a><p>图源：Pixabay</p><h2 id="账号恢复操作的逻辑"><a href="#账号恢复操作的逻辑" class="headerlink" title="账号恢复操作的逻辑"></a>账号恢复操作的逻辑</h2><p>以我的一个测试账号 aafuk 为例，当初我使用了 aafeng 这个账号来创建的 aafuk，因此 aafuk 的恢复账号就是 aafeng。那么，如果 aafuk 的密码被盗，在30天之内是可以通过恢复账号，这里是 aafeng 来重置 aafuk 的密码的。这里 aafuk 对 aafeng 是信任的，因此可以由 aafeng 来恢复 aafuk 的密码。但是，系统设计巧妙的一处就是：在整个密码恢复的过程中，aafuk 既不需要提供被盗的密码给 aafeng，也不需要提供 自己想要设置的新密码给 aafeng，仅仅需要提供新密码对应的公钥就可以。</p><p><img src="/images/hive/account-recovery-2.png" alt="Hive账户恢复"></p><h2 id="账号恢复操作步骤"><a href="#账号恢复操作步骤" class="headerlink" title="账号恢复操作步骤"></a>账号恢复操作步骤</h2><p>感谢 @reazuliqbal 提供的账号恢复工具，其访问地址为：<a href="https://reazuliqbal.com/HiveAccountRecovery/" rel="external nofollow noopener noreferrer" target="_blank">https://reazuliqbal.com/HiveAccountRecovery/</a></p><p><img src="/images/hive/account-recovery-3.png" alt="Hive账户恢复"></p><p>下面步骤中使用 aafeng 来恢复 aafuk 这个账号的密码：</p><h3 id="第一步，由-aafuk-操作"><a href="#第一步，由-aafuk-操作" class="headerlink" title="第一步，由 aafuk 操作"></a>第一步，由 aafuk 操作</h3><p>首先单击“Recover Account”，并输入待恢复账号(这里是aafuk)，新密码 (可以由这个工具来生成，也可以使用自己设定的密码）。</p><p><img src="/images/hive/account-recovery-4.png" alt="Hive账户恢复"></p><p>然后单击“Get Public Owner Key”来生成公钥。嗯，似乎出问题了。原因在于我这个测试账户在过去30天内没有更改过密码，不能往下继续。这也意味着如果你的密码被盗超过30天，似乎就没法恢复了。</p><p><img src="/images/hive/account-recovery-5.png" alt="Hive账户恢复"></p><p>好吧，为了进行这个实验，我把 aafuk 的密码改了一下，继续：</p><p>这次可以了，得到了一个公钥：</p><p>New public owner key: STM6e9UQLs5DRKd1ttCeAZWf5Hdqs24aun1rSw459WpgE7Qibcajv</p><p><img src="/images/hive/account-recovery-6.png" alt="Hive账户恢复"></p><p>接下来，把公钥发送给你所设定的恢复账号，这里这里 <strong>发送的是公钥，不是密码，发送的是公钥，不是密码，发送的是公钥，不是密码</strong>。</p><p>第二步：由 aafeng 操作</p><p>访问这个页面：<br><a href="https://reazuliqbal.com/HiveAccountRecovery/request-recovery.html" rel="external nofollow noopener noreferrer" target="_blank">https://reazuliqbal.com/HiveAccountRecovery/request-recovery.html</a></p><p>依次输入待恢复账号，第一步获取的公钥，恢复账号，以及恢复账号的 Active Key，然后单击 “Submit Recovery Request”。</p><p><img src="/images/hive/account-recovery-7.png" alt="Hive账户恢复"></p><p>系统提示这个请求已经被成功提交。</p><p><img src="/images/hive/account-recovery-7a.png" alt="Hive账户恢复"></p><p>这时在 hiveblock 上查看，从 aafeng 和 aafuk 的账号中都可以看到这个交易：</p><p><img src="/images/hive/account-recovery-8.png" alt="Hive账户恢复"></p><h3 id="第三步：由-aafuk-操作"><a href="#第三步：由-aafuk-操作" class="headerlink" title="第三步：由 aafuk 操作"></a>第三步：由 aafuk 操作</h3><p>接下来可以输入前面生成的新密码，还有你账户的旧密码：</p><p><img src="/images/hive/account-recovery-9.png" alt="Hive账户恢复"></p><p>单击“Recover Account”</p><p>提示账号已经成功恢复。</p><p><img src="/images/hive/account-recovery-10.jpg" alt="Hive账户恢复"></p><p>使用新密码登录，成功！</p>]]></content>
     
