@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-18T20:21:48.856Z</updated>
+  <updated>2020-04-19T07:17:29.927Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hive Keychain介绍</title>
+    <link href="https://www.aafeng.uk/hive-keychain/"/>
+    <id>https://www.aafeng.uk/hive-keychain/</id>
+    <published>2020-04-19T05:58:00.000Z</published>
+    <updated>2020-04-19T07:17:29.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近试用了一下 Hive Keychain，感觉非常好用，向大家推荐一下。</p><p><img src="/images/hive/keychain-1.png" alt="Hive Keychain"></p><a id="more"></a><h2 id="Hive-Keychain是做什么的？"><a href="#Hive-Keychain是做什么的？" class="headerlink" title="Hive Keychain是做什么的？"></a>Hive Keychain是做什么的？</h2><p>简而言之，Hive Keychain就是把你所需要的各种Key，主要是Active Key和Posting Key保存在Keychain里。这样你在进行相应操作，比如：转账等时不需要每次都输入那些key了。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Chrome Web Store 下载地址：<a href="https://chrome.google.com/webstore/detail/hive-keychain/jcacnejopjdphbnjgfaaobbfafkihpep" rel="external nofollow noopener noreferrer" target="_blank">https://chrome.google.com/webstore/detail/hive-keychain/jcacnejopjdphbnjgfaaobbfafkihpep</a></p><p>单击“Add to Chrome”</p><p><img src="/images/hive/keychain-2.png" alt="Hive Keychain"></p><p>然后按照提示进行安装，整个过程非常简单。</p><h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>单击Hive Keychain的图标，然后设置一个Keychain的密码：</p><p><img src="/images/hive/keychain-3.png" alt="Hive Keychain"></p><p>首先需要添加各种需要的key，包括Active key，Posting key，和Memo Key。</p><p>这里，添加了我自己的posting key。</p><p><img src="/images/hive/keychain-4.png" alt="Hive Keychain"></p><p>添加后就能看到自己账户的基本信息了：</p><p><img src="/images/hive/keychain-5.png" alt="Hive Keychain"></p><p>如果要进行转账的话，需要添加Active key，需要在”MANAGE ACCOUNTS” -&gt; “你的用户名” 这里添加：</p><p><img src="/images/hive/keychain-6.png" alt="Hive Keychain"></p><p>都设置好后就可以进行各种操作了：比如转账，查看转账历史，对见证人投票等。</p><p><img src="/images/hive/keychain-7.png" alt="Hive Keychain"></p>]]></content>
+    
+    <summary type="html">
+    
+      Hive Keychain介绍
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
+    
+  </entry>
   
   <entry>
     <title>自家腌的咸鸡蛋，真香</title>
@@ -434,28 +456,6 @@
     <summary type="html">
     
       疫情期间团结互助，共度难关
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>全副武装去了趟超市</title>
-    <link href="https://www.aafeng.uk/4vss8x/"/>
-    <id>https://www.aafeng.uk/4vss8x/</id>
-    <published>2020-03-30T19:55:51.000Z</published>
-    <updated>2020-04-15T08:53:27.635Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近英国的疫情越来越严重，在家中已经宅了近两个星期。但今天家中的蔬菜水果快吃光了，决定去超市补充一些生活必需品。</p><p><img src="/images/downloaded/4vss8x_0.jpg" alt="image.png"><br>图源：pixabay</p><a id="more"></a><p>出发前做好了充足的准备，一次性手套，口罩，墨镜一应俱全。嗯，没错，是墨镜。因为没有买到护目镜，所以用墨镜来替代。</p><p>开车到了超市后，发现超市门口已经有很多人在排队了。大家都非常注意，彼此之间保持了两米以上的距离。感觉气氛有些压抑，没有人说话交谈，只是跟着队伍在默默的往前移动。</p><p><img src="/images/downloaded/4vss8x_1.jpg" alt="image.png"><br>图源：pixabay</p><p>超市门口有员工在控制人数，等了快半个小时后终于轮到我了。进去以后，超市里的人很少。这主要是要保证”social distance“吧。相比较于两周前大家纷纷拥堵在超市中囤积生活必需品时，区别简直太大了。超市的物品非常全，可以说是堆积如山。就连两周前的紧俏商品-卫生纸也有很多。由于继续囤积了一些生活必备品，因此，这次消费的金额差不多是平时购物时的两倍。</p><p>到家后并没有对所有物品进行消毒处理，而是把物品全部先放置到了车库中。打算放上三天后再开始使用。对于一些需要在冰箱中保存的物品进行了消毒处理后放在了家中。之后按照专家的推荐边洗手边唱了两遍生日歌。。。</p><p>这次购物应该足够全家人吃上两个礼拜了。下面打算尽量选择网购，老老实实在家中宅上几个星期再说吧。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      全副武装去了趟超市
     
     </summary>
     
