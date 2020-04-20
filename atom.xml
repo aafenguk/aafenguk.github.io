@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-19T22:26:19.792Z</updated>
+  <updated>2020-04-20T09:52:50.244Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近遇到的一个Cron job的坑</title>
+    <link href="https://www.aafeng.uk/cronjob-problem/"/>
+    <id>https://www.aafeng.uk/cronjob-problem/</id>
+    <published>2020-04-20T04:58:00.000Z</published>
+    <updated>2020-04-20T09:52:50.244Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/technology/linux/bash.png" alt="Cron job"></p><p>最近写了一个Python程序，希望对<a href="https://steem.buzz/created/cn" rel="external nofollow noopener noreferrer" target="_blank">CN区</a>的众多liker小伙伴们自动赞赏。 设定好了一个Cronjob，希望让其自动运行，但每次都不能自动执行。 </p><a id="more"></a><p>其Cronjob设置如下：</p><pre><code>30 04 * * * /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log</code></pre><p>而且问题是日志文件为空，根本就没有任何线索。</p><p>首先想到的是环境变量的配置有问题。于是添加了这一句：</p><pre><code>. $HOME/.bash_profile    </code></pre><p>Cron job就成为了：   </p><pre><code>30 04 * * * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log    </code></pre><p>但仍然没有任何作用。    </p><p>检查一下系统日志文件/var/log/syslog，发现这条错误信息：</p><pre><code>Apr 20 11:11:02 vmi164206 CRON[16662]: (CRON) info (No MTA installed, discarding output)</code></pre><p>这条错误消息在于，Cron job产生了输出，Cron守护进程想要将这些输出通过email发送给我，但是我的MTA (Mail Transfer Agent) 并没有正确配置，因此会出现上面的错误提示。</p><p>要想解决这个问题，有几种不同的方法：</p><ul><li>安装并配置MTA，比如：postfix，但我在VM上根本就不使用mail，因此并不想采取这种方式</li><li>进行错误输出重定向，添加： 2&gt;&amp;1，将错误输出到日志文件中</li></ul><p>我选择了第二种方式，这样Cron job就成为了：</p><p>  30 04 <em> </em> * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log 2&gt;&amp;1</p><p>再检查自己的日志文件，终于有输出了：</p><pre><code>Traceback (most recent call last):</code></pre><p>  File “likercli.py”, line 3, in <module><br>    import mysql.connector<br>ModuleNotFoundError: No module named ‘mysql’</module></p><p>提示找不到mysql这个库。但我明明已经安装了啊。 将Python的完整路径添加后问题解决：</p><pre><code>/home/aafeng/environments/myenv/bin/python xxxxxx</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      最近遇到的一个Cron job的坑
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hive Engine及5月1日的空投</title>
@@ -441,28 +463,6 @@
       <category term="Steem" scheme="https://www.aafeng.uk/tags/Steem/"/>
     
       <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive常用工具/站点总结</title>
-    <link href="https://www.aafeng.uk/hive-tool/"/>
-    <id>https://www.aafeng.uk/hive-tool/</id>
-    <published>2020-04-02T20:58:00.000Z</published>
-    <updated>2020-04-18T14:50:15.920Z</updated>
-    
-    <content type="html"><![CDATA[<p>自从Hive从Steem硬分叉以来，大量Steem用户开始使用Hive。但由于这个链还很新，因此很多人对常用的工具/站点并不是很了解。下面就总结一下，如有遗漏，欢迎在下面留言，我会经常更新这个页面的。</p><p><img src="/images/hive/hive.png" alt="Hive"></p><a id="more"></a><h2 id="发帖"><a href="#发帖" class="headerlink" title="发帖"></a>发帖</h2><p>Hive blog: <a href="https://hive.blog/" rel="external nofollow noopener noreferrer" target="_blank">https://hive.blog/</a><br>Peakd: <a href="https://peakd.com/" rel="external nofollow noopener noreferrer" target="_blank">https://peakd.com/</a></p><h2 id="查看链上的交易"><a href="#查看链上的交易" class="headerlink" title="查看链上的交易"></a>查看链上的交易</h2><p>Hiveblocks: <a href="https://hiveblocks.com/" rel="external nofollow noopener noreferrer" target="_blank">https://hiveblocks.com/</a></p><h2 id="账号创建"><a href="#账号创建" class="headerlink" title="账号创建"></a>账号创建</h2><h3 id="Claim-Create-account"><a href="#Claim-Create-account" class="headerlink" title="Claim / Create account:"></a>Claim / Create account:</h3><p>页面：<a href="https://reazuliqbal.com/AccountCreate/" rel="external nofollow noopener noreferrer" target="_blank">https://reazuliqbal.com/AccountCreate/</a><br>源码：<a href="https://github.com/CodeBull/AccountCreate" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/CodeBull/AccountCreate</a></p><h2 id="账户恢复"><a href="#账户恢复" class="headerlink" title="账户恢复"></a>账户恢复</h2><h3 id="arcange开发的"><a href="#arcange开发的" class="headerlink" title="arcange开发的"></a>arcange开发的</h3><p>页面：<a href="https://tools.hivechain.app/recovery/" rel="external nofollow noopener noreferrer" target="_blank">https://tools.hivechain.app/recovery/</a><br>源码：<a href="https://github.com/VIM-Arcange/hive-Recovery" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/VIM-Arcange/hive-Recovery</a></p><h2 id="reazuliqbal开发的"><a href="#reazuliqbal开发的" class="headerlink" title="reazuliqbal开发的"></a>reazuliqbal开发的</h2><p>页面：<a href="https://reazuliqbal.com/HiveAccountRecovery/" rel="external nofollow noopener noreferrer" target="_blank">https://reazuliqbal.com/HiveAccountRecovery/</a><br>源码：<a href="https://github.com/codebull/HiveAccountRecovery/" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/codebull/HiveAccountRecovery/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      Hive常用工具/站点总结
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
