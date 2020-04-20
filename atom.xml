@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-20T09:59:52.609Z</updated>
+  <updated>2020-04-20T21:45:05.896Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>以特殊的方式给儿子庆祝生日</title>
+    <link href="https://www.aafeng.uk/my-sons-birthday-2020/"/>
+    <id>https://www.aafeng.uk/my-sons-birthday-2020/</id>
+    <published>2020-04-20T20:58:00.000Z</published>
+    <updated>2020-04-20T21:45:05.896Z</updated>
+    
+    <content type="html"><![CDATA[<p>转眼又到了儿子的生日。往年都是让儿子自己选择来举办一个生日Party。在英国，小朋友们的Party类型选择很多，比如在游乐场Party，蹦床Party，做Pizza的Party，森林中的户外活动主题Party，镭射枪对战Party，保龄球Party等等。说白了就是家长们轮流买单，让孩子们一起嗨。但今年由于疫情显然是没法搞生日Party了，但仪式感还是要有的。</p><a id="more"></a><p>儿子的礼物已经事先给他准备好了。他一段时间一直想要一个Amazon Alexa，想要问Alexa各种奇怪的问题。我考虑再三，决定还是选择了Google Home Hub作为替代产品，主要原因是对整套Google产品印象分非常高。相信他一定也会喜欢的。还有就是一套他非常想要的书《The Treehouse Collection》。</p><p><img src="/images/kids/birthday/google-home-hub.png" alt="Google Home Hub"></p><p>尽管现在不能和他的小伙伴们见面，但他的小伙伴们早就在Whatsapp群中送上了各种生日祝福，有录视频的，有留下语音的，也有发送电子贺卡的。最让我们感动的是他最好的朋友的妈妈，带上儿子最好的朋友，专程开车来到我们家门口，把礼物远远的留下，并为儿子当面唱了一首生日快乐歌。</p><p>媳妇今天专门为孩子做了一个生日蛋糕。做的是孩子们最喜欢的戚风蛋糕。本来是要搭配些水果的。但现在购物不便，就变通了一下。和媳妇做的蛋糕相比，我<a href="/5wpl8/">前些天做的蛋糕</a>简直就是弱爆了。。。</p><p><img src="/images/kids/birthday/20200420-cake.png" alt="Google Home Hub"></p>]]></content>
+    
+    <summary type="html">
+    
+      儿子生日 + 虚拟Party
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+      <category term="生日" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%97%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>最近遇到的一个Cron job的坑</title>
@@ -439,30 +461,6 @@
     
     
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>注册赞赏公民，支持Steem中文社区 + 使用经验分享</title>
-    <link href="https://www.aafeng.uk/6sxpjo/"/>
-    <id>https://www.aafeng.uk/6sxpjo/</id>
-    <published>2020-04-03T04:56:33.000Z</published>
-    <updated>2020-04-15T09:02:29.750Z</updated>
-    
-    <content type="html"><![CDATA[<p>受 @ericet 影响，最近尝试使用 like 的赞赏功能。感觉非常好用，就交付了每月5美元的赞赏公民(CIVIC LIKER)月费。这样我的赞赏能量就更大了。同时昨天在 @ericet 提供的核心代码基础上进行了修改，写了一段代码，对 <a href="https://steem.buzz/" rel="external nofollow noopener noreferrer" target="_blank">https://steem.buzz/</a> 上所有配置了赞赏功能的 CN 区用户自动进行了赞赏。</p><p><img src="/images/downloaded/6sxpjo_1.jpg" alt="image.png"></p><a id="more"></a><p>下面总结一下自己的体会，完全是自己的理解，如有偏差，欢迎大家指正。</p><p>首先，什么是赞赏公民？赞赏公民类似于Steem/Hive上的大鲸，其赞赏(点赞)的权重较大。但Steem/Hive上的大鲸的点赞力度也根据SP/HP值而有所区分。赞赏公民只有每月5美元这一种选项，因此点赞权重应该一样。</p><p>其次，在Steem/Hive中有Voting Power的概念，满血时点赞产生的收益最大，随着点赞次数增加，点赞产生的收益逐步递减。当VP为0时，点赞不产生任何收益。但在like网络中似乎并没有VP的概念，似乎可以无数次点赞。但是，根据我目前测试，针对同一个用户的多篇文章点赞，其产生的收益并不相同，似乎也在递减。我目前看到的是前两篇一样，第三篇的收益会降低。再往后目前还没有尝试。但具体细节怎样，由于找不到相关文档，我目前也不清楚。</p><p>关于Steem/Hive网络和赞赏功能的集成。目前似乎只有 @ericet 在 <a href="https://steem.buzz/" rel="external nofollow noopener noreferrer" target="_blank">https://steem.buzz/</a> 上将赞赏功能和Steem集成到了一起。目前我还没有看到将赞赏功能和Hive整合的网站。</p><p>其实，like网络已经提供了很多方式和你的自媒体进行整合，比如有Wordpress插件，Medium集成等。对于其它系统搭建的网站，都不难整合的。细节请看到这里：<a href="https://github.com/likecoin/likecoin-button" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/likecoin/likecoin-button</a></p><p><img src="/images/downloaded/6sxpjo_4.jpg" alt="image.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      注册赞赏公民，支持Steem中文社区 + 使用经验分享
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Steem" scheme="https://www.aafeng.uk/tags/Steem/"/>
-    
-      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
     
   </entry>
   
