@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-20T09:52:50.244Z</updated>
+  <updated>2020-04-20T09:59:52.609Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.aafeng.uk/cronjob-problem/"/>
     <id>https://www.aafeng.uk/cronjob-problem/</id>
     <published>2020-04-20T04:58:00.000Z</published>
-    <updated>2020-04-20T09:52:50.244Z</updated>
+    <updated>2020-04-20T09:59:52.609Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/technology/linux/bash.png" alt="Cron job"></p><p>最近写了一个Python程序，希望对<a href="https://steem.buzz/created/cn" rel="external nofollow noopener noreferrer" target="_blank">CN区</a>的众多liker小伙伴们自动赞赏。 设定好了一个Cronjob，希望让其自动运行，但每次都不能自动执行。 </p><a id="more"></a><p>其Cronjob设置如下：</p><pre><code>30 04 * * * /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log</code></pre><p>而且问题是日志文件为空，根本就没有任何线索。</p><p>首先想到的是环境变量的配置有问题。于是添加了这一句：</p><pre><code>. $HOME/.bash_profile    </code></pre><p>Cron job就成为了：   </p><pre><code>30 04 * * * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log    </code></pre><p>但仍然没有任何作用。    </p><p>检查一下系统日志文件/var/log/syslog，发现这条错误信息：</p><pre><code>Apr 20 11:11:02 vmi164206 CRON[16662]: (CRON) info (No MTA installed, discarding output)</code></pre><p>这条错误消息在于，Cron job产生了输出，Cron守护进程想要将这些输出通过email发送给我，但是我的MTA (Mail Transfer Agent) 并没有正确配置，因此会出现上面的错误提示。</p><p>要想解决这个问题，有几种不同的方法：</p><ul><li>安装并配置MTA，比如：postfix，但我在VM上根本就不使用mail，因此并不想采取这种方式</li><li>进行错误输出重定向，添加： 2&gt;&amp;1，将错误输出到日志文件中</li></ul><p>我选择了第二种方式，这样Cron job就成为了：</p><p>  30 04 <em> </em> * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log 2&gt;&amp;1</p><p>再检查自己的日志文件，终于有输出了：</p><pre><code>Traceback (most recent call last):</code></pre><p>  File “likercli.py”, line 3, in <module><br>    import mysql.connector<br>ModuleNotFoundError: No module named ‘mysql’</module></p><p>提示找不到mysql这个库。但我明明已经安装了啊。 将Python的完整路径添加后问题解决：</p><pre><code>/home/aafeng/environments/myenv/bin/python xxxxxx</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/technology/linux/bash.png" alt="Cron job"></p><p>最近写了一个Python程序，希望对<a href="https://steem.buzz/created/cn" rel="external nofollow noopener noreferrer" target="_blank">CN区</a>的众多liker小伙伴们自动赞赏。 设定好了一个Cronjob，希望让其自动运行，但每次都不能自动执行。 </p><a id="more"></a><p>其Cronjob设置如下：</p><pre><code>30 04 * * * /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log</code></pre><p>而且问题是日志文件为空，根本就没有任何线索。</p><p>首先想到的是环境变量的配置有问题。于是添加了这一句：</p><pre><code>. $HOME/.bash_profile    </code></pre><p>Cron job就成为了：   </p><pre><code>30 04 * * * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log    </code></pre><p>但仍然没有任何作用。    </p><p>检查一下系统日志文件/var/log/syslog，发现这条错误信息：</p><pre><code>Apr 20 11:11:02 vmi164206 CRON[16662]: (CRON) info (No MTA installed, discarding output)</code></pre><p>这条错误消息在于，Cron job产生了输出，Cron守护进程想要将这些输出通过email发送给我，但是我的MTA (Mail Transfer Agent) 并没有正确配置，因此会出现上面的错误提示。</p><p>要想解决这个问题，有几种不同的方法：</p><ul><li>安装并配置MTA，比如：postfix，但我在VM上根本就不使用mail，因此并不想采取这种方式</li><li>进行错误输出重定向，添加： 2&gt;&amp;1，将错误输出到日志文件中</li></ul><p>我选择了第二种方式，这样Cron job就成为了：</p><pre><code>30 04 * * * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_steemliker.sh &gt;&gt; /home/aafeng/cronjobs/logs/steemliker.log 2&gt;&amp;1</code></pre><p>再检查自己的日志文件，终于有输出了：</p><pre><code>Traceback (most recent call last):  File &quot;likercli.py&quot;, line 3, in &lt;module&gt;  import mysql.connector  ModuleNotFoundError: No module named &apos;mysql&apos;</code></pre><p>提示找不到mysql这个库。但我明明已经安装了啊。 将Python的完整路径添加后问题解决：</p><pre><code>/home/aafeng/environments/myenv/bin/python xxxxxx</code></pre>]]></content>
     
     <summary type="html">
     
