@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-22T19:53:15.103Z</updated>
+  <updated>2020-04-22T20:16:13.899Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何取消订阅赞赏公民</title>
+    <link href="https://www.aafeng.uk/how-to-cancel-civic-liker/"/>
+    <id>https://www.aafeng.uk/how-to-cancel-civic-liker/</id>
+    <published>2020-04-23T18:58:00.000Z</published>
+    <updated>2020-04-22T20:16:13.899Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先，访问liker.land的设置页面： <a href="https://liker.land/settings/" rel="external nofollow noopener noreferrer" target="_blank">https://liker.land/settings/</a> ，如果没有登录，请使用自己的liker账号登录。</p><p><img src="/images/blockchain/liker/cancel-civic-liker-1.png" alt="赞赏公民"></p><a id="more"></a><p>然后单击”赞赏公民 (生效中)”，</p><p><img src="/images/blockchain/liker/cancel-civic-liker-2.png" alt="赞赏公民"></p><p>单击 “取消《赞赏公民》订阅”就可以了。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何取消订阅赞赏公民
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
+    
+  </entry>
   
   <entry>
     <title>英国全面开启网络授课模式</title>
@@ -439,28 +461,6 @@
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
       <category term="Telegram" scheme="https://www.aafeng.uk/tags/Telegram/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>作为用户，看好Hive链生态系统，加仓HIVE</title>
-    <link href="https://www.aafeng.uk/hive-hive/"/>
-    <id>https://www.aafeng.uk/hive-hive/</id>
-    <published>2020-04-07T04:34:51.000Z</published>
-    <updated>2020-04-13T19:30:39.841Z</updated>
-    
-    <content type="html"><![CDATA[<p>自从上周六STEEM发生0.22.8888软分叉，冻结众多前见证人资产之后，昨天HIVE币价暴跌，最低时被腰斩。</p><p><img src="/images/downloaded/hive-hive_0.jpg" alt="image.png"></p><a id="more"></a><p>关于HIVE和STEEM的硬分叉，双方可以说是各执一词，我就不在这里做过多评论了。但作为STEEM/HIVE用户，就目前而言，我更看好HIVE的生态系统。毕竟大多数的Dapp都迁移到Hive网络上了。包括这两天众多Dapp都要使用的基础服务Steemconnect也已经声明将于六月停止在Steem上的服务，在Hive上的hivesigner则可以正常使用。</p><p>由于HIVE有着一个完善的生态系统，因此我相信HIVE的币价会回归正常。在B网加仓了HIVE：</p><p><img src="/images/downloaded/hive-hive_1.jpg" alt="image.png"></p><p><strong>郑重声明，这只是我的个人行为，不能作为你的投资建议，风险自负。</strong></p><p>作为一个普通用户，我更赞同早期Steem的宣传口号：Money talks，哪边把用户量做上去，把币价抬起来，哪边就能吸引更多的用户。目前我看到的是硬分叉前Steem中的大多数Dapp都迁移到了Hive网络，这样就会携带其大量用户进入Hive。当然，也期待孙老板能把Steem的蛋糕做大，币价也能做上去。</p>]]></content>
-    
-    <summary type="html">
-    
-      作为用户，看好Hive链生态系统，加仓HIVE
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
