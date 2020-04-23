@@ -39,6 +39,28 @@
   </entry>
   
   <entry>
+    <title>幸运的新冠病毒患者?</title>
+    <link href="https://www.aafeng.uk/covid19-20200423/"/>
+    <id>https://www.aafeng.uk/covid19-20200423/</id>
+    <published>2020-04-23T18:50:00.000Z</published>
+    <updated>2020-04-23T19:55:00.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近各个国家纷纷宣告自己的疫苗研发进度。英国牛津大学的疫苗也要开始进行人体实验了。最近在一个微信群里看到有人分享了自己感染/治愈新冠状病毒的经历。</p><p><img src="/images/life/covid19.jpg" alt="新冠病毒"></p><a id="more"></a><p>有小两口说最近使用冠状病毒的试剂进行了测试，其结果有三个指标：C线表明测试有效，G线为红色表明体内存在长期抗体，M线表明是最近感染了冠状病毒。但他们检测的结果是只有C/G线，但没有M线。说明他们早感染过了，并且体内有了抗体。</p><p>他们回想了一下，小两口在二月份的时候曾经有过感冒症状，嗓子疼了好几天，有一点咳嗽，感觉非常疲惫，总想睡觉。曾经有一天发烧38度，但第二天就好了。嗅觉和味觉都变得不是很敏感。</p><p>现在回想起来，在今年一月份的时候，我曾经非常诡异的连续感冒了近一个月，嗓子疼的要冒烟一样。其实最近几年来，我时不时的会得个感冒，一般也就是3，4天左右就好了。而且我已经养成了习惯，感冒了从来都不吃任何药，只是多喝水，靠自身的免疫系统慢慢恢复。但一月份的感冒和以往相比非常异常。而且在同一时间，我有个同事身体超级棒，这辈子从未生过病，但他也得了类似的症状，修了有生以来的第一次病假。</p><p>微信群里顿时有人开玩笑说，好希望早点感染那种轻症的病毒，早点产生抗体，这样就不用太过担心了。哈哈，希望我也有抗体了吧。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      幸运的新冠病毒患者?
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英国全面开启网络授课模式</title>
     <link href="https://www.aafeng.uk/uk-online-classroom/"/>
     <id>https://www.aafeng.uk/uk-online-classroom/</id>
@@ -437,30 +459,6 @@
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
       <category term="Steem" scheme="https://www.aafeng.uk/tags/Steem/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实时推送Hive区块链信息到Telegram客户端（1）</title>
-    <link href="https://www.aafeng.uk/hive-telegram-1/"/>
-    <id>https://www.aafeng.uk/hive-telegram-1/</id>
-    <published>2020-04-08T05:49:03.000Z</published>
-    <updated>2020-04-13T19:28:11.923Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hive的网页客户端有一个消息通知功能（Notificaitons），每次登录Hive之后，就会看到和你账户相关的信息，比如：谁给你点赞，留言，转发，提到你等等信息。</p><p><img src="/images/downloaded/hive-telegram-1_0.jpg" alt="image.png"></p><p>但是，通过这种方式来查看各种通知的体验并不好。首先需要打开hive/peakd的页面，然后需要从菜单中选择查看通知才能够看到。而且，我们不可能总去刷Hive的网页吧。因此，更为便捷和方便的方式就是通过读取Hive区块链的信息，进行分析，找出自己感兴趣的信息，然后发送给自己的Telegram客户端/其他客户端。</p><a id="more"></a><p>要实现这个功能，需要考虑以下这些因素：</p><p>1）区块链信息的读取。这部分可以通过调用Hivepy库中的相关功能来实现。<br>2）定义你感兴趣的规则。比如：所有给你点赞的信息你都想得到通知，某位大鲸发的所有贴子你都想得到通知，任何和你账户相关的转账操作。等等等等。<br>3）配置一个Telegram机器人，一旦第二步中有符合条件的消息，发送给Telegram客户端。当然，这里非常灵活，你可以配置自己喜欢的客户端，比如Slack，Discord等等，道理都是类似的。</p><p>这篇文章主要来说一说如何检测Hive区块链的信息。</p><p>基本思路就是：首先获取当前区块，然后检测当前块中是否有自己感兴趣的信息，如果有的话，存储到一个变量中以便后面发送/处理。之后向前回溯上一个区块，再做同样的检测，如此进行下去，一直检测到指定数目的区块后停止。</p><p>这里就涉及一个基本的问题：究竟该向前回溯多少个区块呢？这就取决于你这个程序被执行的频率了。举个例子，如果你这个程序每三秒运行一次，而Hive区块链每三秒生成一个块(印象中Steem区块链是每三秒一块，Hive应该没有变)，那么你的程序就不需要进行回溯了。如果你的程序每一分钟运行一次的话，那么你的程序需要回溯60/3 - 1次。</p><p>下面先看看如何读取当前区块：</p><pre><code>from hive import Hivefrom hive.blockchain import Blockchainhblocks = Hive()b       = Blockchain()cb      = b.get_current_block()print(cb)</code></pre><p>运行上面程序，可以看到其输出结果为：</p><pre><code>{&apos;block_id&apos;: &apos;0285ea9524d0cc9609991b4e15f52dfbae4663a5&apos;, &apos;signing_key&apos;: &apos;STM6ZHuTjdyS2vPLsaTyd1bsguGo28jsNcKKASFFTbckBWNKpFqdo&apos;, &apos;timestamp&apos;: &apos;2020-04-07T11:07:54&apos;, &apos;extensions&apos;: [], &apos;transaction_merkle_root&apos;: &apos;ce9c9aea30054f975f69be2bbf852b1804c2eee1&apos;, &apos;transaction_ids&apos;: [&apos;e2134800e3a04dd519d43242d33b938d446508b1&apos;, &apos;e5a979e66d092b5c4c2936bbdc68fa9287a244d9&apos;, &apos;c2cf361839450ab9f3a0176135edeb6d81b9bd90&apos;], &apos;witness&apos;: &apos;blocktrades&apos;, &apos;witness_signature&apos;: &apos;1fd20adda3b1f85adcb864661fef0d696a626b3eb9f4301b0381e69bd3aded604f4d77bfa409554ba4c0a42e43fe368ff992360039f2714e28f5b2fdb20356ad0d&apos;, &apos;previous&apos;: &apos;0285ea94c52b1aeda5ed28063a7c64fb5b881f31&apos;, &apos;transactions&apos;: [{&apos;block_num&apos;: 42330773, &apos;ref_block_prefix&apos;: 4010214059, &apos;transaction_num&apos;: 0, &apos;signatures&apos;: [&apos;1f116bb1406e8479fd0644e7e8288510f4ea61d65bd1614e03fd67e204c0c2fa0f1a4ebb3d0632131005b0c44f5191b75bec768e96b08c6fc983e049c5d1c61864&apos;], &apos;extensions&apos;: [], &apos;transaction_id&apos;: &apos;e2134800e3a04dd519d43242d33b938d446508b1&apos;, &apos;expiration&apos;: &apos;2020-04-07T11:17:45&apos;, &apos;ref_block_num&apos;: 60034, &apos;operations&apos;: [[&apos;vote&apos;, {&apos;weight&apos;: 10000, &apos;voter&apos;: &apos;news-steem&apos;, &apos;permlink&apos;: &apos;20200407t104855949z-post&apos;, &apos;author&apos;: &apos;minimalpris&apos;}]]}, {&apos;block_num&apos;: 42330773, &apos;ref_block_prefix&apos;: 3413890307, &apos;transaction_num&apos;: 1, &apos;signatures&apos;: [&apos;205471fe218b0b09b9a0a2ad860286b0a110ebb6d7ef3df6b624b976506054fc645f1cfe2e371a236cd79bb97d7a7a8682ffa00994d3fefd18bf62289ebc3a3e63&apos;], &apos;extensions&apos;: [], &apos;transaction_id&apos;: &apos;e5a979e66d092b5c4c2936bbdc68fa9287a244d9&apos;, &apos;expiration&apos;: &apos;2020-04-07T11:08:21&apos;, &apos;ref_block_num&apos;: 60051, &apos;operations&apos;: [[&apos;vote&apos;, {&apos;weight&apos;: 4000, &apos;voter&apos;: &apos;retinox&apos;, &apos;permlink&apos;: &apos;it-was-all-about-green-a-restful-pleasant-color&apos;, &apos;author&apos;: &apos;priyanarc&apos;}]]}, {&apos;block_num&apos;: 42330773, &apos;ref_block_prefix&apos;: 3519458629, &apos;transaction_num&apos;: 2, &apos;signatures&apos;: [&apos;204064b9720aa2aa1a8380e7b81bdb0f332a628608db586fd4a9abf1ddd03fa4137d7db804973b639032a0683f1108a1a1ed0b71c1ec4c8dd0df59fd8a6b192cfe&apos;], &apos;extensions&apos;: [], &apos;transaction_id&apos;: &apos;c2cf361839450ab9f3a0176135edeb6d81b9bd90&apos;, &apos;expiration&apos;: &apos;2020-04-07T11:17:48&apos;, &apos;ref_block_num&apos;: 60035, &apos;operations&apos;: [[&apos;vote&apos;, {&apos;weight&apos;: 600, &apos;voter&apos;: &apos;ctime&apos;, &apos;permlink&apos;: &apos;it-was-all-about-green-a-restful-pleasant-color&apos;, &apos;author&apos;: &apos;priyanarc&apos;}]]}]}</code></pre><p>如果向前回溯一次，共读取两个块的代码如下：</p><pre><code>NUMBER_OF_BLOCKS_TO_CHECK = 2 for i in range(NUMBER_OF_BLOCKS_TO_CHECK):    print(&quot;block id: %s&quot; % cb[&quot;block_id&quot;])    print(&quot;==========================&quot;)    for transaction in cb[&quot;transactions&quot;]:        for operation in transaction[&quot;operations&quot;]:            print(operation[0])                                                                                                            previousid = int(cb[&quot;previous&quot;][:8], base=16)    cb = b.hive.get_block(previousid)</code></pre><p>其运行结果如下：</p><pre><code>block id: 0285eb1b051eb25a0475e4867499303f48d7d77e==========================transfervotecustom_jsonvotevoteblock id: 0285eb1aff2e699579bdd7136493f3a5ea4dedbf==========================votevotevotevotevotevotevotevotevotevotevotevote</code></pre><p>至此，我们已经可以读取块中的信息，下一篇文章会说说怎么定义感兴趣的规则。</p>]]></content>
-    
-    <summary type="html">
-    
-      实时推送Hive区块链信息到Telegram客户端（1）
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-      <category term="Telegram" scheme="https://www.aafeng.uk/tags/Telegram/"/>
     
   </entry>
   
