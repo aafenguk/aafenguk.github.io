@@ -61,6 +61,28 @@
   </entry>
   
   <entry>
+    <title>安装并使用zsh</title>
+    <link href="https://www.aafeng.uk/zsh/"/>
+    <id>https://www.aafeng.uk/zsh/</id>
+    <published>2020-04-22T20:58:00.000Z</published>
+    <updated>2020-04-24T20:43:15.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近开始使用zsh，感觉比Linux系统默认的bash要好用太多了，尤其对于经常使用git的各位程序猿来说，提供了很多额外的提示，比如，当前的branch，是否有未提交更改，以及各种快捷命令等等。强烈推荐！下面把安装步骤介绍一下：</p><p><img src="/images/technology/linux/zsh-1.png" alt="zsh"></p><a id="more"></a><p>首先运行一下命令安装zsh：</p><pre><code>sudo apt-get install zshsudo usermod -s /bin/zsh $(whoami)</code></pre><p>退出并重新登录后会看到如下提示：</p><p><img src="/images/technology/linux/zsh-2.png" alt="zsh"></p><p>我这里选择输入“2”，让系统自动生成zsh配置文件。</p><p>zsh有很多有用的插件，这里推荐“Oh-My-ZSH”这个插件，运行如下命令进行安装：</p><pre><code>sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><p>安装成功后会有如下提示：</p><p><img src="/images/technology/linux/zsh-3.png" alt="zsh"></p><p>安装结束后可以修改 .zshrc 来更改主题，各种插件，以及各种配置。</p><p>下面介绍几个针对git增强的功能：</p><p>首先，但你进入一个处于 git 管理的目录时，系统提示符会变为：</p><p><img src="/images/technology/linux/zsh-4.png" alt="zsh"></p><p>上面的 “web” 是当前目录；“master” 是当前 git 的分支；“✗” 代表当前目录下有未提交的更改。是不是非常的一目了然？</p><p>输入</p><pre><code>alias</code></pre><p>会看到 “Oh-My-ZSH” 添加了很多命令的别名：</p><pre><code>gsr=&apos;git svn rebase&apos;gss=&apos;git status -s&apos;gst=&apos;git status&apos;gsta=&apos;git stash save&apos;gstaa=&apos;git stash apply&apos;gstall=&apos;git stash --all&apos;gstc=&apos;git stash clear&apos;gstd=&apos;git stash drop&apos;gstl=&apos;git stash list&apos;gstp=&apos;git stash pop&apos;gsts=&apos;git stash show --text&apos;gstu=&apos;git stash --include-untracked&apos;gsu=&apos;git submodule update&apos;gsw=&apos;git switch&apos;gswc=&apos;git switch -c&apos;gtl=&apos;gtl(){ git tag --sort=-v:refname -n -l &quot;${1}*&quot; }; noglob gtl&apos;......</code></pre><p>用习惯后能节省不少时间。自从开始使用 zsh + “Oh-My-ZSH”感觉越用越顺手，再也无法回到过去的bash了。再次强烈推荐！</p>]]></content>
+    
+    <summary type="html">
+    
+      安装并使用zsh
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英国全面开启网络授课模式</title>
     <link href="https://www.aafeng.uk/uk-online-classroom/"/>
     <id>https://www.aafeng.uk/uk-online-classroom/</id>
@@ -435,30 +457,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive和Steem都已经分家了，绝大多数账户的恢复账户还都是Steem意味着什么？</title>
-    <link href="https://www.aafeng.uk/hive-steem-steem/"/>
-    <id>https://www.aafeng.uk/hive-steem-steem/</id>
-    <published>2020-04-09T07:39:03.000Z</published>
-    <updated>2020-04-15T09:02:06.770Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hive从Steem硬分叉之后，发生了很多事情。其中有一点就是，所有的Steem账户都在Hive上有了一个”分身”，用户名相同，密码相同，所有的设置都相同。其中重要的一点就是：绝大多数账户的恢复账户(Recovery account)是steem这个账户。究其原因，这取决于账户的创建方式。如果是通过Steemit官网创建的，那么默认恢复账号就是’steem’，如果是通过别的账户创建的，那么，恢复账号就是其父账号。</p><p><img src="/images/downloaded/hive-steem-steem_0.jpg" alt="image.png"></p><a id="more"></a><p>那么，这意味着什么呢？如果你的Hive密码丢失了，那么你所设置的Recovery account是可以帮你找回密码的。过去在Steem网络中，steem属于’官方’账号，在丢失密码时可以向其寻求帮助来找回密码。但是，在Hive中，steem这个账号似乎没有这个义务来帮助用户恢复密码了。</p><p>那么，对于众多Hive用户来说，建议更换Recovery账号，这样万一不幸丢失密码，可以多一层保险。推荐设置为自己家人或者好友的账号作为恢复账号。甚至，设置一个小号作为恢复账号都可以。</p><p>如果打算修改系统恢复账号，可以有以下几种方式：</p><p>首先，可以通过peakd.com来进行恢复。在首页中单击”ACTIONS”-&gt;”Keys &amp; Permissions”，</p><p><img src="/images/downloaded/hive-steem-steem_1.jpg" alt="image.png"></p><p>然后选择：”Recovery account”</p><p><img src="/images/downloaded/hive-steem-steem_2.jpg" alt="image.png"></p><p>然后按照提示进行操作就可以。在操作过程中需要提供Owner Key。</p><p>第二种方式：写一段简短的代码来实现这个操作。我是信任peakd.com这个网站的，但还是不想提供自己的Owner key给第三方。这时，可以通过Beem库实现这个操作。毕竟这是开源软件，可以读一下源代码明白是怎么运作的。具体更改恢复账号操作的源代码如下：</p><pre><code>import beemusername = &apos;aafeng.test&apos;wif = {  &quot;owner&quot;: “YOUR_OWNER_KEY”}hive = beem.Steem(nodes=[&apos;https://api.hive.blog&apos;], keys=wif)account = beem.account.Account(username, steem_instance=hive)account.change_recovery_account(new_recovery_account=&apos;aafeng&apos;)</code></pre><p>运行这段程序，可以看到，我测试账号的恢复账号更改操作已经提交。</p><p><img src="/images/downloaded/hive-steem-steem_4.jpg" alt="image.png"></p><p>需要注意的是，出于账户安全的考虑，这个操作需要30天才能完成。</p><p>关于更多恢复账号的讨论，可以参阅这篇英文文章：<a href="https://peakd.com/witness-update/@engrave/review-your-recovery-account-if-you-dont-want-to-lose-your-assets" rel="external nofollow noopener noreferrer" target="_blank">https://peakd.com/witness-update/@engrave/review-your-recovery-account-if-you-dont-want-to-lose-your-assets</a></p>]]></content>
-    
-    <summary type="html">
-    
-      Hive和Steem都已经分家了，绝大多数账户的恢复账户还都是Steem意味着什么？
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-      <category term="Steem" scheme="https://www.aafeng.uk/tags/Steem/"/>
     
   </entry>
   
