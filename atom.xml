@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-04-29T07:41:02.129Z</updated>
+  <updated>2020-04-29T21:22:26.366Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Bitbucket Pipelines自动部署Serverless项目到AWS Lambda</title>
+    <link href="https://www.aafeng.uk/bitbucket-pipelines-serverless/"/>
+    <id>https://www.aafeng.uk/bitbucket-pipelines-serverless/</id>
+    <published>2020-04-30T18:58:00.000Z</published>
+    <updated>2020-04-29T21:22:26.366Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近越来越多的在项目中用到AWS Lambda，也就是AWS无服务器架构中的核心编程单元。其最大的优势就是开发人员不用操心底层系统的架构和维护，只需要专注于核心代码。但AWS整个系统的部署要涉及的步骤非常繁琐，因此这里推荐使用serverless框架。就算使用这个框架，似乎还不够自动。因此下面介绍一下如何使用Bitbucket Pipelines将上面的所有环节都连接到一起，开发人员只关注Lambda代码的实现，一旦提交代码到Bitbucket，就会自动构建并部署到AWS。</p><p><img src="/images/technology/aws/bitbucket.png" alt="Bitbucket Pipelines"></p><a id="more"></a><p>首先，添加一个AWS用户，具有对Lambda和Cloudformation的访问权限。当然，如果你的Lambda需要访问其他AWS资源，比如S3，DynamoDB等等，需要添加额外的权限。记录下该用户的ACCESS_KEY_ID和SECRET_ACCESS_KEY，后面要用到。</p><p>接下来，使用serverless创建一个项目：</p><pre><code>serverless create --template aws-python3 --name data-api</code></pre><p>注意将region添加到serverless.yml中，否则系统默认的region可能不是你想要的。最终的serverless.yml文件内容：</p><pre><code>service: data-apiprovider:  name: aws  region: eu-west-1  runtime: python3.7functions:  hello:    handler: handler.hello    events:      - http:          path: hello          method: get</code></pre><p>处理逻辑集中在handler.py中：</p><pre><code>import jsondef hello(event, context):    body = {        &quot;message&quot;: &quot;Lambda + Bitbucket pipelines test&quot;    }    response = {        &quot;statusCode&quot;: 200,        &quot;body&quot;: json.dumps(body)    }    return response</code></pre><p>将整个项目提交并推送到Bitbucket中。</p><p>接下来需要在Bitbucket repository中激活Pipelines，</p><p><img src="https://images.hive.blog/DQmdyunTKDHUMTGZ3K3V1cJ5nFouKrYrTXiTQhVET64yeiY/image.png" alt="image.png"></p><p>添加Repository级别的环境变量AWS_DEFAULT_REGION, AWS_ACCESS_KEY_ID以及AWS_SECRET_ACCESS_KEY：</p><p><img src="https://images.hive.blog/DQmPtnM7gGVACUvynsiFERdoFSZa7pQQAQnRjgR4jymeeag/image.png" alt="image.png"></p><p>最后需要创建一个针对Bitbucket Pipeline的配置文件bitbucket-pipelines.yml。在Bitbucket中有很多现成的模板可以使用，这里输入serverless，就可以看到这个专门针对serverless框架的模板，可以选择这个并在此基础上进行修改：</p><p><img src="https://images.hive.blog/DQmZYSCBgygmcnKEMTdNUekWRyDzFBbmTNUSrMNo93qnbr9/image.png" alt="image.png"></p><p>最终的bitbucket-pipelines.yml文件内容：</p><pre><code>image: python:3.7.3pipelines:  default:    - step:        caches:          - pip        script:           - pipe: atlassian/serverless-deploy:0.1.4            variables:              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY</code></pre><p>至此，配置完成。 以后一旦代码提交到Bitbucket，Pipeline就会自动构建并部署到AWS，是不是很方便？</p><p>也可以在pipeline配置文件中定义不同的pipeline，比如针对production的pipeline:</p><pre><code>branches:  production:  - step:      caches:        - pip      script:        - pipe: atlassian/serverless-deploy:0.1.4          variables:            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY            EXTRA_ARGS: &apos;--stage prod&apos;</code></pre><p>这样就可以人工构建产品环境下的服务了。</p><p>关于pipelines的更多配置，请参考：<a href="https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html" rel="external nofollow noopener noreferrer" target="_blank">https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      使用Bitbucket Pipelines自动部署Serverless项目到AWS Lambda
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>英国疫情日记2020-04-28 - 没有他们的负重前行，又哪来的岁月静好？</title>
@@ -429,28 +451,6 @@
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
       <category term="Telegram" scheme="https://www.aafeng.uk/tags/Telegram/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>疫情对生活习惯的改变</title>
-    <link href="https://www.aafeng.uk/covid19-20200414/"/>
-    <id>https://www.aafeng.uk/covid19-20200414/</id>
-    <published>2020-04-14T19:05:18.000Z</published>
-    <updated>2020-04-14T19:52:39.761Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天收到单位的邮件，通知了一个坏消息：有一位同事不幸感染新冠病毒去世了。在接下来的例会中，大家更多的是彼此间的问候，工作谈的并不是很多。最近很多同事，尤其是家中有孩子的，感觉和之前坐办公室时的效率相比，简直是差了太多了。还好单位HR在开始在家办公不久就发了一封邮件，大意是在当前形势下，充分信任大家，不要感觉需要和原来坐班时一样出活，只要try your best就可以了。更多需要注意自己的心理健康，以及工作/家庭之间的平衡。</p><a id="more"></a><p>我感觉对一般人影响最大的就是购物方式基本上都在网上进行了。现在经常需要在固定的时段刷各个超市的网站，希望能够订到送货时段。和朋友们也经常交流如何能够订到合适的送货时段，在哪家超市可以买到想要的食材等等话题。</p><p>由于很多东西网购经常没货，而且网购的slot经常订不上。因此今早又去了一趟超市。不像疫情刚开始大家纷纷囤货时超市的热闹，现在超市门口没有几个人。而且很多超市都有工作人员控制人流，在入口处还帮助顾客对购物车进行消毒。很多超市还要求在购物时只沿着一个方向走。</p><p><img src="/images/life/aldi20200414.jpg" alt="冷冷清清的ALDI超市门口"></p><p>除此之外，各种在线活动，在线教育网站，Youtube频道等越来越火爆。就连小学的小朋友之间也时不时在网上约着群聊。不知道等到疫情过后，已经习惯在网上进行各种活动的我们是否还能再适应回去？？？</p>]]></content>
-    
-    <summary type="html">
-    
-      疫情对生活习惯的改变
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
