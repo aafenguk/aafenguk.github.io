@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/cloudwatch-sns/</loc>
+    
+    <lastmod>2020-05-01T16:17:28.231Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/aws-amplify/</loc>
     
     <lastmod>2020-05-01T09:18:23.926Z</lastmod>

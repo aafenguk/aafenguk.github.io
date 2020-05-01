@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-01T09:18:23.926Z</updated>
+  <updated>2020-05-01T16:17:28.231Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知</title>
+    <link href="https://www.aafeng.uk/cloudwatch-sns/"/>
+    <id>https://www.aafeng.uk/cloudwatch-sns/</id>
+    <published>2020-05-01T10:48:00.000Z</published>
+    <updated>2020-05-01T16:17:28.231Z</updated>
+    
+    <content type="html"><![CDATA[<p>在运行Amazon AWS的众多服务时，一旦某个服务出现了故障，我们肯定想要第一时间得到通知。 或者当某项服务的资源使用超过某个阀值时，我们可能想要赋予其更多资源。 要实现类似的功能，我们可以使用SNS（Simple Notification Servivce)和SQS(Simple Queue Service)。下面通过一个简单的例子来说明如何使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知。</p><h2 id="创建SNS-Topic及其订阅"><a href="#创建SNS-Topic及其订阅" class="headerlink" title="创建SNS Topic及其订阅"></a>创建SNS Topic及其订阅</h2><p>在任何消息系统中，最常见的方式就是设定一个主题(Topic)，然后添加一些订阅者(Subscription)。这样一旦有任何新的消息发送到Topic，所有的订阅者都会收到消息推送。下面说说如何在SNS中设置Topic和Subscription。</p><p>首先再AWS SNS中创建一个Topic</p><p><img src="/images/technology/aws/sns-1.png" alt="SNS"></p><p>接下来我们分别创建两个订阅：Email和短信。先来看看Email方式的订阅：</p><p><img src="https://images.hive.blog/DQmRVCBCLisWwSxuoMKmGdmWE1MLc5Kmowd1gdLa91rUdnt/image.png" alt="image.png"><br><img src="/images/technology/aws/sns-2.png" alt="SNS"></p><p>创建结束后，需要打开自己的邮箱进行确认。</p><p><img src="https://images.hive.blog/DQmU9PHXytiWJ3gvNFmd1THuhXmBtanoPh5uAVcR3yJwAbL/image.png" alt="image.png"><br><img src="/images/technology/aws/sns-3.png" alt="SNS"></p><p>接下来创建一个通过短信方式的订阅。</p><p>我们可以看到，除Email和短信外，订阅消息的方式还有很多种。这样当消息抵达队列中时，可以调用一个HTTP/HTTPS的地址，可以触发一个Lambda，可以转发到Amazon的消息队列中。</p><p><img src="https://images.hive.blog/DQmTGzQ8PvoQ19cM3QBw5rXVZ9B9dVAtFKNEzhRabukeqQF/image.png" alt="image.png"><br><img src="/images/technology/aws/sns-4.png" alt="SNS"></p><h2 id="创建一个当Lambda发生错误时触发的消息"><a href="#创建一个当Lambda发生错误时触发的消息" class="headerlink" title="创建一个当Lambda发生错误时触发的消息"></a>创建一个当Lambda发生错误时触发的消息</h2><p>在CloudWatch中创建一个Alarm：</p><p><img src="/images/technology/aws/alarm-1.png" alt="CloudWatch"></p><p>这时候需要选择一个Metric，这里选择“Lamba - errors”这个Metric。</p><p>同时还要设定一些触发条件，比如当错误数超过某个阀值时会触发，或者当Lambda被调用的次数超过某个阀值时会触发。</p><p><img src="/images/technology/aws/alarm-2.png" alt="CloudWatch"></p><p>接下里需要配置，当Alarm被触发时需要做的动作：</p><p><img src="/images/technology/aws/alarm-3.png" alt="CloudWatch"></p><p>对于某些资源，还可以触发”Autoscaling“，这样在资源不足的情况下就可以非常快速的升级配置，实现更快的响应率。可以说这里的这些Action非常灵活，可以符合众多应用需求。</p><p>由于我设定的是当Lambda被调用次数超过0次时会触发Alaram，因此在调用一次Lambda后很快就收到了消息提示。</p><p><img src="/images/technology/aws/alarm-4.png" alt="CloudWatch"></p>]]></content>
+    
+    <summary type="html">
+    
+      使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>使用AWS Amplify自动部署Hexo静态站点</title>
@@ -427,28 +449,6 @@
     
     
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我家孩子最爱的杂志，没有之一：The Week Junior</title>
-    <link href="https://www.aafeng.uk/the-week-junior/"/>
-    <id>https://www.aafeng.uk/the-week-junior/</id>
-    <published>2020-04-15T20:59:00.000Z</published>
-    <updated>2020-04-17T06:09:17.426Z</updated>
-    
-    <content type="html"><![CDATA[<p>儿子前一段在学校迷上了《The Week Junior》这本杂志，不仅在学校天天读，回家后还经常和我们谈到他在杂志上看到的各种新闻，最新消息等等。感觉这本杂志让他长了不少见识，也拓展了他的兴趣爱好。</p><p><img src="/images/kids/the-week-junior.jpg" alt="The Week Junior"></p><a id="more"></a><p>最近由于疫情学校停课，于是我们自己订了一份这个杂志，以满足儿子阅读的愿望。《The Week Junior》杂志是周刊，专门为8-14岁的小朋友们设计。杂志涉及的话题非常广泛，包括时事新闻，科学，环境，体育，艺术，有趣的APP，动物等等。</p><p>这份杂志鼓励互动，其中有一个“Over to you”页面，可以聆听众多小读者的想法。这份杂志也鼓励创新，提倡“Critical thinking”，在每份杂志中都有一页提供一个比较有争议的话题，并提出正反方的观点和论据。希望通过这种方式培养孩子们独立思考能力。就像国内的各种辩论赛，或者雅思考试中的议论文一样，支持哪种观点并不重要，重要的是你需要有理有据，自圆其说。</p><p>为了鼓励小读者们认真阅读，还有一个测试页面来检查孩子们的理解。想要偷懒是不行的。。。</p><p>杂志中还有“Do something”和“How to”，鼓励孩子们的动手能力。这可以是一个手工，一个试验，也可以根据食谱做一顿饭。作为一个小吃货，儿子似乎对这项活动情有独钟。下面是这周的食谱和儿子的成果：</p><p><img src="/images/kids/the-week-junior2.jpg" alt="The Week Junior"></p><p><img src="/images/kids/the-week-junior3.jpg" alt="The Week Junior"></p>]]></content>
-    
-    <summary type="html">
-    
-      我家孩子最爱的杂志，没有之一：The Week Junior
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-      <category term="读书" scheme="https://www.aafeng.uk/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
