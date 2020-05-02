@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-01T22:46:20.583Z</updated>
+  <updated>2020-05-02T20:09:29.748Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用Bigdipper查看Likecoin区块链中的交易</title>
+    <link href="https://www.aafeng.uk/likecoin-bigdipper/"/>
+    <id>https://www.aafeng.uk/likecoin-bigdipper/</id>
+    <published>2020-05-02T18:48:00.000Z</published>
+    <updated>2020-05-02T20:09:29.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Likecoin区块链中，绝大多数用户接触的是其前端，比如：Matters，Steem.buzz等。但前端发生的行为，比如赞赏，都是由底层区块链来支撑的。下面介绍一下<a href="https://likecoin.bigdipper.live/" rel="external nofollow noopener noreferrer" target="_blank">Bigdipper/北斗</a>这个网站，在其中可以查看各种Likecoin的交易信息。</p><a id="more"></a><h2 id="什么是Likecoin-bigdipper"><a href="#什么是Likecoin-bigdipper" class="headerlink" title="什么是Likecoin bigdipper"></a>什么是Likecoin bigdipper</h2><p><a href="https://likecoin.bigdipper.live/" rel="external nofollow noopener noreferrer" target="_blank">Likecoin bigdipper/北斗</a>是由<a href="https://www.forbole.com/cosmos-hub-validator/" rel="external nofollow noopener noreferrer" target="_blank">Forbole</a>开发的开源Likecoin区块链浏览器，在上面可以查看Likecoin上的各种交易数据。登录bigdipper后可以看到Likecoin区块链的当前信息：</p><p><img src="/images/blockchain/liker/bigdipper-1.png" alt="Bigdipper"></p><p>其源代码在这里：<a href="https://github.com/forbole/big-dipper" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/forbole/big-dipper</a></p><h2 id="在bigdipper上查看Validators"><a href="#在bigdipper上查看Validators" class="headerlink" title="在bigdipper上查看Validators"></a>在bigdipper上查看Validators</h2><p>首先可以查看Likecoin网络上验证人的信息。这些验证人的作用就是维护Likecoin网络的正常运行，保证网络上交易的安全性。</p><p><img src="/images/blockchain/liker/bigdipper-2.png" alt="Bigdipper"></p><p>在上图中可以看到当前激活的10个Validator。</p><h2 id="在bigdipper上查看区块信息"><a href="#在bigdipper上查看区块信息" class="headerlink" title="在bigdipper上查看区块信息"></a>在bigdipper上查看区块信息</h2><p>还可以在bigdipper查看Likecoin的区块信息，比如：最新区块的出块时间，哈希值，区块高度，出块人，块中包含的交易数等。</p><p><img src="/images/blockchain/liker/bigdipper-3.png" alt="Bigdipper"></p><h2 id="在bigdipper中查看区块链中的交易信息"><a href="#在bigdipper中查看区块链中的交易信息" class="headerlink" title="在bigdipper中查看区块链中的交易信息"></a>在bigdipper中查看区块链中的交易信息</h2><p>在bigdipper中查看Likecoin交易中的各种信息，包括：交易往来的账号，交易所在区块的高度，是否已被验证，交易哈希值等。</p><p><img src="/images/blockchain/liker/bigdipper-4.png" alt="Bigdipper"></p>]]></content>
+    
+    <summary type="html">
+    
+      如何使用Bigdipper查看Likecoin区块链中的交易
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
+    
+  </entry>
   
   <entry>
     <title>化赞为赏-说说什么是Likecoin和赞赏公民？</title>
@@ -427,28 +449,6 @@
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>好运总是眷顾那些勇敢的人，这就是为何我们必须勇敢的原因。</title>
-    <link href="https://www.aafeng.uk/captain-tom-moore/"/>
-    <id>https://www.aafeng.uk/captain-tom-moore/</id>
-    <published>2020-04-18T04:30:00.000Z</published>
-    <updated>2020-04-18T22:08:41.568Z</updated>
-    
-    <content type="html"><![CDATA[<p>这两天朋友圈被这位叫做Captain Tom Moore的英国老爷爷刷屏了。曾经参与二战的英国退伍老兵Tom Moore将于月底迎接他的100岁生日。近几日他在著名的justgiving网站发起了一项为英国NHS(National Health Service，国家医疗系统)的募捐活动 (募捐活动网址：<a href="https://www.justgiving.com/fundraising/tomswalkforthenhs" rel="external nofollow noopener noreferrer" target="_blank">https://www.justgiving.com/fundraising/tomswalkforthenhs</a><br>)。善款将被捐赠给NHS，以支持那些在NHS工作的众多无名英雄们。</p><a id="more"></a><p>老爷爷设定的目标对于年轻人来说是轻而易举的一件事：绕着自己家花园走100圈</p><blockquote><p>Cpt Tom Moore is walking 100 lengths of his garden for NHS Charities Together because our fantastic NHS workers are national heroes</p></blockquote><p>但作为一位百岁高龄的老人来说，这的确是一项巨大的挑战，老爷爷需要借助于自己的助步器，步履蹒跚的来完成这项挑战。网友们得知后非常感动，纷纷慷慨解囊。起初他设定的目标为50万英镑，但截止到我写这篇文章的时候，已经收到来自世界各地，共近90万人的捐赠，总共募集到1800万英镑，为设定募捐目标的3625%！</p><p><img src="/images/life/captain-tom-moore.jpg" alt="Captain Tom Moore"></p><p>看了一下 justgiving 上对老爷爷的介绍。他曾经被派往印度和日军作战。说起来也是一位抗日英雄！</p><blockquote><p>Tom was born and brought up in Keighley, Yorkshire. He went to Keighley Grammar School and later completed an apprenticeship as a Civil Engineer. Tom went onto being enlisted in 8 DWR (145 RAC) at the beginning of the war, and in 1940 was selected for Officer training. He was later posted to 9DWR in India, and served and fought on the Arakan, went to Regiment to Sumatra after the Japanese surrender and returned to be Instructor at Armoured Fighting Vehicle School in Bovington.</p></blockquote><p>老爷爷说的一句话让我非常感动：“当你看到我胸前这些勋章时，就能明白好运总是眷顾那些勇敢的人，这就是为何我们必须勇敢的原因。”。的确，在面对敌人，面对可怕的病毒时，可能每个人都曾经害怕，但我们必须勇敢。如果每个人都畏惧不前，只能让病毒更加肆虐，让更多的人遭受不幸。正是奋斗在抗疫最前线的众多无名英雄，给了众人希望，让我们有了前行的动力。</p>]]></content>
-    
-    <summary type="html">
-    
-      好运总是眷顾那些勇敢的人，这就是为何我们必须勇敢的原因。
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
