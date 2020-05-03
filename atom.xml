@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-02T22:27:06.876Z</updated>
+  <updated>2020-05-03T22:03:37.593Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何安装/配置一个Likecoin Validator节点</title>
+    <link href="https://www.aafeng.uk/likecoin-validator/"/>
+    <id>https://www.aafeng.uk/likecoin-validator/</id>
+    <published>2020-05-03T22:03:37.593Z</published>
+    <updated>2020-05-03T22:03:37.593Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近尝试了一下配置/运行Likecoin Validator节点，下面把步骤总结一下。整个步骤是基于<a href="https://docs.like.co/developer/likecoin-chain-node/setup-mainnet-node" rel="external nofollow noopener noreferrer" target="_blank">Likecoin官方文档</a>的。下面只是把我如何运行Validator节点的步骤记录下来，按照这个步骤进行完毕，应该就能运行一个Inactive Validator节点了。至于如何成为Active Validator，由于我并没有走到那一步，因此不做讨论。</p><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><pre><code>sudo apt updatesudo apt install apt-transport-https ca-certificates curl software-properties-commoncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&quot;sudo apt updateapt-cache policy docker-cesudo apt install docker-cesudo systemctl status dockersudo usermod -aG docker ${USER}</code></pre><p>之后重新登录一下。</p><h2 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker compose"></a>安装docker compose</h2><pre><code>sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-composesudo chmod +x /usr/local/bin/docker-compose</code></pre><h2 id="安装并配置Likecoin"><a href="#安装并配置Likecoin" class="headerlink" title="安装并配置Likecoin"></a>安装并配置Likecoin</h2><pre><code>git clone https://github.com/likecoin/likecoin-chain --branch sheungwan --single-branchcd likecoin-chain./scripts/build.sh</code></pre><p>从<a href="https://docs.like.co/developer/likecoin-chain-node/setup-mainnet-node" rel="external nofollow noopener noreferrer" target="_blank">官方Github页面</a>找到genesis.json的相应链接，下载genesis.json并保存至likecoin-chain目录。</p><p>运行：</p><pre><code>./scripts/init.sh 你节点的名字 genesis.json 913bd0f4bea4ef512ffba39ab90eae84c1420862@34.82.131.35:26656docker-compose up -d    </code></pre><p>这是你就会看到有很多后台进程在同步数据。 在我的VM(位于德国的VPS, 4核，8GB RAM, 200G SSD)上，整个数据同步过程共花费了24个小时左右。</p><p><img src="/images/blockchain/liker/validator.png" alt="Likecoin Validator节点"></p><p>在同步过程中，你可以通过以下网址查看同步的状态：</p><pre><code>http://你的IP地址:26657/status</code></pre><p>数据同步结束后，其状态信息中的“catching_up”就会变为”false”。</p><pre><code>&quot;sync_info&quot;: {  &quot;latest_block_hash&quot;: &quot;E6E05948B40D3FD4BE895527D3F95000FC617B61F2A12B1AE13855BF4CE71F5F&quot;,  &quot;latest_app_hash&quot;: &quot;A79011D8A41E4795E0C530B0AB88D8BE6ABA44648D166D89335B8D3BBF55CCF6&quot;,  &quot;latest_block_height&quot;: &quot;2681538&quot;,  &quot;latest_block_time&quot;: &quot;2020-05-03T21:21:39.335206851Z&quot;,  &quot;catching_up&quot;: false},</code></pre><p>至此，Likecoin的节点应该就能正常运行了，但要成为激活的(Active)节点，应该还需要进行进一步的设置，由于我并没有运行激活的节点，这里先不做讨论。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何安装/配置一个Likecoin Validator节点
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
+    
+  </entry>
   
   <entry>
     <title>《Fantastic Mr Fox》- 致那些童心尚存的成年人</title>
@@ -422,28 +444,6 @@
     <summary type="html">
     
       Hive Engine及5月1日的空投
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive Keychain介绍</title>
-    <link href="https://www.aafeng.uk/hive-keychain/"/>
-    <id>https://www.aafeng.uk/hive-keychain/</id>
-    <published>2020-04-19T05:58:00.000Z</published>
-    <updated>2020-04-19T07:17:29.927Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近试用了一下 Hive Keychain，感觉非常好用，向大家推荐一下。</p><p><img src="/images/hive/keychain-1.png" alt="Hive Keychain"></p><a id="more"></a><h2 id="Hive-Keychain是做什么的？"><a href="#Hive-Keychain是做什么的？" class="headerlink" title="Hive Keychain是做什么的？"></a>Hive Keychain是做什么的？</h2><p>简而言之，Hive Keychain就是把你所需要的各种Key，主要是Active Key和Posting Key保存在Keychain里。这样你在进行相应操作，比如：转账等时不需要每次都输入那些key了。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Chrome Web Store 下载地址：<a href="https://chrome.google.com/webstore/detail/hive-keychain/jcacnejopjdphbnjgfaaobbfafkihpep" rel="external nofollow noopener noreferrer" target="_blank">https://chrome.google.com/webstore/detail/hive-keychain/jcacnejopjdphbnjgfaaobbfafkihpep</a></p><p>单击“Add to Chrome”</p><p><img src="/images/hive/keychain-2.png" alt="Hive Keychain"></p><p>然后按照提示进行安装，整个过程非常简单。</p><h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>单击Hive Keychain的图标，然后设置一个Keychain的密码：</p><p><img src="/images/hive/keychain-3.png" alt="Hive Keychain"></p><p>首先需要添加各种需要的key，包括Active key，Posting key，和Memo Key。</p><p>这里，添加了我自己的posting key。</p><p><img src="/images/hive/keychain-4.png" alt="Hive Keychain"></p><p>添加后就能看到自己账户的基本信息了：</p><p><img src="/images/hive/keychain-5.png" alt="Hive Keychain"></p><p>如果要进行转账的话，需要添加Active key，需要在”MANAGE ACCOUNTS” -&gt; “你的用户名” 这里添加：</p><p><img src="/images/hive/keychain-6.png" alt="Hive Keychain"></p><p>都设置好后就可以进行各种操作了：比如转账，查看转账历史，对见证人投票等。</p><p><img src="/images/hive/keychain-7.png" alt="Hive Keychain"></p>]]></content>
-    
-    <summary type="html">
-    
-      Hive Keychain介绍
     
     </summary>
     
