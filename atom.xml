@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-03T22:08:32.795Z</updated>
+  <updated>2020-05-04T14:18:01.729Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用AWS Lambda中的层(Layer)解决依赖库的问题</title>
+    <link href="https://www.aafeng.uk/lambda-layer/"/>
+    <id>https://www.aafeng.uk/lambda-layer/</id>
+    <published>2020-05-04T20:21:55.453Z</published>
+    <updated>2020-05-04T14:18:01.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>在前面分享了如何<a href="/serverless-requirements/">使用Serverless Requirements在AWS无服务器架构中配置Python依赖库</a>，但这种做法的缺点就是在每个Lamda项目中都需要配置依赖库。这样每次生成的Lambda都包含了对应的依赖库，因此文件会很大。在每次部署的时候耗时更长，同时占用很多S3存储资源，可以说既费时又费钱。同样，这种方法的重用性非常差，因此我们希望通过一种可以重用的方式，只将依赖库保存一份，每当在需要时引用一下就可以了。这就是下面要介绍的AWS Lambda中的层(Layer)。</p><p><img src="/images/technology/aws/layer.jpg" alt="AWS Lambda Layer"></p><a id="more"></a><p>层的使用就类似于在各种编程语言中使用程序库一样，只需引用就可以在不同程序中使用共享的程序库，而无需将程序库部署到Lambda中。使用Lambda中的的层有以下优点：</p><ul><li>这种依赖库是可以在不同的Lambda中共享的。这样在每次使用这些常用的依赖库时只需在Lambda中添加对这个层的引用就可以了。这样就可以节省费用，提高开发速度。</li><li>通过这种方式可以有效减少Lambda函数的大小，从而可以在Lambda控制台中直接调试代码。</li><li>Lambda中的层支持Python, Node.js, Ruby等主流开发语言。</li><li>可以在不同AWS账号之间共享层。</li></ul><p>下面以一个非常简单的Lambda来说明如何使用层来进行开发：</p><p>首先，创建一个非常简单的Lambda，这里我们不用Serverless框架，直接在Lambda控制台中创建如下的Lambda函数：</p><pre><code>import jsonimport xmltodictdef lambda_handler(event, context):    xml=&apos;&apos;&apos;&lt;user&gt;        &lt;name&gt;aafeng&lt;/name&gt;        &lt;url&gt;https://www.aafeng.uk&lt;/url&gt;    &lt;/user&gt;&apos;&apos;&apos;    return {        &quot;statusCode&quot;: 200,        &quot;user&quot;: json.dumps(xmltodict.parse(xml))    }</code></pre><p>很显然，由于找不到xmltodict这个依赖库，这个Lambda函数无法正常运行：</p><p><img src="/images/technology/aws/layer2.png" alt="AWS Lambda Layer"></p><p>下面我们就将xmltodict打包并创建一个层，并在Lambda中添加对这个层的引用来解决上面的这个问题。</p><p>运行如下命令创建一个包含xmltodict依赖库的zip文件：</p><pre><code>mkdir -p layer/pythoncd layerpip3 install xmltodict -t pythonzip -r ../xmltodict.zip .</code></pre><p>然后可以看到生成了xmltodict.zip这个文件。</p><p>在AWS中通过上传刚生成的xmltodict.zip来创建一个层。记录下这个层的id: arn:aws:lambda:eu-west-1:xxxxxxxxxxxxxx:layer:xmltodict:1</p><p>回到AWS Lambda控制台，单击“Add Layer”，将刚创建的层添加后再次运行这个Lambda函数，可以看到已经没有问题了。</p><p><img src="/images/technology/aws/layer3.png" alt="AWS Lambda Layer"></p><p>从层的执行机制上来说，其实在Lambda运行时，层会被提取到/opt目录，Lambda的运行时会在该目录下查找对应的库。</p><p>但使用层的时候也是有限制的。比如：每个Lambda中最多使用5个层，Lambda+各个使用到的层的总大小不能超过250MB。但对于一般引用来说是足够了。如果超出这个大小，说明你的Lambda需要再进行拆分。</p>]]></content>
+    
+    <summary type="html">
+    
+      使用AWS Lambda中的层(Layer)解决依赖库的问题
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>如何安装/配置一个Likecoin Validator节点</title>
@@ -429,28 +451,6 @@
     
     
       <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive Engine及5月1日的空投</title>
-    <link href="https://www.aafeng.uk/hive-engine-airdrop/"/>
-    <id>https://www.aafeng.uk/hive-engine-airdrop/</id>
-    <published>2020-04-19T20:58:00.000Z</published>
-    <updated>2020-04-19T22:26:19.792Z</updated>
-    
-    <content type="html"><![CDATA[<p>在说正文之前先说重点。Hive Engine将于5月1日对Steem Engine中ENG，EM，EM4代币的持有者进行空投，但前提是这些代币必须处于锁定 (staked) 状态，且不能处于解锁 (unstaking)的过程中。因此，如果持有以上的三种代币，请锁定并耐心等待空投。</p><p><img src="/images/hive/hive-engine-1.png" alt="Hive Engine"></p><a id="more"></a><p>其实自从Hive从Steem硬分叉之后，我一直在想是否会有一个和Steem Engine等同的Hive Engine出来？近期正好看到 @aggroed 的<a href="https://hive.blog/hive-engine/@aggroed/hive-engine-plans-for-april-and-may" rel="external nofollow noopener noreferrer" target="_blank">这篇文章</a>。才知道Hive Engine已经上线，并将于5月1日进行空投。</p><p>其访问网址为：<a href="https://hive-engine.com/" rel="external nofollow noopener noreferrer" target="_blank">https://hive-engine.com/</a></p><p>登录方式可以选择Hive的那些key来登录，或者选择Hive Keychain。我这里使用  Hive Keychain登录：</p><p><img src="/images/hive/hive-engine-2.png" alt="Hive Engine"></p><p>登录之后看到自己空空如也的钱包:-(</p><p><img src="/images/hive/hive-engine-3.png" alt="Hive Engine"></p><p>关于5月1日的空投，请参考这篇<a href="https://hive.blog/hive-engine/@aggroed/hive-engine-plans-for-april-and-may" rel="external nofollow noopener noreferrer" target="_blank">英文原文</a>。文章中有些信息是针对代币发行者的，下面仅对部分我认为和普通代币持有者相关的信息进行摘要：</p><blockquote><p>We’ll be sun setting EMFOUR. Any holder of EMFOUR will receive an airdrop of 4 EM for every EMFOUR they own and we’ll remove EMFOUR from the market.</p></blockquote><p>在Steem Engine上的EMFOUR代币持有者，将会获得EM代币空投，其比例为每个EMFOUR会获得4个EM。之后EMFOUR将被从市场中移除。</p><blockquote><p>Many people hold ENG/EM/EMFOUR and are wondering what the future holds for them. I’m currently targeting a series of airdrops that would commence on May 1st. It will require ENG/EM to be staked and not in the unstaking process for it to count towards the airdrop.</p></blockquote><p>在5月1日起会进行空投，但仅限于将ENG/EM锁定的持有者，且该代币不能处于解锁的过程中。</p>]]></content>
-    
-    <summary type="html">
-    
-      Hive Engine及5月1日的空投
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
