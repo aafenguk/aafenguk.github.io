@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-04T14:18:01.729Z</updated>
+  <updated>2020-05-04T21:54:44.993Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>细思极恐 - 其实我们都是斯金纳箱中的鸽子</title>
+    <link href="https://www.aafeng.uk/skinner-box/"/>
+    <id>https://www.aafeng.uk/skinner-box/</id>
+    <published>2020-05-04T21:54:44.993Z</published>
+    <updated>2020-05-04T21:54:44.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知道你有没有这样的经历，有时候手机不在旁边感觉似乎缺了点什么。而下意识的拿起手机似乎又不知道为什么要把它拿起来，也不知道要拿它做什么。最近看到一个观点似乎能够完美的解释这种行为。说白了，我们掉到了那些专业的产品设计师所设计好的坑里了。我们平常的很多行为，比如：对手机的使用，对某款游戏的上瘾，其实都是处于别人的掌控之中。我们更像是行为心理学中的经典实验，斯金纳箱中的鸽子。</p><p><img src="/images/life/pigeon.jpg" alt="斯金纳箱中的鸽子"></p><a id="more"></a><p>斯金纳是行为心理学的大师，他把巴甫洛夫和桑代克关于条件反射的理论更上一层楼，提出了一个新的观点：操作性条件反射。说白了，就是动物（包括人）的很多条件反射是完全可以操作的。比如：人的恐怖情绪是可以被操控的。他曾经做过一个著名的鸽子实验。在实验中，他把鸽子关在笼子中，每过15秒就用喂食器自动给鸽子喂食，这样过了一段时间后，他发现了一个奇怪的现象：笼中的鸽子在被喂食前做着各种这样的奇怪动作，有的鸽子左右摇头，有的鸽子走来走去，有的鸽子翩翩起舞，似乎鸽子们通过这种方式来祈求食物的到来。即使后来他彻底停止了对鸽子的喂食，但鸽子仍然在做着各种动作，仍然希望食物的来临。</p><p>斯金纳还曾经做过一个很不人道（后来被禁止）的实验，证明了可以控制人的恐惧感。在实验中他们把各种毛绒玩具放在一个小婴儿面前，婴儿对这些玩具展示出强烈的兴趣。实验者带着圣诞老人的面具来到婴儿面前，婴儿也非常喜欢。之后他们做了一件事，就是在婴儿和玩具接触的时候，制造出一种让人不适的噪音来，婴儿听到噪音后吓得大哭。之后只要婴儿一接触这些玩具，他们就制造出噪音。久而久之，婴儿就把这些玩具和噪音联系到了一起。之后只要看到毛绒玩具就很恐惧。</p><p>其实在我们的生活中，有很多这样的例子。很多产品的设计师也在把这种观点应用到了各种产品中。比如：我家孩子经常使用一个APP，叫做Receipt Hog，每次购物后我会把小票给他们，他们用这个APP把小票扫描进去，并做一个简单的问卷，就会得到一定的积分，达到一定分值后可以兑换现金，同时还会随机的给他们抽奖的机会。迄今为止他们已经领到10英镑了。但现在我所看到的是，孩子们对待小票的行为已经完全被这个APP所控制。每次购物回来后，他们肯定不会忘记和我要小票。</p><p>还有一个有趣的例子就是我经常去一家超市购物，感觉这家超市在深入的研究客户的行为。如果我有一段时间不去他家购物，他家就会给我寄送优惠券来，比如：满40英镑返8镑。如果我使用了这些优惠券，他们会停止给我寄，再过一段时间会尝试给我寄力度稍微小一些的优惠券，如果我没有用那些优惠券，他们就会再寄来我曾经用过的优惠券，于是我又乖乖的去他家消费了。感觉我的购物行为完全被他家的优惠券牵着鼻子走。。。</p><p>我想类似的例子数不胜数。等到人工智能得到进一步发展后，人类是否终将被某些AI所完全控制，甚至人类思维将会和AI彻底融合？</p>]]></content>
+    
+    <summary type="html">
+    
+      细思极恐 - 其实我们都是斯金纳箱中的鸽子
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用AWS Lambda中的层(Layer)解决依赖库的问题</title>
@@ -429,28 +449,6 @@
     
     
       <category term="生日" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%97%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近遇到的一个Cron job的坑</title>
-    <link href="https://www.aafeng.uk/cronjob-problem/"/>
-    <id>https://www.aafeng.uk/cronjob-problem/</id>
-    <published>2020-04-20T04:58:00.000Z</published>
-    <updated>2020-04-21T21:08:35.303Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/technology/linux/bash.png" alt="Cron job"></p><p>最近写了一个Python程序，将其添加到了cronjob中，希望让其定期自动运行，但一直不能正常工作。其实在这之前一直在使用cronjob，也从没遇到过什么问题，因此感觉肯定是一个很初级的错误导致的。 下面把这次排错的经历记录一下。</p><a id="more"></a><p>其Cronjob设置如下：</p><pre><code>30 04 * * * /home/aafeng/batch/liker/aafeng_liker.sh &gt;&gt; /home/aafeng/cronjobs/logs/aafeng_liker.log</code></pre><p>它就是不工作，而且日志文件为空，根本就没有任何线索。</p><p>首先想到的是环境变量的配置有问题。于是添加了这一句：</p><pre><code>. $HOME/.bash_profile    </code></pre><p>其作用就相当于运行：</p><pre><code>source $HOME/.bash_profile  </code></pre><p>这样就能保证在运行脚本之前装载所有环境变量，于是Cron job就成为了：   </p><pre><code>30 04 * * * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_liker.sh &gt;&gt; /home/aafeng/cronjobs/logs/aafeng_liker.log    </code></pre><p>但仍然没有任何作用。    </p><p>检查一下系统日志文件/var/log/syslog，发现这条错误信息：</p><pre><code>Apr 20 11:11:02 vmi164206 CRON[16662]: (CRON) info (No MTA installed, discarding output)</code></pre><p>这条错误消息说明，Cron job产生了输出，Cron守护进程想要将这些输出通过email发送给我，但是我的MTA (Mail Transfer Agent) 并没有正确配置，因此才出现上面的错误提示。</p><p>要想解决这个问题，有几种不同的方法：</p><ul><li>安装并配置MTA，比如：postfix，但我在VM上根本就不使用mail，因此并不想采取这种方式</li><li>进行错误输出重定向，添加： 2&gt;&amp;1，将错误输出到日志文件中</li></ul><p>我选择了第二种方式，这样Cron job就成为了：</p><p>  30 04 <em> </em> * . $HOME/.bash_profile; /home/aafeng/batch/liker/aafeng_liker.sh &gt;&gt; /home/aafeng/cronjobs/logs/aafeng_liker.log 2&gt;&amp;1</p><p>再检查自己的日志文件，终于有输出了：</p><pre><code>Traceback (most recent call last):  File &quot;likercli.py&quot;, line 3, in &lt;module&gt;  import mysql.connector  ModuleNotFoundError: No module named &apos;mysql&apos;</code></pre><p>提示找不到mysql这个库。但我明明已经安装了啊。 将Python的完整路径添加后问题解决：</p><pre><code>/home/aafeng/environments/myenv/bin/python xxxxxx</code></pre><p>其实这并不能完全解释为什么找不到mysql这个库。因为前面已经通过</p><pre><code>. $HOME/.bash_profile</code></pre><p>装载了所有配置，包括Python virtual env，这样应该就能直接定位到/home/aafeng/environments/myenv/bin/python 啊，但就是无法直接工作。算了，既然加上完整的Python路径能正常运行，就先不管它了。</p>]]></content>
-    
-    <summary type="html">
-    
-      最近遇到的一个Cron job的坑
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
     
   </entry>
   
