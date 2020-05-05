@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-04T21:54:44.993Z</updated>
+  <updated>2020-05-05T20:13:20.735Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Thinkpad笔记本维修记</title>
+    <link href="https://www.aafeng.uk/thinkpad-sleep/"/>
+    <id>https://www.aafeng.uk/thinkpad-sleep/</id>
+    <published>2020-05-05T20:13:20.735Z</published>
+    <updated>2020-05-05T20:13:20.735Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天早上打开笔记本电脑，准备开始干活。忽然发现按下电源开关后，电脑完全没有反应，黑屏。而电源开关的指示灯一直在闪。无论怎么按电源开关都没有反应。</p><p>首先想到的就是电脑休眠了，需要唤醒。于是想起了一招，长按电源键5秒钟就可以强制其关机，然后再重新开机就应该能正常启动系统了。可是按了5秒，10秒，15秒，30秒，都没有任何反应？？？</p><p>既然这样都不管用，那就只能硬上了 - 直接拔掉电池。可是把电脑翻过来一看，由于当初选择的是T480s超薄版的，电池不像一般笔记本电脑那样在外面可以直接拆掉。于是找来工具，把电脑后盖打开，电池取下来几秒钟，再放了回去，顺便把内部除了除尘。终于可以正常开机了。</p><p><img src="/images/technology/thinkpad.jpg" alt="Thinkpad笔记本"></p><p>回想一下，头一天晚上结束时的操作和平时一样，选择了休眠，而没有关机。但这个笔记本已经用了一年多了，每天的操作都一样，一直没有问题。在网上查了一下也没有找到答案。看来以后每天不用电脑时还是老老实实的关机吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      Thinkpad笔记本维修记
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>细思极恐 - 其实我们都是斯金纳箱中的鸽子</title>
@@ -427,28 +447,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>以特殊的方式给儿子庆祝生日</title>
-    <link href="https://www.aafeng.uk/my-sons-birthday-2020/"/>
-    <id>https://www.aafeng.uk/my-sons-birthday-2020/</id>
-    <published>2020-04-20T20:58:00.000Z</published>
-    <updated>2020-04-20T21:51:11.609Z</updated>
-    
-    <content type="html"><![CDATA[<p>转眼又到了儿子的生日。往年都是让儿子自己选择来举办一个生日Party。在英国，小朋友们的Party类型选择很多，比如在游乐场Party，蹦床Party，做Pizza的Party，森林中的户外活动主题Party，镭射枪对战Party，保龄球Party等等。说白了就是家长们轮流买单，让孩子们一起嗨。今年由于疫情显然是没法搞生日Party了，但仪式感还是要有的。</p><a id="more"></a><p>儿子的礼物已经事先给他准备好了。他前段时间一直想要一个Amazon Alexa，想要问Alexa各种奇怪的问题。我考虑再三，决定还是选择了Google Home Hub作为替代产品，主要原因是对整套Google产品印象分非常高。相信他一定也会喜欢的。还有就是一套他非常想要的书《The Treehouse Collection》。</p><p><img src="/images/kids/birthday/google-home-hub.png" alt="Google Home Hub"></p><p>尽管现在不能和他的小伙伴们见面，但他的小伙伴们早就在Whatsapp群中送上了各种生日祝福，有录视频的，有留下语音的，也有发送电子贺卡的。最让我们感动的是他最好的朋友的妈妈，带上儿子最好的朋友，专程开车来到我们家门口，把礼物远远的留下，并为儿子当面唱了一首生日快乐歌。</p><p>媳妇今天专门为孩子做了一个生日蛋糕。做的是孩子们最喜欢的戚风蛋糕。本来是要搭配些水果的。但现在购物不便，就变通了一下。和媳妇做的蛋糕相比，我<a href="/5wpl8/">前些天做的蛋糕</a>简直就是弱爆了。。。</p><p><img src="/images/kids/birthday/20200420-cake.png" alt="Google Home Hub"></p>]]></content>
-    
-    <summary type="html">
-    
-      儿子生日 + 虚拟Party
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-      <category term="生日" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%97%A5/"/>
     
   </entry>
   
