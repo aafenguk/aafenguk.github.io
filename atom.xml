@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-05T20:25:36.892Z</updated>
+  <updated>2020-05-06T08:23:59.834Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>试用Hive-js</title>
+    <link href="https://www.aafeng.uk/hive-js/"/>
+    <id>https://www.aafeng.uk/hive-js/</id>
+    <published>2020-05-06T08:23:59.834Z</published>
+    <updated>2020-05-06T08:23:59.834Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近Hive更新了hive-js这个库，在阅读这这篇<a href="/hive-139531/@mahdiyari/hive-js-and-hive-tx-migration-to-hive-breaking-changes-for-browsers">英文文章</a>文章后，把要点概括一下：</p><ul><li>使用steem-js的应用应切换到hive-js上，在下一个HF后极有可能steem-js无法正常在Hive上工作。</li><li>增加了节点的自动切换功能(alternative_api_endpoints)，如果一个节点出现问题，会自动切换到下一个节点。</li></ul><a id="more"></a><p><img src="/images/blockchain/hive/hive-js.jpg" alt="hive-js"></p><p>下面进行了一个简单的测试。</p><p>首先创建test.js:</p><pre><code>&quot;use strict&quot;const hive  = require(&apos;@hiveio/hive-js&apos;);// Read posts from Hivehive.api.getDiscussionsByCreated({tag: &apos;hive&apos;, limit: 10}, function(err, discussions) {  for(var i = 0; i &lt; discussions.length; i++) {    let post = discussions[i]    console.log(post.title)  }})</code></pre><p>运行如下命令安装hive-js：</p><pre><code>npm install @hiveio/hive-js --save</code></pre><p>之后运行：</p><pre><code>node test.js</code></pre><p>可以看到程序能够正常运行，但似乎还有一些hive-js的调试信息。相信开发者很快就会更新的。</p><p><img src="/images/blockchain/hive/hive-js2.jpg" alt="hive-js"></p><p>整体而言，感觉把现有使用steem-js的程序改成hive-js的工作量不大，建议使用steem-js早做迁移，避免某一天程序突然不干活了。</p><p>Hive-js源码：<a href="https://gitlab.syncad.com/hive/hive-js" rel="external nofollow noopener noreferrer" target="_blank">https://gitlab.syncad.com/hive/hive-js</a></p><p>更多关于Hive-js的讨论请参考这篇<a href="/hive-139531/@mahdiyari/hive-js-and-hive-tx-migration-to-hive-breaking-changes-for-browsers">英文文章</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      试用Hive-js
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
+    
+  </entry>
   
   <entry>
     <title>Thinkpad笔记本维修记</title>
@@ -425,28 +447,6 @@
     
     
       <category term="英国教育" scheme="https://www.aafeng.uk/tags/%E8%8B%B1%E5%9B%BD%E6%95%99%E8%82%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的疫情记录 - 2020.04.21</title>
-    <link href="https://www.aafeng.uk/covid19-20200421/"/>
-    <id>https://www.aafeng.uk/covid19-20200421/</id>
-    <published>2020-04-21T10:58:00.000Z</published>
-    <updated>2020-04-21T21:09:52.691Z</updated>
-    
-    <content type="html"><![CDATA[<p>至今已经宅家三周了。这两天英国政府又宣布继续封城三周。三周后再讨论下一步的措施。下面说说我周边一些人的心态和变化。</p><p><img src="/images/life/20200417_flowers.jpg" alt="我家附近的油菜花田，摄于2020.04.17"></p><a id="more"></a><p>有一个朋友在市中心开了一家咖啡店。但从开始封城，他们就决定把店关了。因为各种费用的确是一笔不小的负担。尽管政府有一定的补助，但也是杯水车薪，让他们入不敷出，不如早做决断，哪怕等疫情过后东山再起。还有另外一家很有名的中国超市老板说，他们也就能再撑几个月的时间，如果几个月后还不能恢复正常的话，他们也只能关门了。由此可见，这次的疫情对这些小公司，自雇者的冲击太大了。与之相反的是各大超市越做越大，销售额暴增，甚至想订一个送货时段都要靠拼人品。和同事的聊天中同事提到了一点就是：尽量去照顾那些比较小的店铺，便利店等，尽量不要让他们倒闭，否则等疫情过后，作为消费者也会感受到不便和损失的。</p><p>第二是人们心理的变化。以封城为例，众多民众从最初的抵触，到现在的接受，甚至是过度的担心。甚至有的家长说即使是复课了，短期内也不会让孩子回到学校上学。可以说，除非有效的疫苗能够很快的被研发出来并量产，否则人们的生活很难恢复正常。</p><p>第三是各种在线服务的火爆。举一个简单的例子，最近专门支持在线会议的软件Zoom股价暴涨。可见众多企业和机构的需求量有多大。可以预见，众多提供在线服务的平台一定会得到一个高速发展。</p><p>等到有一天疫情彻底过去，它对人们的影响也不会消失。忘记在哪里看到了一个可悲的事实，在疫情期间家暴明显增加，有心理问题的人数明显增加。在疫情过后，人类社会将会面临一个长期而缓慢的恢复过程。</p>]]></content>
-    
-    <summary type="html">
-    
-      我的疫情记录 - 2020.04.21
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
