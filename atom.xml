@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-07T07:38:23.145Z</updated>
+  <updated>2020-05-07T20:59:34.520Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用forwardemail.net为自己域名配置免费邮件服务</title>
+    <link href="https://www.aafeng.uk/forwardemail/"/>
+    <id>https://www.aafeng.uk/forwardemail/</id>
+    <published>2020-05-08T07:19:26.259Z</published>
+    <updated>2020-05-07T20:59:34.520Z</updated>
+    
+    <content type="html"><![CDATA[<p>在购买自己的域名后，肯定想要设置自己域名下的邮箱。下面介绍一下如何通过forwardemail这个网站的服务+gmail来实现如何接收和发送自己域名下的邮件。</p><a id="more"></a><h2 id="设定邮件转发"><a href="#设定邮件转发" class="headerlink" title="设定邮件转发"></a>设定邮件转发</h2><p>首先打开 <a href="https://forwardemail.net/" rel="external nofollow noopener noreferrer" target="_blank">https://forwardemail.net/</a> ，通过Google或Github账号登录。登录成功后可以看到如下界面：</p><p><img src="/images/technology/forwardmail/01.png" alt="forwardemail"></p><p>添加自己的域名：</p><p><img src="/images/technology/forwardmail/02.png" alt="forwardemail"></p><p>目前提示尚未通过验证：</p><p><img src="/images/technology/forwardmail/03.png" alt="forwardemail"></p><p>设置域名以做邮件转发：</p><p><img src="/images/technology/forwardmail/04.png" alt="forwardemail"></p><p>我是在Cloudflare中配置的MX和TXT记录：</p><p><img src="/images/technology/forwardmail/05.png" alt="forwardemail"></p><p>整个过程需要等待一段时间，通过验证之后看到的界面是这样的：</p><p><img src="/images/technology/forwardmail/06.png" alt="forwardemail"></p><p>至此，所有发送到 <a href="mailto:XXXX@aafeng.uk" rel="external nofollow noopener noreferrer" target="_blank">XXXX@aafeng.uk</a> 的邮件都会被转发到你所指定的邮箱中。</p><h2 id="第二步：通过gmail发送以自己域名为后缀邮箱的邮件"><a href="#第二步：通过gmail发送以自己域名为后缀邮箱的邮件" class="headerlink" title="第二步：通过gmail发送以自己域名为后缀邮箱的邮件"></a>第二步：通过gmail发送以自己域名为后缀邮箱的邮件</h2><p><img src="/images/technology/forwardmail/07.png" alt="forwardemail"></p><p>首先需要激活Google账号的二元验证。如未激活，在如下页面中激活：</p><p><a href="https://www.google.com/landing/2step/" rel="external nofollow noopener noreferrer" target="_blank">https://www.google.com/landing/2step/</a></p><p>访问页面：<a href="https://www.google.com/landing/2step/" rel="external nofollow noopener noreferrer" target="_blank">https://www.google.com/landing/2step/</a></p><p>在App列表框中选择“Mail”，在“Device”中选择“Other”，然后输入你的邮箱。单击“Generate”，生成App的密码：</p><p><img src="/images/technology/forwardmail/08.png" alt="forwardemail"></p><p>记录下这个密码。</p><p>打开Gmail设置页面，选择“Accounts and Import” =&gt; “Send mail as”, 单击”Add another email address”</p><p>添加自己域名下的邮箱，注意取消选中“Treat as alias”：</p><p><img src="/images/technology/forwardmail/09.png" alt="forwardemail"></p><p>在下一步中输入你Gmail的用户名（不含@gmail.com)，以及前面记录下的Google app的密码：</p><p><img src="/images/technology/forwardmail/10.png" alt="forwardemail"></p><p>输入发送到你邮箱中的验证码后，单击”Verify“，至此设置完毕。可以看到能够在Gmail中通过自己域名下的邮箱来发送邮件了。</p>]]></content>
+    
+    <summary type="html">
+    
+      使用forwardemail.net为自己域名配置免费邮件服务
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>宅家日久，体重渐增，压力渐大</title>
@@ -425,28 +445,6 @@
     
     
       <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>幸运的新冠病毒患者?</title>
-    <link href="https://www.aafeng.uk/covid19-20200423/"/>
-    <id>https://www.aafeng.uk/covid19-20200423/</id>
-    <published>2020-04-23T18:50:00.000Z</published>
-    <updated>2020-04-23T19:55:00.580Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近各个国家纷纷宣告自己的疫苗研发进度。英国牛津大学的疫苗也要开始进行人体实验了。最近在一个微信群里看到有人分享了自己感染/治愈新冠状病毒的经历。</p><p><img src="/images/life/covid19.jpg" alt="新冠病毒"></p><a id="more"></a><p>有小两口说最近使用冠状病毒的试剂进行了测试，其结果有三个指标：C线表明测试有效，G线为红色表明体内存在长期抗体，M线表明是最近感染了冠状病毒。但他们检测的结果是只有C/G线，但没有M线。说明他们早感染过了，并且体内有了抗体。</p><p>他们回想了一下，小两口在二月份的时候曾经有过感冒症状，嗓子疼了好几天，有一点咳嗽，感觉非常疲惫，总想睡觉。曾经有一天发烧38度，但第二天就好了。嗅觉和味觉都变得不是很敏感。</p><p>现在回想起来，在今年一月份的时候，我曾经非常诡异的连续感冒了近一个月，嗓子疼的要冒烟一样。其实最近几年来，我时不时的会得个感冒，一般也就是3，4天左右就好了。而且我已经养成了习惯，感冒了从来都不吃任何药，只是多喝水，靠自身的免疫系统慢慢恢复。但一月份的感冒和以往相比非常异常。而且在同一时间，我有个同事身体超级棒，这辈子从未生过病，但他也得了类似的症状，修了有生以来的第一次病假。</p><p>微信群里顿时有人开玩笑说，好希望早点感染那种轻症的病毒，早点产生抗体，这样就不用太过担心了。哈哈，希望我也有抗体了吧。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      幸运的新冠病毒患者?
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
