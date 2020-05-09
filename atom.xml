@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-07T20:59:34.520Z</updated>
+  <updated>2020-05-09T22:53:22.077Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>周末家庭影院 - The BFG</title>
+    <link href="https://www.aafeng.uk/the-bfg/"/>
+    <id>https://www.aafeng.uk/the-bfg/</id>
+    <published>2020-05-09T22:53:22.077Z</published>
+    <updated>2020-05-09T22:53:22.077Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个周末全家一起观看了2016年出品的电影《The BFG》(The Big Friendly Giant)。这个影片是根据Roald Dahl的同名小说改编的。选择这个电影的原因很简单，同名小说是女儿最喜欢的小说之一。</p><a id="more"></a><p>影片中讲述的是小女孩Sophie由于在晚上无法入睡，碰巧看到的巨人BFG被BFG捉回了巨人国。只不过幸运的是，捉她的巨人在巨人国中是一个另类的巨人。和别的吃人的巨人不一样，这个巨人只吃自己种植的植物。同时，这个巨人还有一项重要的任务，就是去寻找不同的梦，并把梦装到一个个的玻璃瓶中，再一个个的送到小朋友们的梦境中。</p><p>为了阻止巨人们继续吃人，Sophie和这个好巨人一起合作，打算制作一个关于巨人吃小孩的噩梦，并把这个梦送到女王的梦境中以获取女王的帮助。最终在女王的帮助下，Sophie战胜了那些恶巨人，让他们不能再作恶。</p><p>正所谓一千个读者的心中就会有一千个版本的哈姆雷特一样。和上周看过的《The Fantastic Mr Fox》相比，这部电影似乎有些”成人不宜“，整部影片似乎更适合小朋友们看。虽然最终是个皆大欢喜的Happy ending，但整部电影略显平淡，让人能够记住的瞬间似乎没有。</p><p>对我而言，整部电影虽然略显平淡，但其中对Sophoie稚嫩心灵的刻画可以说是入目三分。同时整部电影的正能量满满，尤其是善良的BFG一步步帮助Sophie解开心结，让她的梦境成真，还是很暖心的。</p>]]></content>
+    
+    <summary type="html">
+    
+      周末家庭影院 - The BFG
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用forwardemail.net为自己域名配置免费邮件服务</title>
@@ -423,28 +443,6 @@
     
     
       <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何取消订阅赞赏公民</title>
-    <link href="https://www.aafeng.uk/how-to-cancel-civic-liker/"/>
-    <id>https://www.aafeng.uk/how-to-cancel-civic-liker/</id>
-    <published>2020-04-23T18:58:00.000Z</published>
-    <updated>2020-04-22T20:16:13.899Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先，访问liker.land的设置页面： <a href="https://liker.land/settings/" rel="external nofollow noopener noreferrer" target="_blank">https://liker.land/settings/</a> ，如果没有登录，请使用自己的liker账号登录。</p><p><img src="/images/blockchain/liker/cancel-civic-liker-1.png" alt="赞赏公民"></p><a id="more"></a><p>然后单击”赞赏公民 (生效中)”，</p><p><img src="/images/blockchain/liker/cancel-civic-liker-2.png" alt="赞赏公民"></p><p>单击 “取消《赞赏公民》订阅”就可以了。</p>]]></content>
-    
-    <summary type="html">
-    
-      如何取消订阅赞赏公民
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
     
   </entry>
   
