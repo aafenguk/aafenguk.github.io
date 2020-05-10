@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-09T22:53:22.077Z</updated>
+  <updated>2020-05-10T19:41:15.372Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一次在家烧烤</title>
+    <link href="https://www.aafeng.uk/bbq/"/>
+    <id>https://www.aafeng.uk/bbq/</id>
+    <published>2020-05-10T19:41:15.372Z</published>
+    <updated>2020-05-10T19:41:15.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>家里的烤炉已经买了好几年了，但一直没有拆开包装。最近几天天气出奇的好，同时因为lockdown已经没有任何social活动了，于是决定趁着现在有时间尝试在家烧烤一次。</p><p><img src="/images/food/bbq1.jpg" alt="烧烤"></p><a id="more"></a><p>整体而言还是很成功的，上面是一张成品图。</p><p>首先把烤炉从车库中翻了出来，花了两个多小时进行组装：</p><p><img src="/images/food/bbq2.jpg" alt="烧烤"></p><p>终于装好了：</p><p><img src="/images/food/bbq3.jpg" alt="烧烤"></p><p>在超市买的易燃炭，非常方便，只需要把外面的油纸点着就好，过一小会火就会烧的很旺。只不过需要注意的是，有浓烟和大火苗的时候是不能食材放上去的，否则食材很容易被烤糊。</p><p>主要烤的是五花肉串和羊肉串，这两种串是事先腌制好的。在网上找的食谱。羊肉串只用洋葱和蛋清腌制，五花肉串用食盐，料酒，洋葱，鸡蛋腌制。总共腌制了大约4个小时。</p><p>过了一会，炭已经烧好，没有什么烟了，可以开始烤了！</p><p><img src="/images/food/bbq4.jpg" alt="烧烤"></p><p>很快就烤好了，开吃！</p><p><img src="/images/food/bbq1.jpg" alt="烧烤"></p>]]></content>
+    
+    <summary type="html">
+    
+      第一次在家烧烤
+    
+    </summary>
+    
+      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>周末家庭影院 - The BFG</title>
@@ -421,28 +441,6 @@
     
     
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装并使用zsh</title>
-    <link href="https://www.aafeng.uk/zsh/"/>
-    <id>https://www.aafeng.uk/zsh/</id>
-    <published>2020-04-24T19:48:00.000Z</published>
-    <updated>2020-04-24T20:55:06.409Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近开始使用zsh，感觉比Linux系统默认的bash要好用太多了，尤其对于经常使用git的各位程序猿来说，提供了很多额外的提示，比如，当前的branch，是否有未提交更改，以及各种快捷命令等等。强烈推荐！下面把安装步骤介绍一下：</p><p><img src="/images/technology/linux/zsh-1.png" alt="zsh"></p><a id="more"></a><p>首先运行以下命令安装zsh：</p><pre><code>sudo apt-get install zshsudo usermod -s /bin/zsh $(whoami)</code></pre><p>退出并重新登录后会看到如下提示：</p><p><img src="/images/technology/linux/zsh-2.png" alt="zsh"></p><p>我这里选择输入“2”，让系统自动生成zsh配置文件。</p><p>zsh有很多有用的插件，这里推荐“Oh-My-ZSH”这个插件，运行如下命令进行安装：</p><pre><code>sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><p>安装成功后会有如下提示：</p><p><img src="/images/technology/linux/zsh-3.png" alt="zsh"></p><p>安装结束后可以修改 .zshrc 来更改主题，各种插件，以及各种配置。</p><p>下面介绍几个针对git增强的功能：</p><p>首先，但你进入一个处于 git 管理的目录时，系统提示符会变为：</p><p><img src="/images/technology/linux/zsh-4.png" alt="zsh"></p><p>上面的 “web” 是当前目录；“master” 是当前 git 的分支；“✗” 代表当前目录下有未提交的更改。是不是非常的一目了然？</p><p>输入</p><pre><code>alias</code></pre><p>会看到 “Oh-My-ZSH” 添加了很多命令的别名：</p><pre><code>gsr=&apos;git svn rebase&apos;gss=&apos;git status -s&apos;gst=&apos;git status&apos;gsta=&apos;git stash save&apos;gstaa=&apos;git stash apply&apos;gstall=&apos;git stash --all&apos;gstc=&apos;git stash clear&apos;gstd=&apos;git stash drop&apos;gstl=&apos;git stash list&apos;gstp=&apos;git stash pop&apos;gsts=&apos;git stash show --text&apos;gstu=&apos;git stash --include-untracked&apos;gsu=&apos;git submodule update&apos;gsw=&apos;git switch&apos;gswc=&apos;git switch -c&apos;gtl=&apos;gtl(){ git tag --sort=-v:refname -n -l &quot;${1}*&quot; }; noglob gtl&apos;......</code></pre><p>用习惯后能节省不少时间。自从开始使用 zsh + “Oh-My-ZSH”感觉越用越顺手，再也无法回到过去的bash了。再次强烈推荐！</p>]]></content>
-    
-    <summary type="html">
-    
-      安装并使用zsh
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
     
   </entry>
   
