@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-14T11:05:27.506Z</updated>
+  <updated>2020-05-14T20:58:25.518Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>18年投的一个ICO项目2Key终于要上交易所了</title>
+    <link href="https://www.aafeng.uk/2key/"/>
+    <id>https://www.aafeng.uk/2key/</id>
+    <published>2020-05-14T20:58:25.518Z</published>
+    <updated>2020-05-14T20:58:25.518Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>声明：下面只是我个人的经历分享，不作为您的投资建议。</strong></p><p>今天朋友联系我说18年一起投的一个ICO项目2Key要发币了，而且在5月19号要上交易所。我整个就懵了，2Key是什么？？？翻了翻过去的记录，似乎还真的投过这个币，现在忘的彻彻底底了。</p><p><img src="/images/blockchain/2key.jpg" alt="2Key"></p><p>当时选择投资这个ICO主要有以下几个考虑：</p><ul><li>首先，这个项目有卖点。2Key强调的是“智能链接”，可以用2Key来创建多级推荐活动。在这些活动中奖励推荐链中的每一个人。在整个活动过程中，可以实时跟踪活动是如何传播的。</li><li>其次，项目的合伙人/合作方包括：Enigma, Ledger, Metamask, Zoom (Zoom在两年前还没有和2Key合作，这应该是今年的事)等这些知名的名字，应该靠谱。</li><li>感觉团队是是实实在在的做事，比如他们专门针对系统的Bug有一套赏金系统：<a href="https://www.2key.network/bug-bounty" rel="external nofollow noopener noreferrer" target="_blank">https://www.2key.network/bug-bounty</a></li></ul><p>查看了一下项目的Github活跃度，代码更新还是比较频繁的：</p><p><img src="/images/blockchain/2key2.png" alt="2Key"></p><p>2Key现在的币价是$0.08，在5月19号要上架Bilaxy和Hotbit交易所。希望上架后币价能涨一些吧。</p><p>最后给出项目的相关信息：</p><p>代币名称：2KEY<br>发行总量：6亿<br>合约地址：0xe48972fcd82a274411c01834e2f031d4377fa2c0<br>官网：<a href="https://www.2key.network/" rel="external nofollow noopener noreferrer" target="_blank">https://www.2key.network/</a><br>源码：<a href="https://github.com/2key/contracts" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/2key/contracts</a></p>]]></content>
+    
+    <summary type="html">
+    
+      18年投的一个ICO项目2Key终于要上交易所了
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>一次将Solr数据备份和恢复的曲折经历</title>
@@ -415,28 +435,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Serverless Requirements在AWS无服务器架构中配置Python依赖库</title>
-    <link href="https://www.aafeng.uk/serverless-requirements/"/>
-    <id>https://www.aafeng.uk/serverless-requirements/</id>
-    <published>2020-04-28T19:48:00.000Z</published>
-    <updated>2020-04-28T11:06:03.114Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近一直在尝试<a href="https://aws.amazon.com/" rel="external nofollow noopener noreferrer" target="_blank">AWS</a> Serverless（无服务器架构）的系列产品，比如：S3, Lambda, APIGateway等等。在使用<a href="https://serverless.com/" rel="external nofollow noopener noreferrer" target="_blank">Serverless</a>这个框架通过Python编写Lambda的时候经常会遇到一个问题就是：在Python中要使用其他依赖库怎么办？本来Lambda就是AWS微服务架构中的最小单元了，那么如何导入这些依赖库呢？其中的一个方案就是使用<a href="https://serverless.com/plugins/serverless-python-requirements/" rel="external nofollow noopener noreferrer" target="_blank">Serverless Requirements</a>这个插件来管理这些依赖库。下面以一个简单的例子进行说明。</p><p><img src="/images/technology/aws/serverless.png" alt="Serverless"></p><a id="more"></a><p>当然，前提是已经安装了serverless，如未安装，请先行安装，整个安装过程非常简单。安装完毕后创建一个项目:</p><pre><code>serverless create --template aws-python3 --name dependency-test --path dependency-testcd dependency-test</code></pre><p>进入”dependency-test”目录后可以看到共生成了两个文件：handler.py和serverless.yml。</p><p>先来看看handler.py这个文件，将注释删除后可以看到整个代码非常简单：</p><pre><code>import jsondef hello(event, context):    body = {        &quot;message&quot;: &quot;Go Serverless v1.0! Your function executed successfully!&quot;,        &quot;input&quot;: event    }    response = {        &quot;statusCode&quot;: 200,        &quot;body&quot;: json.dumps(body)    }    return response</code></pre><p>下面我们以<a href="https://github.com/numpy/numpy" rel="external nofollow noopener noreferrer" target="_blank">numpy</a>这个最为常见的依赖库为例来进行说明。将handler.py修改成如下这样：</p><pre><code>import jsonimport numpy as npdef hello(event, context):    a = np.arange(9).reshape(3, 3)    body = {        &quot;array&quot;: str(a)    }    response = {        &quot;statusCode&quot;: 200,        &quot;body&quot;: json.dumps(body)    }    return responseif __name__ == &quot;__main__&quot;:    print(hello(&apos;&apos;, &apos;&apos;))</code></pre><p>其实在Lambda中，完全不用添加最后两行，这里只是为了在本地运行以做测试的。运行：</p><pre><code>python handler.py</code></pre><p>可以看到如下结果：</p><pre><code>{&apos;statusCode&apos;: 200, &apos;body&apos;: &apos;{&quot;array&quot;: &quot;[[0 1 2]\\n [3 4 5]\\n [6 7 8]]&quot;}&apos;}</code></pre><p>接下来需要将其部署到AWS，首先初始化当前目录，并安装依赖库：</p><pre><code>npm install --save serverless-python-requirements</code></pre><p>这样就会生成package-lock.json以及node_modules目录。是不是有些奇怪？Python的代码下出现了Node.js的文件和库。其实这也没什么奇怪的。因为Serverless这个框架就是用Node.js实现的，其插件”serverless-python-requirements”也是用Node.js实现的，自然就需要node_modules了。</p><p>为了能让”serverless-python-requirements”正常工作，需要添加requirements.txt这个文件，其内容为：</p><pre><code>numpy==1.18.3</code></pre><p>然后修改默认的serverless.yml，添加对serverless-python-requirements这个插件的引用：</p><pre><code>service: dependency-testprovider:  name: aws  runtime: python3.8functions:  hello:    handler: handler.hello    events:      - http:          path: dependency_test          method: getplugins:  - serverless-python-requirementscustom:  pythonRequirements:    dockerizePip: true</code></pre><p>部署到AWS</p><pre><code>serverless deploy</code></pre><p>可以看到已经成功部署：</p><p><img src="/images/technology/aws/serverless2.png" alt="Serverless"></p><p>测试一下：</p><p><img src="/images/technology/aws/serverless3.png" alt="Serverless"></p>]]></content>
-    
-    <summary type="html">
-    
-      使用Serverless Requirements在AWS无服务器架构中配置Python依赖库
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
