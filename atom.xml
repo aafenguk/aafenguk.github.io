@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-13T22:16:33.873Z</updated>
+  <updated>2020-05-14T11:05:27.506Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次将Solr数据备份和恢复的曲折经历</title>
+    <link href="https://www.aafeng.uk/solr-data-restore/"/>
+    <id>https://www.aafeng.uk/solr-data-restore/</id>
+    <published>2020-05-14T04:57:45.000Z</published>
+    <updated>2020-05-14T11:05:27.506Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近准备开始一个新的项目。其实也不是全新的，其现有代码已经运行了5年，现在需要添加很多新的功能。在这个项目中使用了Solr，因此首先需要把其数据备份并恢复到自己的VM上来以坐测试和开发。于是一个曲折的故事就开始了。。。</p><p><img src="/images/technology/solr/solr.png" alt="Solr"></p><a id="more"></a><h2 id="Solr-7-5"><a href="#Solr-7-5" class="headerlink" title="Solr 7.5"></a>Solr 7.5</h2><p>其实我自己的VM上已经有了Solr，其版本是7.5，而服务器上的版本是7.6，想想这个两个版本差距不大，于是想直接把数据复制过来不就可以了吗？这个过程非常简单，就是把服务器上/var/solr/data目录下这个项目对应的子文件夹整个复制到本机的同样目录，并重新启动Solr就可以了。但当重新启动Solr后发现了如下错误：</p><pre><code>SolrCore Initialization Failuresxxxx: org.apache.solr.common.SolrException:org.apache.solr.common.SolrException: Error opening new searcherPlease check your logs for more information</code></pre><p>检查日志文件，发现如下错误：</p><pre><code>Suppressed: org.apache.lucene.index.CorruptIndexException: checksum passed (4454119c). possibly transient resource issue, ......</code></pre><p>提示索引文件出错，首先想到的是在打包压缩和复制的过程中出现了错误，于是又走了一遍，还是同样的错误。这时觉得应该就是版本之间的兼容性问题了。确实也是，新版本支持旧版本的索引文件很好理解。但反过来，把新版本的索引文件复制到旧版本上去，不被支持就很好理解了。</p><h2 id="最新的Solr-8-5-1"><a href="#最新的Solr-8-5-1" class="headerlink" title="最新的Solr 8.5.1"></a>最新的Solr 8.5.1</h2><p>那好吧，索性就使用最新的版本8.5.1吧，这样所有的问题不就都解决了吗？其安装过程也非常简单，下载tgz文件，解压，再运行install_solr_service.sh就可以了。</p><p>但安装完毕后却出现了新的问题：</p><pre><code>xxxx: org.apache.solr.common.SolrException:org.apache.solr.common.SolrException: Could not load conf for core xxxx: Can&apos;t load schema /var/solr/data/xxxx/conf/schema.xml: Plugin init failure for [schema.xml] fieldType &quot;textSuggest&quot;: Plugin init failure for [schema.xml] analyzer/filter: Error loading class &apos;solr.StandardFilterFactory&apos;Please check your logs for more information</code></pre><p>原来是StandardFilterFactory在Solr 8中不能正常工作。找到了项目中的schema.xml，把相应的行注释掉，重新启动Solr，貌似问题解决了。但感觉并不是很满意，毕竟需要对配置做修改才能正常工作，而且不知道是否会对其他部分产生负面影响。</p><h2 id="Solr-7-7-3"><a href="#Solr-7-7-3" class="headerlink" title="Solr 7.7.3"></a>Solr 7.7.3</h2><p>最终决定尝试一下Solr 7.x中的最终版本7.7.3。整个安装步骤非常简单，下载并解压后运行：</p><pre><code>./install_solr_service.sh ../../solr-7.7.3.tgz -f</code></pre><p>但在启动过程中会发现如下错误：</p><p><img src="/images/technology/solr/solr2.png" alt="Solr"></p><p>这个问题倒是好解决，编辑文件/etc/security/limits.conf，添加：</p><pre><code>solr hard nofile 65535solr soft nofile 65535solr hard nproc 65535solr soft nproc 65535</code></pre><p>重新启动Solr</p><pre><code>sudo systemctl restart solr</code></pre><p>终于能够正常工作了，没有任何错误提示。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在Solr数据备份/恢复的时候一定要注意各个版本之间的差异。虽然不断保持软件的最新版本是一个好习惯，但在生产环境中，还是要慎之又慎，尽量选用兼容性最好前提下的最新版本。 </p>]]></content>
+    
+    <summary type="html">
+    
+      一次将Solr数据备份和恢复的曲折经历
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>比特币减半了，可你的信仰还在吗？</title>
@@ -417,28 +437,6 @@
     
     
       <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>宅家期间，少儿编程学起来</title>
-    <link href="https://www.aafeng.uk/kids-programming/"/>
-    <id>https://www.aafeng.uk/kids-programming/</id>
-    <published>2020-04-28T04:58:00.000Z</published>
-    <updated>2020-04-28T06:49:42.176Z</updated>
-    
-    <content type="html"><![CDATA[<p>近期一直宅在家中，难得有了很多陪伴孩子的时间。这也使得我能够了却一桩长时间以来的心愿：教孩子编程。</p><p><img src="/images/kids/coding/kids-programming-1.jpg" alt="少儿编程"></p><a id="more"></a><p>由于我本身就从事IT，因此也算有些优势，至少明白程序该怎么写。之所以想要培养孩子学会编程，主要感觉这是一项必备技能。无论他们以后从事什么工作，能够自己写一些代码，肯定对他们的工作和学习都会有所帮助。至于以后他们从事什么职业，这就不是我现在需要操心的了。</p><p>说干就干，那么该选择什么编程语言呢？很多学校都在似乎用Scratch这样的图形化编程语言。因为这种语言非常直观，让孩子们一看就能懂，容易上手。但我权衡再三，决定选择Python。原因有以下几个：</p><ul><li>首先，Python是我个人最喜欢的编程语言。说起来也很有意思，Python并不是我工作中使用的编程语言，但我却对它情有独钟，除工作之外的程序基本上我都尽量使用Python。</li><li>Python的市场需求很大，应用面非常广泛。尤其是在数据挖掘和人工智能方面得到到大量的应用。如果孩子对编程感兴趣，那么以后肯定要接触人工智能的。那索性从开始就把这个最基础的工具学好。</li><li>Python完全适合8岁+的孩子们学习。无论是国内还是国外，都有很多同龄的小朋友们在学，而且效果似乎不错。</li><li>Python的库非常丰富，包括适合初学者的图形库，比如：turtle。因此更容易引起孩子们的学习兴趣。</li></ul><p>这里推荐<a href="https://trinket.io/" rel="external nofollow noopener noreferrer" target="_blank">Trinket</a>这个网站，在这里可以使用图形库turtle编写各种图形化的程序。这个网站就像是一个在线IDE，代码编写，运行在网上全都有了。</p><p><img src="/images/kids/coding/kids-programming-2.png" alt="少儿编程"></p><p><img src="/images/kids/coding/kids-programming-3.png" alt="少儿编程"></p>]]></content>
-    
-    <summary type="html">
-    
-      宅家期间，少儿编程学起来
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-      <category term="少儿编程" scheme="https://www.aafeng.uk/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
