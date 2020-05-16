@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-16T21:55:22.923Z</updated>
+  <updated>2020-05-16T22:48:05.287Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java应用程序性能调优的神器 - Glowroot</title>
+    <link href="https://www.aafeng.uk/glowroot/"/>
+    <id>https://www.aafeng.uk/glowroot/</id>
+    <published>2020-05-16T22:48:05.287Z</published>
+    <updated>2020-05-16T22:48:05.287Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近遇到一个Java Web应用中的性能问题。在某个时段整个程序的响应时间过长。在分析了日志后没有任何头绪。于是祭出了Glowroot这个Java性能调优的大杀器，终于将问题找了出来。下面把这个强悍的工具向大家介绍一下。</p><p><img src="/images/technology/glowroot/glowroot.png" alt="Glowroot"></p><a id="more"></a><h2 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h2><p>首先在其<a href="https://glowroot.org/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载压缩包。如果对其源码感兴趣的话，这里是其<a href="https://github.com/glowroot/glowroot" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>。将压缩文件下载并解压缩后会在相应子目录(glowroot)中看到glowroot.jar这个文件。</p><p>由于我是对Tomcat容器中的程序进行性能调优，因此需要将Glowroot对应子目录的所有者改为运行Tomcat的用户，我这里是”tomcat”。这么做的主要原因是因为Glowroot在运行时需要创建logs, tmp等子目录并要在其中创建文件。</p><pre><code>sudo chown tomcat:tomcat glowroot</code></pre><p>接下来需要在启动Tomcat的时候添加JVM的参数。如果是通过apt方式安装的Tomcat，那么配置文件在：/etc/default/tomcat8，添加如下内容：</p><pre><code>-javaagent:/opt/york/digilib/glowroot/glowroot.jar</code></pre><p>至此，就可以进行测试了。重新启动Tomcat，访问本机的4000端口：</p><pre><code>http://localhost:4000</code></pre><p>就可以看到Glowroot的主界面了：</p><p><img src="/images/technology/glowroot/glowroot2.png" alt="Glowroot"></p><h2 id="主要性能指标"><a href="#主要性能指标" class="headerlink" title="主要性能指标"></a>主要性能指标</h2><p>首先，在Glowroot中可以很方便的查看响应时间的瓶颈，甚至能定位到具体的某个类。比如，在下图中可以看到spring controller占用了响应时间的83.9%，这肯定不正常。其实，我性能调优最后的结论就是spring controller出的问题。最终的解决方案也是基于这个发现的。</p><p><img src="/images/technology/glowroot/glowroot3.png" alt="Glowroot"></p><p>还可以查看各个线程的资源使用，同样，其分析结果直指spring中的doGet方法：</p><p><img src="/images/technology/glowroot/glowroot4.png" alt="Glowroot"></p><p>除此之外，还有对各种REST API调用的分析等。</p><h2 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h2><p>Glowroot有一个配置文件：admin.json。在刚安装的时候，你是找不到这个文件的。你可以选择自己手工创建它。但由于刚开始使用时不知道该如何进行配置，这里建议先不要管它，直接重新启动Tomcat，这样在Glowroot被首次启动后，就会在其目录下创建admin.json这个文件。这个时候你就可以在其基础上进行修改了，这样就会简单的多。</p><p>Glowroot的默认配置下，只能从本机访问，如果要从外部访问，可以更改这一段：</p><pre><code>&quot;bindAddress&quot;: &quot;0.0.0.0&quot;,</code></pre><p>如果要更改端口：</p><pre><code>&quot;port&quot;: 4000,</code></pre><p>默认设置下，匿名账户具有管理员权限，这肯定是要改的。以下会添加新用户’admin’，将匿名用户(anonymous)的角色改为’Anonymous’，并添加一个新的角色“Anonymous”：<br>   “users”: [<br>      {<br>        “username”: “admin”,<br>        “password”: “xxxxxxxx”,<br>        “roles”: [<br>          “Administrator”<br>        ]<br>      },<br>      {<br>        “username”: “anonymous”,<br>        “roles”: [<br>          “Anonymous”<br>        ]<br>      }<br>    ],</p><pre><code>{  &quot;name&quot;: &quot;Anonymous&quot;,  &quot;permissions&quot;: [    &quot;agent:transaction&quot;,    &quot;agent:error&quot;,    &quot;agent:jvm:gauges&quot;,    &quot;agent:jvm:threadDump&quot;,    &quot;agent:jvm:heapHistogram&quot;,    &quot;agent:jvm:mbeanTree&quot;,    &quot;agent:jvm:systemProperties&quot;,    &quot;agent:jvm:environment&quot;,    &quot;agent:config:view&quot;,    &quot;admin:view&quot;  ]}</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前也用过jvisualvm进行Java应用程序的性能调优，但感觉它特别吃内存，会严重影响服务器的性能。Glowroot似乎没有这个问题，添加这个模块后并没有感觉服务器的性能下降。同时，感觉Glowroot更加直观好用，能够迅速定位到出问题的类，以及相应的线程。从而帮助你快速找到问题的根源所在。</p>]]></content>
+    
+    <summary type="html">
+    
+      Java应用程序性能调优的神器 - Glowroot
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>试用AI加持的代码增强工具Kite</title>
@@ -404,28 +424,6 @@
     <summary type="html">
     
       使用AWS Amplify自动部署Hexo静态站点
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Bitbucket Pipelines自动部署Serverless项目到AWS Lambda</title>
-    <link href="https://www.aafeng.uk/bitbucket-pipelines-serverless/"/>
-    <id>https://www.aafeng.uk/bitbucket-pipelines-serverless/</id>
-    <published>2020-04-30T18:58:00.000Z</published>
-    <updated>2020-04-29T21:22:26.366Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近越来越多的在项目中用到AWS Lambda，也就是AWS无服务器架构中的核心编程单元。其最大的优势就是开发人员不用操心底层系统的架构和维护，只需要专注于核心代码。但AWS整个系统的部署要涉及的步骤非常繁琐，因此这里推荐使用serverless框架。就算使用这个框架，似乎还不够自动。因此下面介绍一下如何使用Bitbucket Pipelines将上面的所有环节都连接到一起，开发人员只关注Lambda代码的实现，一旦提交代码到Bitbucket，就会自动构建并部署到AWS。</p><p><img src="/images/technology/aws/bitbucket.png" alt="Bitbucket Pipelines"></p><a id="more"></a><p>首先，添加一个AWS用户，具有对Lambda和Cloudformation的访问权限。当然，如果你的Lambda需要访问其他AWS资源，比如S3，DynamoDB等等，需要添加额外的权限。记录下该用户的ACCESS_KEY_ID和SECRET_ACCESS_KEY，后面要用到。</p><p>接下来，使用serverless创建一个项目：</p><pre><code>serverless create --template aws-python3 --name data-api</code></pre><p>注意将region添加到serverless.yml中，否则系统默认的region可能不是你想要的。最终的serverless.yml文件内容：</p><pre><code>service: data-apiprovider:  name: aws  region: eu-west-1  runtime: python3.7functions:  hello:    handler: handler.hello    events:      - http:          path: hello          method: get</code></pre><p>处理逻辑集中在handler.py中：</p><pre><code>import jsondef hello(event, context):    body = {        &quot;message&quot;: &quot;Lambda + Bitbucket pipelines test&quot;    }    response = {        &quot;statusCode&quot;: 200,        &quot;body&quot;: json.dumps(body)    }    return response</code></pre><p>将整个项目提交并推送到Bitbucket中。</p><p>接下来需要在Bitbucket repository中激活Pipelines，</p><p><img src="https://images.hive.blog/DQmdyunTKDHUMTGZ3K3V1cJ5nFouKrYrTXiTQhVET64yeiY/image.png" alt="image.png"></p><p>添加Repository级别的环境变量AWS_DEFAULT_REGION, AWS_ACCESS_KEY_ID以及AWS_SECRET_ACCESS_KEY：</p><p><img src="https://images.hive.blog/DQmPtnM7gGVACUvynsiFERdoFSZa7pQQAQnRjgR4jymeeag/image.png" alt="image.png"></p><p>最后需要创建一个针对Bitbucket Pipeline的配置文件bitbucket-pipelines.yml。在Bitbucket中有很多现成的模板可以使用，这里输入serverless，就可以看到这个专门针对serverless框架的模板，可以选择这个并在此基础上进行修改：</p><p><img src="https://images.hive.blog/DQmZYSCBgygmcnKEMTdNUekWRyDzFBbmTNUSrMNo93qnbr9/image.png" alt="image.png"></p><p>最终的bitbucket-pipelines.yml文件内容：</p><pre><code>image: python:3.7.3pipelines:  default:    - step:        caches:          - pip        script:           - pipe: atlassian/serverless-deploy:0.1.4            variables:              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY</code></pre><p>至此，配置完成。 以后一旦代码提交到Bitbucket，Pipeline就会自动构建并部署到AWS，是不是很方便？</p><p>也可以在pipeline配置文件中定义不同的pipeline，比如针对production的pipeline:</p><pre><code>branches:  production:  - step:      caches:        - pip      script:        - pipe: atlassian/serverless-deploy:0.1.4          variables:            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY            EXTRA_ARGS: &apos;--stage prod&apos;</code></pre><p>这样就可以人工构建产品环境下的服务了。</p><p>关于pipelines的更多配置，请参考：<a href="https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html" rel="external nofollow noopener noreferrer" target="_blank">https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      使用Bitbucket Pipelines自动部署Serverless项目到AWS Lambda
     
     </summary>
     
