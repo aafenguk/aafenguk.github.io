@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-14T21:05:50.119Z</updated>
+  <updated>2020-05-16T21:55:22.923Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>试用AI加持的代码增强工具Kite</title>
+    <link href="https://www.aafeng.uk/kite/"/>
+    <id>https://www.aafeng.uk/kite/</id>
+    <published>2020-05-16T21:55:22.923Z</published>
+    <updated>2020-05-16T21:55:22.923Z</updated>
+    
+    <content type="html"><![CDATA[<p>平时写代码主要用IntelliJ和PyCharm，基本上还算满意。最近在一个很偶然的机会看到了Kite这个代码增强工具，试用了一下VS Code+Kite，感觉还是非常好用的，可以和IntelliJ IDEA这样的付费商业软件相媲美。</p><p><img src="/images/technology/kite/kite.png" alt="Kite"></p><a id="more"></a><p>它支持的代码编辑器非常全面，包括：VS Code, IntelliJ, PyCharm, Sublime, Atom, WebStorm, Vim等。</p><p><img src="/images/technology/kite/kite2.png" alt="Kite"></p><p>就连Python之父也对其赞不绝口：</p><p><img src="/images/technology/kite/kite3.png" alt="Kite"></p><p>安装过程非常简单，首先在<a href="https://kite.com/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载，然后运行安装程序。</p><p>安装中建议只选择你需要的插件以节省磁盘空间并提升速度：</p><p><img src="/images/technology/kite/kite4.png" alt="Kite"></p><p>对我而言，IntelliJ/PyCharm的代码补全功能已经够强大了，不需要Kite，但他们有些太臃肿。因此我只想把Kite安装到轻量级的编辑器VS Code中。</p><p><img src="/images/technology/kite/kite5.png" alt="Kite"></p><p>创建了一个Python源文件，试用一下：</p><p><img src="/images/technology/kite/kite6.png" alt="Kite"></p><p>感觉Kite的基于AI的代码补全非常好用，Kite会根据你的键盘输入自动显示相应的列表。和IntelliJ相比，毫不逊色。</p><p>还有一键调用文档的功能。</p><p><img src="/images/technology/kite/kite7.png" alt="Kite"></p><p>一旦激活后，只要把光标停留在对应的类/方法处，Kite窗口中就会显示对应的文档：</p><p><img src="/images/technology/kite/kite8.png" alt="Kite"></p><p>总而言之，Kite这个辅助编码工具还是很好用的，能够大幅度提高开发效率。有了它的陪伴，就可以更加愉快的编码了。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      试用AI加持的代码增强工具Kite
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>18年投的一个ICO项目2Key终于要上交易所了</title>
@@ -413,28 +433,6 @@
     
     
       <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英国疫情日记2020-04-28 - 没有他们的负重前行，又哪来的岁月静好？</title>
-    <link href="https://www.aafeng.uk/covid19-20200428/"/>
-    <id>https://www.aafeng.uk/covid19-20200428/</id>
-    <published>2020-04-28T20:38:00.000Z</published>
-    <updated>2020-04-29T07:41:02.129Z</updated>
-    
-    <content type="html"><![CDATA[<p>英国疫情这两天似乎有所缓解，近几天新冠病毒死亡人数有所下降，曾经进入重症监护室的首相Johnson重新回到唐宁街10号主持工作。尽管大多数议员还是通过网络方式参与，但英国议会已经重新开始工作。似乎一切都在往好的方向转变。</p><a id="more"></a><p>大家似乎在家中已经宅够了，都期待早日走出家门。甚至在一些公共场合已经有了拥挤的人群。路上的车辆也明确多了起来，在伦敦的部分区域竟然又开始堵车。很多人开始讨论何时复工和复学。但大病后复出的Johnson对复工/复学还是非常谨慎的。在经济损失和人身安全之间选择了后者。其实，不难想象，近几天的疫情有所缓解不正是两周前大家宅在家中的结果吗？如果现在放飞自我，疫情只会再次加重。</p><p>但无论如何，自己还是做好充足准备吧。除了早期高价购买的一些口罩，最近通过不同渠道又准备了一些口罩。最给力的是京东前一段免费为海外华人赠送的口罩。本来以为是按照报名人数随机抽取的，没有想到一下收到了120个口罩，感觉一下变身土豪了：</p><p><img src="/images/life/covid19/20200428-1.jpg" alt="英国疫情记录"></p><p>今天上午11点，全英国集体默哀一分钟，向在抗疫最前线牺牲的英雄们致敬。就连天公似乎也感受到这这种气氛，一改前两周的风和日丽，转为更为“英国”的阴雨天。向这些英雄们致敬，没有他们的负重前行，又怎么可能迎来岁月静好？</p>]]></content>
-    
-    <summary type="html">
-    
-      英国疫情日记2020-04-28 - 没有他们的负重前行，又哪来的岁月静好？
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
