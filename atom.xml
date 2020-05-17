@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-16T22:48:05.287Z</updated>
+  <updated>2020-05-17T10:05:27.932Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>真实 or 梦境？</title>
+    <link href="https://www.aafeng.uk/dream/"/>
+    <id>https://www.aafeng.uk/dream/</id>
+    <published>2020-05-17T10:05:27.932Z</published>
+    <updated>2020-05-17T10:05:27.932Z</updated>
+    
+    <content type="html"><![CDATA[<p>从新冠状病毒爆发开始，我就有一种奇怪的感觉，感觉自己似乎生活在梦境中，也劝说自己相信这是一个噩梦，很快就有梦醒的时刻。最近这两天一则噩耗让我更加希望自己是生活在一个梦境中。有一位关系最好的前同事不幸病故，更让我不敢相信，也不愿相信其真实性。以至于这两天我感觉有些精神恍惚，每天早晨醒来后都希望自己刚刚做过了一个噩梦，现在梦醒了，一切都过去了。我究竟是在梦中，还是醒着？那位同事是在我的梦中去世的？我很困惑。</p><p><img src="/images/life/dream.jpg" alt="dream"><br>图源：Pixabay</p><p>中国古代就有庄生梦蝶的故事，庄生也感觉非常困惑，是他梦到了蝴蝶，还是蝴蝶梦到了他。可见古人很早就开始思考我们处于一个真实世界的可能性。</p><p>马斯克曾经说过一句让世人震惊的话：“我们活在真实世界的概率只有十亿分之一”。对此，我还是比较赞同的，觉得我们生活在虚拟世界中是一个大概率事件。这可能是源于我的职业。作为一名IT工作者，我们可以创造很多程序，包括一些游戏。在这些游戏中，我们更像一个能够创造一切的“神”，我们可以定义角色，赋予其各种属性，比如：外貌，财富值，生命值等等。我们也可以在游戏世界中创造很多规则和事件，比如：游戏中的国家，社会，战争，甚至，某种叫做新冠的传染病。。。游戏中的玩家都有所追求，比如游戏中的财富，武力，等等，可能也想规避某些东西。。。</p><p>想象一下我们所处的世界，以及我们周边的一切。为什么一个没有生命的小小病毒，就能够重创整个世界？为什么在病毒体中的DNA能够在被感染的人体内疯狂复制自己。那这个如此精妙的DNA又是谁来创造的？为什么人类之间会有爱，亲情，嫉妒，愤怒等等复杂的感情？为什么这些感情会左右人们做出很多自己无法控制的事情？为什么人类的寿命是有限的？那么是谁设定的这个限制？为什么光速是速度的极限？难道超过了这个限制运行这个“程序/游戏”的服务器就会宕机？</p><p>有人在验证自己在梦中还是醒着的状态的时候经常会掐自己一把，如果能够感觉到疼痛，就不是在做梦。可是现在科技如此发达，虚拟现实(VR)完全可以让你感觉到痛感，愉悦感等等。</p><p>我无法解答这些问题，也无法证明/证伪我究竟是生活在一个真实世界，还是一个虚拟世界/梦境中。只是希望，无论真实还是梦境，珍惜身边的一切，体验真实/游戏中的每一刻。</p>]]></content>
+    
+    <summary type="html">
+    
+      真实 or 梦境？
+    
+    </summary>
+    
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java应用程序性能调优的神器 - Glowroot</title>
@@ -402,28 +422,6 @@
     <summary type="html">
     
       使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用AWS Amplify自动部署Hexo静态站点</title>
-    <link href="https://www.aafeng.uk/aws-amplify/"/>
-    <id>https://www.aafeng.uk/aws-amplify/</id>
-    <published>2020-05-01T04:48:00.000Z</published>
-    <updated>2020-05-01T09:18:23.926Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近尝试了一下Amazon AWS的Amplify，感觉非常好用。下面介绍一下如何使用Amplify自动将Hexo生成的静态站点发布到AWS。 其实使用AWS的优点还是有很多的。 比如： 前12个月免费，12月后对于访问量不是很高的个人站点而言，费用也非常低，每个月可能都不到1美元； 全球CDN网络支持，和众多AWS服务的无缝集成等等。下面把具体步骤总结一下：</p><p><img src="/images/technology/aws/amplify-1.png" alt="Amplify"></p><a id="more"></a><h2 id="安装并配置AWS-Amplify"><a href="#安装并配置AWS-Amplify" class="headerlink" title="安装并配置AWS Amplify"></a>安装并配置AWS Amplify</h2><p>首先运行如下命令安装Amplify：</p><pre><code>npm install -g @aws-amplify/cli</code></pre><p>如果还没有在~/.aws/credentials中创建profile，运行如下命令配置Amplify:</p><pre><code>amplify configure</code></pre><p>其运行结果就会在credentials中创建一个profile:</p><pre><code>[amplify]aws_access_key_id=XXXXXXXXXXXXXXXXXXXaws_secret_access_key=XXXXXXXXXXXXXXXXXXXXXX</code></pre><p>当然，如果想要使用现有的profile，可以忽略上面的这一步。</p><h2 id="生成Hexo静态站点"><a href="#生成Hexo静态站点" class="headerlink" title="生成Hexo静态站点"></a>生成Hexo静态站点</h2><p>下面以一个简单的静态站点为例。运行如下命令生成一个静态站点，并安装Node.js的依赖库：</p><pre><code>hexo init amplify-testcd amplify-testnpm install</code></pre><p>在本地测试一下Hexo是否能正常工作：</p><pre><code>hexo s</code></pre><p>访问 <a href="http://localhost:4000/" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:4000/</a> 应该能看到刚刚生成的站点。</p><h2 id="使用Amplify初始化-部署静态站点"><a href="#使用Amplify初始化-部署静态站点" class="headerlink" title="使用Amplify初始化/部署静态站点"></a>使用Amplify初始化/部署静态站点</h2><p>进入到站点目录并运行：</p><pre><code>amplify init</code></pre><p>会有一系列的问题需要回答，我的选择如下：</p><pre><code>amplify initNote: It is recommended to run this command from the root of your app directory? Enter a name for the project amplifytest? Enter a name for the environment prod? Choose your default editor: IntelliJ IDEA? Choose the type of app that you&apos;re building javascriptPlease tell us about your project? What javascript framework are you using none? Source Directory Path:  source? Distribution Directory Path: public? Build Command:  npm run-script build? Start Command: npm run-script startUsing default provider  awscloudformation? Do you want to use an AWS profile? Yes? Please choose the profile you want to use amplifyAdding backend environment prod to AWS Amplify Console app: XXXXXXXX</code></pre><p>运行结果会显示初始化成功的信息：</p><pre><code>✔ Successfully created initial AWS cloud resources for deployments.✔ Initialized provider successfully.</code></pre><p>添加额外站点信息：</p><pre><code>amplify hosting add</code></pre><p>这是我的选项：</p><pre><code>? Select the plugin module to execute Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)? Choose a type Manual deployment</code></pre><p>发布站点：</p><pre><code>amplify publish</code></pre><p>发布成功后会有提示：</p><pre><code>✔ Zipping artifacts completed.✔ Deployment complete!https://prod.XXXXXXXX.amplifyapp.com</code></pre><p>进入到AWS Amplify，可以看到已经成功部署：</p><p><img src="/images/technology/aws/amplify-2.png" alt="Amplify"></p><h2 id="连接到自己的域名"><a href="#连接到自己的域名" class="headerlink" title="连接到自己的域名"></a>连接到自己的域名</h2><p>在AWS Amplify的Domain management中，选择”Add domain”并进行配置：</p><p><img src="/images/technology/aws/amplify-3.png" alt="Amplify"></p><p>接下来Amplify会验证你对域名的所有权，按照提示在你的域名管理站点中添加相应的CNAME记录。</p><p><img src="/images/technology/aws/amplify-4.png" alt="Amplify"></p><p>然后在你的域名管理网站中添加对应的CNAME。需要等待一定时间DNS更改才能生效。</p>]]></content>
-    
-    <summary type="html">
-    
-      使用AWS Amplify自动部署Hexo静态站点
     
     </summary>
     
