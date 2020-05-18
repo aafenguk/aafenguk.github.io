@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-17T19:43:11.206Z</updated>
+  <updated>2020-05-18T21:46:11.205Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作网红巴斯克芝士蛋糕</title>
+    <link href="https://www.aafeng.uk/cheese-cake/"/>
+    <id>https://www.aafeng.uk/cheese-cake/</id>
+    <published>2020-05-18T21:46:11.205Z</published>
+    <updated>2020-05-18T21:46:11.205Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近孩子们看上了丑萌的巴斯克芝士蛋糕，于是在妈妈的带领下进行尝试，成功的做出了这款网红蛋糕。而我的角色是摄影师，全程记录了整个制作过程。整体感觉这款蛋糕真的很丑，但做法超级简单，失败率极低，而且真心好吃！</p><p><img src="/images/food/cheesecake/1.jpg" alt="巴斯克芝士蛋糕"></p><p>这款蛋糕的名字巴斯克源于其发源地西班牙巴斯克地区。其实这款蛋糕在几十年前就被发明了出来，但在2019年才成为了网红，据说其最大的卖点就是看起来像是烤糊了。。。</p><p>这款蛋糕的主要原料就是软芝士，我们用的是两盒180克的Philadelphia奶酪。再配以糖，鸡蛋，面粉，奶油和黄油。注意这个奶酪千万不要买错了喔，曾经听过一个悲催的故事，有人用Cheddar Cheese试图做芝士蛋糕，其结果就可想而知了。。。</p><p><img src="/images/food/cheesecake/2.jpg" alt="巴斯克芝士蛋糕"></p><p>Philadelphia奶酪需要在室温下放置一段时间以便于搅拌。随后和其他原料一起搅拌，需要注意搅拌器的速度应调至最低，待拌匀无颗粒后倒入蛋糕模具中。</p><p>可以在模具四壁涂上些黄油，这样就比较容易把烘培纸放好，也便于在制作完毕后脱模。</p><p>所有准备工作都做好后，把模具放入预热到200度的模具中烤30分钟就可以了。乍一看，似乎真的是烤过了。。。</p><p><img src="/images/food/cheesecake/3.jpg" alt="巴斯克芝士蛋糕"></p><p>在蛋糕冷却后最好放入冰箱冷藏几个小时后再食用，效果更好！看看最后装盘的效果，Yummy！</p><p><img src="/images/food/cheesecake/4.jpg" alt="巴斯克芝士蛋糕"></p>]]></content>
+    
+    <summary type="html">
+    
+      制作网红巴斯克芝士蛋糕
+    
+    </summary>
+    
+      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java应用程序性能调优的神器 - Glowroot</title>
@@ -407,28 +427,6 @@
     
     
       <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知</title>
-    <link href="https://www.aafeng.uk/cloudwatch-sns/"/>
-    <id>https://www.aafeng.uk/cloudwatch-sns/</id>
-    <published>2020-05-01T10:48:00.000Z</published>
-    <updated>2020-05-01T16:30:09.677Z</updated>
-    
-    <content type="html"><![CDATA[<p>在运行Amazon AWS的众多服务时，一旦某个服务出现了故障，我们肯定想要第一时间得到通知。 或者当某项服务的资源使用超过某个阀值时，我们可能想要赋予其更多资源。 要实现类似的功能，我们可以使用SNS（Simple Notification Servivce)和SQS(Simple Queue Service)。下面通过一个简单的例子来说明如何使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知。</p><a id="more"></a><h2 id="创建SNS-Topic及其订阅"><a href="#创建SNS-Topic及其订阅" class="headerlink" title="创建SNS Topic及其订阅"></a>创建SNS Topic及其订阅</h2><p>在任何消息系统中，最常见的方式就是设定一个主题(Topic)，然后添加一些订阅者(Subscription)。这样一旦有任何新的消息发送到Topic，所有的订阅者都会收到消息推送。下面说说如何在SNS中设置Topic和Subscription。</p><p>首先再AWS SNS中创建一个Topic</p><p><img src="/images/technology/aws/sns-1.png" alt="SNS"></p><p>接下来我们分别创建两个订阅：Email和短信。先来看看Email方式的订阅：</p><p><img src="/images/technology/aws/sns-2.png" alt="SNS"></p><p>创建结束后，需要打开自己的邮箱进行确认。</p><p><img src="/images/technology/aws/sns-3.png" alt="SNS"></p><p>接下来创建一个通过短信方式的订阅。</p><p>我们可以看到，除Email和短信外，订阅消息的方式还有很多种。这样当消息抵达队列中时，可以调用一个HTTP/HTTPS的地址，可以触发一个Lambda，可以转发到Amazon的消息队列中。</p><p><img src="/images/technology/aws/sns-4.png" alt="SNS"></p><h2 id="创建一个当Lambda发生错误时触发的消息"><a href="#创建一个当Lambda发生错误时触发的消息" class="headerlink" title="创建一个当Lambda发生错误时触发的消息"></a>创建一个当Lambda发生错误时触发的消息</h2><p>在CloudWatch中创建一个Alarm：</p><p><img src="/images/technology/aws/alarm-1.png" alt="CloudWatch"></p><p>这时候需要选择一个Metric，这里选择“Lamba - errors”这个Metric。</p><p>同时还要设定一些触发条件，比如当错误数超过某个阀值时会触发，或者当Lambda被调用的次数超过某个阀值时会触发。</p><p><img src="/images/technology/aws/alarm-2.png" alt="CloudWatch"></p><p>接下里需要配置，当Alarm被触发时需要做的动作：</p><p><img src="/images/technology/aws/alarm-3.png" alt="CloudWatch"></p><p>对于某些资源，还可以触发”Autoscaling“，这样在资源不足的情况下就可以非常快速的升级配置，实现更快的响应率。可以说这里的这些Action非常灵活，可以符合众多应用需求。</p><p>由于我设定的是当Lambda被调用次数超过0次时会触发Alaram，因此在调用一次Lambda后很快就收到了消息提示。</p><p><img src="/images/technology/aws/alarm-4.png" alt="CloudWatch"></p>]]></content>
-    
-    <summary type="html">
-    
-      使用AWS CloudWatch监测Lambda运行，并通过SNS发送通知
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
