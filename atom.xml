@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-17T10:21:10.512Z</updated>
+  <updated>2020-05-17T19:43:11.206Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java应用程序性能调优的神器 - Glowroot</title>
+    <link href="https://www.aafeng.uk/glowroot/"/>
+    <id>https://www.aafeng.uk/glowroot/</id>
+    <published>2020-05-17T19:43:11.206Z</published>
+    <updated>2020-05-17T19:43:11.206Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近遇到一个Java Web应用中的性能问题。在某个时段整个程序的响应时间过长。在分析了日志后没有任何头绪。于是祭出了Glowroot这个Java性能调优的大杀器，终于将问题找了出来。下面把这个强悍的工具向大家介绍一下。</p><p><img src="/images/technology/glowroot/glowroot.png" alt="Glowroot"></p><a id="more"></a><h2 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h2><p>首先在其<a href="https://glowroot.org/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载压缩包。如果对其源码感兴趣的话，这里是其<a href="https://github.com/glowroot/glowroot" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>。将压缩文件下载并解压缩后会在相应子目录(glowroot)中看到glowroot.jar这个文件。</p><p>由于我是对Tomcat容器中的程序进行性能调优，因此需要将Glowroot对应子目录的所有者改为运行Tomcat的用户，我这里是”tomcat”。这么做的主要原因是因为Glowroot在运行时需要创建logs, tmp等子目录并要在其中创建文件。</p><pre><code>sudo chown tomcat:tomcat glowroot</code></pre><p>接下来需要在启动Tomcat的时候添加JVM的参数。如果是通过apt方式安装的Tomcat，那么配置文件在：/etc/default/tomcat8，添加如下内容：</p><pre><code>-javaagent:/opt/york/digilib/glowroot/glowroot.jar</code></pre><p>至此，就可以进行测试了。重新启动Tomcat，访问本机的4000端口：</p><pre><code>http://localhost:4000</code></pre><p>就可以看到Glowroot的主界面了：</p><p><img src="/images/technology/glowroot/glowroot2.png" alt="Glowroot"></p><h2 id="主要性能指标"><a href="#主要性能指标" class="headerlink" title="主要性能指标"></a>主要性能指标</h2><p>首先，在Glowroot中可以很方便的查看响应时间的瓶颈，甚至能定位到具体的某个类。比如，在下图中可以看到spring controller占用了响应时间的83.9%，这肯定不正常。其实，我性能调优最后的结论就是spring controller出的问题。最终的解决方案也是基于这个发现的。</p><p><img src="/images/technology/glowroot/glowroot3.png" alt="Glowroot"></p><p>还可以查看各个线程的资源使用，同样，其分析结果直指spring中的doGet方法：</p><p><img src="/images/technology/glowroot/glowroot4.png" alt="Glowroot"></p><p>除此之外，还有对各种REST API调用的分析等。</p><h2 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h2><p>Glowroot有一个配置文件：admin.json。在刚安装的时候，你是找不到这个文件的。你可以选择自己手工创建它。但由于刚开始使用时不知道该如何进行配置，这里建议先不要管它，直接重新启动Tomcat，这样在Glowroot被首次启动后，就会在其目录下创建admin.json这个文件。这个时候你就可以在其基础上进行修改了，这样就会简单的多。</p><p>Glowroot的默认配置下，只能从本机访问，如果要从外部访问，可以更改这一段：</p><pre><code>&quot;bindAddress&quot;: &quot;0.0.0.0&quot;,</code></pre><p>如果要更改端口：</p><pre><code>&quot;port&quot;: 4000,</code></pre><p>默认设置下，匿名账户具有管理员权限，这肯定是要改的。以下会添加新用户’admin’，将匿名用户(anonymous)的角色改为’Anonymous’，并添加一个新的角色“Anonymous”：</p><p>   “users”: [<br>      {<br>        “username”: “admin”,<br>        “password”: “xxxxxxxx”,<br>        “roles”: [<br>          “Administrator”<br>        ]<br>      },<br>      {<br>        “username”: “anonymous”,<br>        “roles”: [<br>          “Anonymous”<br>        ]<br>      }<br>    ],<br>    {<br>      “name”: “Anonymous”,<br>      “permissions”: [<br>        “agent:transaction”,<br>        “agent:error”,<br>        “agent:jvm:gauges”,<br>        “agent:jvm:threadDump”,<br>        “agent:jvm:heapHistogram”,<br>        “agent:jvm:mbeanTree”,<br>        “agent:jvm:systemProperties”,<br>        “agent:jvm:environment”,<br>        “agent:config:view”,<br>        “admin:view”<br>      ]<br>    }</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前也用过jvisualvm进行Java应用程序的性能调优，但感觉它特别吃内存，会严重影响服务器的性能。Glowroot似乎没有这个问题，添加这个模块后并没有感觉服务器的性能下降。同时，感觉Glowroot更加直观好用，能够迅速定位到出问题的类，以及相应的线程。从而帮助你快速找到问题的根源所在。</p>]]></content>
+    
+    <summary type="html">
+    
+      Java应用程序性能调优的神器 - Glowroot
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>细思极恐 - 其实我们都是斯金纳箱中的鸽子</title>
+    <link href="https://www.aafeng.uk/skinner-box/"/>
+    <id>https://www.aafeng.uk/skinner-box/</id>
+    <published>2020-05-17T10:36:48.172Z</published>
+    <updated>2020-05-17T10:36:48.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知道你有没有这样的经历，有时候手机不在旁边感觉似乎缺了点什么。而下意识的拿起手机似乎又不知道为什么要把它拿起来，也不知道要拿它做什么。最近看到一个观点似乎能够完美的解释这种行为。说白了，我们掉到了那些专业的产品设计师所设计好的坑里了。我们平常的很多行为，比如：对手机的使用，对某款游戏的上瘾，其实都是处于别人的掌控之中。我们更像是行为心理学中的经典实验，斯金纳箱中的鸽子。</p><p><img src="/images/life/pigeon.jpg" alt="斯金纳箱中的鸽子"></p><a id="more"></a><p>斯金纳是行为心理学的大师，他把巴甫洛夫和桑代克关于条件反射的理论更上一层楼，提出了一个新的观点：操作性条件反射。说白了，就是动物（包括人）的很多条件反射是完全可以操作的。比如：人的恐怖情绪是可以被操控的。他曾经做过一个著名的鸽子实验。在实验中，他把鸽子关在笼子中，每过15秒就用喂食器自动给鸽子喂食，这样过了一段时间后，他发现了一个奇怪的现象：笼中的鸽子在被喂食前做着各种这样的奇怪动作，有的鸽子左右摇头，有的鸽子走来走去，有的鸽子翩翩起舞，似乎鸽子们通过这种方式来祈求食物的到来。即使后来他彻底停止了对鸽子的喂食，但鸽子仍然在做着各种动作，仍然希望食物的来临。</p><p>斯金纳还曾经做过一个很不人道（后来被禁止）的实验，证明了可以控制人的恐惧感。在实验中他们把各种毛绒玩具放在一个小婴儿面前，婴儿对这些玩具展示出强烈的兴趣。实验者带着圣诞老人的面具来到婴儿面前，婴儿也非常喜欢。之后他们做了一件事，就是在婴儿和玩具接触的时候，制造出一种让人不适的噪音来，婴儿听到噪音后吓得大哭。之后只要婴儿一接触这些玩具，他们就制造出噪音。久而久之，婴儿就把这些玩具和噪音联系到了一起。之后只要看到毛绒玩具就很恐惧。</p><p>其实在我们的生活中，有很多这样的例子。很多产品的设计师也在把这种观点应用到了各种产品中。比如：我家孩子经常使用一个APP，叫做Receipt Hog，每次购物后我会把小票给他们，他们用这个APP把小票扫描进去，并做一个简单的问卷，就会得到一定的积分，达到一定分值后可以兑换现金，同时还会随机的给他们抽奖的机会。迄今为止他们已经领到10英镑了。但现在我所看到的是，孩子们对待小票的行为已经完全被这个APP所控制。每次购物回来后，他们肯定不会忘记和我要小票。</p><p>还有一个有趣的例子就是我经常去一家超市购物，感觉这家超市在深入的研究客户的行为。如果我有一段时间不去他家购物，他家就会给我寄送优惠券来，比如：满40英镑返8镑。如果我使用了这些优惠券，他们会停止给我寄，再过一段时间会尝试给我寄力度稍微小一些的优惠券，如果我没有用那些优惠券，他们就会再寄来我曾经用过的优惠券，于是我又乖乖的去他家消费了。感觉我的购物行为完全被他家的优惠券牵着鼻子走。。。</p><p>我想类似的例子数不胜数。等到人工智能得到进一步发展后，人类是否终将被某些AI所完全控制，甚至人类思维将会和AI彻底融合？</p>]]></content>
+    
+    <summary type="html">
+    
+      细思极恐 - 其实我们都是斯金纳箱中的鸽子
+    
+    </summary>
+    
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>你是刺猬思维还是狐狸思维？</title>
+    <link href="https://www.aafeng.uk/fox-hedgehog/"/>
+    <id>https://www.aafeng.uk/fox-hedgehog/</id>
+    <published>2020-05-17T10:35:52.928Z</published>
+    <updated>2020-05-17T10:35:52.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近看到了一篇文章，对自己的触动很大。文章说的是狐狸思维和刺猬思维在币圈投资中的体现。但其中所讲的道理，适用于生活中的方方面面。</p><p><img src="/images/life/fox.jpg" alt="狐狸思维"></p><a id="more"></a><p>图源：Pixabay</p><p>狐狸和刺猬的故事源于古希腊寓言故事，狐狸想要吃掉刺猬，想尽各种方法进攻，希望能够找到刺猬的弱点。而刺猬只有一招，就是把全身缩成一团，用全身的刺来保护自己。最终狐狸机关算尽还是败在了刺猬的手中。其实这个故事讲的是一个道理：狐狸懂的很多，思维多元化，办法也很多；<strong>刺猬却能够懂的最重要的事</strong>，思维是集中和单一的，但可以做到一招先，吃遍天。</p><p>说白了，刺猬思维是典型的一根筋，认准了一件事情，就不再改变，朝着一个目标努力，直到把事情做完为止。而狐狸思维说的则是很会变通的人，他们脑瓜活络，能够有很多的好点子，但其中的有些人却没有明确的目标，甚至不知道自己想要什么。</p><p>在币圈中估计大家身边都有很多典型的“狐狸”和“刺猬”，我也听说过很多类似的故事。在币圈，有些人认准大饼，买入后长期持有，结果跑赢了绝大多数频繁进行交易的人。金庸迷们熟悉的角色郭靖也是典型的一根筋思维，不懂变通，但却能学会降龙十八掌，傲视群雄。</p><p>其实，我觉得任何事情都不是绝对的。可以在“狐狸”式思维和“刺猬”式思维中有机的切换和变通。在进行思考的时候选择“狐狸”式思维，而在做事的时候则要“刺猬”式思维。</p><p>你是狐狸还是刺猬呢？</p>]]></content>
+    
+    <summary type="html">
+    
+      你是刺猬思维还是狐狸思维？
+    
+    </summary>
+    
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>真实 or 梦境？</title>
@@ -32,26 +92,6 @@
     </summary>
     
       <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java应用程序性能调优的神器 - Glowroot</title>
-    <link href="https://www.aafeng.uk/glowroot/"/>
-    <id>https://www.aafeng.uk/glowroot/</id>
-    <published>2020-05-16T22:48:05.287Z</published>
-    <updated>2020-05-16T22:48:05.287Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近遇到一个Java Web应用中的性能问题。在某个时段整个程序的响应时间过长。在分析了日志后没有任何头绪。于是祭出了Glowroot这个Java性能调优的大杀器，终于将问题找了出来。下面把这个强悍的工具向大家介绍一下。</p><p><img src="/images/technology/glowroot/glowroot.png" alt="Glowroot"></p><a id="more"></a><h2 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h2><p>首先在其<a href="https://glowroot.org/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载压缩包。如果对其源码感兴趣的话，这里是其<a href="https://github.com/glowroot/glowroot" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>。将压缩文件下载并解压缩后会在相应子目录(glowroot)中看到glowroot.jar这个文件。</p><p>由于我是对Tomcat容器中的程序进行性能调优，因此需要将Glowroot对应子目录的所有者改为运行Tomcat的用户，我这里是”tomcat”。这么做的主要原因是因为Glowroot在运行时需要创建logs, tmp等子目录并要在其中创建文件。</p><pre><code>sudo chown tomcat:tomcat glowroot</code></pre><p>接下来需要在启动Tomcat的时候添加JVM的参数。如果是通过apt方式安装的Tomcat，那么配置文件在：/etc/default/tomcat8，添加如下内容：</p><pre><code>-javaagent:/opt/york/digilib/glowroot/glowroot.jar</code></pre><p>至此，就可以进行测试了。重新启动Tomcat，访问本机的4000端口：</p><pre><code>http://localhost:4000</code></pre><p>就可以看到Glowroot的主界面了：</p><p><img src="/images/technology/glowroot/glowroot2.png" alt="Glowroot"></p><h2 id="主要性能指标"><a href="#主要性能指标" class="headerlink" title="主要性能指标"></a>主要性能指标</h2><p>首先，在Glowroot中可以很方便的查看响应时间的瓶颈，甚至能定位到具体的某个类。比如，在下图中可以看到spring controller占用了响应时间的83.9%，这肯定不正常。其实，我性能调优最后的结论就是spring controller出的问题。最终的解决方案也是基于这个发现的。</p><p><img src="/images/technology/glowroot/glowroot3.png" alt="Glowroot"></p><p>还可以查看各个线程的资源使用，同样，其分析结果直指spring中的doGet方法：</p><p><img src="/images/technology/glowroot/glowroot4.png" alt="Glowroot"></p><p>除此之外，还有对各种REST API调用的分析等。</p><h2 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h2><p>Glowroot有一个配置文件：admin.json。在刚安装的时候，你是找不到这个文件的。你可以选择自己手工创建它。但由于刚开始使用时不知道该如何进行配置，这里建议先不要管它，直接重新启动Tomcat，这样在Glowroot被首次启动后，就会在其目录下创建admin.json这个文件。这个时候你就可以在其基础上进行修改了，这样就会简单的多。</p><p>Glowroot的默认配置下，只能从本机访问，如果要从外部访问，可以更改这一段：</p><pre><code>&quot;bindAddress&quot;: &quot;0.0.0.0&quot;,</code></pre><p>如果要更改端口：</p><pre><code>&quot;port&quot;: 4000,</code></pre><p>默认设置下，匿名账户具有管理员权限，这肯定是要改的。以下会添加新用户’admin’，将匿名用户(anonymous)的角色改为’Anonymous’，并添加一个新的角色“Anonymous”：<br>   “users”: [<br>      {<br>        “username”: “admin”,<br>        “password”: “xxxxxxxx”,<br>        “roles”: [<br>          “Administrator”<br>        ]<br>      },<br>      {<br>        “username”: “anonymous”,<br>        “roles”: [<br>          “Anonymous”<br>        ]<br>      }<br>    ],</p><pre><code>{  &quot;name&quot;: &quot;Anonymous&quot;,  &quot;permissions&quot;: [    &quot;agent:transaction&quot;,    &quot;agent:error&quot;,    &quot;agent:jvm:gauges&quot;,    &quot;agent:jvm:threadDump&quot;,    &quot;agent:jvm:heapHistogram&quot;,    &quot;agent:jvm:mbeanTree&quot;,    &quot;agent:jvm:systemProperties&quot;,    &quot;agent:jvm:environment&quot;,    &quot;agent:config:view&quot;,    &quot;admin:view&quot;  ]}</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前也用过jvisualvm进行Java应用程序的性能调优，但感觉它特别吃内存，会严重影响服务器的性能。Glowroot似乎没有这个问题，添加这个模块后并没有感觉服务器的性能下降。同时，感觉Glowroot更加直观好用，能够迅速定位到出问题的类，以及相应的线程。从而帮助你快速找到问题的根源所在。</p>]]></content>
-    
-    <summary type="html">
-    
-      Java应用程序性能调优的神器 - Glowroot
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
@@ -132,26 +172,6 @@
     </summary>
     
       <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你是刺猬思维还是狐狸思维？</title>
-    <link href="https://www.aafeng.uk/fox-hedgehog/"/>
-    <id>https://www.aafeng.uk/fox-hedgehog/</id>
-    <published>2020-05-11T20:07:27.871Z</published>
-    <updated>2020-05-11T20:07:27.871Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近看到了一篇文章，对自己的触动很大。文章说的是狐狸思维和刺猬思维在币圈投资中的体现。但其中所讲的道理，适用于生活中的方方面面。</p><p><img src="/images/life/fox.jpg" alt="狐狸思维"></p><a id="more"></a><p>图源：Pixabay</p><p>狐狸和刺猬的故事源于古希腊寓言故事，狐狸想要吃掉刺猬，想尽各种方法进攻，希望能够找到刺猬的弱点。而刺猬只有一招，就是把全身缩成一团，用全身的刺来保护自己。最终狐狸机关算尽还是败在了刺猬的手中。其实这个故事讲的是一个道理：狐狸懂的很多，思维多元化，办法也很多；<strong>刺猬却能够懂的最重要的事</strong>，思维是集中和单一的，但可以做到一招先，吃遍天。</p><p>说白了，刺猬思维是典型的一根筋，认准了一件事情，就不再改变，朝着一个目标努力，直到把事情做完为止。而狐狸思维说的则是很会变通的人，他们脑瓜活络，能够有很多的好点子，但其中的有些人却没有明确的目标，甚至不知道自己想要什么。</p><p>在币圈中估计大家身边都有很多典型的“狐狸”和“刺猬”，我也听说过很多类似的故事。在币圈，有些人认准大饼，买入后长期持有，结果跑赢了绝大多数频繁进行交易的人。金庸迷们熟悉的角色郭靖也是典型的一根筋思维，不懂变通，但却能学会降龙十八掌，傲视群雄。</p><p>其实，我觉得任何事情都不是绝对的。可以在“狐狸”式思维和“刺猬”式思维中有机的切换和变通。在进行思考的时候选择“狐狸”式思维，而在做事的时候则要“刺猬”式思维。</p><p>你是狐狸还是刺猬呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      你是刺猬思维还是狐狸思维？
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
@@ -303,26 +323,6 @@
   </entry>
   
   <entry>
-    <title>细思极恐 - 其实我们都是斯金纳箱中的鸽子</title>
-    <link href="https://www.aafeng.uk/skinner-box/"/>
-    <id>https://www.aafeng.uk/skinner-box/</id>
-    <published>2020-05-04T21:54:44.993Z</published>
-    <updated>2020-05-04T21:54:44.993Z</updated>
-    
-    <content type="html"><![CDATA[<p>不知道你有没有这样的经历，有时候手机不在旁边感觉似乎缺了点什么。而下意识的拿起手机似乎又不知道为什么要把它拿起来，也不知道要拿它做什么。最近看到一个观点似乎能够完美的解释这种行为。说白了，我们掉到了那些专业的产品设计师所设计好的坑里了。我们平常的很多行为，比如：对手机的使用，对某款游戏的上瘾，其实都是处于别人的掌控之中。我们更像是行为心理学中的经典实验，斯金纳箱中的鸽子。</p><p><img src="/images/life/pigeon.jpg" alt="斯金纳箱中的鸽子"></p><a id="more"></a><p>斯金纳是行为心理学的大师，他把巴甫洛夫和桑代克关于条件反射的理论更上一层楼，提出了一个新的观点：操作性条件反射。说白了，就是动物（包括人）的很多条件反射是完全可以操作的。比如：人的恐怖情绪是可以被操控的。他曾经做过一个著名的鸽子实验。在实验中，他把鸽子关在笼子中，每过15秒就用喂食器自动给鸽子喂食，这样过了一段时间后，他发现了一个奇怪的现象：笼中的鸽子在被喂食前做着各种这样的奇怪动作，有的鸽子左右摇头，有的鸽子走来走去，有的鸽子翩翩起舞，似乎鸽子们通过这种方式来祈求食物的到来。即使后来他彻底停止了对鸽子的喂食，但鸽子仍然在做着各种动作，仍然希望食物的来临。</p><p>斯金纳还曾经做过一个很不人道（后来被禁止）的实验，证明了可以控制人的恐惧感。在实验中他们把各种毛绒玩具放在一个小婴儿面前，婴儿对这些玩具展示出强烈的兴趣。实验者带着圣诞老人的面具来到婴儿面前，婴儿也非常喜欢。之后他们做了一件事，就是在婴儿和玩具接触的时候，制造出一种让人不适的噪音来，婴儿听到噪音后吓得大哭。之后只要婴儿一接触这些玩具，他们就制造出噪音。久而久之，婴儿就把这些玩具和噪音联系到了一起。之后只要看到毛绒玩具就很恐惧。</p><p>其实在我们的生活中，有很多这样的例子。很多产品的设计师也在把这种观点应用到了各种产品中。比如：我家孩子经常使用一个APP，叫做Receipt Hog，每次购物后我会把小票给他们，他们用这个APP把小票扫描进去，并做一个简单的问卷，就会得到一定的积分，达到一定分值后可以兑换现金，同时还会随机的给他们抽奖的机会。迄今为止他们已经领到10英镑了。但现在我所看到的是，孩子们对待小票的行为已经完全被这个APP所控制。每次购物回来后，他们肯定不会忘记和我要小票。</p><p>还有一个有趣的例子就是我经常去一家超市购物，感觉这家超市在深入的研究客户的行为。如果我有一段时间不去他家购物，他家就会给我寄送优惠券来，比如：满40英镑返8镑。如果我使用了这些优惠券，他们会停止给我寄，再过一段时间会尝试给我寄力度稍微小一些的优惠券，如果我没有用那些优惠券，他们就会再寄来我曾经用过的优惠券，于是我又乖乖的去他家消费了。感觉我的购物行为完全被他家的优惠券牵着鼻子走。。。</p><p>我想类似的例子数不胜数。等到人工智能得到进一步发展后，人类是否终将被某些AI所完全控制，甚至人类思维将会和AI彻底融合？</p>]]></content>
-    
-    <summary type="html">
-    
-      细思极恐 - 其实我们都是斯金纳箱中的鸽子
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>使用AWS Lambda中的层(Layer)解决依赖库的问题</title>
     <link href="https://www.aafeng.uk/lambda-layer/"/>
     <id>https://www.aafeng.uk/lambda-layer/</id>
@@ -349,7 +349,7 @@
     <link href="https://www.aafeng.uk/fantastic-mr-fox/"/>
     <id>https://www.aafeng.uk/fantastic-mr-fox/</id>
     <published>2020-05-02T20:48:00.000Z</published>
-    <updated>2020-05-02T22:27:06.876Z</updated>
+    <updated>2020-05-17T10:37:20.995Z</updated>
     
     <content type="html"><![CDATA[<p>疫情期间所有的活动都取消了。不过也有好处，就是一家人在一起的时间多了很多。没有了和朋友们的聚会，孩子们的各种Party，宅在家中总要组织些活动吧。每周末一家人一起看一场电影就成了我们宅家期间的一个习惯。</p><a id="more"></a><p>我们选择的影片一般都是在豆瓣上影评分数比较高的，适合全家看的电影。或者是因为孩子们读过对应的图书，非常喜欢书中的故事。今晚选择的就是2009年由福克斯出品的《Fantastic Mr Fox》。这部电影在Youtube上需要付费才能看到。还好我们付年费订了Amazon Prime会员。其会员包括了很多免费的正版电影。</p><p>故事情节还是有一些刺激的。影片开头就是狐狸先生和狐狸太太在农场偷鸡时的场景。狐狸先生得知狐狸太太怀孕，于是承诺两人逃脱后不再偷东西。但两年后狐狸先生购买了三个农场主附近的树屋，同时由于内心中不甘于平凡生活的冲动，背着狐狸太太再次去农场行窃，从而引发了农场主们对狐狸一家的围剿。。。</p><p>尽管狐狸先生一直在干着偷鸡摸狗的勾当，但作为一只狐狸，这才是它应该做的事情吧。因此，我从这部影片中还是能看到其《不忘初心》的正能量的。狐狸先生人到中年，有了众多的责任和羁绊，压抑了内心中的真我，它不断寻找自我的过程正是其吸引人之处。影片最后当狐狸先生看到了狼眼中的野性时，泪水禁不住流了下来，是那种为成年人生活中的无可奈何而流下的泪水。而狐狸先生和狼的道别，何尝不是和自己的梦想在道别？</p>]]></content>
     
@@ -359,7 +359,7 @@
     
     </summary>
     
-      <category term="娱乐" scheme="https://www.aafeng.uk/categories/%E5%A8%B1%E4%B9%90/"/>
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
     
     
       <category term="电影" scheme="https://www.aafeng.uk/tags/%E7%94%B5%E5%BD%B1/"/>
