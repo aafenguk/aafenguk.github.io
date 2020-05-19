@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-19T20:24:45.899Z</updated>
+  <updated>2020-05-19T21:31:49.056Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如果财务自由了，我会做什么？</title>
+    <link href="https://www.aafeng.uk/financial-freedom/"/>
+    <id>https://www.aafeng.uk/financial-freedom/</id>
+    <published>2020-05-19T21:31:49.056Z</published>
+    <updated>2020-05-19T21:31:49.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看到matters上很多人在讨论一个话题，如果财务自由了，我会。。。让我也不禁开始做了一个白日梦，如果我财务自由了，会做些什么呢？</p><p><img src="/images/life/jump.jpg" alt="财务自由"></p><a id="more"></a><p>我首先想到的就是要多陪陪家人。自从在国外定居后，由于年假有限，每年只有几周的时间回国。而每次回去，难免会有很多聚会和应酬，真正能留给家人的时间并不多。因此，如果没有工作的牵绊，希望能多陪陪家人。</p><p>世界那么大，我没去过的地方还很多。所谓读万卷书，行万里路。我很喜欢“在路上”的感觉。因此第二个想到的就是旅游。如果真的既有时间又不用担心费用，我会花费更多的时间在旅游上。</p><p>要想照顾家人，想去游遍世界，都需要一个好的身体，因此我会花更多的时间在健身上。平时早上送孩子上学后我去上班，看到有些家长一身运动装，肯定是送完孩子去健身的。当时就很羡慕。如果我不用去上班了，肯定也会和他们一样，多花些时间在健身上。乒乓球，游泳，瑜伽，自行车，想坚持的运动似乎还不少。。。</p><p>有一件事可能很多人不太理解。如果不用工作了，我还想写程序。只不过现在是为了工作而写。到时候是为了自己的兴趣而写。其实我觉得写代码还是很有成就感的。看着一行行代码按照自己设定的方式准确无误的运行，还是很满足的。</p><p>好了，白日梦先做到这里，其实，如果后面的那个条件对于很多人是很难实现的。无论是否能够实现财务自由，该做的还是要做的。比如：还是要尽量多抽取时间，避免不必要的应酬，多和家人在一起。每年去至少2，3个没有去过的地方，感受一下不一样的世界。体育锻炼也不能省，越是工作忙，越应该坚持。</p>]]></content>
+    
+    <summary type="html">
+    
+      如果财务自由了，我会做什么？
+    
+    </summary>
+    
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python学习笔记</title>
@@ -405,28 +425,6 @@
     
     
       <category term="电影" scheme="https://www.aafeng.uk/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何使用Bigdipper查看Likecoin区块链中的交易</title>
-    <link href="https://www.aafeng.uk/likecoin-bigdipper/"/>
-    <id>https://www.aafeng.uk/likecoin-bigdipper/</id>
-    <published>2020-05-02T18:48:00.000Z</published>
-    <updated>2020-05-02T20:09:29.748Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Likecoin区块链中，绝大多数用户接触的是其前端，比如：Matters，Steem.buzz等。但前端发生的行为，比如赞赏，都是由底层区块链来支撑的。下面介绍一下<a href="https://likecoin.bigdipper.live/" rel="external nofollow noopener noreferrer" target="_blank">Bigdipper/北斗</a>这个网站，在其中可以查看各种Likecoin的交易信息。</p><a id="more"></a><h2 id="什么是Likecoin-bigdipper"><a href="#什么是Likecoin-bigdipper" class="headerlink" title="什么是Likecoin bigdipper"></a>什么是Likecoin bigdipper</h2><p><a href="https://likecoin.bigdipper.live/" rel="external nofollow noopener noreferrer" target="_blank">Likecoin bigdipper/北斗</a>是由<a href="https://www.forbole.com/cosmos-hub-validator/" rel="external nofollow noopener noreferrer" target="_blank">Forbole</a>开发的开源Likecoin区块链浏览器，在上面可以查看Likecoin上的各种交易数据。登录bigdipper后可以看到Likecoin区块链的当前信息：</p><p><img src="/images/blockchain/liker/bigdipper-1.png" alt="Bigdipper"></p><p>其源代码在这里：<a href="https://github.com/forbole/big-dipper" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/forbole/big-dipper</a></p><h2 id="在bigdipper上查看Validators"><a href="#在bigdipper上查看Validators" class="headerlink" title="在bigdipper上查看Validators"></a>在bigdipper上查看Validators</h2><p>首先可以查看Likecoin网络上验证人的信息。这些验证人的作用就是维护Likecoin网络的正常运行，保证网络上交易的安全性。</p><p><img src="/images/blockchain/liker/bigdipper-2.png" alt="Bigdipper"></p><p>在上图中可以看到当前激活的10个Validator。</p><h2 id="在bigdipper上查看区块信息"><a href="#在bigdipper上查看区块信息" class="headerlink" title="在bigdipper上查看区块信息"></a>在bigdipper上查看区块信息</h2><p>还可以在bigdipper查看Likecoin的区块信息，比如：最新区块的出块时间，哈希值，区块高度，出块人，块中包含的交易数等。</p><p><img src="/images/blockchain/liker/bigdipper-3.png" alt="Bigdipper"></p><h2 id="在bigdipper中查看区块链中的交易信息"><a href="#在bigdipper中查看区块链中的交易信息" class="headerlink" title="在bigdipper中查看区块链中的交易信息"></a>在bigdipper中查看区块链中的交易信息</h2><p>在bigdipper中查看Likecoin交易中的各种信息，包括：交易往来的账号，交易所在区块的高度，是否已被验证，交易哈希值等。</p><p><img src="/images/blockchain/liker/bigdipper-4.png" alt="Bigdipper"></p>]]></content>
-    
-    <summary type="html">
-    
-      如何使用Bigdipper查看Likecoin区块链中的交易
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
     
   </entry>
   
