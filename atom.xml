@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-19T08:09:29.085Z</updated>
+  <updated>2020-05-19T20:24:45.899Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习笔记</title>
+    <link href="https://www.aafeng.uk/python-tips/"/>
+    <id>https://www.aafeng.uk/python-tips/</id>
+    <published>2020-05-19T20:24:45.899Z</published>
+    <updated>2020-05-19T20:24:45.899Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实Python我已经用了很多年了，用起来也比较顺手。但最近开始教自己的孩子学习Python时，还是发现了许多自己需要更新的知识。有些是自己没用过，不知道的，有些则是能让Python程序更加优雅，或者更加有效的。下面总结几点。</p><p><img src="/images/technology/python/python.png" alt="Python"></p><a id="more"></a><h2 id="关于格式化字符串"><a href="#关于格式化字符串" class="headerlink" title="关于格式化字符串"></a>关于格式化字符串</h2><p>我一般使用的方式是：</p><pre><code>&quot;One for %s, one for me.&quot; % name</code></pre><p>这种方式能够正常工作，但建议的方式是：</p><pre><code>&apos;One for {name}, one for me.&apos;.format(name=name)</code></pre><p>或者简化为：</p><pre><code>&apos;One for {}, one for me.&apos;.format(name)</code></pre><h2 id="sort-和-sorted的区别"><a href="#sort-和-sorted的区别" class="headerlink" title="sort 和 sorted的区别"></a>sort 和 sorted的区别</h2><p>首先进行一个简单的试验：</p><p><img src="/images/technology/python/python2.png" alt="Python"></p><p>可以看到，sorted会将列表进行排序，并返回一个新的列表。而sort()则会将列表进行排序。在Python的函数中，尽量不要使用sort()方法，以避免改变传入的参数。就像别人借给你一样东西，肯定希望你完好无损的归还一样。</p><h2 id="关于数组越界的问题"><a href="#关于数组越界的问题" class="headerlink" title="关于数组越界的问题"></a>关于数组越界的问题</h2><p>Python其实很聪明的，它知道如何判断数组越界，并会在数组越界时自动的帮你处理。比如，有些人的Python代码会这样写：</p><pre><code>sorted_array = sorted(scores,reverse=True)return sorted_array[0:3] if len(sorted_array)&gt;=3 else sorted_array</code></pre><p>其实完全不必，可以简化为：</p><pre><code>return sorted(scores,reverse=True)[0:3]</code></pre><h2 id="强大的Python数组操作"><a href="#强大的Python数组操作" class="headerlink" title="强大的Python数组操作"></a>强大的Python数组操作</h2><p>举一个简单的例子：把如下字符串：</p><pre><code>&quot;1 2 3 4\n5 6 7 8\n9 8 7 6&quot;</code></pre><p>转换为一个二位数组：</p><pre><code>1 2 3 45 6 7 89 8 7 6</code></pre><p>可以先使用 splitlines：</p><pre><code>s = &quot;1 2 3 4\n5 6 7 8\n9 8 7 6&quot;&gt;&gt;&gt; lines = s.splitlines()&gt;&gt;&gt; lines[&apos;1 2 3 4&apos;, &apos;5 6 7 8&apos;, &apos;9 8 7 6&apos;]</code></pre><p>然后再进一步处理：</p><pre><code>&gt;&gt;&gt; rows = [[int(v) for v in row.split()] for row in lines]&gt;&gt;&gt; rows[[1, 2, 3, 4], [5, 6, 7, 8], [9, 8, 7, 6]]</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      Python 学习笔记
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>制作网红巴斯克芝士蛋糕</title>
@@ -398,28 +420,6 @@
     <summary type="html">
     
       如何使用Bigdipper查看Likecoin区块链中的交易
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>化赞为赏-说说什么是Likecoin和赞赏公民？</title>
-    <link href="https://www.aafeng.uk/likecoin/"/>
-    <id>https://www.aafeng.uk/likecoin/</id>
-    <published>2020-05-01T20:48:00.000Z</published>
-    <updated>2020-05-01T22:46:20.583Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近一段时间开始使用支持Likecoin的网站，包括steem.buzz，matters。同时也加入了付费的赞赏公民，同时还在自己的博客中加入了赞赏按钮。感觉还是很喜欢这个年轻的生态系统。有些朋友在问到底什么是Likecoin，什么又是赞赏公民，他们到底有什么用等问题。下面把我所理解的总结一下，希望大家都能加入<a href="https://liker.land/civic?from=aafeng17936" rel="external nofollow noopener noreferrer" target="_blank">赞赏公民</a>，支持这个有活力的生态系统。</p><p><img src="/images/blockchain/liker/liker.png" alt="Liker Land"></p><a id="more"></a><h2 id="什么是Likecoin"><a href="#什么是Likecoin" class="headerlink" title="什么是Likecoin"></a>什么是Likecoin</h2><p>Likecoin是一种基于区块链的虚拟货币。它就像比特币一样，价格随市场需求会有波动，在写这篇文章的时候Likecoin的价格大约是每1美元可以购买200个Likecoin。Likecoin最早是基于以太坊网络的，但现在它运行在自己的链上。现在Likecoin指的是运行在它自己链上的代币，早期运行于以太坊上的代币叫做：LikeCoin (ERC-20)。</p><p><img src="/images/blockchain/liker/likecoin.png" alt="Likecoin"></p><h2 id="Likecoin区块链的维护者-Validators"><a href="#Likecoin区块链的维护者-Validators" class="headerlink" title="Likecoin区块链的维护者 - Validators"></a>Likecoin区块链的维护者 - Validators</h2><p>有了Likecoin这个代币后，那么由谁来支持最底层的区块链网络呢？又有谁来支持/验证区块链中的交易，保证区块链的数据安全呢？在不同的网络中有不同的叫法，在比特币网络中叫做矿工，在Steem/Hive网络中叫做见证人。在Likecoin中则叫做Validator。只不过有一点让我不太理解的就是，Likecoin网络中的Validator似乎是人工决定的，而且目前只有固定的10个。既然是区块链，就应该是完全开放的，谁都可以成为Validator，只不过要根据用户投票来决定谁能出块。这就像Steem/Hive网络中的见证人机制，排名前20的见证人+排名20之后的见证人中随机抽取一名，共组成21名见证人来出块。</p><p><a href="https://likecoin.bigdipper.live/validators" rel="external nofollow noopener noreferrer" target="_blank">查看Likecoin中Validator信息</a></p><h2 id="如何注册Likecoin账号？"><a href="#如何注册Likecoin账号？" class="headerlink" title="如何注册Likecoin账号？"></a>如何注册Likecoin账号？</h2><p>Likecoin的账号注册非常简单，有两种选择。可以通过邮件/密码注册一个账号，也可以通过其他方式，比如Google账号，facebook, twitter, apple，以及matters网站来注册。</p><p><img src="/images/blockchain/liker/likecoin2.png" alt="Likecoin"></p><h2 id="构建于Likecoin基础上的应用网站"><a href="#构建于Likecoin基础上的应用网站" class="headerlink" title="构建于Likecoin基础上的应用网站"></a>构建于Likecoin基础上的应用网站</h2><p>既然基于Likecoin的底层区块链已经有了，那么接下来就需要在此之上的应用了。这里介绍如下几个：</p><h3 id="Matters"><a href="#Matters" class="headerlink" title="Matters"></a>Matters</h3><p><a href="https://matters.news/" rel="external nofollow noopener noreferrer" target="_blank">Matters</a> 以一个基于Likecoin代币奖励机制的内容激励平台。任何Likecoin用户都可以在Matters登陆后发文。如果有人给你的文章点赞，你就会获得以Likecoin方式奖励的收益。</p><h3 id="Steem-buzz"><a href="#Steem-buzz" class="headerlink" title="Steem.buzz"></a>Steem.buzz</h3><p>Steem.buzz是Steem中文社区中的新手村村长 ericet 维护的一个Steem区块链前端应用程序。但在Steem.buzz中为众多的Likecoin用户添加了赞赏功能。在每一篇发在Steem网络的文章下面还会出现一个赞赏按钮。如果有人点了赞赏按钮，你就会获得Likecoin作为奖励。</p><h2 id="什么是赞赏公民？"><a href="#什么是赞赏公民？" class="headerlink" title="什么是赞赏公民？"></a>什么是赞赏公民？</h2><p>前面已经说过，Likecoin的注册用户对文章点赞的话，文章作者会有一定的收益。但这个收益是比较有限的。而<a href="https://liker.land/civic?from=aafuk47017" rel="external nofollow noopener noreferrer" target="_blank">赞赏公民</a>则相当于是”VIP“用户，每月缴纳5美元的月费。他们的赞赏会更值钱。其实，5美元/月并不多，也就是一杯咖啡的钱，但以此来资助自己喜欢的作者，激励他们创作出更好的作品来，读者本身也是受益者。何况，赞赏公民似乎更希望和其他赞赏公民互动，增加彼此的收益。</p>]]></content>
-    
-    <summary type="html">
-    
-      化赞为赏-说说什么是Likecoin和赞赏公民？
     
     </summary>
     
