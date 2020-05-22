@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-21T22:02:49.507Z</updated>
+  <updated>2020-05-22T11:44:08.558Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何将Likecoin以英镑/欧元/美元提现？</title>
+    <link href="https://www.aafeng.uk/likecoin-withdraw/"/>
+    <id>https://www.aafeng.uk/likecoin-withdraw/</id>
+    <published>2020-05-22T11:44:08.558Z</published>
+    <updated>2020-05-22T11:44:08.558Z</updated>
+    
+    <content type="html"><![CDATA[<p>很多人讨论过如何将Likecoin以人民币，台币提现。下面总结一下如何以英镑/欧元/美元的方式提现。其基本步骤就是：通过Like Land APP将LIKECOIN转到交易所，比如：<a href="https://www.liquid.com/sign-up/?affiliate=e4wfjlmE746444" rel="external nofollow noopener noreferrer" target="_blank">Liquid</a>，或者<a href="https://www.bitasset.com/reg?icode=jhhl" rel="external nofollow noopener noreferrer" target="_blank">BitAsset</a>；在这些交易所将LIKECOIN兑换为比特币；然后再将比特币转到支持英镑/欧元/美元的其他交易所；在交易所把比特币兑换成英镑/欧元/美元再提现。</p><p><img src="/images/blockchain/liker/liker.png" alt="LIKECOIN"></p><a id="more"></a><h2 id="第一步，将LIKECOIN转至BitAsset交易所"><a href="#第一步，将LIKECOIN转至BitAsset交易所" class="headerlink" title="第一步，将LIKECOIN转至BitAsset交易所"></a>第一步，将LIKECOIN转至BitAsset交易所</h2><p>登录<a href="https://www.bitasset.com/reg?icode=jhhl" rel="external nofollow noopener noreferrer" target="_blank">BitAsset交易所</a>，选择“Wallet” -&gt; “My Wallet”</p><p><img src="/images/blockchain/liker/withdraw-1.png" alt="Likecoin提现"></p><p>单击”Deposit”后选择”LIKE”作为”Chain Name”</p><p><img src="/images/blockchain/liker/withdraw-2.png" alt="Likecoin提现"></p><p>可以复制地址，或者打开对应的QR码：</p><p>进入Liker Land手机APP，扫描交易所的这个QR码，设定转账金额，并按“确认”按钮。</p><p>几分钟后就能在交易所看到LIKECOIN已经到账。</p><h2 id="第二步：将LIKECOIN转为BTC"><a href="#第二步：将LIKECOIN转为BTC" class="headerlink" title="第二步：将LIKECOIN转为BTC"></a>第二步：将LIKECOIN转为BTC</h2><p>在交易所钱包中选择：LIKE -&gt; Transaction -&gt; LIKE-BTC</p><p>在这个交易对中，设定交易的LIKECOIN金额，价格，然后单击“SELL”</p><p><img src="/images/blockchain/liker/withdraw-3.png" alt="Likecoin提现"></p><p>如果你挂单的价格被买方接受，很快交易就会结束，会有BTC到账。</p><h2 id="第二步，将BTC转至Kraken"><a href="#第二步，将BTC转至Kraken" class="headerlink" title="第二步，将BTC转至Kraken"></a>第二步，将BTC转至Kraken</h2><p>接下来需要选择一个支持英镑/欧元/美元的交易所。这样的交易所有很多，下面以 Kraken 为例。</p><p>在交易所的’Wallet’，将BTC转出。输入Kraken中的BTC地址，然后设定转出金额。</p><p><img src="/images/blockchain/liker/withdraw-4.png" alt="Likecoin提现"></p><p>可以看到，BitAsset会收取1%的手续费。</p><p>需要进行二次验证：</p><p><img src="/images/blockchain/liker/withdraw-5.png" alt="Likecoin提现"></p><p>交易开始后，需要等待一段时间。毕竟比特币的交易速度还是非常慢的。</p><h2 id="第四步：在交易所把比特币转换为法币"><a href="#第四步：在交易所把比特币转换为法币" class="headerlink" title="第四步：在交易所把比特币转换为法币"></a>第四步：在交易所把比特币转换为法币</h2><p>我使用比较多的交易所是Brittrex (支持欧元/美元)和Kraken(支持英镑/欧元/美元/加元/日元)。再这些交易所把比特币兑换成法币后，就可与提现到自己银行账号了。当然，这些交易所都需要进行实名验证。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何将Likecoin以英镑/欧元/美元提现？
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
+    
+  </entry>
   
   <entry>
     <title>开始使用Jupyter Notebook</title>
@@ -403,26 +425,6 @@
     
     
       <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Thinkpad笔记本维修记</title>
-    <link href="https://www.aafeng.uk/thinkpad-sleep/"/>
-    <id>https://www.aafeng.uk/thinkpad-sleep/</id>
-    <published>2020-05-05T20:25:36.892Z</published>
-    <updated>2020-05-05T20:25:36.892Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天早上打开笔记本电脑，准备开始干活。忽然发现按下电源开关后，电脑完全没有反应，黑屏。而电源开关的指示灯一直在闪。无论怎么按电源开关都没有反应。</p><a id="more"></a><p>首先想到的就是电脑休眠了，需要唤醒。于是想起了一招，长按电源键5秒钟就可以强制其关机，然后再重新开机就应该能正常启动系统了。可是按了5秒，10秒，15秒，30秒，都没有任何反应？？？</p><p>既然这样都不管用，那就只能硬上了 - 直接拔掉电池。可是把电脑翻过来一看，由于当初选择的是T480s超薄版的，电池不像一般笔记本电脑那样在外面可以直接拆掉。于是找来工具，把电脑后盖打开，电池取下来几秒钟，再放了回去，顺便把内部除了除尘。终于可以正常开机了。</p><p><img src="/images/technology/thinkpad.jpg" alt="Thinkpad笔记本"></p><p>回想一下，头一天晚上结束时的操作和平时一样，选择了休眠，而没有关机。但这个笔记本已经用了一年多了，每天的操作都一样，一直没有问题。在网上查了一下也没有找到答案。看来以后每天不用电脑时还是老老实实的关机吧。</p>]]></content>
-    
-    <summary type="html">
-    
-      Thinkpad笔记本维修记
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
     
   </entry>
   
