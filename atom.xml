@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-22T11:44:08.558Z</updated>
+  <updated>2020-05-22T21:33:52.814Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新冠病毒过后，我们还能回到过去的工作模式吗？</title>
+    <link href="https://www.aafeng.uk/wfh/"/>
+    <id>https://www.aafeng.uk/wfh/</id>
+    <published>2020-05-22T21:33:52.814Z</published>
+    <updated>2020-05-22T21:33:52.814Z</updated>
+    
+    <content type="html"><![CDATA[<p>转眼已经在家工作两个月了。似乎已经慢慢习惯了在家办公的方方面面。今天单位开会，老板表达出了一个意思，在家办公至少要到今年年底，至于什么时候返回办公室，目前不清楚不知道。这不禁让我想到，等到新冠病毒彻底被控制了，我们还能像原来一样回到办公室上班吗？会有什么不一样吗？</p><p><img src="/images/work/clock.jpg" alt="在家办公"></p><p>图源：Pixabay</p><a id="more"></a><p>经过这一段时间的适应，很多人都觉得在家办公似乎没有想象中的那么糟糕，虽然整体而言不如在办公室的时候更有组织，更有条理，但似乎大家都适应的不错，该做的工作都做了。同时很多单位都在思考，一旦疫情结束了，还有必要租那么昂贵的办公室吗？把这笔费用省下来，可以投入到其他方面，对公司而言整体上是更划算的。</p><p>而且，通过这一段时间的在家办公，大家也开始反思过去的一些工作习惯是否合理？会议是否安排的过多，同时也过长？由于现在有了社交距离，只能通过一些即时通讯软件进行沟通。而在使用这些软件时，并不能像面对面沟通那样期待对方的及时反馈。如果需要集中精力工作，只需要暂时不去看那些软件就可以了。</p><p>就我个人而言，整体感觉如果孩子们能够回到学校上学，那么在家办公的效率更高。因为在同一个办公室里，虽然更方便彼此之间的沟通，但也难免彼此之间互相干扰。如果独自在家办公，在需要沟通时通过Slack，Zoom之类的通讯软件进行沟通。在不需要交流的时候，自己可以精力更加集中，更加出活。</p><p>在疫情真正结束后，目前没人能想象出会以什么形式工作。但有一点可以肯定，这样疫情将会彻底改变人们的工作模式。</p>]]></content>
+    
+    <summary type="html">
+    
+      新冠病毒过后，我们还能回到过去的工作模式吗？
+    
+    </summary>
+    
+      <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
+    
+    
+      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>如何将Likecoin以英镑/欧元/美元提现？</title>
@@ -403,28 +425,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>试用Hive-js</title>
-    <link href="https://www.aafeng.uk/hive-js/"/>
-    <id>https://www.aafeng.uk/hive-js/</id>
-    <published>2020-05-06T08:23:59.834Z</published>
-    <updated>2020-05-06T08:23:59.834Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近Hive更新了hive-js这个库，在阅读这这篇<a href="/hive-139531/@mahdiyari/hive-js-and-hive-tx-migration-to-hive-breaking-changes-for-browsers">英文文章</a>文章后，把要点概括一下：</p><ul><li>使用steem-js的应用应切换到hive-js上，在下一个HF后极有可能steem-js无法正常在Hive上工作。</li><li>增加了节点的自动切换功能(alternative_api_endpoints)，如果一个节点出现问题，会自动切换到下一个节点。</li></ul><a id="more"></a><p><img src="/images/blockchain/hive/hive-js.jpg" alt="hive-js"></p><p>下面进行了一个简单的测试。</p><p>首先创建test.js:</p><pre><code>&quot;use strict&quot;const hive  = require(&apos;@hiveio/hive-js&apos;);// Read posts from Hivehive.api.getDiscussionsByCreated({tag: &apos;hive&apos;, limit: 10}, function(err, discussions) {  for(var i = 0; i &lt; discussions.length; i++) {    let post = discussions[i]    console.log(post.title)  }})</code></pre><p>运行如下命令安装hive-js：</p><pre><code>npm install @hiveio/hive-js --save</code></pre><p>之后运行：</p><pre><code>node test.js</code></pre><p>可以看到程序能够正常运行，但似乎还有一些hive-js的调试信息。相信开发者很快就会更新的。</p><p><img src="/images/blockchain/hive/hive-js2.jpg" alt="hive-js"></p><p>整体而言，感觉把现有使用steem-js的程序改成hive-js的工作量不大，建议使用steem-js早做迁移，避免某一天程序突然不干活了。</p><p>Hive-js源码：<a href="https://gitlab.syncad.com/hive/hive-js" rel="external nofollow noopener noreferrer" target="_blank">https://gitlab.syncad.com/hive/hive-js</a></p><p>更多关于Hive-js的讨论请参考这篇<a href="/hive-139531/@mahdiyari/hive-js-and-hive-tx-migration-to-hive-breaking-changes-for-browsers">英文文章</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      试用Hive-js
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
