@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-22T21:33:52.814Z</updated>
+  <updated>2020-05-23T08:49:53.637Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在Jupyter中使用Turtle</title>
+    <link href="https://www.aafeng.uk/jupyter-turtle/"/>
+    <id>https://www.aafeng.uk/jupyter-turtle/</id>
+    <published>2020-05-23T08:49:53.637Z</published>
+    <updated>2020-05-23T08:49:53.637Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直在使用Python Turtle教孩子编程。最近感觉Jupyter特别适合教学，那么怎样在Jupyter中使用Turtle呢？答案是<a href="https://github.com/takluyver/mobilechelonian" rel="external nofollow noopener noreferrer" target="_blank">mobilechelonian</a>。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><p>首先在Notebook中安装依赖库并进行测试：</p><pre><code>!pip install mobilechelonian!pip install matplotlibimport numpy as npimport matplotlib.pyplot as pltfrom mobilechelonian import Turtlefrom mobilechelonian import prepare_jsprepare_js()</code></pre><p>运行以上代码就会安装mobilechelonian。接下来就可以使用Turtle来画图了：</p><pre><code>from mobilechelonian import Turtlet = Turtle()t.speed(5)t.pencolor(&quot;blue&quot;)t.left(90)t.forward(60)t.left(90)t.forward(60)t.left(90)t.forward(60)t.left(90)t.forward(60)</code></pre><p><img src="/images/technology/jupyter/jupyter-turtle.png" alt="Jupyter"></p>]]></content>
+    
+    <summary type="html">
+    
+      如何在Jupyter中使用Turtle
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>新冠病毒过后，我们还能回到过去的工作模式吗？</title>
@@ -403,28 +425,6 @@
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>宅家日久，体重渐增，压力渐大</title>
-    <link href="https://www.aafeng.uk/20200506/"/>
-    <id>https://www.aafeng.uk/20200506/</id>
-    <published>2020-05-07T07:38:23.145Z</published>
-    <updated>2020-05-07T07:38:23.145Z</updated>
-    
-    <content type="html"><![CDATA[<p>真的很奇怪，在英国往年似乎很少长时间有艳阳高照的天气，但自从开始宅在家中后，晴空万里的好天气似乎接连不断。仿佛在诱惑人们不要宅在家中。算一算，离上次全家出门散步似乎已经两周多了，于是今天决定出门去放放风。</p><p><img src="/images/life/2020-05-06.jpg" alt></p><p>家附近的小山丘，摄于2020.5</p><a id="more"></a><p>外面已经是初夏的感觉了，路边的盛开的花似乎已经换了一茬，水仙已经陆陆续续的凋谢，换上了各种颜色更为鲜艳的花。偶遇三三两两的路人都是一身短装，完全是夏天的装束了。在往年赶上这样的天气，周边的海滩一定又是人满为患了。</p><p>我们走的并不是很远，只是在家附近的小山丘上去走了走，路上遇到了好几拨孩子学校的同学，看来大家都不想宅在家中了。在和其他家长的闲聊中感觉到大家似乎面临了同样的问题：由于一日三餐都在家中，购买食物的开支都明显上涨，伴随的是大家的体重似乎也都在缓慢的增加。很多人宅在家中，总要给自己找点事情做，于是一大批美食博主变得非常火爆，我媳妇最近迷上了Youtube上一个叫做小高姐的美食博主，开始按照菜谱做了很多美食，面对这么多诱惑，我几乎不做思考的选择了接受。。。</p><p>家长们面临的压力日渐增加，想要工作和辅导孩子功课两不误，很多家长只能在孩子入睡后再加班，把白天亏欠的时间补回来。但这样长久下去家长们的压力会变得过大。在网上看到了一段话，应该能够反映出家长们的心声：</p><blockquote><p>It’s OK if your child<br>is tearful<br>keeps throwing tantrums<br>won’t do their schoolwork<br>wants to go back to school<br>can’t focus on home learning<br>won’t do what you ask<br>picks fights with siblings<br>is struggling to sleep<br>spends hours on screens<br>keeps answering back<br>is always bored</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      宅家日久，体重渐增，压力渐大
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
