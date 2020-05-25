@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-24T09:38:08.775Z</updated>
+  <updated>2020-05-25T11:46:35.598Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jupyter的几个设置</title>
+    <link href="https://www.aafeng.uk/jupyter_settings/"/>
+    <id>https://www.aafeng.uk/jupyter_settings/</id>
+    <published>2020-05-25T11:46:35.598Z</published>
+    <updated>2020-05-25T11:46:35.598Z</updated>
+    
+    <content type="html"><![CDATA[<p>在<a href="/jupyter/">前面的文章</a>中介绍了Jupyter，但在进一步的使用中，发现一些需要设置/安装/配置的选项，比如：如何禁用默认的Terminal窗口，如何让多个用户使用Jupyter，如何在Jupyter中使用Turtle画图等。下面总结如下。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><h2 id="禁用terminal"><a href="#禁用terminal" class="headerlink" title="禁用terminal"></a>禁用terminal</h2><p>在默认情况下，打开Jupyter窗口后，可以新建一个终端窗口。在终端窗口中可以运行各种Linux命令。在终端窗口中使用的是运行Jupyter的用户，因此具有和该用户同样的权限。因此，如果打算和别人分享Jupyter，最好不要用权限过大的用户运行Jupyter，同时应该禁用终端窗口。不过，严格的讲，这并不能阻止恶意用户运行Linux命令，只要能运行Python脚本，就会有多种方式达到这个目的。但系统安全是一个渐进的过程。至少对于不太熟悉Linux的用户，如果一不小心进入终端窗口，再一不小心误删了文件，不也麻烦吗？</p><p><img src="/images/technology/jupyter/terminal1.png" alt="Jupyter"></p><p>要想禁止Linux终端窗口，可以在Jupyter的配置文件(用户根目录下.jupyter/jupyter_notebook_config.py)中添加一行就可以了：</p><pre><code>c.NotebookApp.terminals_enabled = False</code></pre><p>可以看到，终端已经被禁用。</p><p><img src="/images/technology/jupyter/terminal2.png" alt="Jupyter"></p><h2 id="在Jupyter中设定多个账号"><a href="#在Jupyter中设定多个账号" class="headerlink" title="在Jupyter中设定多个账号"></a>在Jupyter中设定多个账号</h2><p>默认的配置文件在/home/USERNAME/.jupyter/jupyter_notebook_config.py中。其初始设置非常简单：</p><pre><code>c.NotebookApp.allow_origin = &apos;*&apos; #allow all originsc.NotebookApp.ip = &apos;0.0.0.0&apos; # listen on all IPs</code></pre><p>如果想要多个用户共同使用Jupyter，可以为这些用户设置不同的端口，密码，和工作目录。比如：可以创建配置文件：/home/USERNAME/.jupyter/user1_config.py:</p><pre><code>c.NotebookApp.allow_origin = &apos;*&apos; c.NotebookApp.ip = &apos;0.0.0.0&apos; c.NotebookApp.terminals_enabled = Falsec.NotebookApp.port = 8890c.NotebookApp.notebook_dir = &apos;/home/user1/jupyter_notes&apos;</code></pre><p>在运行Jupyter的时候指定配置文件：</p><pre><code>jupyter notebook --config /home/user1/.jupyter/user1_config.py</code></pre><p>依次类推，可以为不同用户创建不同的配置文件，这样就可以彼此之间互不干扰了。</p>]]></content>
+    
+    <summary type="html">
+    
+      Jupyter的几个设置
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>开始使用Jupyter Notebook</title>
@@ -404,26 +426,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用forwardemail.net为自己域名配置免费邮件服务</title>
-    <link href="https://www.aafeng.uk/forwardemail/"/>
-    <id>https://www.aafeng.uk/forwardemail/</id>
-    <published>2020-05-08T07:19:26.259Z</published>
-    <updated>2020-05-07T20:59:34.520Z</updated>
-    
-    <content type="html"><![CDATA[<p>在购买自己的域名后，肯定想要设置自己域名下的邮箱。下面介绍一下如何通过forwardemail这个网站的服务+gmail来实现如何接收和发送自己域名下的邮件。</p><a id="more"></a><h2 id="设定邮件转发"><a href="#设定邮件转发" class="headerlink" title="设定邮件转发"></a>设定邮件转发</h2><p>首先打开 <a href="https://forwardemail.net/" rel="external nofollow noopener noreferrer" target="_blank">https://forwardemail.net/</a> ，通过Google或Github账号登录。登录成功后可以看到如下界面：</p><p><img src="/images/technology/forwardmail/01.png" alt="forwardemail"></p><p>添加自己的域名：</p><p><img src="/images/technology/forwardmail/02.png" alt="forwardemail"></p><p>目前提示尚未通过验证：</p><p><img src="/images/technology/forwardmail/03.png" alt="forwardemail"></p><p>设置域名以做邮件转发：</p><p><img src="/images/technology/forwardmail/04.png" alt="forwardemail"></p><p>我是在Cloudflare中配置的MX和TXT记录：</p><p><img src="/images/technology/forwardmail/05.png" alt="forwardemail"></p><p>整个过程需要等待一段时间，通过验证之后看到的界面是这样的：</p><p><img src="/images/technology/forwardmail/06.png" alt="forwardemail"></p><p>至此，所有发送到 <a href="mailto:XXXX@aafeng.uk" rel="external nofollow noopener noreferrer" target="_blank">XXXX@aafeng.uk</a> 的邮件都会被转发到你所指定的邮箱中。</p><h2 id="第二步：通过gmail发送以自己域名为后缀邮箱的邮件"><a href="#第二步：通过gmail发送以自己域名为后缀邮箱的邮件" class="headerlink" title="第二步：通过gmail发送以自己域名为后缀邮箱的邮件"></a>第二步：通过gmail发送以自己域名为后缀邮箱的邮件</h2><p><img src="/images/technology/forwardmail/07.png" alt="forwardemail"></p><p>首先需要激活Google账号的二元验证。如未激活，在如下页面中激活：</p><p><a href="https://www.google.com/landing/2step/" rel="external nofollow noopener noreferrer" target="_blank">https://www.google.com/landing/2step/</a></p><p>访问页面：<a href="https://www.google.com/landing/2step/" rel="external nofollow noopener noreferrer" target="_blank">https://www.google.com/landing/2step/</a></p><p>在App列表框中选择“Mail”，在“Device”中选择“Other”，然后输入你的邮箱。单击“Generate”，生成App的密码：</p><p><img src="/images/technology/forwardmail/08.png" alt="forwardemail"></p><p>记录下这个密码。</p><p>打开Gmail设置页面，选择“Accounts and Import” =&gt; “Send mail as”, 单击”Add another email address”</p><p>添加自己域名下的邮箱，注意取消选中“Treat as alias”：</p><p><img src="/images/technology/forwardmail/09.png" alt="forwardemail"></p><p>在下一步中输入你Gmail的用户名（不含@gmail.com)，以及前面记录下的Google app的密码：</p><p><img src="/images/technology/forwardmail/10.png" alt="forwardemail"></p><p>输入发送到你邮箱中的验证码后，单击”Verify“，至此设置完毕。可以看到能够在Gmail中通过自己域名下的邮箱来发送邮件了。</p>]]></content>
-    
-    <summary type="html">
-    
-      使用forwardemail.net为自己域名配置免费邮件服务
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
