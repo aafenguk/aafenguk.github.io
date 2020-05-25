@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/jupyter/</loc>
+    
+    <lastmod>2020-05-24T09:38:08.775Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/jupyter-turtle/</loc>
     
-    <lastmod>2020-05-23T08:49:53.637Z</lastmod>
+    <lastmod>2020-05-24T06:23:33.644Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>https://www.aafeng.uk/likecoin-withdraw/</loc>
     
     <lastmod>2020-05-22T11:44:08.558Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aafeng.uk/jupyter/</loc>
-    
-    <lastmod>2020-05-21T22:02:49.507Z</lastmod>
     
   </url>
   

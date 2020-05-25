@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-23T08:49:53.637Z</updated>
+  <updated>2020-05-24T09:38:08.775Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>开始使用Jupyter Notebook</title>
+    <link href="https://www.aafeng.uk/jupyter/"/>
+    <id>https://www.aafeng.uk/jupyter/</id>
+    <published>2020-05-24T09:38:08.775Z</published>
+    <updated>2020-05-24T09:38:08.775Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直听说过Jupyter很好用，但自己并没有试过。最近在教孩子编程的时候正好尝试了一下，感觉确实很好用。它最大的优点就是把代码和程序运行的结果放在了同一个页面中。这样就特别适合初学者，一边学习，一边运行，直接能看到结果。当然，Jupyter的作用远不止这些，比如在Jupyter Notebook中可以添加程序代码，Markdown，方程式，图片等等各种类型的数据。可以用Jupyter来进行数据清理，数据转换，数据可视化，统计建模，机器学习等等。</p><p><img src="/images/technology/jupyter/jupyter.png" alt="Jupyter"></p><a id="more"></a><p>其官方定义如下：</p><blockquote><p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p></blockquote><p>可以把Jupyter安装在本机，然后运行命令：”jupyter notebook”，它就会启动一个Web服务器，默认情况下会监听“8888”端口。</p><p><img src="/images/technology/jupyter/jupyter2.png" alt="Jupyter"></p><p>可以看到，在同一个Web页面中，可以编辑并运行代码，非常方便。这种直观的方式尤其适合初学者，让他们能够把注意力集中到要学习的内容上，而不是编程环境上。</p><p>同时，由于可以把Markdown和代码混排，特别适合老师们准备教案。不仅有文字说明，也有程序代码的源代码和运行结果。</p><p>Jupyter的另一大用途就是数据可视化，把代码和运行结果放在同一个页面，调整代码后，即刻可以看到更新后的图表，非常方便。比如，有人<a href="https://www.kaggle.com/neelkudu28/covid-19-visualizations-predictions-forecasting" rel="external nofollow noopener noreferrer" target="_blank">统计了印度的冠状病毒疫情数据</a>，并做了相应的图表：</p><p><img src="/images/technology/jupyter/jupyter3.png" alt="Jupyter"></p><p>除了自己安装并运行Jupyter服务器之外，也可以使用很多云计算平台的相关服务，比如：</p><ul><li><a href="https://mybinder.org/" rel="external nofollow noopener noreferrer" target="_blank">mybinder</a>: 这个网站可以把你提交到Github的Jupyter Notebook装载并运行，这样别人无需搭建环境，就能看到你Notebook的运行结果。</li><li><a href="https://www.kaggle.com/notebooks" rel="external nofollow noopener noreferrer" target="_blank">kaggle</a>：在这个平台上可以创建自己的Notebook，也可以搜索，使用别人的Notebook。</li><li><a href="https://colab.research.google.com/" rel="external nofollow noopener noreferrer" target="_blank">Google colab</a></li><li><a href="https://www.ibm.com/uk-en/cloud/watson-studio" rel="external nofollow noopener noreferrer" target="_blank">IBM Watson Studio</a></li><li><a href="https://paiza.cloud/en/" rel="external nofollow noopener noreferrer" target="_blank">Paiza Cloud</a></li></ul><p>感觉越来越喜欢这个工具了，打算花点时间进一步探索一下。</p>]]></content>
+    
+    <summary type="html">
+    
+      开始使用Jupyter Notebook
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何在Jupyter中使用Turtle</title>
     <link href="https://www.aafeng.uk/jupyter-turtle/"/>
     <id>https://www.aafeng.uk/jupyter-turtle/</id>
-    <published>2020-05-23T08:49:53.637Z</published>
-    <updated>2020-05-23T08:49:53.637Z</updated>
+    <published>2020-05-24T06:23:33.644Z</published>
+    <updated>2020-05-24T06:23:33.644Z</updated>
     
-    <content type="html"><![CDATA[<p>一直在使用Python Turtle教孩子编程。最近感觉Jupyter特别适合教学，那么怎样在Jupyter中使用Turtle呢？答案是<a href="https://github.com/takluyver/mobilechelonian" rel="external nofollow noopener noreferrer" target="_blank">mobilechelonian</a>。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><p>首先在Notebook中安装依赖库并进行测试：</p><pre><code>!pip install mobilechelonian!pip install matplotlibimport numpy as npimport matplotlib.pyplot as pltfrom mobilechelonian import Turtlefrom mobilechelonian import prepare_jsprepare_js()</code></pre><p>运行以上代码就会安装mobilechelonian。接下来就可以使用Turtle来画图了：</p><pre><code>from mobilechelonian import Turtlet = Turtle()t.speed(5)t.pencolor(&quot;blue&quot;)t.left(90)t.forward(60)t.left(90)t.forward(60)t.left(90)t.forward(60)t.left(90)t.forward(60)</code></pre><p><img src="/images/technology/jupyter/jupyter-turtle.png" alt="Jupyter"></p>]]></content>
+    <content type="html"><![CDATA[<p>一直在使用Python Turtle教孩子编程。最近感觉Jupyter特别适合教学，那么怎样在Jupyter中使用Turtle呢？答案是<a href="https://github.com/takluyver/mobilechelonian" rel="external nofollow noopener noreferrer" target="_blank">mobilechelonian</a>。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><p>首先在Notebook中安装依赖库并进行测试：</p><pre><code>!pip install mobilechelonian!pip install matplotlibimport numpy as npimport matplotlib.pyplot as pltfrom mobilechelonian import Turtlefrom mobilechelonian import prepare_jsprepare_js()</code></pre><p>运行以上代码就会安装mobilechelonian。接下来就可以使用Turtle来画图了：</p><pre><code>from mobilechelonian import Turtlet = Turtle()t.speed(5)t.pencolor(&quot;blue&quot;)for i in range(4):    t.left(90)    t.forward(60)</code></pre><p><img src="/images/technology/jupyter/jupyter-turtle.png" alt="Jupyter"></p>]]></content>
     
     <summary type="html">
     
@@ -79,28 +101,6 @@
     
     
       <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开始使用Jupyter Notebook</title>
-    <link href="https://www.aafeng.uk/jupyter/"/>
-    <id>https://www.aafeng.uk/jupyter/</id>
-    <published>2020-05-21T22:02:49.507Z</published>
-    <updated>2020-05-21T22:02:49.507Z</updated>
-    
-    <content type="html"><![CDATA[<p>一直听说过Jupyter很好用，但自己并没有试过。最近在教孩子编程的时候正好尝试了一下，感觉确实很好用。它最大的优点就是把代码和程序运行的结果放在了同一个页面中。这样就特别适合初学者，一边学习，一边运行，直接能看到结果。当然，Jupyter的作用远不止这些，比如在Jupyter Notebook中可以添加程序代码，Markdown，方程式，图片等等各种类型的数据。可以用Jupyter来进行数据清理，数据转换，数据可视化，统计建模，机器学习等等。</p><p><img src="/images/technology/jupyter/jupyter.png" alt="Jupyter"></p><a id="more"></a><p>其官方定义如下：</p><blockquote><p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p></blockquote><p>可以把Jupyter安装在本机，然后运行命令：”jupyter notebook”，它就会启动一个Web服务器，默认情况下会监听“8888”端口。</p><p><img src="/images/technology/jupyter/jupyter2.png" alt="Jupyter"></p><p>可以看到，在同一个Web页面中，可以编辑并运行代码，非常方便。这种直观的方式尤其适合初学者，让他们能够把注意力集中到要学习的内容上，而不是编程环境上。</p><p>同时，由于可以把Markdown和代码混排，特别适合老师们准备教案。不仅有文字说明，也有程序代码的源代码和运行结果。</p><p>Jupyter的另一大用途就是数据可视化，把代码和运行结果放在同一个页面，调整代码后，即刻可以看到更新后的图表，非常方便。比如，有人<a href="https://www.kaggle.com/neelkudu28/covid-19-visualizations-predictions-forecasting" rel="external nofollow noopener noreferrer" target="_blank">统计了印度的冠状病毒疫情数据</a>，并做了相应的图表：</p><p><img src="/images/technology/jupyter/jupyter3.png" alt="Jupyter"></p><p>除了自己安装并运行Jupyter服务器之外，也可以使用很多云计算平台的相关服务，比如：</p><ul><li><a href="https://mybinder.org/" rel="external nofollow noopener noreferrer" target="_blank">mybinder</a>: 这个网站可以把你提交到Github的Jupyter Notebook装载并运行，这样别人无需搭建环境，就能看到你Notebook的运行结果。</li><li><a href="https://www.kaggle.com/notebooks" rel="external nofollow noopener noreferrer" target="_blank">kaggle</a>：在这个平台上可以创建自己的Notebook，也可以搜索，使用别人的Notebook。</li></ul><p>感觉越来越喜欢这个工具了，打算花点时间进一步探索一下。</p>]]></content>
-    
-    <summary type="html">
-    
-      开始使用Jupyter Notebook
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
     
   </entry>
   
