@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-25T22:13:06.487Z</updated>
+  <updated>2020-05-26T09:58:28.080Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习笔记 - collections</title>
+    <link href="https://www.aafeng.uk/python-collections/"/>
+    <id>https://www.aafeng.uk/python-collections/</id>
+    <published>2020-05-26T09:58:28.080Z</published>
+    <updated>2020-05-26T09:58:28.080Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Python中，除了系统默认的容器：dict, list, set, tuple之外，还有一个非常强大的模块：collections。在这个模块中有很多非常好用的功能，能供简化我们的代码。下面举几个例子，欢迎大家指正。</p><p><img src="/images/technology/python/python3.png" alt="Python"></p><h2 id="namedtuple-提高代码可读性"><a href="#namedtuple-提高代码可读性" class="headerlink" title="namedtuple - 提高代码可读性"></a>namedtuple - 提高代码可读性</h2><p>首先来看一个例子：假设我们有一组数据。想用Python对这组数据进行处理。最为直观的做法是：</p><pre><code>people_list = [(&apos;Jim&apos;, &apos;male&apos;, 30), (&apos;Julie&apos;, &apos;female&apos;, 25)]for p in people_list:    print (f&apos;{p[0]} is a {p[2]} year old {p[1]}&apos;)</code></pre><p>但以上代码的最大缺点就是其可读性太差。上面的p[0], p[1], p[2]具体代表什么数据要检查前面的代码才能知道。设想如果处理的数据量更大，比如，共有十几，甚至几十列数据，如果在查看p[35], p[48]之类的代码时肯定会痛苦万分的。</p><p>这个时候就应该考虑使用collections中的namedtuple:</p><pre><code>import collectionsPerson = collections.namedtuple(&apos;Person&apos;, &apos;name gender age&apos;)people_list = [Person(&apos;Jim&apos;, &apos;male&apos;, 30), Person(&apos;Julie&apos;, &apos;female&apos;, 25)]for p in people_list:    print (f&apos;{p.name} is a {p.age} year old {p.gender}&apos;)</code></pre><p> 以上代码的可读性明显增强。不过使用namedtuple的一个缺点(有时也是优点)就是它的属性是只读的。</p><h2 id="Counter-优雅的统计代码"><a href="#Counter-优雅的统计代码" class="headerlink" title="Counter - 优雅的统计代码"></a>Counter - 优雅的统计代码</h2><p>假设我们需要对一个列表进行统计：</p><pre><code>[&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]</code></pre><p>我们希望统计每种颜色出现的次数：</p><pre><code>{&apos;red&apos;: 4, &apos;yellow&apos;: 2, &apos;blue&apos;: 1, &apos;black&apos;: 1, &apos;white&apos;: 1}</code></pre><p>如果使用一个循环，则代码显得非常臃肿：</p><pre><code>color_list = [&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]stats = {}for i in color_list:    if stats.get(i) is None:        stats[i] = 1    else:        stats[i] += 1ordered_stats = dict(sorted(stats.items(), key=lambda count: count[1], reverse=True))print(ordered_stats)</code></pre><p>但如果使用collections中的Counter的话，代码就显得非常简洁了：</p><pre><code>from collections import Countercolor_list = [&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]stats = Counter(color_list).most_common()</code></pre><p>Counter也可以用来统计一段话中每个字符出现的次数。</p><pre><code>from collections import Counters = &apos;The clever fox jumped over the lazy brown dog.&apos;print(Counter(s).most_common())</code></pre><h2 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h2><p>在使用字典时，一般可以使用 ‘dict = {}’对其进行初始化。在后续使用中，可以使用 ‘dict[element] = xx’，但有一个前提就是，element必须是已经存在的，否则就会出错。比如：</p><p><img src="/images/technology/python/dict1.png" alt="Python"></p><p>当然，我们可以在使用前检查某个元素是否存在：</p><pre><code>&apos;julie&apos; in dict.keys()</code></pre><p>但这会使代码显得很臃肿。</p><p>更为简洁的方法就是使用defaultdict，比如：</p><p><img src="/images/technology/python/dict2.png" alt="Python"></p><p>上面介绍了collections模块中的namedtuple, Counter, defaultdict，使用它们可以简化我们的代码，也能增强程序的可读性。</p>]]></content>
+    
+    <summary type="html">
+    
+      Python学习笔记 - collections
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>英国小学即将复课</title>
@@ -409,26 +431,6 @@
     
     
       <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一次在家烧烤</title>
-    <link href="https://www.aafeng.uk/bbq/"/>
-    <id>https://www.aafeng.uk/bbq/</id>
-    <published>2020-05-10T19:41:15.372Z</published>
-    <updated>2020-05-10T19:41:15.372Z</updated>
-    
-    <content type="html"><![CDATA[<p>家里的烤炉已经买了好几年了，但一直没有拆开包装。最近几天天气出奇的好，同时因为lockdown已经没有任何social活动了，于是决定趁着现在有时间尝试在家烧烤一次。</p><p><img src="/images/food/bbq1.jpg" alt="烧烤"></p><a id="more"></a><p>整体而言还是很成功的，上面是一张成品图。</p><p>首先把烤炉从车库中翻了出来，花了两个多小时进行组装：</p><p><img src="/images/food/bbq2.jpg" alt="烧烤"></p><p>终于装好了：</p><p><img src="/images/food/bbq3.jpg" alt="烧烤"></p><p>在超市买的易燃炭，非常方便，只需要把外面的油纸点着就好，过一小会火就会烧的很旺。只不过需要注意的是，有浓烟和大火苗的时候是不能食材放上去的，否则食材很容易被烤糊。</p><p>主要烤的是五花肉串和羊肉串，这两种串是事先腌制好的。在网上找的食谱。羊肉串只用洋葱和蛋清腌制，五花肉串用食盐，料酒，洋葱，鸡蛋腌制。总共腌制了大约4个小时。</p><p>过了一会，炭已经烧好，没有什么烟了，可以开始烤了！</p><p><img src="/images/food/bbq4.jpg" alt="烧烤"></p><p>很快就烤好了，开吃！</p><p><img src="/images/food/bbq1.jpg" alt="烧烤"></p>]]></content>
-    
-    <summary type="html">
-    
-      第一次在家烧烤
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
     
   </entry>
   
