@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-27T15:31:18.408Z</updated>
+  <updated>2020-05-27T22:27:56.294Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>DIY菜鸟</title>
+    <link href="https://www.aafeng.uk/diy/"/>
+    <id>https://www.aafeng.uk/diy/</id>
+    <published>2020-05-27T22:27:56.294Z</published>
+    <updated>2020-05-27T22:27:56.294Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天媳妇告诉我家里的锅炉坏了，水管里没有热水了。于是我去看了一下，发现报警指示灯一直在闪。首先检查了一下水压，发现水压不足。于是立刻把水压调整了一下，但报警灯仍然还亮着。接下来找到了锅炉的说明书，在排错章节找到了这个问题的解决方案。把锅炉重置了一下，问题解决。整个用时不足20分钟。</p><p><img src="/images/life/boiler.jpg" alt="Boiler"></p><p>其实，我本是一个DIY菜鸟。原因很简单：第一自己对这类东西不感兴趣，第二在这方面的动手能力似乎不强。久而久之，能够花钱找人的就都尽量找人来解决了。但在英国这里的人工很贵。而且很多电工，水暖工只要一请到家中，无论是否修好都要收费。记得上次家中的下水道堵了，自己尝试了一下无法解决。于是叫了一个水暖工来帮忙。水暖工来干了一个下午都没有疏通，当时感觉一百多英镑可能要白扔了。还好在水暖工打算放弃，要收工的最后一刻，下水终于通了。后来，通过和朋友打听，以及网上搜到的资料，学会了定期向下水道中灌些碱性的Soda Crystal来溶解其中的油脂。同时也购买了相应的工具。慢慢的掌握了保持下水道畅通的诀窍。</p><p>后来慢慢的接触到了很多DIY大神。记得当时读书的时候，自己的导师是计算机科学的教授，同时也是一位DIY高手。他在业余时间自己组装过摩托车，汽车，甚至花费了几年的时间自己组装了一艘游艇，而且第一次下水试航就成功！后来周边也有很多朋友是DIY高手，自己重做浴室，重新装修厨房，把电工，水暖工，瓦工的活全包了。慢慢受这些高人们的影响。有些家中的电器或者设备出现故障，首先就会想到自己能不能修好。自己对着Youtube视频，磕磕绊绊的也修过不少东西，慢慢也对DIY产生了一点点兴趣。</p><p>中国有句古话叫做庖丁解牛，其实很多事情都是这样的，练久了就成了高手和专家。我不能奢望自己能成为DIY高手，但对着Youtube视频，把家中电器，设备的常见故障已经解决了不少了，应该也算是半个DIY爱好者了吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      DIY菜鸟
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="DIY" scheme="https://www.aafeng.uk/tags/DIY/"/>
+    
+  </entry>
+  
+  <entry>
     <title>体验了一下Python数据可视化神器pyecharts</title>
     <link href="https://www.aafeng.uk/pyecharts/"/>
     <id>https://www.aafeng.uk/pyecharts/</id>
-    <published>2020-05-27T15:31:18.408Z</published>
-    <updated>2020-05-27T15:31:18.408Z</updated>
+    <published>2020-05-27T15:48:38.739Z</published>
+    <updated>2020-05-27T15:48:38.739Z</updated>
     
-    <content type="html"><![CDATA[<p>最近试用了一个由百度开源的数据可视化Python软件包<a href="https://github.com/pyecharts/pyecharts" rel="external nofollow noopener noreferrer" target="_blank">pyecharts</a>。它将Python和<a href="https://echarts.apache.org/en/index.html" rel="external nofollow noopener noreferrer" target="_blank">echarts</a>结合在一起，提供强大的数据可视化支持，感觉非常好用。向大家强烈推荐。</p><p><img src="/images/technology/python/pyecharts/pyecharts.png" alt="pyecharts"></p><p>首先看下其官方的介绍：</p><blockquote><ul><li>简洁的 API 设计，使用如丝滑般流畅，支持链式调用</li><li>囊括了 30+ 种常见图表，应有尽有</li><li>支持主流 Notebook 环境，Jupyter Notebook 和 JupyterLab</li><li>可轻松集成至 Flask，Sanic，Django 等主流 Web 框架</li><li>高度灵活的配置项，可轻松搭配出精美的图表</li><li>详细的文档和示例，帮助开发者更快的上手项目</li><li>多达 400+ 地图文件，并且支持原生百度地图，为地理数据可视化提供强有力的支持</li></ul></blockquote><p>对我而言，比较吸引我的特点包括：简洁的API设计，支持各种常见图表，和Jupyter Notebook的集成，以及丰富的文档。</p><p>其安装非常简单，只需要运行：</p><pre><code>pip install pyecharts</code></pre><h2 id="生成渲染后的HTML页面"><a href="#生成渲染后的HTML页面" class="headerlink" title="生成渲染后的HTML页面"></a>生成渲染后的HTML页面</h2><p>如下代码会生产一个简单的柱状图：</p><pre><code>from pyecharts.charts import Barfrom pyecharts import options as optsbar = (    Bar()    .add_xaxis([&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;June&quot;])    .add_yaxis(&quot;Downloads&quot;, [114, 155, 97, 131, 185, 270])    .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Downloads&quot;)))bar.render()</code></pre><p>上面代码会在当前目录下生成一个文件：render.html，该文件会显示如下的柱状图：</p><p><img src="/images/technology/python/pyecharts/pyecharts2.png" alt="pyecharts"></p><h2 id="在Jupyter-notebook中使用"><a href="#在Jupyter-notebook中使用" class="headerlink" title="在Jupyter_notebook中使用"></a>在Jupyter_notebook中使用</h2><p>和前面的代码一样，只不过在最后需要调用：</p><pre><code>bar.render_notebook()</code></pre><p><img src="/images/technology/python/pyecharts/pyecharts3.png" alt="pyecharts"></p><h2 id="生成渲染后图片"><a href="#生成渲染后图片" class="headerlink" title="生成渲染后图片"></a>生成渲染后图片</h2><p>首先安装snapshot_selenium：</p><pre><code>pip install snapshot_selenium</code></pre><p>还需要安装Chrome。 切换到root用户运行：</p><pre><code>curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key addecho &quot;deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.listapt-get -y updateapt-get -y install google-chrome-stable</code></pre><p>运行如下代码就可以在当前目录下生成一个PNG图片：</p><pre><code>from pyecharts.charts import Barfrom pyecharts import options as optsfrom pyecharts.render import make_snapshotfrom snapshot_selenium import snapshot as driverbar = (    Bar()    .add_xaxis([&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;June&quot;])    .add_yaxis(&quot;Downloads&quot;, [114, 155, 97, 131, 185, 270])    .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Downloads&quot;)))make_snapshot(driver, bar.render(), &quot;bar.png&quot;)</code></pre><p>pyecharts支持的图表超过30种，我仅仅尝试了两种，但感觉其他图表都类似，应该非常容易上手。下一步项目中如果需要的话，应该能够拿起来就用了。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近试用了一个由百度开源的数据可视化Python软件包<a href="https://github.com/pyecharts/pyecharts" rel="external nofollow noopener noreferrer" target="_blank">pyecharts</a>。它将Python和<a href="https://echarts.apache.org/en/index.html" rel="external nofollow noopener noreferrer" target="_blank">echarts</a>结合在一起，提供强大的数据可视化支持，感觉非常好用。向大家强烈推荐。</p><p><img src="/images/technology/python/pyecharts/pyecharts.png" alt="pyecharts"></p><a id="more"></a><p>首先看下其官方的介绍：</p><blockquote><ul><li>简洁的 API 设计，使用如丝滑般流畅，支持链式调用</li><li>囊括了 30+ 种常见图表，应有尽有</li><li>支持主流 Notebook 环境，Jupyter Notebook 和 JupyterLab</li><li>可轻松集成至 Flask，Sanic，Django 等主流 Web 框架</li><li>高度灵活的配置项，可轻松搭配出精美的图表</li><li>详细的文档和示例，帮助开发者更快的上手项目</li><li>多达 400+ 地图文件，并且支持原生百度地图，为地理数据可视化提供强有力的支持</li></ul></blockquote><p>对我而言，比较吸引我的特点包括：简洁的API设计，支持各种常见图表，和Jupyter Notebook的集成，以及丰富的文档。</p><p>其安装非常简单，只需要运行：</p><pre><code>pip install pyecharts</code></pre><h2 id="生成渲染后的HTML页面"><a href="#生成渲染后的HTML页面" class="headerlink" title="生成渲染后的HTML页面"></a>生成渲染后的HTML页面</h2><p>如下代码会生产一个简单的柱状图：</p><pre><code>from pyecharts.charts import Barfrom pyecharts import options as optsbar = (    Bar()    .add_xaxis([&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;June&quot;])    .add_yaxis(&quot;Downloads&quot;, [114, 155, 97, 131, 185, 270])    .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Downloads&quot;)))bar.render()</code></pre><p>上面代码会在当前目录下生成一个文件：render.html，该文件会显示如下的柱状图：</p><p><img src="/images/technology/python/pyecharts/pyecharts2.png" alt="pyecharts"></p><h2 id="在Jupyter-notebook中使用"><a href="#在Jupyter-notebook中使用" class="headerlink" title="在Jupyter_notebook中使用"></a>在Jupyter_notebook中使用</h2><p>和前面的代码一样，只不过在最后需要调用：</p><pre><code>bar.render_notebook()</code></pre><p><img src="/images/technology/python/pyecharts/pyecharts3.png" alt="pyecharts"></p><h2 id="生成渲染后图片"><a href="#生成渲染后图片" class="headerlink" title="生成渲染后图片"></a>生成渲染后图片</h2><p>首先安装snapshot_selenium：</p><pre><code>pip install snapshot_selenium</code></pre><p>还需要安装Chrome。 切换到root用户运行：</p><pre><code>curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key addecho &quot;deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.listapt-get -y updateapt-get -y install google-chrome-stable</code></pre><p>运行如下代码就可以在当前目录下生成一个PNG图片：</p><pre><code>from pyecharts.charts import Barfrom pyecharts import options as optsfrom pyecharts.render import make_snapshotfrom snapshot_selenium import snapshot as driverbar = (    Bar()    .add_xaxis([&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;June&quot;])    .add_yaxis(&quot;Downloads&quot;, [114, 155, 97, 131, 185, 270])    .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Downloads&quot;)))make_snapshot(driver, bar.render(), &quot;bar.png&quot;)</code></pre><p>pyecharts支持的图表超过30种，我仅仅尝试了两种，但感觉其他图表都类似，应该非常容易上手。下一步项目中如果需要的话，应该能够拿起来就用了。</p>]]></content>
     
     <summary type="html">
     
@@ -410,26 +432,6 @@
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>比特币减半了，可你的信仰还在吗？</title>
-    <link href="https://www.aafeng.uk/btc-halving/"/>
-    <id>https://www.aafeng.uk/btc-halving/</id>
-    <published>2020-05-13T22:16:33.873Z</published>
-    <updated>2020-05-13T22:16:33.873Z</updated>
-    
-    <content type="html"><![CDATA[<p>比特币已经如期在区块高度630000处完成了第三次减半，随之而来的是挖矿难度增大，加上各种丢失密钥的情况时有发生，比特币应该是越来越稀缺，越来越值钱才对。但让众多持币者失望的是，比特币并没有迎来大家期待的暴涨。</p><p><img src="/images/blockchain/btc.jpg" alt="比特币"></p><a id="more"></a><p>记不清在哪里看到有人做过统计，比特币的最大持有者已经由早期的矿工慢慢变成了大的虚拟货币交易所。交易所在每一笔交易中收取交易费。伴随着比特币的减半，更加加剧了这种趋势，让最大的几家交易所越做越大。那么交易所有动力让币价一直暴涨吗？似乎有，但动力不足。因为交易所有着更为赚钱的手段：合约。</p><p>其实看看周围的朋友熟人，无论是新老韭菜，还是一些大佬，似乎没在合约市场爆过仓都不好意思说自己是玩币一族。但看看那些惊心触目的数据就可以知道，在合约市场上，用暴利来形容庄家的赚钱速度似乎都嫌不够。交易所则更像是一个大赌场，它自己不仅是玩家，更是庄家，同时每一笔交易还收取手续费。有这么赚钱的方式，干嘛着急把比特币的价格拉高，让比特币的价格不断震荡，多空双爆，多香！只要不把比特币玩死，就足够了。</p><p>其实在2013年的时候，就有朋友向我推销比特币，但很遗憾的是，我没有被朋友洗脑，和比特币就那么华丽丽的错过了。现在不能想，不然错过了着几个亿，大腿都要拍断了。。。</p><p>后来到了2017年的时候再次接触比特币，可能也有些FOMO的心理吧，成了坚定的持币一族。近两万美元的比特币见过，3000多美元的比特币也见过。但自从买了硬件钱包后，因为嫌麻烦，只往钱包里存过两次，再也没有碰过钱包。现在想想，反正投入的也不多，就接着放着吧。</p><p>你的信仰还在吗？</p>]]></content>
-    
-    <summary type="html">
-    
-      比特币减半了，可你的信仰还在吗？
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
