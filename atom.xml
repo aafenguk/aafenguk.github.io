@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-27T22:31:36.436Z</updated>
+  <updated>2020-05-28T21:01:26.693Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hiveonboard</title>
+    <link href="https://www.aafeng.uk/hiveonboard/"/>
+    <id>https://www.aafeng.uk/hiveonboard/</id>
+    <published>2020-05-28T21:01:26.693Z</published>
+    <updated>2020-05-28T21:01:26.693Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近看到了Hiveonboard这个账户创建服务，感觉很有意思，和大家分享一下。其实很多dapp都提供账户创建服务，可以说各有各的特色，有的是免费的，有的是需要收费的。有的可以秒级创建账户，有的则需要等待几天甚至更长时间才行。那么，Hiveonboard有什么特色呢？</p><p><img src="/images/blockchain/hive/hiveonboard.jpg" alt="Hiveonboard"></p><h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>首先，Hiveonboard提供的是创建账户的<strong>服务</strong>，而不是创建账户的<strong>功能</strong>。很多dapp具有创建Hive账户的<strong>功能</strong>，但Hiveonboard则为其他的dapp提供完整的账户创建服务。这样，其他的dapp就不必重新造轮子，而是专注于其核心功能上了。</p><p><img src="/images/blockchain/hive/hiveonboard2.jpg" alt="Hiveonboard"></p><p>从上图中可以看到，当dapp的用户选择了创建账户时，会被转向到Hiveonboard网站上，在完成了账户创建后，会返回该dapp。</p><h2 id="安全性考虑"><a href="#安全性考虑" class="headerlink" title="安全性考虑"></a>安全性考虑</h2><p>为了避免一些恶意网站的利用这项服务实现钓鱼功能，Hiveonboard实现了一个白名单，只有白名单上的用户才能使用这项服务。如果有新的dapp需要使用这项服务，可以<a href="https://github.com/christianfuerst/hiveonboard/blob/master/src/config/whitelist.json" rel="external nofollow noopener noreferrer" target="_blank">提交一个PR</a></p><h2 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h2><p>为了便于dapp测试创建账户的操作，Hiveonboard提供了调试模式，这样在进行测试的时候就不会真正的创建账户，也不会进行手机验证。要使用调试模式，只需要在网址中添加参数：debug_mode=true</p><pre><code>https://hiveonboard.com/create-account?debug_mode=true</code></pre><h2 id="试用Hiveonboard"><a href="#试用Hiveonboard" class="headerlink" title="试用Hiveonboard"></a>试用Hiveonboard</h2><p>自己尝试着从 tipu 网站开始，试用了Hiveonboard的账户创建功能，感觉还是很顺滑的。整个账户创建过程只需要不到2分钟的时间。中间需要验证手机号。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果打算开发一款自己的dapp，但没有时间实现账户创建功能，可以考虑试用Hiveonboard，将其账户创建功能和自己的dapp结合在一起。</p>]]></content>
+    
+    <summary type="html">
+    
+      Hiveonboard
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
+    
+  </entry>
   
   <entry>
     <title>DIY菜鸟</title>
@@ -412,26 +434,6 @@
     </summary>
     
       <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>一次将Solr数据备份和恢复的曲折经历</title>
-    <link href="https://www.aafeng.uk/solr-data-restore/"/>
-    <id>https://www.aafeng.uk/solr-data-restore/</id>
-    <published>2020-05-14T04:57:45.000Z</published>
-    <updated>2020-05-14T11:05:27.506Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近准备开始一个新的项目。其实也不是全新的，其现有代码已经运行了5年，现在需要添加很多新的功能。在这个项目中使用了Solr，因此首先需要把其数据备份并恢复到自己的VM上来以坐测试和开发。于是一个曲折的故事就开始了。。。</p><p><img src="/images/technology/solr/solr.png" alt="Solr"></p><a id="more"></a><h2 id="Solr-7-5"><a href="#Solr-7-5" class="headerlink" title="Solr 7.5"></a>Solr 7.5</h2><p>其实我自己的VM上已经有了Solr，其版本是7.5，而服务器上的版本是7.6，想想这个两个版本差距不大，于是想直接把数据复制过来不就可以了吗？这个过程非常简单，就是把服务器上/var/solr/data目录下这个项目对应的子文件夹整个复制到本机的同样目录，并重新启动Solr就可以了。但当重新启动Solr后发现了如下错误：</p><pre><code>SolrCore Initialization Failuresxxxx: org.apache.solr.common.SolrException:org.apache.solr.common.SolrException: Error opening new searcherPlease check your logs for more information</code></pre><p>检查日志文件，发现如下错误：</p><pre><code>Suppressed: org.apache.lucene.index.CorruptIndexException: checksum passed (4454119c). possibly transient resource issue, ......</code></pre><p>提示索引文件出错，首先想到的是在打包压缩和复制的过程中出现了错误，于是又走了一遍，还是同样的错误。这时觉得应该就是版本之间的兼容性问题了。确实也是，新版本支持旧版本的索引文件很好理解。但反过来，把新版本的索引文件复制到旧版本上去，不被支持就很好理解了。</p><h2 id="最新的Solr-8-5-1"><a href="#最新的Solr-8-5-1" class="headerlink" title="最新的Solr 8.5.1"></a>最新的Solr 8.5.1</h2><p>那好吧，索性就使用最新的版本8.5.1吧，这样所有的问题不就都解决了吗？其安装过程也非常简单，下载tgz文件，解压，再运行install_solr_service.sh就可以了。</p><p>但安装完毕后却出现了新的问题：</p><pre><code>xxxx: org.apache.solr.common.SolrException:org.apache.solr.common.SolrException: Could not load conf for core xxxx: Can&apos;t load schema /var/solr/data/xxxx/conf/schema.xml: Plugin init failure for [schema.xml] fieldType &quot;textSuggest&quot;: Plugin init failure for [schema.xml] analyzer/filter: Error loading class &apos;solr.StandardFilterFactory&apos;Please check your logs for more information</code></pre><p>原来是StandardFilterFactory在Solr 8中不能正常工作。找到了项目中的schema.xml，把相应的行注释掉，重新启动Solr，貌似问题解决了。但感觉并不是很满意，毕竟需要对配置做修改才能正常工作，而且不知道是否会对其他部分产生负面影响。</p><h2 id="Solr-7-7-3"><a href="#Solr-7-7-3" class="headerlink" title="Solr 7.7.3"></a>Solr 7.7.3</h2><p>最终决定尝试一下Solr 7.x中的最终版本7.7.3。整个安装步骤非常简单，下载并解压后运行：</p><pre><code>./install_solr_service.sh ../../solr-7.7.3.tgz -f</code></pre><p>但在启动过程中会发现如下错误：</p><p><img src="/images/technology/solr/solr2.png" alt="Solr"></p><p>这个问题倒是好解决，编辑文件/etc/security/limits.conf，添加：</p><pre><code>solr hard nofile 65535solr soft nofile 65535solr hard nproc 65535solr soft nproc 65535</code></pre><p>重新启动Solr</p><pre><code>sudo systemctl restart solr</code></pre><p>终于能够正常工作了，没有任何错误提示。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在Solr数据备份/恢复的时候一定要注意各个版本之间的差异。虽然不断保持软件的最新版本是一个好习惯，但在生产环境中，还是要慎之又慎，尽量选用兼容性最好前提下的最新版本。 </p>]]></content>
-    
-    <summary type="html">
-    
-      一次将Solr数据备份和恢复的曲折经历
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
