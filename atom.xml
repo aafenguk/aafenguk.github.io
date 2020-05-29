@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-28T21:05:26.755Z</updated>
+  <updated>2020-05-29T22:21:38.997Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中的日期/时间处理</title>
+    <link href="https://www.aafeng.uk/python-datetime/"/>
+    <id>https://www.aafeng.uk/python-datetime/</id>
+    <published>2020-05-29T22:21:38.997Z</published>
+    <updated>2020-05-29T22:21:38.997Z</updated>
+    
+    <content type="html"><![CDATA[<p>在写代码的时候有很多场合需要处理日期和时间，比如：在日志中需要记录当前时间，在处理订单的时候需要处理用户下单的时间，在Hive上的各种点赞机器人需要知道新帖子的创建时间，以及帖子的“年龄”等等。。。在Python中提供了非常强大的日期/时间处理模块：time，和datetime。这些模块中又有很多有用的函数。下面把我经常使用的函数做一总结，欢迎大家指正。</p><p><img src="/images/technology/python/datetime/datetime.jpg" alt="Python中的日期/时间处理"></p><p>图源：pixabay</p><a id="more"></a><h2 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h2><p>time模块提供了和时间相关的一些类及函数。</p><h3 id="时间偏移量表示法"><a href="#时间偏移量表示法" class="headerlink" title="时间偏移量表示法"></a>时间偏移量表示法</h3><p>在Python交互式窗口中输入time.time()，其输出为一个数字：</p><p><img src="/images/technology/python/datetime/1.png" alt="Python中的日期/时间处理"></p><p>这个数字代表了从1970年1月1日00:00:00至今的秒偏移量。</p><p>将其转换为字符串格式：</p><p><img src="/images/technology/python/datetime/2.png" alt="Python中的日期/时间处理"></p><h3 id="元组表示法"><a href="#元组表示法" class="headerlink" title="元组表示法"></a>元组表示法</h3><p>还有一种时间的表示法：使用包含9个整数的元组分别表示年，月，日，时，分，秒等：</p><p><img src="/images/technology/python/datetime/3.png" alt="Python中的日期/时间处理"></p><p>可以把这个元组转换为第一种表示法：</p><p><img src="/images/technology/python/datetime/4.png" alt="Python中的日期/时间处理"></p><h3 id="格式化字符串表示法"><a href="#格式化字符串表示法" class="headerlink" title="格式化字符串表示法"></a>格式化字符串表示法</h3><p>还可以将时间表示为我们熟悉的格式：</p><p><img src="/images/technology/python/datetime/5.png" alt="Python中的日期/时间处理"></p><h3 id="时间的加减法"><a href="#时间的加减法" class="headerlink" title="时间的加减法"></a>时间的加减法</h3><p>比如，计算一个小时之后的时间：</p><p><img src="/images/technology/python/datetime/6.png" alt="Python中的日期/时间处理"></p><h2 id="datetime模块"><a href="#datetime模块" class="headerlink" title="datetime模块"></a>datetime模块</h2><p>从 datetime 模块中，依次导入date，datetime，timedelta。</p><pre><code>from datetime import date, datetime, timedelta</code></pre><h3 id="获取日期"><a href="#获取日期" class="headerlink" title="获取日期"></a>获取日期</h3><p>获取当前日期：</p><p><img src="/images/technology/python/datetime/7.png" alt="Python中的日期/时间处理"></p><h3 id="日期时间和字符串转换"><a href="#日期时间和字符串转换" class="headerlink" title="日期时间和字符串转换"></a>日期时间和字符串转换</h3><p>将日期转换为字符串；</p><p><img src="/images/technology/python/datetime/8.png" alt="Python中的日期/时间处理"></p><p>将日期时间字符串转换为日期时间(datetime)类型：</p><p><img src="/images/technology/python/datetime/9.png" alt="Python中的日期/时间处理"></p><h3 id="计算时间差"><a href="#计算时间差" class="headerlink" title="计算时间差"></a>计算时间差</h3><p><img src="/images/technology/python/datetime/10.png" alt="Python中的日期/时间处理"></p><p>获取明天和昨天的时间：</p><p><img src="/images/technology/python/datetime/11.png" alt="Python中的日期/时间处理"></p><p>得到Hive文章的发布时间后，计算从文章发布时间到现在时间的秒数：</p><p><img src="/images/technology/python/datetime/12.png" alt="Python中的日期/时间处理"></p>]]></content>
+    
+    <summary type="html">
+    
+      Python中的日期/时间处理
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Hiveonboard</title>
@@ -414,26 +436,6 @@
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>18年投的一个ICO项目2Key终于要上交易所了</title>
-    <link href="https://www.aafeng.uk/2key/"/>
-    <id>https://www.aafeng.uk/2key/</id>
-    <published>2020-05-14T21:05:50.119Z</published>
-    <updated>2020-05-14T21:05:50.119Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>声明：下面只是我个人的经历分享，不作为您的投资建议。</strong></p><p>今天朋友联系我说18年一起投的一个ICO项目2Key要发币了，而且在5月19号要上交易所。我整个就懵了，2Key是什么？？？翻了翻过去的记录，似乎还真的投过这个币，现在忘的彻彻底底了。</p><p><img src="/images/blockchain/2key.jpg" alt="2Key"></p><a id="more"></a><p>当时选择投资这个ICO主要有以下几个考虑：</p><ul><li>首先，这个项目有卖点。2Key强调的是“智能链接”，可以用2Key来创建多级推荐活动。在这些活动中奖励推荐链中的每一个人。在整个活动过程中，可以实时跟踪活动是如何传播的。</li><li>其次，项目的合伙人/合作方包括：Enigma, Ledger, Metamask, Zoom (Zoom在两年前还没有和2Key合作，这应该是今年的事)等这些知名的名字，应该靠谱。</li><li>感觉团队是是实实在在的做事，比如他们专门针对系统的Bug有一套赏金系统：<a href="https://www.2key.network/bug-bounty" rel="external nofollow noopener noreferrer" target="_blank">https://www.2key.network/bug-bounty</a></li></ul><p>查看了一下项目的Github活跃度，代码更新还是比较频繁的：</p><p><img src="/images/blockchain/2key2.png" alt="2Key"></p><p>2Key现在的币价是$0.08，在5月19号要上架Bilaxy和Hotbit交易所。希望上架后币价能涨一些吧。</p><p>最后给出项目的相关信息：</p><p>代币名称：2KEY<br>发行总量：6亿<br>合约地址：0xe48972fcd82a274411c01834e2f031d4377fa2c0<br>官网：<a href="https://www.2key.network/" rel="external nofollow noopener noreferrer" target="_blank">https://www.2key.network/</a><br>源码：<a href="https://github.com/2key/contracts" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/2key/contracts</a></p>]]></content>
-    
-    <summary type="html">
-    
-      18年投的一个ICO项目2Key终于要上交易所了
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
