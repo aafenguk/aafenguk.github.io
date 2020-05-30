@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-29T22:21:38.997Z</updated>
+  <updated>2020-05-30T22:11:10.359Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>因果关系</title>
+    <link href="https://www.aafeng.uk/causal/"/>
+    <id>https://www.aafeng.uk/causal/</id>
+    <published>2020-05-30T22:11:10.359Z</published>
+    <updated>2020-05-30T22:11:10.359Z</updated>
+    
+    <content type="html"><![CDATA[<p>前两天在写自己DIY那篇文章的时候，对于事情的因果关系，感觉有些困惑。我是因为不擅长DIY而对它没有太大兴趣呢，还是因为对它没有兴趣而变得不是很擅长呢？</p><p><img src="/images/thinking/why.jpg" alt="因果关系"><br>图源：Pixabay</p><a id="more"></a><p>从小接受的教育就是“种瓜得瓜，种豆得豆”，“一分辛苦，一分收获”。在数学上更是相信充分条件所体现的逻辑，比如：如果条件A满足，必然会有结果B。但最近我的想法在发生变化。很多事情的因果关系并不是绝对的。有时候因果关系是可以互换的。</p><p>首先拿我家孩子练琴的事来举例。刚开始的时候，儿子并不喜欢弹琴，但在妈妈的<del>威逼</del>鼓励下，慢慢取得了一些成就，获得很多奖杯/奖牌，同时也得到了老师和同学们的认可。这样他的信心越来越足，也越来越喜欢。在学琴这件事情上，喜欢弹琴和取得成绩之间是什么样的因果关系呢？在我看来，只有喜欢弹琴，才能越弹越好，才能取得好成绩。同样因为取得了好成绩，有了动力，会越来越喜欢弹琴。如果深究下去，终会陷入先有鸡，还是先有蛋的逻辑之中。</p><p>在工作问题上，很多人都会说，要选择一份自己喜欢的工作，这样才会把工作做好，就是所谓的“爱一行，干一行”吧。可我在读书期间，导师曾经说过一句话：”Do it, then like it”。如果用中文表述，应该是：“干一行，爱一行”吧。只要认真做一件工作，慢慢的就会培养对工作的自信，同时也会慢慢真正的喜欢上工作本身。</p><p>曾经听过一个说法：每天早上亲吻自己伴侣的人，收入会比没有这种亲密表现的人高出20%甚至更多，同时他们的平均寿命也更长。想想似乎有道理，早上一个吻，能够增进夫妻感情，精神状态会比较好。这样在工作的时候能做得更好，从而升职加薪。长期保持好的心理状态，就能增长寿命。但反过来一想，收入更高的人似乎更有时间来维护夫妻之间的感情。那么这里哪个是因，哪个又是果呢？</p><p>不过，无论怎么讲，每天不要忘记给TA一个吻，好处似乎还真不少。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      因果关系
+    
+    </summary>
+    
+      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python中的日期/时间处理</title>
@@ -416,26 +436,6 @@
     </summary>
     
       <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>试用AI加持的代码增强工具Kite</title>
-    <link href="https://www.aafeng.uk/kite/"/>
-    <id>https://www.aafeng.uk/kite/</id>
-    <published>2020-05-16T21:55:22.923Z</published>
-    <updated>2020-05-16T21:55:22.923Z</updated>
-    
-    <content type="html"><![CDATA[<p>平时写代码主要用IntelliJ和PyCharm，基本上还算满意。最近在一个很偶然的机会看到了Kite这个代码增强工具，试用了一下VS Code+Kite，感觉还是非常好用的，可以和IntelliJ IDEA这样的付费商业软件相媲美。</p><p><img src="/images/technology/kite/kite.png" alt="Kite"></p><a id="more"></a><p>它支持的代码编辑器非常全面，包括：VS Code, IntelliJ, PyCharm, Sublime, Atom, WebStorm, Vim等。</p><p><img src="/images/technology/kite/kite2.png" alt="Kite"></p><p>就连Python之父也对其赞不绝口：</p><p><img src="/images/technology/kite/kite3.png" alt="Kite"></p><p>安装过程非常简单，首先在<a href="https://kite.com/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载，然后运行安装程序。</p><p>安装中建议只选择你需要的插件以节省磁盘空间并提升速度：</p><p><img src="/images/technology/kite/kite4.png" alt="Kite"></p><p>对我而言，IntelliJ/PyCharm的代码补全功能已经够强大了，不需要Kite，但他们有些太臃肿。因此我只想把Kite安装到轻量级的编辑器VS Code中。</p><p><img src="/images/technology/kite/kite5.png" alt="Kite"></p><p>创建了一个Python源文件，试用一下：</p><p><img src="/images/technology/kite/kite6.png" alt="Kite"></p><p>感觉Kite的基于AI的代码补全非常好用，Kite会根据你的键盘输入自动显示相应的列表。和IntelliJ相比，毫不逊色。</p><p>还有一键调用文档的功能。</p><p><img src="/images/technology/kite/kite7.png" alt="Kite"></p><p>一旦激活后，只要把光标停留在对应的类/方法处，Kite窗口中就会显示对应的文档：</p><p><img src="/images/technology/kite/kite8.png" alt="Kite"></p><p>总而言之，Kite这个辅助编码工具还是很好用的，能够大幅度提高开发效率。有了它的陪伴，就可以更加愉快的编码了。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      试用AI加持的代码增强工具Kite
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
