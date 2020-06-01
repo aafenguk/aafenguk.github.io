@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-05-31T21:47:23.417Z</updated>
+  <updated>2020-06-01T21:19:34.552Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>改良版鱼香肉丝</title>
+    <link href="https://www.aafeng.uk/shredded-pork/"/>
+    <id>https://www.aafeng.uk/shredded-pork/</id>
+    <published>2020-06-01T21:19:34.552Z</published>
+    <updated>2020-06-01T21:19:34.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近朋友圈很多人都喜欢上了王刚的家常菜食谱。我们照着做了两个菜，感觉效果还真的不错。整体思路是按照王刚的做法来的，但稍微做了些调整，一是因为有的食材家中没有，还有就是完全按照菜谱做的效果并不是很好，最后出锅前又添了些配料。下面记录一下我们自己的改良版鱼香肉丝。</p><p>首先上一个成品图：<br><img src="/images/food/yxrs/1.jpg" alt="鱼香肉丝"></p><a id="more"></a><p>切好肉丝，用一个蛋清，盐，胡椒粉，生抽，料酒腌制肉丝：</p><p><img src="/images/food/yxrs/2.jpg" alt="鱼香肉丝"></p><p>接下来准备姜末，蒜末，还有泡椒碎。我们只用了4个小泡椒，就已经很辣了。由于考虑到孩子要吃，因此把泡椒碎和姜蒜分开放：</p><p><img src="/images/food/yxrs/3.jpg" alt="鱼香肉丝"></p><p>切好配菜，包括青椒丝，胡萝卜丝，和木耳</p><p><img src="/images/food/yxrs/4.jpg" alt="鱼香肉丝"></p><p>用生抽，醋，糖，盐，料酒，水淀粉配酱汁。</p><p>接下来就可以开始炒了。</p><p>首先将腌制好的肉丝在热油中炒熟，盛出备用。</p><p>加下来将姜末，蒜末，和剁椒碎在油中炒香。在这里我们又额外的添加了一勺郫县豆瓣酱，事实证明最终的效果还是很好的。</p><p>将肉丝和配菜放入锅中翻炒。稍后将配好的酱汁放入锅中继续炒熟，撒上葱花即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      改良版鱼香肉丝
+    
+    </summary>
+    
+      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python中的列表生成式</title>
@@ -414,26 +434,6 @@
     <summary type="html">
     
       细思极恐 - 其实我们都是斯金纳箱中的鸽子
-    
-    </summary>
-    
-      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你是刺猬思维还是狐狸思维？</title>
-    <link href="https://www.aafeng.uk/fox-hedgehog/"/>
-    <id>https://www.aafeng.uk/fox-hedgehog/</id>
-    <published>2020-05-17T10:35:52.928Z</published>
-    <updated>2020-05-17T10:35:52.928Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近看到了一篇文章，对自己的触动很大。文章说的是狐狸思维和刺猬思维在币圈投资中的体现。但其中所讲的道理，适用于生活中的方方面面。</p><p><img src="/images/life/fox.jpg" alt="狐狸思维"></p><a id="more"></a><p>图源：Pixabay</p><p>狐狸和刺猬的故事源于古希腊寓言故事，狐狸想要吃掉刺猬，想尽各种方法进攻，希望能够找到刺猬的弱点。而刺猬只有一招，就是把全身缩成一团，用全身的刺来保护自己。最终狐狸机关算尽还是败在了刺猬的手中。其实这个故事讲的是一个道理：狐狸懂的很多，思维多元化，办法也很多；<strong>刺猬却能够懂的最重要的事</strong>，思维是集中和单一的，但可以做到一招先，吃遍天。</p><p>说白了，刺猬思维是典型的一根筋，认准了一件事情，就不再改变，朝着一个目标努力，直到把事情做完为止。而狐狸思维说的则是很会变通的人，他们脑瓜活络，能够有很多的好点子，但其中的有些人却没有明确的目标，甚至不知道自己想要什么。</p><p>在币圈中估计大家身边都有很多典型的“狐狸”和“刺猬”，我也听说过很多类似的故事。在币圈，有些人认准大饼，买入后长期持有，结果跑赢了绝大多数频繁进行交易的人。金庸迷们熟悉的角色郭靖也是典型的一根筋思维，不懂变通，但却能学会降龙十八掌，傲视群雄。</p><p>其实，我觉得任何事情都不是绝对的。可以在“狐狸”式思维和“刺猬”式思维中有机的切换和变通。在进行思考的时候选择“狐狸”式思维，而在做事的时候则要“刺猬”式思维。</p><p>你是狐狸还是刺猬呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      你是刺猬思维还是狐狸思维？
     
     </summary>
     
