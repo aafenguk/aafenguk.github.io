@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-02T20:45:33.752Z</updated>
+  <updated>2020-06-02T22:08:19.446Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>房子扩建工程即将开始</title>
+    <link href="https://www.aafeng.uk/house-extension/"/>
+    <id>https://www.aafeng.uk/house-extension/</id>
+    <published>2020-06-02T22:08:19.446Z</published>
+    <updated>2020-06-02T22:08:19.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>家中的房子扩建工程已经酝酿了很长时间。前一段时间由于全面停工停学，建筑工人也都被迫在家休息，因此工程就被拖了下来。今天Builder打电话说再过两周就来家中开始干活了。让我感觉似乎还没有准备好。</p><p><img src="/images/life/builder.jpg" alt="扩建工程"></p><a id="more"></a><p>去年的时候我和媳妇就扩建这件事已经达成一致意见，今年四月份开工，预计2-3个月的时间，在暑假完工，正好趁着暑期把家中收拾好。谁想到整个计划被新冠病毒彻底打乱。现在Builder要求开工，我其实还是非常犹豫的。</p><p>如果现在开工，最坏的可能就是工程干到一半的时候疫情第二次爆发，会被迫停工。这样自己家将会长期成为一个工地，对生活的负面影响将会很大。</p><p>如果现在不开工，而是等待形式彻底明朗的时候再开工。问题就在于第一不知道什么时候形式会变得明朗，甚至不知道形式会不会变得明朗。第二是builder不会一直等我们，可能builder会去做别的工程。再过几个月就到冬季了，而冬季是不适合这种工程的。这样一拖就不知道何年何月才能再重新开工了。</p><p>好在我们选择的Builder是朋友推荐的，人非常好。总是在安慰我们，即使在当前疫情下，我们可以work together，想办法把工程按时完成。</p><p>在反复权衡之后，我们决定开工！就算疫情一时半会不会完全好转，但生活毕竟还要继续。人类可能要学会长期和病毒共存了。至于下一步如何，只能走一步看一步了。希望builder能够顺利把我们的工程做完吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      房子扩建工程即将开始
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>将Hive文章保存到Elasticsearch的尝试</title>
@@ -420,26 +440,6 @@
     </summary>
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java应用程序性能调优的神器 - Glowroot</title>
-    <link href="https://www.aafeng.uk/glowroot/"/>
-    <id>https://www.aafeng.uk/glowroot/</id>
-    <published>2020-05-17T19:43:11.206Z</published>
-    <updated>2020-05-17T19:43:11.206Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近遇到一个Java Web应用中的性能问题。在某个时段整个程序的响应时间过长。在分析了日志后没有任何头绪。于是祭出了Glowroot这个Java性能调优的大杀器，终于将问题找了出来。下面把这个强悍的工具向大家介绍一下。</p><p><img src="/images/technology/glowroot/glowroot.png" alt="Glowroot"></p><a id="more"></a><h2 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h2><p>首先在其<a href="https://glowroot.org/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载压缩包。如果对其源码感兴趣的话，这里是其<a href="https://github.com/glowroot/glowroot" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>。将压缩文件下载并解压缩后会在相应子目录(glowroot)中看到glowroot.jar这个文件。</p><p>由于我是对Tomcat容器中的程序进行性能调优，因此需要将Glowroot对应子目录的所有者改为运行Tomcat的用户，我这里是”tomcat”。这么做的主要原因是因为Glowroot在运行时需要创建logs, tmp等子目录并要在其中创建文件。</p><pre><code>sudo chown tomcat:tomcat glowroot</code></pre><p>接下来需要在启动Tomcat的时候添加JVM的参数。如果是通过apt方式安装的Tomcat，那么配置文件在：/etc/default/tomcat8，添加如下内容：</p><pre><code>-javaagent:/opt/york/digilib/glowroot/glowroot.jar</code></pre><p>至此，就可以进行测试了。重新启动Tomcat，访问本机的4000端口：</p><pre><code>http://localhost:4000</code></pre><p>就可以看到Glowroot的主界面了：</p><p><img src="/images/technology/glowroot/glowroot2.png" alt="Glowroot"></p><h2 id="主要性能指标"><a href="#主要性能指标" class="headerlink" title="主要性能指标"></a>主要性能指标</h2><p>首先，在Glowroot中可以很方便的查看响应时间的瓶颈，甚至能定位到具体的某个类。比如，在下图中可以看到spring controller占用了响应时间的83.9%，这肯定不正常。其实，我性能调优最后的结论就是spring controller出的问题。最终的解决方案也是基于这个发现的。</p><p><img src="/images/technology/glowroot/glowroot3.png" alt="Glowroot"></p><p>还可以查看各个线程的资源使用，同样，其分析结果直指spring中的doGet方法：</p><p><img src="/images/technology/glowroot/glowroot4.png" alt="Glowroot"></p><p>除此之外，还有对各种REST API调用的分析等。</p><h2 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h2><p>Glowroot有一个配置文件：admin.json。在刚安装的时候，你是找不到这个文件的。你可以选择自己手工创建它。但由于刚开始使用时不知道该如何进行配置，这里建议先不要管它，直接重新启动Tomcat，这样在Glowroot被首次启动后，就会在其目录下创建admin.json这个文件。这个时候你就可以在其基础上进行修改了，这样就会简单的多。</p><p>Glowroot的默认配置下，只能从本机访问，如果要从外部访问，可以更改这一段：</p><pre><code>&quot;bindAddress&quot;: &quot;0.0.0.0&quot;,</code></pre><p>如果要更改端口：</p><pre><code>&quot;port&quot;: 4000,</code></pre><p>默认设置下，匿名账户具有管理员权限，这肯定是要改的。以下会添加新用户’admin’，将匿名用户(anonymous)的角色改为’Anonymous’，并添加一个新的角色“Anonymous”：</p><p>   “users”: [<br>      {<br>        “username”: “admin”,<br>        “password”: “xxxxxxxx”,<br>        “roles”: [<br>          “Administrator”<br>        ]<br>      },<br>      {<br>        “username”: “anonymous”,<br>        “roles”: [<br>          “Anonymous”<br>        ]<br>      }<br>    ],<br>    {<br>      “name”: “Anonymous”,<br>      “permissions”: [<br>        “agent:transaction”,<br>        “agent:error”,<br>        “agent:jvm:gauges”,<br>        “agent:jvm:threadDump”,<br>        “agent:jvm:heapHistogram”,<br>        “agent:jvm:mbeanTree”,<br>        “agent:jvm:systemProperties”,<br>        “agent:jvm:environment”,<br>        “agent:config:view”,<br>        “admin:view”<br>      ]<br>    }</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前也用过jvisualvm进行Java应用程序的性能调优，但感觉它特别吃内存，会严重影响服务器的性能。Glowroot似乎没有这个问题，添加这个模块后并没有感觉服务器的性能下降。同时，感觉Glowroot更加直观好用，能够迅速定位到出问题的类，以及相应的线程。从而帮助你快速找到问题的根源所在。</p>]]></content>
-    
-    <summary type="html">
-    
-      Java应用程序性能调优的神器 - Glowroot
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
