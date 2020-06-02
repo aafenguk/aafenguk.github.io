@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-01T21:19:34.552Z</updated>
+  <updated>2020-06-02T20:45:33.752Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将Hive文章保存到Elasticsearch的尝试</title>
+    <link href="https://www.aafeng.uk/hive-elasticsearch/"/>
+    <id>https://www.aafeng.uk/hive-elasticsearch/</id>
+    <published>2020-06-02T20:45:33.752Z</published>
+    <updated>2020-06-02T20:45:33.752Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直对Hive的搜索功能不是很满意。在工作中使用过不同的框架，这些框架提供的搜索功能中，facet，关键字标红等可以说是标配。但在Hive中一样都没有。其原因我也能理解，毕竟从链上读取数据，这些数据中不包含需要的信息，自然也不太容易实现这些功能。那么，如果把链上数据保存到Solr或者Elasticsearch中，不就能增强其搜索功能了吗？下面记录一下把Hive中的文章信息保存到Elasticsearch中的步骤。当然，下面只是一个简单的实验，想做到一个真正能工作的网站还有很多工作要做。</p><p><img src="/images/blockchain/hive/es.png" alt="Elasticsearch"></p><a id="more"></a><h2 id="安装Elasticsearch"><a href="#安装Elasticsearch" class="headerlink" title="安装Elasticsearch"></a>安装Elasticsearch</h2><p>下载Elasticsearch:</p><p><a href="https://www.elastic.co/cn/downloads/elasticsearch" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/elasticsearch</a></p><p>解压缩：</p><pre><code>tar xvf elasticsearch-7.7.0-linux-x86_64.tar.gz</code></pre><p>运行：</p><pre><code>cd elasticsearch-7.7.0/bin ./elasticsearch</code></pre><p>在本地用curl测试一下：</p><pre><code>curl localhost:9200</code></pre><p>其输出应类似于：</p><pre><code>{  &quot;name&quot; : &quot;YOUR_SERVER_NAME&quot;,  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,  &quot;cluster_uuid&quot; : &quot;liHA066AQJeE91lv8lLqig&quot;,  &quot;version&quot; : {    &quot;number&quot; : &quot;7.7.0&quot;,    &quot;build_flavor&quot; : &quot;default&quot;,    &quot;build_type&quot; : &quot;tar&quot;,    &quot;build_hash&quot; : &quot;81a1e9eda8e6183f5237786246f6dced26a10eaf&quot;,    &quot;build_date&quot; : &quot;2020-05-12T02:01:37.602180Z&quot;,    &quot;build_snapshot&quot; : false,    &quot;lucene_version&quot; : &quot;8.5.1&quot;,    &quot;minimum_wire_compatibility_version&quot; : &quot;6.8.0&quot;,    &quot;minimum_index_compatibility_version&quot; : &quot;6.0.0-beta1&quot;  },  &quot;tagline&quot; : &quot;You Know, for Search&quot;}</code></pre><h2 id="安装Kibana"><a href="#安装Kibana" class="headerlink" title="安装Kibana"></a>安装Kibana</h2><p>其实，要想使用Elasticsearch，不一定要安装Kibana。但有了Kibana，可以实现对Elasticsearch中的数据可视化。</p><p>从官网下载：<a href="https://www.elastic.co/cn/downloads/kibana" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/kibana</a></p><p>解压缩后进入config目录并修改kibana.yml:</p><pre><code>server.host: &quot;0.0.0.0&quot;</code></pre><p>进入bin目录运行：</p><pre><code>./kibana</code></pre><p>可以看到如下界面：    </p><p><img src="/images/blockchain/hive/es2.png" alt="Elasticsearch"></p><p>导入如下电商数据进行测试：</p><p><img src="/images/blockchain/hive/es3.png" alt="Elasticsearch"></p><p>打开devtool后进行一个简单的查询，可以看到如下数据：</p><p><img src="/images/blockchain/hive/es4.png" alt="Elasticsearch"></p><h2 id="Elasticsearch中的重要概念"><a href="#Elasticsearch中的重要概念" class="headerlink" title="Elasticsearch中的重要概念"></a>Elasticsearch中的重要概念</h2><p>在向ElasticSearch中插入数据之前，把其中的重要概念和传统的关系型数据库做一个对比：</p><p><strong>ES =&gt; RDB</strong></p><p>Index  =&gt;  Database<br>Type  =&gt;   Table<br>Document  =&gt;  Row<br>Field =&gt;  Column<br>Mapping  =&gt;   Schema</p><h2 id="安装并测试Python-elasticsearch模块"><a href="#安装并测试Python-elasticsearch模块" class="headerlink" title="安装并测试Python elasticsearch模块"></a>安装并测试Python elasticsearch模块</h2><p>首先安装elasticsearch模块：</p><pre><code>pip install elasticsearch</code></pre><p>进入Python命令行，依次输入如下命令创建一个新的索引“hive-posts-index”：</p><pre><code>&gt;&gt;&gt; from datetime import datetime&gt;&gt;&gt; from elasticsearch import Elasticsearch&gt;&gt;&gt; es = Elasticsearch()&gt;&gt;&gt; es.indices.create(index=&apos;hive-posts-index&apos;, ignore=400){&apos;acknowledged&apos;: True, &apos;shards_acknowledged&apos;: True, &apos;index&apos;: &apos;hive-posts-index&apos;}</code></pre><p>进入Kibana devtool界面，就会看到这个索引已经创建：</p><p><img src="/images/blockchain/hive/es5.png" alt="Elasticsearch"></p><p>测试添加记录</p><pre><code>es.index(index=&quot;hive-posts-index&quot;, id=1, body={&quot;any&quot;: &quot;data&quot;, &quot;timestamp&quot;: datetime.now()})</code></pre><p>读取记录：</p><pre><code>&gt;&gt;&gt; es.get(index=&quot;hive-posts-index&quot;, id=1){&apos;_index&apos;: &apos;hive-posts-index&apos;, &apos;_type&apos;: &apos;_doc&apos;, &apos;_id&apos;: &apos;1&apos;, &apos;_version&apos;: 1, &apos;_seq_no&apos;: 0, &apos;_primary_term&apos;: 1, &apos;found&apos;: True, &apos;_source&apos;: {&apos;any&apos;: &apos;data&apos;, &apos;timestamp&apos;: &apos;2020-06-02T15:52:40.759337&apos;}}</code></pre><h2 id="将Hive中的帖子插入到Elasticsearch中"><a href="#将Hive中的帖子插入到Elasticsearch中" class="headerlink" title="将Hive中的帖子插入到Elasticsearch中"></a>将Hive中的帖子插入到Elasticsearch中</h2><p>写了一个简单的程序，将我最新5篇文章的标题，正文，分类保存到ES，并以permlink作为ES中的id：</p><pre><code>from beem import Steemfrom beem.account import Accountfrom datetime import datetimefrom elasticsearch import Elasticsearches = Elasticsearch()hive    = Steem(nodes = &apos;https://api.hive.blog&apos;)account = Account(&apos;aafeng&apos;, steem_instance = hive)posts   = account.get_blog(start_entry_id=0, limit=5)for post in posts:    author   = post.author    title    = post.title    body     = post.body    category = post.category    permlink = post.permlink    es.index(index=&quot;hive-posts-index&quot;, id=permlink, body={&quot;author&quot;: author,\                                                    &quot;title&quot;:  title,\                                                    &quot;body&quot;:   body,\                                                    &quot;category&quot;: category,\                                                    &quot;permlink&quot;: permlink,\                                                    &quot;timestamp&quot;: datetime.now()})</code></pre><p>在Kibana中进行查询：</p><pre><code>GET hive-posts-index/_search?q=*:*</code></pre><p>从输出可以看出，我的文章已经保存到ES中了:</p><p><img src="/images/blockchain/hive/es6.png" alt="Elasticsearch"></p><p>也可以使用curl验证是否已经将数据保存至ES：</p><pre><code>curl http://localhost:9200/hive-posts-index/_search?size=5</code></pre><p>然后可以使用ES来进行各种查询了，比如：</p><pre><code>GET hive-posts-index/_search?q=title:必有GET hive-posts-index/_search?q=category:hive-105017</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      将Hive文章保存到Elasticsearch的尝试
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
+    
+  </entry>
   
   <entry>
     <title>改良版鱼香肉丝</title>
@@ -418,26 +440,6 @@
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>细思极恐 - 其实我们都是斯金纳箱中的鸽子</title>
-    <link href="https://www.aafeng.uk/skinner-box/"/>
-    <id>https://www.aafeng.uk/skinner-box/</id>
-    <published>2020-05-17T10:36:48.172Z</published>
-    <updated>2020-05-17T10:36:48.172Z</updated>
-    
-    <content type="html"><![CDATA[<p>不知道你有没有这样的经历，有时候手机不在旁边感觉似乎缺了点什么。而下意识的拿起手机似乎又不知道为什么要把它拿起来，也不知道要拿它做什么。最近看到一个观点似乎能够完美的解释这种行为。说白了，我们掉到了那些专业的产品设计师所设计好的坑里了。我们平常的很多行为，比如：对手机的使用，对某款游戏的上瘾，其实都是处于别人的掌控之中。我们更像是行为心理学中的经典实验，斯金纳箱中的鸽子。</p><p><img src="/images/life/pigeon.jpg" alt="斯金纳箱中的鸽子"></p><a id="more"></a><p>斯金纳是行为心理学的大师，他把巴甫洛夫和桑代克关于条件反射的理论更上一层楼，提出了一个新的观点：操作性条件反射。说白了，就是动物（包括人）的很多条件反射是完全可以操作的。比如：人的恐怖情绪是可以被操控的。他曾经做过一个著名的鸽子实验。在实验中，他把鸽子关在笼子中，每过15秒就用喂食器自动给鸽子喂食，这样过了一段时间后，他发现了一个奇怪的现象：笼中的鸽子在被喂食前做着各种这样的奇怪动作，有的鸽子左右摇头，有的鸽子走来走去，有的鸽子翩翩起舞，似乎鸽子们通过这种方式来祈求食物的到来。即使后来他彻底停止了对鸽子的喂食，但鸽子仍然在做着各种动作，仍然希望食物的来临。</p><p>斯金纳还曾经做过一个很不人道（后来被禁止）的实验，证明了可以控制人的恐惧感。在实验中他们把各种毛绒玩具放在一个小婴儿面前，婴儿对这些玩具展示出强烈的兴趣。实验者带着圣诞老人的面具来到婴儿面前，婴儿也非常喜欢。之后他们做了一件事，就是在婴儿和玩具接触的时候，制造出一种让人不适的噪音来，婴儿听到噪音后吓得大哭。之后只要婴儿一接触这些玩具，他们就制造出噪音。久而久之，婴儿就把这些玩具和噪音联系到了一起。之后只要看到毛绒玩具就很恐惧。</p><p>其实在我们的生活中，有很多这样的例子。很多产品的设计师也在把这种观点应用到了各种产品中。比如：我家孩子经常使用一个APP，叫做Receipt Hog，每次购物后我会把小票给他们，他们用这个APP把小票扫描进去，并做一个简单的问卷，就会得到一定的积分，达到一定分值后可以兑换现金，同时还会随机的给他们抽奖的机会。迄今为止他们已经领到10英镑了。但现在我所看到的是，孩子们对待小票的行为已经完全被这个APP所控制。每次购物回来后，他们肯定不会忘记和我要小票。</p><p>还有一个有趣的例子就是我经常去一家超市购物，感觉这家超市在深入的研究客户的行为。如果我有一段时间不去他家购物，他家就会给我寄送优惠券来，比如：满40英镑返8镑。如果我使用了这些优惠券，他们会停止给我寄，再过一段时间会尝试给我寄力度稍微小一些的优惠券，如果我没有用那些优惠券，他们就会再寄来我曾经用过的优惠券，于是我又乖乖的去他家消费了。感觉我的购物行为完全被他家的优惠券牵着鼻子走。。。</p><p>我想类似的例子数不胜数。等到人工智能得到进一步发展后，人类是否终将被某些AI所完全控制，甚至人类思维将会和AI彻底融合？</p>]]></content>
-    
-    <summary type="html">
-    
-      细思极恐 - 其实我们都是斯金纳箱中的鸽子
-    
-    </summary>
-    
-      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
     
     
   </entry>
