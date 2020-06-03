@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-02T22:08:19.446Z</updated>
+  <updated>2020-06-03T12:09:11.669Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to save Hive posts into Elasticsearch</title>
+    <link href="https://www.aafeng.uk/hive-elasticserach-tutorial/"/>
+    <id>https://www.aafeng.uk/hive-elasticserach-tutorial/</id>
+    <published>2020-06-03T12:09:11.669Z</published>
+    <updated>2020-06-03T12:09:11.669Z</updated>
+    
+    <content type="html"><![CDATA[<p>Elasticsearch is a great search engine providing a distributed, multitenant-capable full-text search engine. It provides features like facets, keyword highlighting etc in the search user interface. Here is a tutorial to index Hive posts into elasticsearch.</p><p><img src="/images/blockchain/hive/es.png" alt="Elasticsearch"></p><a id="more"></a><h2 id="Install-Elasticsearch"><a href="#Install-Elasticsearch" class="headerlink" title="Install Elasticsearch"></a>Install Elasticsearch</h2><p>Download Elasticsearch(ES) from the official site:</p><p><a href="https://www.elastic.co/cn/downloads/elasticsearch" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/elasticsearch</a></p><p>Decompress:</p><pre><code>tar xvf elasticsearch-7.7.0-linux-x86_64.tar.gz</code></pre><p>Then run the following command to start ES:</p><pre><code>cd elasticsearch-7.7.0/bin ./elasticsearch</code></pre><p>Use curl to test:</p><pre><code>curl localhost:9200</code></pre><p>You will the the output like:</p><pre><code>{  &quot;name&quot; : &quot;YOUR_SERVER_NAME&quot;,  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,  &quot;cluster_uuid&quot; : &quot;liHA066AQJeE91lv8lLqig&quot;,  &quot;version&quot; : {    &quot;number&quot; : &quot;7.7.0&quot;,    &quot;build_flavor&quot; : &quot;default&quot;,    &quot;build_type&quot; : &quot;tar&quot;,    &quot;build_hash&quot; : &quot;81a1e9eda8e6183f5237786246f6dced26a10eaf&quot;,    &quot;build_date&quot; : &quot;2020-05-12T02:01:37.602180Z&quot;,    &quot;build_snapshot&quot; : false,    &quot;lucene_version&quot; : &quot;8.5.1&quot;,    &quot;minimum_wire_compatibility_version&quot; : &quot;6.8.0&quot;,    &quot;minimum_index_compatibility_version&quot; : &quot;6.0.0-beta1&quot;  },  &quot;tagline&quot; : &quot;You Know, for Search&quot;}</code></pre><h2 id="Install-Kibana"><a href="#Install-Kibana" class="headerlink" title="Install Kibana"></a>Install Kibana</h2><p>You don’t have to install Kibana prior to using ES. However, Kibana provides lots of additional features to your data.</p><p>Download from: <a href="https://www.elastic.co/cn/downloads/kibana" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/kibana</a></p><p>Decompress and modify file: config/kibana.yml, add this line:</p><pre><code>server.host: &quot;0.0.0.0&quot;</code></pre><p>Run Kibana</p><pre><code>cd bin./kibana</code></pre><p>You will see the following UI</p><p><img src="/images/blockchain/hive/es2.png" alt="Elasticsearch"></p><p>Import the E Commerence data for testing:</p><p><img src="/images/blockchain/hive/es3.png" alt="Elasticsearch"></p><p>Open the evtool and run a simple query, you will see:</p><p><img src="/images/blockchain/hive/es4.png" alt="Elasticsearch"></p><h2 id="Important-concepts-in-ES"><a href="#Important-concepts-in-ES" class="headerlink" title="Important concepts in ES"></a>Important concepts in ES</h2><p>Let’s compare the terms in ES with relational database:</p><p><strong>ES              RDB</strong></p><p>Index  =&gt;  Database<br>Type  =&gt;   Table<br>Document  =&gt;  Row<br>Field =&gt;  Column<br>Mapping  =&gt;   Schema</p><h2 id="Install-and-test-Python-elasticsearch-module"><a href="#Install-and-test-Python-elasticsearch-module" class="headerlink" title="Install and test Python elasticsearch module"></a>Install and test Python elasticsearch module</h2><p>Install elasticsearch via pip:</p><pre><code>pip install elasticsearch</code></pre><p>Enter Python interactive mode, and run the following commands to create ES index called “hive-posts-index”:</p><pre><code>&gt;&gt;&gt; from datetime import datetime&gt;&gt;&gt; from elasticsearch import Elasticsearch&gt;&gt;&gt; es = Elasticsearch()&gt;&gt;&gt; es.indices.create(index=&apos;hive-posts-index&apos;, ignore=400){&apos;acknowledged&apos;: True, &apos;shards_acknowledged&apos;: True, &apos;index&apos;: &apos;hive-posts-index&apos;}</code></pre><p>As shown in Kibana devtool, the ES index has been created:</p><p><img src="/images/blockchain/hive/es5.png" alt="Elasticsearch"></p><p>Add a test document into your index:</p><pre><code>es.index(index=&quot;hive-posts-index&quot;, id=1, body={&quot;any&quot;: &quot;data&quot;, &quot;timestamp&quot;: datetime.now()})</code></pre><p>Read the document you just added from ES:</p><pre><code>&gt;&gt;&gt; es.get(index=&quot;hive-posts-index&quot;, id=1){&apos;_index&apos;: &apos;hive-posts-index&apos;, &apos;_type&apos;: &apos;_doc&apos;, &apos;_id&apos;: &apos;1&apos;, &apos;_version&apos;: 1, &apos;_seq_no&apos;: 0, &apos;_primary_term&apos;: 1, &apos;found&apos;: True, &apos;_source&apos;: {&apos;any&apos;: &apos;data&apos;, &apos;timestamp&apos;: &apos;2020-06-02T15:52:40.759337&apos;}}</code></pre><h2 id="Add-Hive-posts-into-ES-index"><a href="#Add-Hive-posts-into-ES-index" class="headerlink" title="Add Hive posts into ES index"></a>Add Hive posts into ES index</h2><p>Here is a demo script to add my latest 5 posts into ES index:</p><pre><code>from beem import Steemfrom beem.account import Accountfrom datetime import datetimefrom elasticsearch import Elasticsearches = Elasticsearch()hive    = Steem(nodes = &apos;https://api.hive.blog&apos;)account = Account(&apos;aafeng&apos;, steem_instance = hive)posts   = account.get_blog(start_entry_id=0, limit=5)for post in posts:    author   = post.author    title    = post.title    body     = post.body    category = post.category    permlink = post.permlink    es.index(index=&quot;hive-posts-index&quot;, id=permlink, body={&quot;author&quot;: author,\                                                    &quot;title&quot;:  title,\                                                    &quot;body&quot;:   body,\                                                    &quot;category&quot;: category,\                                                    &quot;permlink&quot;: permlink,\                                                    &quot;timestamp&quot;: datetime.now()})</code></pre><p>We can query it in Kibana:</p><pre><code>GET hive-posts-index/_search?q=*:*</code></pre><p>The output suggests that my posts have been stored in ES:</p><p><img src="/images/blockchain/hive/es6.png" alt="Elasticsearch"></p><p>We also can use curl to test if my posts have been saved into ES:</p><pre><code>curl http://localhost:9200/hive-posts-index/_search\?size=5</code></pre><p>Now we have flexi wya to query post data:</p><pre><code>GET hive-posts-index/_search?q=body:elasticsearchGET hive-posts-index/_search?q=category:hive-105017</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      How to save Hive posts into Elasticsearch
+    
+    </summary>
+    
+      <category term="英文教程" scheme="https://www.aafeng.uk/categories/%E8%8B%B1%E6%96%87%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
+    
+  </entry>
   
   <entry>
     <title>房子扩建工程即将开始</title>
@@ -421,26 +443,6 @@
     
     
       <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制作网红巴斯克芝士蛋糕</title>
-    <link href="https://www.aafeng.uk/cheese-cake/"/>
-    <id>https://www.aafeng.uk/cheese-cake/</id>
-    <published>2020-05-19T08:09:29.085Z</published>
-    <updated>2020-05-19T08:09:29.085Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近孩子们看上了丑萌的巴斯克芝士蛋糕，于是在妈妈的带领下进行尝试，成功的做出了这款网红蛋糕。而我的角色是摄影师，全程记录了整个制作过程。整体感觉这款蛋糕真的很丑，但做法超级简单，失败率极低，而且真心好吃！</p><p><img src="/images/food/cheesecake/1.jpg" alt="巴斯克芝士蛋糕"></p><a id="more"></a><p>这款蛋糕的名字巴斯克源于其发源地西班牙巴斯克地区。其实这款蛋糕在几十年前就被发明了出来，但在2019年才成为了网红，据说其最大的卖点就是看起来像是烤糊了。。。</p><p>这款蛋糕的主要原料就是软芝士，我们用的是两盒180克的Philadelphia奶酪。再配以糖，鸡蛋，面粉，奶油和黄油。注意这个奶酪千万不要买错了喔，曾经听过一个悲催的故事，有人用Cheddar Cheese试图做芝士蛋糕，其结果就可想而知了。。。</p><p><img src="/images/food/cheesecake/2.jpg" alt="巴斯克芝士蛋糕"></p><p>Philadelphia奶酪需要在室温下放置一段时间以便于搅拌。随后和其他原料一起搅拌，需要注意搅拌器的速度应调至最低，待拌匀无颗粒后倒入蛋糕模具中。</p><p>可以在模具四壁涂上些黄油，这样就比较容易把烘培纸放好，也便于在制作完毕后脱模。</p><p>所有准备工作都做好后，把模具放入预热到200度的模具中烤30分钟就可以了。乍一看，似乎真的是烤过了。。。</p><p><img src="/images/food/cheesecake/3.jpg" alt="巴斯克芝士蛋糕"></p><p>在蛋糕冷却后最好放入冰箱冷藏几个小时后再食用，效果更好！看看最后装盘的效果，Yummy！</p><p><img src="/images/food/cheesecake/4.jpg" alt="巴斯克芝士蛋糕"></p>]]></content>
-    
-    <summary type="html">
-    
-      制作网红巴斯克芝士蛋糕
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
     
   </entry>
   
