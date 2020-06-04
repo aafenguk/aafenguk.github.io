@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.aafeng.uk/covid19-impacts/</loc>
+    <loc>https://www.aafeng.uk/pizza/</loc>
     
-    <lastmod>2020-06-03T23:06:22.253Z</lastmod>
+    <lastmod>2020-06-04T21:21:07.977Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.aafeng.uk/hive-elasticsearch/</loc>
     
-    <lastmod>2020-06-03T16:37:55.688Z</lastmod>
+    <lastmod>2020-06-04T11:15:18.116Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.aafeng.uk/covid19-impacts/</loc>
+    
+    <lastmod>2020-06-03T23:06:22.253Z</lastmod>
     
   </url>
   
