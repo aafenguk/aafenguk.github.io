@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-05T21:32:41.847Z</updated>
+  <updated>2020-06-07T20:07:13.286Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编程思想</title>
+    <link href="https://www.aafeng.uk/programming-thinking/"/>
+    <id>https://www.aafeng.uk/programming-thinking/</id>
+    <published>2020-06-07T20:07:13.286Z</published>
+    <updated>2020-06-07T20:07:13.286Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近和朋友聊天，正好他家的孩子也在学习编程。于是就聊到了怎么教孩子编程，该教些什么，以及什么是编程思想的问题上。</p><p><img src="/images/technology/programming-thinking.jpg" alt="编程思想"><br>图源：Pixabay</p><a id="more"></a><p>其实在很多年前就和同事们讨论过这个问题。大家一致认为编程的过程其实就是一种逻辑思维的过程，是如何将一个现实世界的问题逐步分解，再用算法将其高效实现的过程。因此，在整个编程思维的训练过程中，最重要的是训练思维的逻辑性。</p><p>记得上大学的时候，在数学系，计算机系，和计算中心等好几个系中都有程序设计的高手，这些人都有一个共同的特点，就是他们的数学功底都非常好。有的是数学系科班出身的，有的虽然不是数学系毕业的，但数学功底是非常深厚的。记得曾经一起做过项目的一个南开大学数学系退休返聘的老教授，负责最核心的算法部分，每次手写的代码，成百上千行，几乎都是一次性通过测试。他缜密的思维能力让人佩服万分。究其原因，其实就是数学好的人，无一例外的，逻辑思维都非常清晰，而这是在编程中最为重要的部分。</p><p>曾经有人打过一个比方，学习编程的过程，有点类似金庸小说中的武功修炼。不仅有各种实用的招式，也需要有深厚内功的辅助才行。在编程的学习中，数据结构，算法等基础性课程就好比是内功。如果内功修炼的够深厚了，无论用什么编程语言，什么框架，都会使的得心应手，做出优秀的软件来。当然，在内功好的基础上，如果能辅以高效的框架和编程语言，就能更加有效的开发软件。</p><p>回到教孩子编程这个问题上来，我认为首先是培养他们的兴趣。但在培养的过程中，一定注意启发他们积极思考，将程序设计中的逻辑性贯穿到每个例子中。一旦他们真正掌握了这种思维方式，以后再学习任何其他语言或者框架时才能举一反三，事半功倍。</p>]]></content>
+    
+    <summary type="html">
+    
+      编程思想
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Elasticsearch的中文分词</title>
@@ -421,28 +441,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何将Likecoin以英镑/欧元/美元提现？</title>
-    <link href="https://www.aafeng.uk/likecoin-withdraw/"/>
-    <id>https://www.aafeng.uk/likecoin-withdraw/</id>
-    <published>2020-05-22T11:44:08.558Z</published>
-    <updated>2020-05-22T11:44:08.558Z</updated>
-    
-    <content type="html"><![CDATA[<p>很多人讨论过如何将Likecoin以人民币，台币提现。下面总结一下如何以英镑/欧元/美元的方式提现。其基本步骤就是：通过Like Land APP将LIKECOIN转到交易所，比如：<a href="https://www.liquid.com/sign-up/?affiliate=e4wfjlmE746444" rel="external nofollow noopener noreferrer" target="_blank">Liquid</a>，或者<a href="https://www.bitasset.com/reg?icode=jhhl" rel="external nofollow noopener noreferrer" target="_blank">BitAsset</a>；在这些交易所将LIKECOIN兑换为比特币；然后再将比特币转到支持英镑/欧元/美元的其他交易所；在交易所把比特币兑换成英镑/欧元/美元再提现。</p><p><img src="/images/blockchain/liker/liker.png" alt="LIKECOIN"></p><a id="more"></a><h2 id="第一步，将LIKECOIN转至BitAsset交易所"><a href="#第一步，将LIKECOIN转至BitAsset交易所" class="headerlink" title="第一步，将LIKECOIN转至BitAsset交易所"></a>第一步，将LIKECOIN转至BitAsset交易所</h2><p>登录<a href="https://www.bitasset.com/reg?icode=jhhl" rel="external nofollow noopener noreferrer" target="_blank">BitAsset交易所</a>，选择“Wallet” -&gt; “My Wallet”</p><p><img src="/images/blockchain/liker/withdraw-1.png" alt="Likecoin提现"></p><p>单击”Deposit”后选择”LIKE”作为”Chain Name”</p><p><img src="/images/blockchain/liker/withdraw-2.png" alt="Likecoin提现"></p><p>可以复制地址，或者打开对应的QR码：</p><p>进入Liker Land手机APP，扫描交易所的这个QR码，设定转账金额，并按“确认”按钮。</p><p>几分钟后就能在交易所看到LIKECOIN已经到账。</p><h2 id="第二步：将LIKECOIN转为BTC"><a href="#第二步：将LIKECOIN转为BTC" class="headerlink" title="第二步：将LIKECOIN转为BTC"></a>第二步：将LIKECOIN转为BTC</h2><p>在交易所钱包中选择：LIKE -&gt; Transaction -&gt; LIKE-BTC</p><p>在这个交易对中，设定交易的LIKECOIN金额，价格，然后单击“SELL”</p><p><img src="/images/blockchain/liker/withdraw-3.png" alt="Likecoin提现"></p><p>如果你挂单的价格被买方接受，很快交易就会结束，会有BTC到账。</p><h2 id="第二步，将BTC转至Kraken"><a href="#第二步，将BTC转至Kraken" class="headerlink" title="第二步，将BTC转至Kraken"></a>第二步，将BTC转至Kraken</h2><p>接下来需要选择一个支持英镑/欧元/美元的交易所。这样的交易所有很多，下面以 Kraken 为例。</p><p>在交易所的’Wallet’，将BTC转出。输入Kraken中的BTC地址，然后设定转出金额。</p><p><img src="/images/blockchain/liker/withdraw-4.png" alt="Likecoin提现"></p><p>可以看到，BitAsset会收取1%的手续费。</p><p>需要进行二次验证：</p><p><img src="/images/blockchain/liker/withdraw-5.png" alt="Likecoin提现"></p><p>交易开始后，需要等待一段时间。毕竟比特币的交易速度还是非常慢的。</p><h2 id="第四步：在交易所把比特币转换为法币"><a href="#第四步：在交易所把比特币转换为法币" class="headerlink" title="第四步：在交易所把比特币转换为法币"></a>第四步：在交易所把比特币转换为法币</h2><p>我使用比较多的交易所是Brittrex (支持欧元/美元)和Kraken(支持英镑/欧元/美元/加元/日元)。再这些交易所把比特币兑换成法币后，就可与提现到自己银行账号了。当然，这些交易所都需要进行实名验证。</p>]]></content>
-    
-    <summary type="html">
-    
-      如何将Likecoin以英镑/欧元/美元提现？
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Likecoin" scheme="https://www.aafeng.uk/tags/Likecoin/"/>
     
   </entry>
   
