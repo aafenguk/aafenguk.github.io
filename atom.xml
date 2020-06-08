@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-07T20:07:13.286Z</updated>
+  <updated>2020-06-08T15:07:11.141Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Kibana可视化你的数据</title>
+    <link href="https://www.aafeng.uk/kibana-visualization/"/>
+    <id>https://www.aafeng.uk/kibana-visualization/</id>
+    <published>2020-06-08T15:07:11.141Z</published>
+    <updated>2020-06-08T15:07:11.141Z</updated>
+    
+    <content type="html"><![CDATA[<p>把数据保存到Elasticsearch之后，有一个重要的工作就是要对数据进行可视化，以便下一步的分析。下面通过一个官方的数据集来介绍如何通过Kibana进行数据可视化。</p><p><img src="/images/technology/kibana/kibana.png" alt="Kibana"></p><a id="more"></a><h2 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h2><p>Elasticsearch: 7.7.0<br>Kibana: 7.7.0</p><h2 id="下载并导入数据"><a href="#下载并导入数据" class="headerlink" title="下载并导入数据"></a>下载并导入数据</h2><p>从官网下载如下的数据集：<a href="https://download.elastic.co/demos/kibana/gettingstarted/accounts.zip" rel="external nofollow noopener noreferrer" target="_blank">https://download.elastic.co/demos/kibana/gettingstarted/accounts.zip</a></p><p>解压缩后会得到accounts.json这个文件，其大小大约为240K。</p><p>运行如下命令将数据导入ES：</p><pre><code>curl -H &apos;Content-Type: application/x-ndjson&apos; -XPOST &apos;localhost:9200/bankdemo/account/_bulk?pretty&apos; --data-binary @accounts.json</code></pre><p>在Kibana的Devtool中验证数据已经被导入：</p><pre><code>GET /_cat/indices?vGET bankdemo/_search?q=*:*</code></pre><p>其输出类似于：</p><pre><code>{  &quot;took&quot; : 6,  &quot;timed_out&quot; : false,  &quot;_shards&quot; : {    &quot;total&quot; : 1,    &quot;successful&quot; : 1,    &quot;skipped&quot; : 0,    &quot;failed&quot; : 0  },  &quot;hits&quot; : {    &quot;total&quot; : {      &quot;value&quot; : 1000,      &quot;relation&quot; : &quot;eq&quot;    },    &quot;max_score&quot; : 1.0,    &quot;hits&quot; : [      {        &quot;_index&quot; : &quot;bankdemo&quot;,        &quot;_type&quot; : &quot;account&quot;,        &quot;_id&quot; : &quot;1&quot;,        &quot;_score&quot; : 1.0,        &quot;_source&quot; : {          &quot;account_number&quot; : 1,          &quot;balance&quot; : 39225,          &quot;firstname&quot; : &quot;Amber&quot;,          &quot;lastname&quot; : &quot;Duke&quot;,          &quot;age&quot; : 32,          &quot;gender&quot; : &quot;M&quot;,          &quot;address&quot; : &quot;880 Holmes Lane&quot;,          &quot;employer&quot; : &quot;Pyrami&quot;,          &quot;email&quot; : &quot;amberduke@pyrami.com&quot;,          &quot;city&quot; : &quot;Brogan&quot;,          &quot;state&quot; : &quot;IL&quot;        }      },……</code></pre><h2 id="创建索引模式-Index-Pattern"><a href="#创建索引模式-Index-Pattern" class="headerlink" title="创建索引模式(Index Pattern)"></a>创建索引模式(Index Pattern)</h2><p>索引模式(Index Pattern)可以针对多个索引，因此在创建时支持通配符。</p><p>在Kibana的页面中选择：Kibana -&gt; Management -&gt; Index Patterns -&gt; Create index pattern</p><p><img src="/images/technology/kibana/visualization1.png" alt="Kibana"></p><p>创建完毕后会看到如下界面：</p><p><img src="/images/technology/kibana/visualization2.png" alt="Kibana"></p><p>可以看到有的字段可以被搜索的(Searchable)，有的字段是可以被聚合的(Aggregatable)。如果需要的话，可以自己更改这些字段的属性。</p><h2 id="在Kibana中查看数据"><a href="#在Kibana中查看数据" class="headerlink" title="在Kibana中查看数据"></a>在Kibana中查看数据</h2><p>单击Discovery后，可以输入KQL来检索数据。</p><p>比如，输入：</p><pre><code>balance &gt;= 47500 and employer:a*</code></pre><p>你会看到：</p><p><img src="/images/technology/kibana/visualization3.png" alt="Kibana"></p><p>KQL的语法和SQL非常相似，简单好用，比如：</p><pre><code>balance &gt;= 47500 and employer:a* and account_number &gt; 100</code></pre><p>可以通过左侧菜单选择索引，以及字段。    </p><h2 id="Kibana可视化：饼图"><a href="#Kibana可视化：饼图" class="headerlink" title="Kibana可视化：饼图"></a>Kibana可视化：饼图</h2><p>选择Visualize -&gt; Create visualization -&gt; Pie -&gt; Bank Demo</p><p><img src="/images/technology/kibana/visualization4.png" alt="Kibana"></p><p>由于目前没有对源数据进行定义，因此，初始饼图看起来这是这样的：</p><p><img src="/images/technology/kibana/visualization5.png" alt="Kibana"></p><p>选择Buckets -&gt; Add -&gt; Split slices -&gt; Range，同时设定不同的范围：</p><p><img src="/images/technology/kibana/visualization6.png" alt="Kibana"></p><p>可以看到更新后的饼图：</p><p><img src="/images/technology/kibana/visualization7.png" alt="Kibana"></p><p>还可以添加一个SUB-BUCKET，在现有聚合的基础上做进一步的划分：</p><p><img src="/images/technology/kibana/visualization8.png" alt="Kibana"></p><p>最后不要忘记保存你的Visualization。</p>]]></content>
+    
+    <summary type="html">
+    
+      使用Kibana可视化你的数据
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="ELK" scheme="https://www.aafeng.uk/tags/ELK/"/>
+    
+  </entry>
   
   <entry>
     <title>编程思想</title>
@@ -419,28 +441,6 @@
     
     
       <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新冠病毒过后，我们还能回到过去的工作模式吗？</title>
-    <link href="https://www.aafeng.uk/wfh/"/>
-    <id>https://www.aafeng.uk/wfh/</id>
-    <published>2020-05-22T21:33:52.814Z</published>
-    <updated>2020-05-22T21:33:52.814Z</updated>
-    
-    <content type="html"><![CDATA[<p>转眼已经在家工作两个月了。似乎已经慢慢习惯了在家办公的方方面面。今天单位开会，老板表达出了一个意思，在家办公至少要到今年年底，至于什么时候返回办公室，目前不清楚不知道。这不禁让我想到，等到新冠病毒彻底被控制了，我们还能像原来一样回到办公室上班吗？会有什么不一样吗？</p><p><img src="/images/work/clock.jpg" alt="在家办公"></p><p>图源：Pixabay</p><a id="more"></a><p>经过这一段时间的适应，很多人都觉得在家办公似乎没有想象中的那么糟糕，虽然整体而言不如在办公室的时候更有组织，更有条理，但似乎大家都适应的不错，该做的工作都做了。同时很多单位都在思考，一旦疫情结束了，还有必要租那么昂贵的办公室吗？把这笔费用省下来，可以投入到其他方面，对公司而言整体上是更划算的。</p><p>而且，通过这一段时间的在家办公，大家也开始反思过去的一些工作习惯是否合理？会议是否安排的过多，同时也过长？由于现在有了社交距离，只能通过一些即时通讯软件进行沟通。而在使用这些软件时，并不能像面对面沟通那样期待对方的及时反馈。如果需要集中精力工作，只需要暂时不去看那些软件就可以了。</p><p>就我个人而言，整体感觉如果孩子们能够回到学校上学，那么在家办公的效率更高。因为在同一个办公室里，虽然更方便彼此之间的沟通，但也难免彼此之间互相干扰。如果独自在家办公，在需要沟通时通过Slack，Zoom之类的通讯软件进行沟通。在不需要交流的时候，自己可以精力更加集中，更加出活。</p><p>在疫情真正结束后，目前没人能想象出会以什么形式工作。但有一点可以肯定，这样疫情将会彻底改变人们的工作模式。</p>]]></content>
-    
-    <summary type="html">
-    
-      新冠病毒过后，我们还能回到过去的工作模式吗？
-    
-    </summary>
-    
-      <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
