@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-08T15:07:11.141Z</updated>
+  <updated>2020-06-08T22:52:37.566Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Kibana对Hive中文区数据进行可视化</title>
+    <link href="https://www.aafeng.uk/kibana-visualization-hive/"/>
+    <id>https://www.aafeng.uk/kibana-visualization-hive/</id>
+    <published>2020-06-08T22:52:37.566Z</published>
+    <updated>2020-06-08T22:52:37.566Z</updated>
+    
+    <content type="html"><![CDATA[<p>在前面介绍了如何把Hive中的帖子保存到Elasticsearch中。有了数据，就有好多玩法了。下面介绍如何通过Kibana对Hive中文区的发帖数据进行可视化分析。</p><p><img src="/images/technology/kibana/kibana.png" alt="Kibana"></p><a id="more"></a><h2 id="关于数据的说明"><a href="#关于数据的说明" class="headerlink" title="关于数据的说明"></a>关于数据的说明</h2><p>获取下面数据的代码，是根据上篇文章最后的代码稍作改编而得到的。作为演示，只读取了HIVE CN 中文社区的最新100篇文章。由于这篇文章的重点是介绍如何进行数据可视化，而不是可视化报告本身，后面有时间的话可以从链上把数据都抓取下来，放在ES中，那样生成的报告本身就更有意义了。</p><h2 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h2><p>Elasticsearch: 7.7.0<br>Kibana: 7.7.0</p><h2 id="创建索引模式-Index-Pattern"><a href="#创建索引模式-Index-Pattern" class="headerlink" title="创建索引模式(Index Pattern)"></a>创建索引模式(Index Pattern)</h2><p>ES中的索引模式(Index Pattern)可以针对多个索引，因此在创建时支持通配符。</p><p>在Kibana的页面中选择：Kibana -&gt; Management -&gt; Index Patterns -&gt; Create index pattern</p><p>创建完毕后会看到如下界面：</p><p><img src="/images/blockchain/kibana/kibana.png" alt="Kibana"></p><p>可以看到有的字段可以被搜索的(Searchable)，有的字段是可以被聚合的(Aggregatable)。</p><h2 id="在Kibana中查看数据"><a href="#在Kibana中查看数据" class="headerlink" title="在Kibana中查看数据"></a>在Kibana中查看数据</h2><p>单击Discovery后，可以输入KQL来检索数据。</p><p>比如，输入：</p><pre><code>author = aafeng</code></pre><p>你会看到：</p><p><img src="/images/blockchain/kibana/kibana2.png" alt="Kibana"></p><p>KQL的语法和SQL非常相似，简单好用，比如：</p><pre><code>author = aafeng and created = 2020-06-08*</code></pre><p>可以通过左侧菜单选择索引，以及字段。    </p><h2 id="Kibana可视化"><a href="#Kibana可视化" class="headerlink" title="Kibana可视化"></a>Kibana可视化</h2><p>下面把每个作者在所统计的区间(这100篇文章所覆盖的时间段)内的发文数做一个统计，并以饼图的形式呈现出来。</p><p>选择Visualize -&gt; Create visualization -&gt; Pie，由于目前没有对源数据进行定义，因此，初始饼图看起来这是这样的：</p><p><img src="/images/blockchain/kibana/kibana3.png" alt="Kibana"></p><p>选择Buckets -&gt; Add -&gt; Split slices -&gt; Terms，选取Author字段，并选择Metric: Count。</p><p><img src="/images/blockchain/kibana/kibana4.png" alt="Kibana"></p><p>可以看到更新后的饼图：</p><p><img src="/images/blockchain/kibana/kibana5.png" alt="Kibana"></p><p>最后不要忘记保存你的Visualization。</p><p>还可以把这些数据以不同的图形来展示，比如：柱形图。同时也可以通过KQL把数据做筛选后再绘制图形。例如：下面的柱形图展示了中文区6月7日的发帖统计：</p><p><img src="/images/blockchain/kibana/kibana6.png" alt="Kibana"></p>]]></content>
+    
+    <summary type="html">
+    
+      使用Kibana对Hive中文区数据进行可视化
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="ELK" scheme="https://www.aafeng.uk/tags/ELK/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Kibana可视化你的数据</title>
@@ -412,28 +434,6 @@
     <summary type="html">
     
       开始使用Jupyter Notebook
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何在Jupyter中使用Turtle</title>
-    <link href="https://www.aafeng.uk/jupyter-turtle/"/>
-    <id>https://www.aafeng.uk/jupyter-turtle/</id>
-    <published>2020-05-24T06:23:33.644Z</published>
-    <updated>2020-05-24T06:23:33.644Z</updated>
-    
-    <content type="html"><![CDATA[<p>一直在使用Python Turtle教孩子编程。最近感觉Jupyter特别适合教学，那么怎样在Jupyter中使用Turtle呢？答案是<a href="https://github.com/takluyver/mobilechelonian" rel="external nofollow noopener noreferrer" target="_blank">mobilechelonian</a>。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><p>首先在Notebook中安装依赖库并进行测试：</p><pre><code>!pip install mobilechelonian!pip install matplotlibimport numpy as npimport matplotlib.pyplot as pltfrom mobilechelonian import Turtlefrom mobilechelonian import prepare_jsprepare_js()</code></pre><p>运行以上代码就会安装mobilechelonian。接下来就可以使用Turtle来画图了：</p><pre><code>from mobilechelonian import Turtlet = Turtle()t.speed(5)t.pencolor(&quot;blue&quot;)for i in range(4):    t.left(90)    t.forward(60)</code></pre><p><img src="/images/technology/jupyter/jupyter-turtle.png" alt="Jupyter"></p>]]></content>
-    
-    <summary type="html">
-    
-      如何在Jupyter中使用Turtle
     
     </summary>
     
