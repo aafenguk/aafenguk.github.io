@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-09T22:29:13.122Z</updated>
+  <updated>2020-06-10T21:56:15.845Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>保护环境，人人有责</title>
+    <link href="https://www.aafeng.uk/recycles/"/>
+    <id>https://www.aafeng.uk/recycles/</id>
+    <published>2020-06-10T21:56:15.845Z</published>
+    <updated>2020-06-10T21:56:15.845Z</updated>
+    
+    <content type="html"><![CDATA[<p>在英国已经定居好多年了，慢慢也习惯了这边的很多规矩，比如：垃圾的严格分类。市政府提供的回收垃圾容器只有废纸，塑料瓶，和玻璃瓶三种。家中一旦有了不用的电器，用过的电池，都要放在特定的容器中，等到有时间的时候一起处理。</p><p><img src="/images/life/recycle.jpg" alt="可回收垃圾"></p><a id="more"></a><p>记得刚到英国的时候，傻傻的分不清各种回收物品该往哪里放，还是好心的邻居告诉我，才知道了什么可以放在回收容器中，什么东西不可以。</p><p>由于市政府提供的垃圾回收容器都比较小，同时只针对生活中最常见的可回收垃圾。因此如果有大量的可回收垃圾，或者比较特殊的可回收垃圾，比如：不用的电子产品，家具等，需要自己来解决。一般每座城市都会有专门的大型垃圾回收站。因此每过几周，我都会把家中的各种无法处理的垃圾带到垃圾回收站去处理。每次在垃圾回收站那里都需要排很长的队。</p><p>就拿这次家中的装修工程来说，家中有一堵又高又厚的树墙，不仅占据了很大的花园空间，还非常不容易打理，可以说既费时间又费钱。这次想趁着建筑工人在，有很多趁手的工具，把树墙彻底砍掉。但和建筑工人沟通后才知道，砍掉这些树墙本身工作量还好，并不是很大。但要把砍下来的树运走，造价就比较高了。需要租3-4个scape，大约需要800英镑左右。感觉这个代价似乎有些大。</p><p>还有一种对环境危害很大的垃圾就是废弃的电池。它不仅能对环境造成严重污染，还可能会危害人类的健康。好在英国的各大超市一般都提供电池回收箱，只要记着在去超市的时候把电池带上，扔在电池回收箱中就可以了。</p><p>人类生活的环境日趋恶化，我们所能做的就是从自己做起，尽量保护地球母亲，为我们的子孙后代做一件好事。</p>]]></content>
+    
+    <summary type="html">
+    
+      保护环境，人人有责
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>人工智能离我们多远不好说，但各种智能家居已经成为现在进行时</title>
@@ -419,28 +439,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jupyter的几个设置</title>
-    <link href="https://www.aafeng.uk/jupyter_settings/"/>
-    <id>https://www.aafeng.uk/jupyter_settings/</id>
-    <published>2020-05-25T11:46:35.598Z</published>
-    <updated>2020-05-25T11:46:35.598Z</updated>
-    
-    <content type="html"><![CDATA[<p>在<a href="/jupyter/">前面的文章</a>中介绍了Jupyter，但在进一步的使用中，发现一些需要设置/安装/配置的选项，比如：如何禁用默认的Terminal窗口，如何让多个用户使用Jupyter，如何在Jupyter中使用Turtle画图等。下面总结如下。</p><p><img src="/images/technology/jupyter/jupyter.jpg" alt="Jupyter"></p><a id="more"></a><h2 id="禁用terminal"><a href="#禁用terminal" class="headerlink" title="禁用terminal"></a>禁用terminal</h2><p>在默认情况下，打开Jupyter窗口后，可以新建一个终端窗口。在终端窗口中可以运行各种Linux命令。在终端窗口中使用的是运行Jupyter的用户，因此具有和该用户同样的权限。因此，如果打算和别人分享Jupyter，最好不要用权限过大的用户运行Jupyter，同时应该禁用终端窗口。不过，严格的讲，这并不能阻止恶意用户运行Linux命令，只要能运行Python脚本，就会有多种方式达到这个目的。但系统安全是一个渐进的过程。至少对于不太熟悉Linux的用户，如果一不小心进入终端窗口，再一不小心误删了文件，不也麻烦吗？</p><p><img src="/images/technology/jupyter/terminal1.png" alt="Jupyter"></p><p>要想禁止Linux终端窗口，可以在Jupyter的配置文件(用户根目录下.jupyter/jupyter_notebook_config.py)中添加一行就可以了：</p><pre><code>c.NotebookApp.terminals_enabled = False</code></pre><p>可以看到，终端已经被禁用。</p><p><img src="/images/technology/jupyter/terminal2.png" alt="Jupyter"></p><h2 id="在Jupyter中设定多个账号"><a href="#在Jupyter中设定多个账号" class="headerlink" title="在Jupyter中设定多个账号"></a>在Jupyter中设定多个账号</h2><p>默认的配置文件在/home/USERNAME/.jupyter/jupyter_notebook_config.py中。其初始设置非常简单：</p><pre><code>c.NotebookApp.allow_origin = &apos;*&apos; #allow all originsc.NotebookApp.ip = &apos;0.0.0.0&apos; # listen on all IPs</code></pre><p>如果想要多个用户共同使用Jupyter，可以为这些用户设置不同的端口，密码，和工作目录。比如：可以创建配置文件：/home/USERNAME/.jupyter/user1_config.py:</p><pre><code>c.NotebookApp.allow_origin = &apos;*&apos; c.NotebookApp.ip = &apos;0.0.0.0&apos; c.NotebookApp.terminals_enabled = Falsec.NotebookApp.port = 8890c.NotebookApp.notebook_dir = &apos;/home/user1/jupyter_notes&apos;</code></pre><p>在运行Jupyter的时候指定配置文件：</p><pre><code>jupyter notebook --config /home/user1/.jupyter/user1_config.py</code></pre><p>依次类推，可以为不同用户创建不同的配置文件，这样就可以彼此之间互不干扰了。</p>]]></content>
-    
-    <summary type="html">
-    
-      Jupyter的几个设置
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
     
   </entry>
   
