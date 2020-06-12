@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-11T21:42:19.313Z</updated>
+  <updated>2020-06-12T20:41:41.645Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Accessibility的重要性</title>
+    <link href="https://www.aafeng.uk/web-accessibility/"/>
+    <id>https://www.aafeng.uk/web-accessibility/</id>
+    <published>2020-06-12T20:41:41.645Z</published>
+    <updated>2020-06-12T20:41:41.645Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实以前在做项目的时候或多或少的接触了一些Web Accessibility（Web无障碍访问）的标准，但并没有留意其重要性。最近在一个项目中才真正意识到了在一个Web项目中，Accessibility是如此重要。如果不符合Web Accessibility的标准，可能会对有些用户造成极大的不便。</p><p><img src="/images/technology/web-accessibility.jpg" alt="Web Accessibility"><br>图源：w3.org</p><a id="more"></a><p>事情起源是这样的：按照用户要求，实现了一个对用户数据的统计功能，并以在Web页面中以饼图，柱状图等图形化的方式展示统计好的数据。在实现了该功能以后，发给了客户寻求反馈意见。结果用户的意见是：“我根本看不清你做的柱状图，能否调整配色方案？”。嗯，这是怎么回事？在我这里明明是很清楚的啊？于是要求客户发了一个截屏过来，和我在本机看到的是一样啊。突然意识到了，每个人的视力，对颜色的敏感度都不一样。在我这里很清楚，并不代表在别人眼中看到的也很清楚啊！于是按照相应的标准更改了配色，客户终于满意了。</p><p>记得互联网的发明人Tim Berners-Lee曾经说过一句很经典的话：</p><blockquote><p>The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.</p></blockquote><p>简单翻译一下：Web的力量在于其普遍性。其基本要素在于：每个人无论残疾与否都能够访问它。</p><p>再来看看Web Accessibility的官方定义：</p><blockquote><p>Web Accessibility（Web无障碍访问）旨在使得行动不便或者残障人士能够使用Web，即可以在Web上获取信息、理解信息、查找信息，以及网络交互。通常情况下，仅仅是确保每个网页的所有内容都有对应的文本（Text）信息，以及所有的交互都可以通过键盘来完成，就可以实现Web的无障碍访问。无障碍访问可以体现在一个单独的规范（例如WAI-ARIA）、指南（例如WCAG），或者某个规范中的一个部分（例如HTML5）。</p></blockquote><p>在设计一个Web应用的时候，应该充分采用适当的设计和编码，使得残疾人或者有各种障碍的人也可以访问该应用。在英国就有近1400万【<a href="https://www.scope.org.uk/media/disability-facts-figures/" rel="external nofollow noopener noreferrer" target="_blank">数据来源</a>】的残疾人士，约为英国总人口的22%。因此，在设计Web应用的时候，绝对不能忽视这么大的一个群体。在美国，可以<a href="https://www.disabilityscoop.com/2019/10/08/supreme-court-allows-sue-web-accessibility/27269/" rel="external nofollow noopener noreferrer" target="_blank">起诉不遵循Web Accessibility规范的零售商</a>。在欧盟也有相应的<a href="https://europa.eu/european-union/abouteuropa/accessibility_en" rel="external nofollow noopener noreferrer" target="_blank">规定</a>。</p><p>在实现Web Accessibility时，可以参考W3C的<a href="https://www.w3.org/WAI/WCAG21/Understanding/intro#understanding-the-four-principles-of-accessibility" rel="external nofollow noopener noreferrer" target="_blank">Web Content Accessibility Guidelines</a>。在这个Web Accessibilty指南中，有四大基本原则：Perceivable(可感知)，Operable (可操作)，Understandable (可理解)，Robust (健壮性)。其实就是强调对于不同的用户，在不同的终端中，用户可以和Web应用无障碍的交互。</p><p>在进行Web Accessibility测试的时候，有很多相关的工具，比如：测试网页配色对比度的。有相应的Screen Reader测试工具/插件。</p>]]></content>
+    
+    <summary type="html">
+    
+      Web Accessibility的重要性
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>说说英国的传奇工种 - 水暖工</title>
@@ -408,28 +428,6 @@
     <summary type="html">
     
       体验了一下Python数据可视化神器pyecharts
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记 - collections</title>
-    <link href="https://www.aafeng.uk/python-collections/"/>
-    <id>https://www.aafeng.uk/python-collections/</id>
-    <published>2020-05-26T14:00:46.461Z</published>
-    <updated>2020-05-26T14:00:46.461Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Python中，除了系统默认的容器：dict, list, set, tuple之外，还有一个非常强大的模块：collections。在这个模块中有很多非常好用的功能，能供简化我们的代码。下面举几个例子，欢迎大家指正。</p><p><img src="/images/technology/python/python3.png" alt="Python"></p><a id="more"></a><h2 id="namedtuple-提高代码可读性"><a href="#namedtuple-提高代码可读性" class="headerlink" title="namedtuple - 提高代码可读性"></a>namedtuple - 提高代码可读性</h2><p>首先来看一个例子：假设我们有一组数据。想用Python对这组数据进行处理。最为直观的做法是：</p><pre><code>people_list = [(&apos;Jim&apos;, &apos;male&apos;, 30), (&apos;Julie&apos;, &apos;female&apos;, 25)]for p in people_list:    print (f&apos;{p[0]} is a {p[2]} year old {p[1]}&apos;)</code></pre><p>但以上代码的最大缺点就是其可读性太差。上面的p[0], p[1], p[2]具体代表什么数据要检查前面的代码才能知道。设想如果处理的数据量更大，比如，共有十几，甚至几十列数据，如果在查看p[35], p[48]之类的代码时肯定会痛苦万分的。</p><p>这个时候就应该考虑使用collections中的namedtuple:</p><pre><code>import collectionsPerson = collections.namedtuple(&apos;Person&apos;, &apos;name gender age&apos;)people_list = [Person(&apos;Jim&apos;, &apos;male&apos;, 30), Person(&apos;Julie&apos;, &apos;female&apos;, 25)]for p in people_list:    print (f&apos;{p.name} is a {p.age} year old {p.gender}&apos;)</code></pre><p> 以上代码的可读性明显增强。不过使用namedtuple的一个缺点(有时也是优点)就是它的属性是只读的。</p><h2 id="Counter-优雅的统计代码"><a href="#Counter-优雅的统计代码" class="headerlink" title="Counter - 优雅的统计代码"></a>Counter - 优雅的统计代码</h2><p>假设我们需要对一个列表进行统计：</p><pre><code>[&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]</code></pre><p>我们希望统计每种颜色出现的次数：</p><pre><code>{&apos;red&apos;: 4, &apos;yellow&apos;: 2, &apos;blue&apos;: 1, &apos;black&apos;: 1, &apos;white&apos;: 1}</code></pre><p>如果使用一个循环，则代码显得非常臃肿：</p><pre><code>color_list = [&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]stats = {}for i in color_list:    if stats.get(i) is None:        stats[i] = 1    else:        stats[i] += 1ordered_stats = dict(sorted(stats.items(), key=lambda count: count[1], reverse=True))print(ordered_stats)</code></pre><p>但如果使用collections中的Counter的话，代码就显得非常简洁了：</p><pre><code>from collections import Countercolor_list = [&apos;red&apos;,&apos;yellow&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;yellow&apos;,&apos;red&apos;,&apos;black&apos;,&apos;white&apos;,&apos;red&apos;]stats = Counter(color_list).most_common()</code></pre><p>Counter也可以用来统计一段话中每个字符出现的次数。</p><pre><code>from collections import Counters = &apos;The clever fox jumped over the lazy brown dog.&apos;print(Counter(s).most_common())</code></pre><h2 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h2><p>在使用字典时，一般可以使用 ‘dict = {}’对其进行初始化。在后续使用中，可以使用 ‘dict[element] = xx’，但有一个前提就是，element必须是已经存在的，否则就会出错。比如：</p><p><img src="/images/technology/python/dict1.png" alt="Python"></p><p>当然，我们可以在使用前检查某个元素是否存在：</p><pre><code>&apos;julie&apos; in dict.keys()</code></pre><p>但这会使代码显得很臃肿。</p><p>更为简洁的方法就是使用defaultdict，比如：</p><p><img src="/images/technology/python/dict2.png" alt="Python"></p><p>上面介绍了collections模块中的namedtuple, Counter, defaultdict，使用它们可以简化我们的代码，也能增强程序的可读性。</p>]]></content>
-    
-    <summary type="html">
-    
-      Python学习笔记 - collections
     
     </summary>
     
