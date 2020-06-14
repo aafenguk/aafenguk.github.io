@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-13T23:15:22.196Z</updated>
+  <updated>2020-06-14T09:08:55.044Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>扩建工程记录</title>
+    <link href="https://www.aafeng.uk/house-extension-log/"/>
+    <id>https://www.aafeng.uk/house-extension-log/</id>
+    <published>2020-06-14T09:08:55.044Z</published>
+    <updated>2020-06-14T09:08:55.044Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近家中进行扩建，主要是往花园中新建一间房，和现有厨房，客厅打通，连成一体。 下面把整个过程记录一下。</p><a id="more"></a><h2 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h2><p>房屋扩建从6月8日开始，第一周主要的打了地基，灌浇了混凝土，把影响地基的树墙砍掉了一部分。</p><p>扩建前的样子：<br><img src="/images/life/house-extension/1.jpg" alt></p><p>开始动工了：<br><img src="/images/life/house-extension/2.jpg" alt></p><p>第一周成果：<br><img src="/images/life/house-extension/3.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      扩建工程记录
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>最近全家人超爱的一道下饭菜 - 红烧小羊腿</title>
@@ -409,28 +429,6 @@
     
     
       <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hiveonboard</title>
-    <link href="https://www.aafeng.uk/hiveonboard/"/>
-    <id>https://www.aafeng.uk/hiveonboard/</id>
-    <published>2020-05-28T21:05:26.755Z</published>
-    <updated>2020-05-28T21:05:26.755Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近看到了Hiveonboard这个账户创建服务，感觉很有意思，和大家分享一下。其实很多dapp都提供账户创建服务，可以说各有各的特色，有的是免费的，有的是需要收费的。有的可以秒级创建账户，有的则需要等待几天甚至更长时间才行。那么，Hiveonboard有什么特色呢？</p><p><img src="/images/blockchain/hive/hiveonboard.jpg" alt="Hiveonboard"></p><a id="more"></a><h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>首先，Hiveonboard提供的是创建账户的<strong>服务</strong>，而不是创建账户的<strong>功能</strong>。很多dapp具有创建Hive账户的<strong>功能</strong>，但Hiveonboard则为其他的dapp提供完整的账户创建服务。这样，其他的dapp就不必重新造轮子，而是专注于其核心功能上了。</p><p><img src="/images/blockchain/hive/hiveonboard2.jpg" alt="Hiveonboard"></p><p>从上图中可以看到，当dapp的用户选择了创建账户时，会被转向到Hiveonboard网站上，在完成了账户创建后，会返回该dapp。</p><h2 id="安全性考虑"><a href="#安全性考虑" class="headerlink" title="安全性考虑"></a>安全性考虑</h2><p>为了避免一些恶意网站的利用这项服务实现钓鱼功能，Hiveonboard实现了一个白名单，只有白名单上的用户才能使用这项服务。如果有新的dapp需要使用这项服务，可以<a href="https://github.com/christianfuerst/hiveonboard/blob/master/src/config/whitelist.json" rel="external nofollow noopener noreferrer" target="_blank">提交一个PR</a></p><h2 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h2><p>为了便于dapp测试创建账户的操作，Hiveonboard提供了调试模式，这样在进行测试的时候就不会真正的创建账户，也不会进行手机验证。要使用调试模式，只需要在网址中添加参数：debug_mode=true</p><pre><code>https://hiveonboard.com/create-account?debug_mode=true</code></pre><h2 id="试用Hiveonboard"><a href="#试用Hiveonboard" class="headerlink" title="试用Hiveonboard"></a>试用Hiveonboard</h2><p>自己尝试着从 tipu 网站开始，试用了Hiveonboard的账户创建功能，感觉还是很顺滑的。整个账户创建过程只需要不到2分钟的时间。中间需要验证手机号。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果打算开发一款自己的dapp，但没有时间实现账户创建功能，可以考虑试用Hiveonboard，将其账户创建功能和自己的dapp结合在一起。</p>]]></content>
-    
-    <summary type="html">
-    
-      Hiveonboard
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
