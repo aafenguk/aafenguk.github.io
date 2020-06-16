@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-14T22:12:59.672Z</updated>
+  <updated>2020-06-16T10:57:28.813Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习神器推荐 - Python Tutor</title>
+    <link href="https://www.aafeng.uk/python-tutor/"/>
+    <id>https://www.aafeng.uk/python-tutor/</id>
+    <published>2020-06-16T10:57:28.813Z</published>
+    <updated>2020-06-16T10:57:28.813Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果说近两年来最受欢迎的编程语言的话，很多人都会想到Python。的确如此，随着Python在人工智能，大数据，区块链中的广泛应用，已经吸引了越来越多的人开始学习Python。但是对于很多初学者来说，Python中的众多概念极易混淆。在教自己孩子学习Python编程的时候就遇到了这样的问题，苦于无法直观的解释一些概念。最近发现的Python Tutor这个免费网站然我不禁眼睛一亮。这个网站可以让初学者直观的理解Python代码执行的过程，逐步可视化程序的运行过程。其最大的亮点就是把程序的执行过程在内存中的表现通过图形的方式来展示，这样就非常便于理解。</p><a id="more"></a><p>首先看下面一段简单的代码：</p><pre><code>b = [1, 3, 5, 7, 9]b = aa[0] = 0print(b[0])</code></pre><p>代码很简单，展示了Python中的浅拷贝。但是对于初学者来说，怎样才能更加直观的理解这个概念呢？我们来看看Python Tutor中的演示：</p><p><img src="/images/technology/python/python-tutor/1.png" alt></p><p><img src="/images/technology/python/python-tutor/2.png" alt></p><p><img src="/images/technology/python/python-tutor/3.png" alt></p><p>通过上面的演示，可以非常直观的理解，其实a和b指向的是内存中的同一个对象，更改a[0]自然会导致b[0]也会被改变。</p><p>Python Tutor中还提供了一些自定制的功能，包括可以自定义演示的箭头，形状等：</p><p><img src="/images/technology/python/python-tutor/4.png" alt></p><p>在Python Tutor中有两种模式：在线编辑模式(Edit)和动态演示模式(Live)。简而言之，编辑模式就是一次性把代码写完，然后再统一运行，然后分步骤查看代码在内存中的表示。而动态演示模式则是在你键入代码的同时，Python Tutor会实时可视化代码在内存中的状态。</p><p>举一个代码深拷贝的例子来演示Python Tutor的动态演示模式。</p><p>首先键入如下代码：</p><pre><code>from copy import deepcopya = [1, 3, 5, 7, 9]</code></pre><p>你会看到如下的演示：</p><p><img src="/images/technology/python/python-tutor/5.png" alt></p><p>接下来分别进行浅拷贝和深拷贝：</p><pre><code>b = ac = deepcopy(a)</code></pre><p>可以看到非常清晰的示意图：</p><p><img src="/images/technology/python/python-tutor/6.png" alt></p><p>看到这样的可视化演示，还有什么不能理解的呢？其实，除了Python程序的可视化演示，Python Tutor还有一系列的功能：Java Tutor, C Tutor, C++ Tutor, JavaScript Tutor, Ruby Tutor等来支持不同语言的可视化演示。</p>]]></content>
+    
+    <summary type="html">
+    
+      Python学习神器推荐 - Python Tutor
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>英国疫情现状，我感受到的变化</title>
@@ -409,26 +431,6 @@
     
     
       <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>因果关系</title>
-    <link href="https://www.aafeng.uk/causal/"/>
-    <id>https://www.aafeng.uk/causal/</id>
-    <published>2020-05-30T22:11:10.359Z</published>
-    <updated>2020-05-30T22:11:10.359Z</updated>
-    
-    <content type="html"><![CDATA[<p>前两天在写自己DIY那篇文章的时候，对于事情的因果关系，感觉有些困惑。我是因为不擅长DIY而对它没有太大兴趣呢，还是因为对它没有兴趣而变得不是很擅长呢？</p><p><img src="/images/thinking/why.jpg" alt="因果关系"><br>图源：Pixabay</p><a id="more"></a><p>从小接受的教育就是“种瓜得瓜，种豆得豆”，“一分辛苦，一分收获”。在数学上更是相信充分条件所体现的逻辑，比如：如果条件A满足，必然会有结果B。但最近我的想法在发生变化。很多事情的因果关系并不是绝对的。有时候因果关系是可以互换的。</p><p>首先拿我家孩子练琴的事来举例。刚开始的时候，儿子并不喜欢弹琴，但在妈妈的<del>威逼</del>鼓励下，慢慢取得了一些成就，获得很多奖杯/奖牌，同时也得到了老师和同学们的认可。这样他的信心越来越足，也越来越喜欢。在学琴这件事情上，喜欢弹琴和取得成绩之间是什么样的因果关系呢？在我看来，只有喜欢弹琴，才能越弹越好，才能取得好成绩。同样因为取得了好成绩，有了动力，会越来越喜欢弹琴。如果深究下去，终会陷入先有鸡，还是先有蛋的逻辑之中。</p><p>在工作问题上，很多人都会说，要选择一份自己喜欢的工作，这样才会把工作做好，就是所谓的“爱一行，干一行”吧。可我在读书期间，导师曾经说过一句话：”Do it, then like it”。如果用中文表述，应该是：“干一行，爱一行”吧。只要认真做一件工作，慢慢的就会培养对工作的自信，同时也会慢慢真正的喜欢上工作本身。</p><p>曾经听过一个说法：每天早上亲吻自己伴侣的人，收入会比没有这种亲密表现的人高出20%甚至更多，同时他们的平均寿命也更长。想想似乎有道理，早上一个吻，能够增进夫妻感情，精神状态会比较好。这样在工作的时候能做得更好，从而升职加薪。长期保持好的心理状态，就能增长寿命。但反过来一想，收入更高的人似乎更有时间来维护夫妻之间的感情。那么这里哪个是因，哪个又是果呢？</p><p>不过，无论怎么讲，每天不要忘记给TA一个吻，好处似乎还真不少。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      因果关系
-    
-    </summary>
-    
-      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
-    
     
   </entry>
   
