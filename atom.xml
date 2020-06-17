@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-16T10:57:28.813Z</updated>
+  <updated>2020-06-17T15:04:53.448Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在线参加年度AWS Summit EU</title>
+    <link href="https://www.aafeng.uk/aws-summit/"/>
+    <id>https://www.aafeng.uk/aws-summit/</id>
+    <published>2020-06-17T15:04:53.448Z</published>
+    <updated>2020-06-17T15:04:53.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>近期单位的IT系统逐步向AWS转型，因此今年的这次AWS在线峰会自然是要参加了。</p><p><img src="/images/technology/aws/summit/1.jpg" alt></p><a id="more"></a><p>整个会议排的很满，从早上9点开始，一直到下午2点左右。共有11个不同的主题，55个分组讨论，其内容涵盖新手区，高级架构，应用程序开发，机器学习，数据处理等。信息量非常大。</p><p><img src="/images/technology/aws/summit/2.jpg" alt></p><p>这次峰会由Amazon的CTO Werner Vogels致开幕词(Keynote)。在Keynote中强调了架构的重要性。系统架构就如同盖房时的地基，对整个软件系统的影响非常大。 在构建系统初期，就要考虑到很多因素，例如： 安全性，可靠性，性能，成本，部署等等。 AWS专门为此构建了一个资料库： <a href="https://aws.amazon.com/builders-library/" rel="external nofollow noopener noreferrer" target="_blank">AWS Builders’ Library</a>。 在这个资料库中由很多关于系统架构方面的讨论，帮助我们如何更好的使用AWS架构软件系统。</p><p>在Keynote中还提供了一组有趣的数据，在整个疫情期间，各行各业对流媒体服务(streaming services)的需求量暴增，比如： 每周播放的流媒体的分钟数达到千亿级。可以设想，如果没有强健的底层架构支撑，很难应对这样的需求。同时还强调了一个重要的设计考虑，整个系统应该有一个内置的机器学习引擎，通过对以往数据的分析，预测将有可能发生的系统负载，提前对系统进行自动扩容，以应对即将到来的峰值访问。</p><p>“ML is no longer an emerging technology”。现在机器学习已经被大幅度应用在IT系统中，影响着众多企业的决策。而且借助AWS这样的平台和其上丰富的服务，开发人员无需过多的ML背景，也可以将ML集成到自己的核心业务之中。这些服务包括：Kendra(数据检索和交互),  CodeGuru(代码审核), Fraud Detector(欺诈监测),  Augmented AI(对基于机器学习的预测进行人工审核)等等。</p><p>总而言之，这次大会上的信息量非常大，我所感受到的重点包括系统架构和人工智能/机器学习。需要一些时间来消化这些信息。</p>]]></content>
+    
+    <summary type="html">
+    
+      在线参加年度AWS Summit EU
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>Python学习神器推荐 - Python Tutor</title>
@@ -409,28 +431,6 @@
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的列表生成式</title>
-    <link href="https://www.aafeng.uk/python-list-comprehensions/"/>
-    <id>https://www.aafeng.uk/python-list-comprehensions/</id>
-    <published>2020-05-31T21:47:23.417Z</published>
-    <updated>2020-05-31T21:47:23.417Z</updated>
-    
-    <content type="html"><![CDATA[<p>用过Python的人一定对它的列表生成式(List Comprehensions)印象非常深刻。刚接触列表生成式的时候可能会有点懵，但一旦适应了之后肯定会喜欢其简洁高效的语法。下面把我经常使用的列表生成式做一个总结，欢迎指正。</p><p><img src="/images/technology/python/python3.png" alt="Python"></p><a id="more"></a><h2 id="数据再运算"><a href="#数据再运算" class="headerlink" title="数据再运算"></a>数据再运算</h2><pre><code>a = range(0, 10)b = [x * 2 for x in a]</code></pre><p>其运算结果会返回一个新的列表</p><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><pre><code>r = range(0, 10)  s = [str(x) for x in a]</code></pre><h2 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h2><pre><code>[a + b for a in &apos;ABC&apos; for b in &apos;123&apos;] </code></pre><p>其输出为：</p><pre><code>[&apos;A1&apos;, &apos;A2&apos;, &apos;A3&apos;, &apos;B1&apos;, &apos;B2&apos;, &apos;B3&apos;, &apos;C1&apos;, &apos;C2&apos;, &apos;C3&apos;]</code></pre><h2 id="使用if做筛选"><a href="#使用if做筛选" class="headerlink" title="使用if做筛选"></a>使用if做筛选</h2><pre><code>b = [x*2 for x in a if x%2==0]</code></pre><p>把赋值与筛选写在一起：</p><pre><code>b = [x*2 for x in range(1, 10) if x%2==0]</code></pre><h2 id="打印键值对"><a href="#打印键值对" class="headerlink" title="打印键值对"></a>打印键值对</h2><p>遍历Python字典，并以自定义方式打印字典中的键值对：</p><pre><code>downloads = {&apos;Jan&apos;: 250, &apos;Feb&apos;: 382, &apos;Mar&apos;: 422}[k+&apos;=&apos; + str(v) for k,v in downloads.items()]</code></pre><h2 id="针对文件系统使用列表生成式"><a href="#针对文件系统使用列表生成式" class="headerlink" title="针对文件系统使用列表生成式"></a>针对文件系统使用列表生成式</h2><p>一条语句列举出”/var/log”中所有以”log”为扩展名的文件：</p><pre><code>[f for f in os.listdir(&quot;/var/log&quot;) if f.endswith(&apos;.log&apos;)]</code></pre><h2 id="函数分组"><a href="#函数分组" class="headerlink" title="函数分组"></a>函数分组</h2><p>在列表生成式中，可以根据函数的返回值进行分组。比如：根据首字母是否为“c“对一个列表中的所有单词进行分组：</p><pre><code>def group_by(lst, fn):    return [        [x for x in lst if fn(x)],        [x for x in lst if not fn(x)]    ]group_by([&apos;fox&apos;, &apos;dog&apos;, &apos;cat&apos;, &apos;people&apos;, &apos;cow&apos;, &apos;chicken&apos;], lambda x: x[0] == &apos;c&apos;)</code></pre><p>其输出为：</p><pre><code>[[&apos;cat&apos;, &apos;cow&apos;, &apos;chicken&apos;], [&apos;fox&apos;, &apos;dog&apos;, &apos;people&apos;]]</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      Python中的列表生成式
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
     
   </entry>
   
