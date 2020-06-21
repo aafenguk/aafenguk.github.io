@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-21T09:21:19.315Z</updated>
+  <updated>2020-06-21T22:16:39.483Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>孩子受欺负了怎么办？</title>
+    <link href="https://www.aafeng.uk/bullied/"/>
+    <id>https://www.aafeng.uk/bullied/</id>
+    <published>2020-06-21T22:16:39.483Z</published>
+    <updated>2020-06-21T22:16:39.483Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从孩子上学后，就一直被这个问题所困扰。毕竟作为家长，没法时时刻刻守在孩子身边，自己的孩子也需要学会如何和别的孩子相处。在遇到自己的权利受到侵犯的时候，应该知道如何应对。</p><p><img src="/images/kids/argue.jpg" alt></p><p>图源：Pixabay</p><a id="more"></a><p>先来说说我听到的两种教育方式：</p><p>第一种就是以牙还牙式。教育孩子不能欺负别的小朋友。但如果别的小朋友欺负上门了，那么也不用客气，打回去就可以了。但这种教育方式可能会误导孩子，导致暴力倾向，影响他们的情商发展。在最初可能是一种自我保护，但久而久之孩子可能会想，看来拳头还真好使，由自我保护慢慢变成了主动去欺负别的孩子。</p><p>说说我家儿子吧。其实我们并没有教育他要打回去。但在学校他有个老铁，拳头比较硬，总是罩着他，只要有小朋友来欺负他，朋友就会替他出头。久而久之，受朋友影响，儿子偶尔也跟着他的朋友去欺负别的小朋友了。在我们的严厉<del>恐吓</del>教育下，总算是刹住了他的这个势头，想想真是头疼。</p><p>第二种方式则是另一个极端。遇到别的孩子欺负上门，躲开就是了。殊不知这种方式更是会影响孩子的性格发展，会让他们变得胆小懦弱。更容易受到别的孩子的欺负。</p><p>我感觉首先是要让孩子明白，暴力不是解决问题的办法。更有效的办法是<strong>沟通</strong>。首先要大声喊出来，你不能抢我的玩具！你打人是不对的！你不能这样对我说话！让欺负人的孩子知道他们的行为是错误的，也觉得这个人不好惹。如果这样还不能解决问题，可以和老师沟通，让老师来协调解决问题。当然，在最极端的情况下，比如当自己的人身安全受到威胁的时候，可以自卫。</p><p>其实我们一直也是在摸索，哪种方式最好，大家有什么好的建议？</p>]]></content>
+    
+    <summary type="html">
+    
+      孩子受欺负了怎么办？
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>最好的父亲节礼物</title>
@@ -409,28 +429,6 @@
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>将Hive文章保存到Elasticsearch的尝试</title>
-    <link href="https://www.aafeng.uk/hive-elasticsearch/"/>
-    <id>https://www.aafeng.uk/hive-elasticsearch/</id>
-    <published>2020-06-04T11:15:18.116Z</published>
-    <updated>2020-06-04T11:15:18.116Z</updated>
-    
-    <content type="html"><![CDATA[<p>一直对Hive的搜索功能不是很满意。在工作中使用过不同的框架，这些框架提供的搜索功能中，facet，关键字标红等可以说是标配。但在Hive中一样都没有。其原因我也能理解，毕竟从链上读取数据，这些数据中不包含需要的信息，自然也不太容易实现这些功能。那么，如果把链上数据保存到Solr或者Elasticsearch中，不就能增强其搜索功能了吗？下面记录一下把Hive中的文章信息保存到Elasticsearch中的步骤。当然，下面只是一个简单的实验，想做到一个真正能工作的网站还有很多工作要做。</p><p><img src="/images/blockchain/hive/es.png" alt="Elasticsearch"></p><a id="more"></a><h2 id="安装Elasticsearch"><a href="#安装Elasticsearch" class="headerlink" title="安装Elasticsearch"></a>安装Elasticsearch</h2><p>下载Elasticsearch:</p><p><a href="https://www.elastic.co/cn/downloads/elasticsearch" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/elasticsearch</a></p><p>解压缩：</p><pre><code>tar xvf elasticsearch-7.7.0-linux-x86_64.tar.gz</code></pre><p>运行：</p><pre><code>cd elasticsearch-7.7.0/bin ./elasticsearch</code></pre><p>在本地用curl测试一下：</p><pre><code>curl localhost:9200</code></pre><p>其输出应类似于：</p><pre><code>{  &quot;name&quot; : &quot;YOUR_SERVER_NAME&quot;,  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,  &quot;cluster_uuid&quot; : &quot;liHA066AQJeE91lv8lLqig&quot;,  &quot;version&quot; : {    &quot;number&quot; : &quot;7.7.0&quot;,    &quot;build_flavor&quot; : &quot;default&quot;,    &quot;build_type&quot; : &quot;tar&quot;,    &quot;build_hash&quot; : &quot;81a1e9eda8e6183f5237786246f6dced26a10eaf&quot;,    &quot;build_date&quot; : &quot;2020-05-12T02:01:37.602180Z&quot;,    &quot;build_snapshot&quot; : false,    &quot;lucene_version&quot; : &quot;8.5.1&quot;,    &quot;minimum_wire_compatibility_version&quot; : &quot;6.8.0&quot;,    &quot;minimum_index_compatibility_version&quot; : &quot;6.0.0-beta1&quot;  },  &quot;tagline&quot; : &quot;You Know, for Search&quot;}</code></pre><h2 id="安装Kibana"><a href="#安装Kibana" class="headerlink" title="安装Kibana"></a>安装Kibana</h2><p>其实，要想使用Elasticsearch，不一定要安装Kibana。但有了Kibana，可以实现对Elasticsearch中的数据可视化。</p><p>从官网下载：<a href="https://www.elastic.co/cn/downloads/kibana" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads/kibana</a></p><p>解压缩后进入config目录并修改kibana.yml:</p><pre><code>server.host: &quot;0.0.0.0&quot;</code></pre><p>进入bin目录运行：</p><pre><code>./kibana</code></pre><p>可以看到如下界面：    </p><p><img src="/images/blockchain/hive/es2.png" alt="Elasticsearch"></p><p>导入如下电商数据进行测试：</p><p><img src="/images/blockchain/hive/es3.png" alt="Elasticsearch"></p><p>打开devtool后进行一个简单的查询，可以看到如下数据：</p><p><img src="/images/blockchain/hive/es4.png" alt="Elasticsearch"></p><h2 id="Elasticsearch中的重要概念"><a href="#Elasticsearch中的重要概念" class="headerlink" title="Elasticsearch中的重要概念"></a>Elasticsearch中的重要概念</h2><p>在向ElasticSearch中插入数据之前，把其中的重要概念和传统的关系型数据库做一个对比：</p><p><strong>ES =&gt; RDB</strong></p><p>Index  =&gt;  Database<br>Type  =&gt;   Table<br>Document  =&gt;  Row<br>Field =&gt;  Column<br>Mapping  =&gt;   Schema</p><h2 id="安装并测试Python-elasticsearch模块"><a href="#安装并测试Python-elasticsearch模块" class="headerlink" title="安装并测试Python elasticsearch模块"></a>安装并测试Python elasticsearch模块</h2><p>首先安装elasticsearch模块：</p><pre><code>pip install elasticsearch</code></pre><p>进入Python命令行，依次输入如下命令创建一个新的索引“hive-posts-index”：</p><pre><code>&gt;&gt;&gt; from datetime import datetime&gt;&gt;&gt; from elasticsearch import Elasticsearch&gt;&gt;&gt; es = Elasticsearch()&gt;&gt;&gt; es.indices.create(index=&apos;hive-posts-index&apos;, ignore=400){&apos;acknowledged&apos;: True, &apos;shards_acknowledged&apos;: True, &apos;index&apos;: &apos;hive-posts-index&apos;}</code></pre><p>如果要删除记录：</p><pre><code>curl -X DELETE &apos;localhost:9200/test-index&apos;</code></pre><p>进入Kibana devtool界面，就会看到这个索引已经创建：</p><p><img src="/images/blockchain/hive/es5.png" alt="Elasticsearch"></p><p>测试添加记录</p><pre><code>es.index(index=&quot;hive-posts-index&quot;, id=1, body={&quot;any&quot;: &quot;data&quot;, &quot;timestamp&quot;: datetime.now()})</code></pre><p>读取记录：</p><pre><code>&gt;&gt;&gt; es.get(index=&quot;hive-posts-index&quot;, id=1){&apos;_index&apos;: &apos;hive-posts-index&apos;, &apos;_type&apos;: &apos;_doc&apos;, &apos;_id&apos;: &apos;1&apos;, &apos;_version&apos;: 1, &apos;_seq_no&apos;: 0, &apos;_primary_term&apos;: 1, &apos;found&apos;: True, &apos;_source&apos;: {&apos;any&apos;: &apos;data&apos;, &apos;timestamp&apos;: &apos;2020-06-02T15:52:40.759337&apos;}}</code></pre><h2 id="将Hive中的帖子插入到Elasticsearch中"><a href="#将Hive中的帖子插入到Elasticsearch中" class="headerlink" title="将Hive中的帖子插入到Elasticsearch中"></a>将Hive中的帖子插入到Elasticsearch中</h2><p>写了一个简单的程序，将我最新5篇文章的标题，正文，分类保存到ES，并以permlink作为ES中的id：</p><pre><code>from beem import Steemfrom beem.account import Accountfrom datetime import datetimefrom elasticsearch import Elasticsearches = Elasticsearch()hive    = Steem(nodes = &apos;https://api.hive.blog&apos;)account = Account(&apos;aafeng&apos;, steem_instance = hive)posts   = account.get_blog(start_entry_id=0, limit=5)for post in posts:    author   = post.author    title    = post.title    body     = post.body    category = post.category    permlink = post.permlink    es.index(index=&quot;hive-posts-index&quot;, id=permlink, body={&quot;author&quot;: author,\                                                    &quot;title&quot;:  title,\                                                    &quot;body&quot;:   body,\                                                    &quot;category&quot;: category,\                                                    &quot;permlink&quot;: permlink,\                                                    &quot;timestamp&quot;: datetime.now()})</code></pre><p>在Kibana中进行查询：</p><pre><code>GET hive-posts-index/_search?q=*:*</code></pre><p>从输出可以看出，我的文章已经保存到ES中了:</p><p><img src="/images/blockchain/hive/es6.png" alt="Elasticsearch"></p><p>也可以使用curl验证是否已经将数据保存至ES：</p><pre><code>curl http://localhost:9200/hive-posts-index/_search?size=5</code></pre><p>然后可以使用ES来进行各种查询了，比如：</p><pre><code>GET hive-posts-index/_search?q=title:必有GET hive-posts-index/_search?q=category:hive-105017</code></pre><p>查看所有索引：</p><pre><code>GET _cat/indicesGET _cat/indices?v</code></pre><p>查看一个文档：</p><pre><code>GET hive-posts-index/_doc/6ulbjb</code></pre><p>显示所有Type:</p><pre><code>GET _mapping?pretty=true</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      将Hive文章保存到Elasticsearch的尝试
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Hive" scheme="https://www.aafeng.uk/tags/Hive/"/>
     
   </entry>
   
