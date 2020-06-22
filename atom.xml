@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-21T22:16:39.483Z</updated>
+  <updated>2020-06-22T09:28:39.515Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AWS学习资源总结</title>
+    <link href="https://www.aafeng.uk/aws-learning-resources/"/>
+    <id>https://www.aafeng.uk/aws-learning-resources/</id>
+    <published>2020-06-22T09:28:39.515Z</published>
+    <updated>2020-06-22T09:28:39.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面把AWS的学习资源总结了一下。这个列表会不断更新。</p><p><img src="/images/technology/aws/aws.png" alt><img src="/images/technology/aws/aws.png" alt></p><a id="more"></a><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><a href="https://www.aws.training/Details/eLearning?id=42594" rel="external nofollow noopener noreferrer" target="_blank">Architecting Serverless Solutions</a></p>]]></content>
+    
+    <summary type="html">
+    
+      AWS学习资源总结
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+      <category term="Lambda" scheme="https://www.aafeng.uk/tags/Lambda/"/>
+    
+  </entry>
   
   <entry>
     <title>孩子受欺负了怎么办？</title>
@@ -408,26 +434,6 @@
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自制Pizza</title>
-    <link href="https://www.aafeng.uk/pizza/"/>
-    <id>https://www.aafeng.uk/pizza/</id>
-    <published>2020-06-04T21:21:07.977Z</published>
-    <updated>2020-06-04T21:21:07.977Z</updated>
-    
-    <content type="html"><![CDATA[<p>自从宅在家中后，很多闲置多年的电器开始启用了。媳妇最近开始使用面包机制作面包，其口感和味道比超市买的买包好吃了不止一个档次。最近还发现了一个功能：可以用面包机制作pizza所需的面饼。</p><p>正好孩子们都超级喜欢pizza，于是买齐了食材，开始制作pizza。先上一张成品图：</p><p><img src="/images/food/pizza/1.jpg" alt="Pizza"></p><a id="more"></a><p>首先将面包机中发好的面团拿出来擀成pizza的面饼：</p><p><img src="/images/food/pizza/2.jpg" alt="Pizza"></p><p>将面饼上抹上西红柿酱，由于所有人都喜欢Cheese，因此先放了一层Cheese：</p><p><img src="/images/food/pizza/3.jpg" alt="Pizza"></p><p>接下来将Pepperoni摆匀：</p><p><img src="/images/food/pizza/4.jpg" alt="Pizza"></p><p>再摆放洋葱，角瓜，蘑菇，最后上面再放一层Cheese：</p><p><img src="/images/food/pizza/5.jpg" alt="Pizza"></p><p>烤箱预热后烤了20分钟就好了，既简单又好吃！</p>]]></content>
-    
-    <summary type="html">
-    
-      自制Pizza
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
     
   </entry>
