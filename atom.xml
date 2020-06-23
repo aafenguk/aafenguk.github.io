@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-22T20:12:23.766Z</updated>
+  <updated>2020-06-23T22:03:46.415Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>魔幻的操作-英国即将全面解封</title>
+    <link href="https://www.aafeng.uk/ease-lockdown/"/>
+    <id>https://www.aafeng.uk/ease-lockdown/</id>
+    <published>2020-06-23T22:03:46.415Z</published>
+    <updated>2020-06-23T22:03:46.415Z</updated>
+    
+    <content type="html"><![CDATA[<p>就在全球都在为第二波疫情担心的时候，英国政府公布了一系列的政策，人们将在7月4日“重获自由”。这些政策包括：博物馆，艺术画廊，电影院，酒吧，餐厅，酒店等将于7月4日开张；社交距离降低为1米+；从7月4日起，两个家庭之间可以聚会，但仍需保持社交距离。</p><p>英国的主流媒体似乎也在一边倒的支持着这些政策：</p><p><img src="/images/life/covid19/reopen-1.jpg" alt></p><a id="more"></a><p><img src="/images/life/covid19/reopen-2.jpg" alt></p><p>这一系列的政策似乎在民众中很受欢迎。目前我们周边已经有好几家朋友似乎都已经按捺不住，透漏出在7月4日后想要一起聚会的想法。同时在英国的好几个华人家长群的民意调查中，家长们也是一边倒的把(EY和Y1两个年级的)孩子送回了学校，或者计划把孩子送回学校。</p><p>真的不是很理解这一系列政策的依据是什么。现在的疫情数据是比前一段时间的要好看很多。但这正是前一段时间大家纷纷宅在家中的结果啊。感觉缓慢的解封是可以理解的。但这步跨的似乎有点大，真的很担心会扯着了。</p><p>不过话说回来，女儿是符合返校条件的（Y1）。最初我很坚决的反对返校。但她班中的小朋友们纷纷返校，已经过了一周，似乎情况都很正常。我也有些动摇了，已经向学校提出申请，如果一切正常，下周可能会尝试返校。</p><p>哎，无论怎样，生活还要继续。今天晚饭后全家出门散步。沿途看到了很多动物。没有了人类的过多打扰，它们似乎生活的更自在了。</p><p>天鹅在距离岸边不远的地方孵化雏鸟。让我第一次有机会这么近距离的观赏这只高冷的大鸟。</p><p><img src="/images/life/covid19/reopen-3.jpg" alt></p><p>就连平时胆小的兔子似乎也变得不怎么怕人了。</p><p><img src="/images/life/covid19/reopen-4.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      魔幻的操作-英国即将全面解封
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>扩建工程记录</title>
@@ -410,26 +432,6 @@
     <summary type="html">
     
       编程思想
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Elasticsearch的中文分词</title>
-    <link href="https://www.aafeng.uk/elasticsearch-chinese-tokenizer/"/>
-    <id>https://www.aafeng.uk/elasticsearch-chinese-tokenizer/</id>
-    <published>2020-06-05T21:32:41.847Z</published>
-    <updated>2020-06-05T21:32:41.847Z</updated>
-    
-    <content type="html"><![CDATA[<p>以下的步骤都是基于Elasticsearch和Kibana的基础上的，如果还没有安装，建议参考我前面的文章。</p><p><img src="/images/blockchain/hive/es.png" alt="Elasticsearch"></p><a id="more"></a><h2 id="什么是分词和默认分词器？"><a href="#什么是分词和默认分词器？" class="headerlink" title="什么是分词和默认分词器？"></a>什么是分词和默认分词器？</h2><p>所谓分词，就是把一段话拆解为若干词元(token)，再将其保存至索引中以便下一步搜索。在ES中有现成的分词器，只不过这些分词器对中文的处理不尽人意。看一个例子：</p><p>在Kibana devtool中输入：</p><pre><code>GET _analyze{      &quot;text&quot;: &quot;are you ok?&quot;  }</code></pre><p>这等同于：</p><pre><code>GET _analyze{      &quot;analyzer&quot;: &quot;standard&quot;,    &quot;text&quot;: &quot;are you ok?&quot;  }</code></pre><p>可以看到其返回结果为：</p><pre><code>{  &quot;tokens&quot; : [    {      &quot;token&quot; : &quot;are&quot;,      &quot;start_offset&quot; : 0,      &quot;end_offset&quot; : 3,      &quot;type&quot; : &quot;&lt;ALPHANUM&gt;&quot;,      &quot;position&quot; : 0    },    {      &quot;token&quot; : &quot;you&quot;,      &quot;start_offset&quot; : 4,      &quot;end_offset&quot; : 7,      &quot;type&quot; : &quot;&lt;ALPHANUM&gt;&quot;,      &quot;position&quot; : 1    },    {      &quot;token&quot; : &quot;ok&quot;,      &quot;start_offset&quot; : 8,      &quot;end_offset&quot; : 10,      &quot;type&quot; : &quot;&lt;ALPHANUM&gt;&quot;,      &quot;position&quot; : 2    }  ]}</code></pre><p>在这里，将”are you ok?”分成了三个词元：”are”, “you”，”ok”。这样的分词没有任何问题，毕竟在英文中就是用空格来分隔各个单词的。</p><p>但如果我们再尝试一段中文的话：</p><pre><code>GET _analyze{      &quot;text&quot;: &quot;我爱我的祖国&quot;  }</code></pre><p>其输出结果为：</p><pre><code>{  &quot;tokens&quot; : [    {      &quot;token&quot; : &quot;我&quot;,      &quot;start_offset&quot; : 0,      &quot;end_offset&quot; : 1,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 0    },    {      &quot;token&quot; : &quot;爱&quot;,      &quot;start_offset&quot; : 1,      &quot;end_offset&quot; : 2,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 1    },    {      &quot;token&quot; : &quot;我&quot;,      &quot;start_offset&quot; : 2,      &quot;end_offset&quot; : 3,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 2    },    {      &quot;token&quot; : &quot;的&quot;,      &quot;start_offset&quot; : 3,      &quot;end_offset&quot; : 4,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 3    },    {      &quot;token&quot; : &quot;祖&quot;,      &quot;start_offset&quot; : 4,      &quot;end_offset&quot; : 5,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 4    },    {      &quot;token&quot; : &quot;国&quot;,      &quot;start_offset&quot; : 5,      &quot;end_offset&quot; : 6,      &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,      &quot;position&quot; : 5    }  ]}</code></pre><p>这样的分词结果是明显错误的，或者说是没什么用的。</p><h2 id="安装elasticsearch中文分词器"><a href="#安装elasticsearch中文分词器" class="headerlink" title="安装elasticsearch中文分词器"></a>安装elasticsearch中文分词器</h2><p>常见的elasticsearch中文分词器包括：<a href="https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-smartcn.html" rel="external nofollow noopener noreferrer" target="_blank">smartcn</a>和<a href="https://github.com/medcl/elasticsearch-analysis-ik" rel="external nofollow noopener noreferrer" target="_blank">ik</a>。</p><p>下面以ik分词器为例来说明如何安装和使用elasticsearch中文分词器。</p><p>首先需要注意，分词器的版本一定要和elasticsearch版本匹配。比如：我使用的elasticsearch版本是7.7.0，那么，对应的分词器版本也应该是7.7.0。</p><p>完整的ik版本列表可以在这里找到：<a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p><p>首先进行安装：</p><pre><code>./elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.7.0/elasticsearch-analysis-ik-7.7.0.zip</code></pre><p>验证一下是否成功安装：</p><pre><code>./elasticsearch-plugin list</code></pre><p>它会显示刚安装的中文分词器。</p><p>同时可以看到，在plugins目录下多了一个analysis-ik子目录。</p><p>安装结束后，就会有两个分词器：ik_max_word和ik_smart。这两个分词器的算法不同。第一个会尽量分出更多的中文词，但会占用更多空间。而第二个则不会。一般情况下，使用ik_smart就足够了。</p><p>比如：运行如下查询：</p><pre><code>GET _analyze{      &quot;analyzer&quot;: &quot;ik_smart&quot;,    &quot;text&quot;: &quot;我爱我的祖国&quot;  }</code></pre><p>其结果为：</p><pre><code>{  &quot;tokens&quot; : [    {      &quot;token&quot; : &quot;我&quot;,      &quot;start_offset&quot; : 0,      &quot;end_offset&quot; : 1,      &quot;type&quot; : &quot;CN_CHAR&quot;,      &quot;position&quot; : 0    },    {      &quot;token&quot; : &quot;爱我&quot;,      &quot;start_offset&quot; : 1,      &quot;end_offset&quot; : 3,      &quot;type&quot; : &quot;CN_WORD&quot;,      &quot;position&quot; : 1    },    {      &quot;token&quot; : &quot;的&quot;,      &quot;start_offset&quot; : 3,      &quot;end_offset&quot; : 4,      &quot;type&quot; : &quot;CN_CHAR&quot;,      &quot;position&quot; : 2    },    {      &quot;token&quot; : &quot;祖国&quot;,      &quot;start_offset&quot; : 4,      &quot;end_offset&quot; : 6,      &quot;type&quot; : &quot;CN_WORD&quot;,      &quot;position&quot; : 3    }  ]}</code></pre><h2 id="定义自己的词条"><a href="#定义自己的词条" class="headerlink" title="定义自己的词条"></a>定义自己的词条</h2><p>在ik分词器中，所有的词条文件都保存在elasticsearch-7.7.0/config/analysis-ik中。如果想要定义自己的词条，需要以下几个步骤：</p><p>首先在这个目录中创建一个新的词条文件，并将新的词条每行添加一个</p><pre><code>新词条1新词条2....</code></pre><p>接下来，在配置文件IKAnalyzer.cfg.xml中添加对上一步自建词条文件的引用：</p><pre><code>&lt;entry key=&quot;ext_dict&quot;&gt;new_dict.dic&lt;/entry&gt;</code></pre><p>之后需要重新启动ES才能生效。</p><h2 id="在索引中使用中文分词器"><a href="#在索引中使用中文分词器" class="headerlink" title="在索引中使用中文分词器"></a>在索引中使用中文分词器</h2><p>创建索引：</p><pre><code>curl -X PUT localhost:9200/ik1</code></pre><p>或者在Kibana中：</p><pre><code>PUT ik1{&quot;settings&quot;: {  &quot;analysis&quot;: {    &quot;analyzer&quot;: {      &quot;es_std&quot;: {        &quot;type&quot;: &quot;ik_smart&quot;      }    }  }}}</code></pre><p>查看ik1</p><pre><code>GET ik1</code></pre><p>试用分词器：</p><pre><code>GET /ik1/_analyze{  &quot;analyzer&quot;: &quot;ik_smart&quot;,   &quot;text&quot;: &quot;我和我的祖国&quot;}</code></pre><p>在Python交互界面中添加一条数据：</p><pre><code>from elasticsearch import Elasticsearches = Elasticsearch()es.index(index=&quot;ik1&quot;, id=1, body={&quot;text&quot;: &quot;我和我的祖国&quot;})</code></pre><p>测试以下查询：</p><pre><code>POST ik1/_search{    &quot;query&quot;: {        &quot;query_string&quot;: {            &quot;query&quot;: &quot;祖国&quot;,            &quot;fields&quot;: [&quot;text&quot;]        }    }}</code></pre><p>其返回值为：</p><pre><code>{  &quot;took&quot; : 5,  &quot;timed_out&quot; : false,  &quot;_shards&quot; : {    &quot;total&quot; : 1,    &quot;successful&quot; : 1,    &quot;skipped&quot; : 0,    &quot;failed&quot; : 0  },  &quot;hits&quot; : {    &quot;total&quot; : {      &quot;value&quot; : 1,      &quot;relation&quot; : &quot;eq&quot;    },    &quot;max_score&quot; : 0.5753642,    &quot;hits&quot; : [      {        &quot;_index&quot; : &quot;ik1&quot;,        &quot;_type&quot; : &quot;_doc&quot;,        &quot;_id&quot; : &quot;1&quot;,        &quot;_score&quot; : 0.5753642,        &quot;_source&quot; : {          &quot;text&quot; : &quot;我和我的祖国&quot;        }      }    ]  }}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      Elasticsearch的中文分词
     
     </summary>
     
