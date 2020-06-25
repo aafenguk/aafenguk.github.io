@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-24T15:57:52.775Z</updated>
+  <updated>2020-06-25T22:01:28.120Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Get新技能：各种地板的选择</title>
+    <link href="https://www.aafeng.uk/flooring/"/>
+    <id>https://www.aafeng.uk/flooring/</id>
+    <published>2020-06-25T22:01:28.120Z</published>
+    <updated>2020-06-25T22:01:28.120Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着家中扩建工程的不断推进，最近需要考虑扩建后的地板了。早些年的时候，只是知道地毯，实木地板，和复合木地板。但最近在不断的选择过程中，才意识到了里面的学问原来还是很多的。</p><p><img src="/images/life/floor-1.jpg" alt></p><a id="more"></a><p>首先是实木地板(Solid Wood)。说白了，实木地板就是一块一块的木板。这种地板的特点就是取材纯天然，但容易变形，需要定期护理。在早期工程木地板技术不成熟的时候，造价较高，因此很多人选择了实木地板。但现在更多的人选择的是下面要介绍的工程木地板。</p><p>第二种是工程木地板(Engineered Wood)。这种木地板其实也是纯木的，只不过不像实木地板，它是由很多层粘合而成的，因此叫做工程木地板。哈哈，就像三明治一样。顶层木的质量最好，其他层的也是纯木，只不过质量不如顶层的好。相较于实木地板，工程木地板的纹理和色彩选择也更多，适用面也更广，比如有地暖的话只能选择工程木地板，而不能选择实木地板。在选择的时候需要注意，其顶层木板越厚，质量一般就越好。比如下图是施工的人推荐的工程木地板，共有9层，顶层非常厚，因此也属于工程木地板中的顶级品质。</p><p><img src="/images/life/floor-2.jpg" alt></p><p>第三种就是复合木地板(laminate)了。复合木地板的底层用的是高密度板，上面是特殊处理过的一个耐磨层。其最大优点是耐磨。但真到有一天上面的耐摩层被破坏了，复合木地板就废了。相比较而言，工程木地板的表面如果磨坏了，还能请专业人士来至少翻新一次。</p><p>最后一种是塑胶地板(Vinyl)。据卖地板的人说，现在选用Vinyl的人越来越多了。这种地板的特点就是寿命长，特别抗造，防水，使用于各种环境。但是感觉就不像木地板那样自然。现在Vinyl的价格还很高，顶级的Vinyl价格甚至会超过高质量工程木地板价格。但对于这种地板，我实在是提不起什么兴趣。主要是觉得铺上后没有地板的感觉。</p><p>虽然施工的人建议我们选择复合木地板。据他说现在选择复合木地板的人最多。不过我们最终还是选择了工程木地板。原因有以下几个：第一，它的材质是天然纯木，同时又很耐磨。第二，即使耐磨层出现问题，还可以再度翻新。第三，可以选择的花色，纹理很多，有我们喜欢的样式。</p><p>伴随着工程的推进，需要学的东西还真多，下一步，厨房的选择，房屋结构的改变，想想有些头大。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      Get新技能：各种地板的选择
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用AWS Step Functions定制工作流</title>
@@ -414,28 +434,6 @@
     </summary>
     
       <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="ELK" scheme="https://www.aafeng.uk/tags/ELK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Kibana可视化你的数据</title>
-    <link href="https://www.aafeng.uk/kibana-visualization/"/>
-    <id>https://www.aafeng.uk/kibana-visualization/</id>
-    <published>2020-06-08T15:07:11.141Z</published>
-    <updated>2020-06-08T15:07:11.141Z</updated>
-    
-    <content type="html"><![CDATA[<p>把数据保存到Elasticsearch之后，有一个重要的工作就是要对数据进行可视化，以便下一步的分析。下面通过一个官方的数据集来介绍如何通过Kibana进行数据可视化。</p><p><img src="/images/technology/kibana/kibana.png" alt="Kibana"></p><a id="more"></a><h2 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h2><p>Elasticsearch: 7.7.0<br>Kibana: 7.7.0</p><h2 id="下载并导入数据"><a href="#下载并导入数据" class="headerlink" title="下载并导入数据"></a>下载并导入数据</h2><p>从官网下载如下的数据集：<a href="https://download.elastic.co/demos/kibana/gettingstarted/accounts.zip" rel="external nofollow noopener noreferrer" target="_blank">https://download.elastic.co/demos/kibana/gettingstarted/accounts.zip</a></p><p>解压缩后会得到accounts.json这个文件，其大小大约为240K。</p><p>运行如下命令将数据导入ES：</p><pre><code>curl -H &apos;Content-Type: application/x-ndjson&apos; -XPOST &apos;localhost:9200/bankdemo/account/_bulk?pretty&apos; --data-binary @accounts.json</code></pre><p>在Kibana的Devtool中验证数据已经被导入：</p><pre><code>GET /_cat/indices?vGET bankdemo/_search?q=*:*</code></pre><p>其输出类似于：</p><pre><code>{  &quot;took&quot; : 6,  &quot;timed_out&quot; : false,  &quot;_shards&quot; : {    &quot;total&quot; : 1,    &quot;successful&quot; : 1,    &quot;skipped&quot; : 0,    &quot;failed&quot; : 0  },  &quot;hits&quot; : {    &quot;total&quot; : {      &quot;value&quot; : 1000,      &quot;relation&quot; : &quot;eq&quot;    },    &quot;max_score&quot; : 1.0,    &quot;hits&quot; : [      {        &quot;_index&quot; : &quot;bankdemo&quot;,        &quot;_type&quot; : &quot;account&quot;,        &quot;_id&quot; : &quot;1&quot;,        &quot;_score&quot; : 1.0,        &quot;_source&quot; : {          &quot;account_number&quot; : 1,          &quot;balance&quot; : 39225,          &quot;firstname&quot; : &quot;Amber&quot;,          &quot;lastname&quot; : &quot;Duke&quot;,          &quot;age&quot; : 32,          &quot;gender&quot; : &quot;M&quot;,          &quot;address&quot; : &quot;880 Holmes Lane&quot;,          &quot;employer&quot; : &quot;Pyrami&quot;,          &quot;email&quot; : &quot;amberduke@pyrami.com&quot;,          &quot;city&quot; : &quot;Brogan&quot;,          &quot;state&quot; : &quot;IL&quot;        }      },……</code></pre><h2 id="创建索引模式-Index-Pattern"><a href="#创建索引模式-Index-Pattern" class="headerlink" title="创建索引模式(Index Pattern)"></a>创建索引模式(Index Pattern)</h2><p>索引模式(Index Pattern)可以针对多个索引，因此在创建时支持通配符。</p><p>在Kibana的页面中选择：Kibana -&gt; Management -&gt; Index Patterns -&gt; Create index pattern</p><p><img src="/images/technology/kibana/visualization1.png" alt="Kibana"></p><p>创建完毕后会看到如下界面：</p><p><img src="/images/technology/kibana/visualization2.png" alt="Kibana"></p><p>可以看到有的字段可以被搜索的(Searchable)，有的字段是可以被聚合的(Aggregatable)。如果需要的话，可以自己更改这些字段的属性。</p><h2 id="在Kibana中查看数据"><a href="#在Kibana中查看数据" class="headerlink" title="在Kibana中查看数据"></a>在Kibana中查看数据</h2><p>单击Discovery后，可以输入KQL来检索数据。</p><p>比如，输入：</p><pre><code>balance &gt;= 47500 and employer:a*</code></pre><p>你会看到：</p><p><img src="/images/technology/kibana/visualization3.png" alt="Kibana"></p><p>KQL的语法和SQL非常相似，简单好用，比如：</p><pre><code>balance &gt;= 47500 and employer:a* and account_number &gt; 100</code></pre><p>可以通过左侧菜单选择索引，以及字段。    </p><h2 id="Kibana可视化：饼图"><a href="#Kibana可视化：饼图" class="headerlink" title="Kibana可视化：饼图"></a>Kibana可视化：饼图</h2><p>选择Visualize -&gt; Create visualization -&gt; Pie -&gt; Bank Demo</p><p><img src="/images/technology/kibana/visualization4.png" alt="Kibana"></p><p>由于目前没有对源数据进行定义，因此，初始饼图看起来这是这样的：</p><p><img src="/images/technology/kibana/visualization5.png" alt="Kibana"></p><p>选择Buckets -&gt; Add -&gt; Split slices -&gt; Range，同时设定不同的范围：</p><p><img src="/images/technology/kibana/visualization6.png" alt="Kibana"></p><p>可以看到更新后的饼图：</p><p><img src="/images/technology/kibana/visualization7.png" alt="Kibana"></p><p>还可以添加一个SUB-BUCKET，在现有聚合的基础上做进一步的划分：</p><p><img src="/images/technology/kibana/visualization8.png" alt="Kibana"></p><p>最后不要忘记保存你的Visualization。</p>]]></content>
-    
-    <summary type="html">
-    
-      使用Kibana可视化你的数据
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="ELK" scheme="https://www.aafeng.uk/tags/ELK/"/>
