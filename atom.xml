@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-29T21:52:31.296Z</updated>
+  <updated>2020-06-30T21:18:33.624Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hive Dapp介绍 - rewarding.app</title>
+    <link href="https://www.aafeng.uk/rewarding-app/"/>
+    <id>https://www.aafeng.uk/rewarding-app/</id>
+    <published>2020-06-30T21:18:33.624Z</published>
+    <updated>2020-06-30T21:18:33.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>试用了一下<a href="https://rewarding.app/" rel="external nofollow noopener noreferrer" target="_blank">rewarding.app</a>这个dapp，感觉其功能还是非常强大的。简而言之，这个dapp可以非常灵活的定义各种点赞规则，之后这个dapp就会按照你定义的规则来进行点赞。</p><a id="more"></a><p>登录后可以看到如下界面：</p><p><img src="/images/blockchain/hive/rewarding.app.1.png" alt></p><p>首先需要使用hivesigner对其进行授权。授权成功后，在hiveblocks上可以看到rewarding这个dapp出现在你的Posting授权列表中：</p><p><img src="/images/blockchain/hive/rewarding.app.2.png" alt></p><p>接下来就可以定义点赞规则了。首先看一下第一组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.3.png" alt></p><p>比如：给哪个作者点赞，点赞比例，点赞时段（比如：5分钟到120分钟之间）。</p><p>再来看一下第二组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.4.png" alt></p><p>首先是vote_sbd，这个选项只有在vote_weight为0的时候，rewarding.app会自动换算，比如你想给作者点赞的价值为$0.1，这个dapp会自动帮你计算你需要的点赞比例。接下来的每天最大点赞数，每周最大点赞数，以及最小的VP值等。</p><p>再来看第三组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.5.png" alt></p><p>比如，文章中必须包含某个标记，或者必须不包含某个标记，以及文章中最小的字数。</p><p>至此，感觉这些参数已经足够灵活了，可以定义各种点赞规则。其实除此之外，还有好多参数可以选择。都定义完之后保存规则，会看到这样的一个规则列表：</p><p><img src="/images/blockchain/hive/rewarding.app.6.png" alt></p><p>这界面，实在是太需要改进了。。。</p><p>不过不得不说，这个dapp的功能还是非常强大的，除了自动点赞规则的设计，还有跟赞，跟踩的功能。个人感觉，如果能够适应它的界面，这个工具还是有其可取之处的。</p>]]></content>
+    
+    <summary type="html">
+    
+      Hive Dapp介绍 - rewarding.app
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Get新技能 - 整体厨房的选购</title>
@@ -414,26 +434,6 @@
     </summary>
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>好评 - 在线美术培训</title>
-    <link href="https://www.aafeng.uk/online-drawing-class/"/>
-    <id>https://www.aafeng.uk/online-drawing-class/</id>
-    <published>2020-06-13T22:19:51.516Z</published>
-    <updated>2020-06-13T22:19:51.516Z</updated>
-    
-    <content type="html"><![CDATA[<p>疫情期间，由于全天候在家，除了正常的功课之外，给孩子们报了一个在线美术课。迄今为止虽然学习的时间不长，但已经取得了不小的进步。整体感觉非常好。除此之外，还有在线钢琴课，小提琴课，中文课，唱歌课等等。感觉似乎今后的学习方式将会从线下向线上发生彻底的改变。</p><a id="more"></a><p>在报班之前也做了简单的调研。国内类似的培训机构非常多，而且很多家都号称有上亿的融资，还有雷军，徐小平等大咖支持，似乎感觉都不错。最终选择的品牌是经朋友推荐后报名的。</p><p>这个课程的好处还是很多的，可以培养孩子的审美观，色彩敏感度，开发孩子的想象力，观察能力和动手能力等。在上课过程中，每个孩子搭配一个班主任，还有一个教学管理老师，似乎能够弥补在线教学的不足，整体的学习效果还是很好的。</p><p>上几幅孩子的画作：</p><p><img src="/images/kids/painting/1.jpg" alt></p><p><img src="/images/kids/painting/2.jpg" alt></p><p><img src="/images/kids/painting/3.jpg" alt></p><p>这次的疫情迫使人们对很多行业的工作模式进行了深入的思考和实践。就拿美术课来说吧。以前根本没有考虑过线上的课程。但如果只选择线下课程，那么师资的选择范围就非常有限。由于我们这样生活的城市非常小，因此选择范围就更为小，往往特别好的老师太忙，想要报班的话，需要排很长的队。而现在改为线上课程，可以选择的老师不仅多，而且都是美院的专业人士。现在觉得等到疫情过去，似乎还是更倾向于线上培训课程。</p>]]></content>
-    
-    <summary type="html">
-    
-      好评 - 在线美术培训
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
     
   </entry>
