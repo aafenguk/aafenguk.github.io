@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-06-30T21:18:33.624Z</updated>
+  <updated>2020-07-01T15:49:01.203Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>试用Streamlit进行数据可视化</title>
+    <link href="https://www.aafeng.uk/streamlit/"/>
+    <id>https://www.aafeng.uk/streamlit/</id>
+    <published>2020-07-01T15:49:01.203Z</published>
+    <updated>2020-07-01T15:49:01.203Z</updated>
+    
+    <content type="html"><![CDATA[<p>早就听说Streamlit是数据分析和机器学习的利器，但一直没有机会尝试。最近花了些时间试用了一下，还真的非常好用！最主要的是其设计思路非常独特：开发者只需要关注于数据及服务器端编码就可以了，那些复杂的客户端交互，响应式设计等等全部由Streamlit这个框架来搞定！这让我想起了过去曾经用过的一个框架：GWT (Google Web Toolkit)，其设计思路可以说和Streamlit是完全一样啊！不同之处是GWT中没有对数据分析和机器学习的支持。</p><a id="more"></a><p>下面通过一个简单的程序来演示Streamlit是如何工作的。</p><p>首先需要安装streamlit及下面需要的pandas:</p><pre><code>pip install streamlitpip install pandas</code></pre><p>接下来写一个对下载数据可视化的程序：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在上面程序中，演示了Streamlit的几个特点：</p><p><strong>对Markdown的支持</strong>：在st.write中，可以直接使用markdown的语法。<br><strong>客户端统计图形的生成</strong>: 可以看到，这里只需要调用line_chart和bar_chart方法，而无需担心如何将数据传送到客户端，客户端又是如何渲染这些统计图的。</p><p>其运行后的界面如下图所示：</p><p><img src="/home/yuxi/web/aafenguk/source/images/technology/streamlit/demo.jpg" alt></p><p>可以看到，Streamlit还帮我们生成了保存为PNG, SVG等功能。</p>]]></content>
+    
+    <summary type="html">
+    
+      试用Streamlit进行数据可视化
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+      <category term="Streamlit" scheme="https://www.aafeng.uk/tags/Streamlit/"/>
+    
+  </entry>
   
   <entry>
     <title>Hive Dapp介绍 - rewarding.app</title>
@@ -415,26 +439,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近全家人超爱的一道下饭菜 - 红烧小羊腿</title>
-    <link href="https://www.aafeng.uk/lamb-leg/"/>
-    <id>https://www.aafeng.uk/lamb-leg/</id>
-    <published>2020-06-13T23:15:22.196Z</published>
-    <updated>2020-06-13T23:15:22.196Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近媳妇按照网红美食博主小高姐的视频做了红烧小羊腿这道菜，成为全家人都喜欢的一道菜。下面把整个做菜的步骤记录一下。</p><p>首先上一张成品图：</p><p><img src="/images/food/lamb/leg1.jpg" alt="红烧小羊腿"></p><a id="more"></a><p>这道菜需要提前一天做准备。首先把洗净的小羊腿上用尖刀扎一些个孔，这样在炖的时候容易入味。同时用盐涂匀后腌制一夜。同时，需要提前把腐竹用凉水泡一夜。</p><p>第二天首先把小羊腿放入冷水中烧开焯一下，这样可以将血沫焯出来，同时也把多余的盐涮掉。</p><p>在锅中放入糖和水，化好糖色。</p><p>接下来准备好调料包：花椒，大料，香叶，桂皮，小茴香。</p><p><img src="/images/food/lamb/leg2.jpg" alt="红烧小羊腿"></p><p>推荐使用铸铁锅。在锅中放入葱姜蒜和郫县豆瓣酱后炒香，放入小羊腿爆香后放入生抽及化好的糖水，再放入调料包。加入开水后以没过羊腿为宜。</p><p><img src="/images/food/lamb/leg3.jpg" alt="红烧小羊腿"></p><p>大火烧开后小火炖1个半小时。在炖的过程中放入切好的腐竹和胡萝卜。</p><p>出锅后锅中应该还有汤汁，可以用来拌饭吃。剩下的第二天可以煮面吃。</p>]]></content>
-    
-    <summary type="html">
-    
-      最近全家人超爱的一道下饭菜 - 红烧小羊腿
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
     
   </entry>
   
