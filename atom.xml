@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-03T16:28:17.215Z</updated>
+  <updated>2020-07-04T20:30:36.721Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>直播带货，自带流量成了CEO的必备技能？</title>
+    <link href="https://www.aafeng.uk/broadcast-sale/"/>
+    <id>https://www.aafeng.uk/broadcast-sale/</id>
+    <published>2020-07-04T20:30:36.721Z</published>
+    <updated>2020-07-04T20:30:36.721Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两年似乎又兴起了一种新的销售模式：直播带货。从而也催生了很多新生代网红：号称“淘宝第一主播”的薇娅，“口红一哥”李佳琦等在去年双十一的销售额竟然能过亿。</p><p><img src="/images/work/media.jpg" alt><br>图源：Pixabay</p><p>由于女儿喜欢一个叫做LOL的玩具而看了Youtube上的一些小网红直播各种玩具的拆箱过程。出于好奇心，Google了一下他们的收入，真的很吓人，最火的小网红能拿到近千万美元的年收入。</p><p>今天读了一篇罗永浩的访谈，感觉讲的很好。最早老罗开始直播的时候，周边人似乎都不能理解，似乎觉得不上档次。但现在这种方式被普遍接受，似乎成为了众多CEO的必备技能之一。</p><p>通过超强的表达能力，自带流量，似乎成为众多CEO的核心竞争力。众多CEO纷纷上场，除了老罗之外，格力的董明珠，小米的雷军等纷纷都成了流量王，在直播间玩的不亦乐乎，同时也在享受着直播带来的巨大利润。</p><p>不可否认，现在无论做什么事，都需要人气和流量。而最迎合现代人的快生活节奏的就是短视频。这么说直播带货成为一种标准营销方式就不足为奇了。</p><p>做直播带货的目的其实主要就是卖货，或者做品牌。前面提到的薇娅，李佳琦就是通过自己的超人气流量卖货。对于众多的CEO来说，似乎主要是在做品牌。其实在币圈中，孙老板可以说是营销高手，通过一次次炒作，吸引流量，只不过他带的货，是币罢了。</p><p>其实，对于众多草根创业者，一边干事，一边做UP主，走的也是同一套逻辑。无论做什么事情，都需要营销，让众人知道。</p><p>但不得不说，这种直播真的不是一般人能扛得住的，一般口才好的人，搞个几次也许还行，但要源源不断的找到好的素材，并通过吸引人的方式表述出来，不是一件简单的事，需要背后团队的共同努力才能做到。</p><p>话说回来，在隔壁的S链，有孙老板站台，个人估计在合适的时机肯定会炒一把。那么Hive这里谁来做这件事呢？也许我并不是很了解，感觉排名最靠前的见证人似乎都是技术大牛。似乎缺少一个能讲故事的人。</p>]]></content>
+    
+    <summary type="html">
+    
+      直播带货，自带流量成了CEO的必备技能？
+    
+    </summary>
+    
+      <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>如何将Streamlit应用免费部署到Heroku</title>
     <link href="https://www.aafeng.uk/streamlit-to-heroku/"/>
     <id>https://www.aafeng.uk/streamlit-to-heroku/</id>
-    <published>2020-07-03T16:28:17.215Z</published>
-    <updated>2020-07-03T16:28:17.215Z</updated>
+    <published>2020-07-04T09:30:08.706Z</published>
+    <updated>2020-07-04T09:30:08.706Z</updated>
     
-    <content type="html"><![CDATA[<p>前面介绍了Streamlit这数据分析和可视化的利器。 下面说说如何将你的Streamlit应用程序部署到免费的Heroku账号，这样任何人都可以访问你的应用了。</p><p><img src="/images/technology/streamlit/heroku-logo.png" alt></p><a id="more"></a><p>还是以前面介绍的简单程序为例：</p><p>首先创建一个文件夹比如叫做ml，然后进入该文件夹，创建程序文件stats.py，其源码为：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在当前目录下运行如下命令来安装pipreqs包，并创建依赖库的文件:</p><pre><code>pip install pipreqspipreqs .</code></pre><p>可以看到，在当前目录下生成了requirements.txt，其内容为：</p><pre><code>streamlit==0.58.0pandas==1.0.3</code></pre><p>创建setup.sh:</p><pre><code>mkdir -p ~/.streamlit/echo &quot;\[general]\n\email = \&quot;YOUR_EMAIL_ADDRESS\&quot;\n\&quot; &gt; ~/.streamlit/credentials.tomlecho &quot;\[server]\n\headless = true\n\enableCORS=false\n\port = $PORT\n\&quot; &gt; ~/.streamlit/config.toml    </code></pre><p>创建Procfile：</p><pre><code>web: sh setup.sh &amp;&amp; streamlit run stats.py        </code></pre><p>创建本地git库</p><pre><code>git initgit add --allgit commit -m &quot;init&quot;</code></pre><p>配置并部署到Heroku:</p><pre><code>heroku loginheroku creategit push heroku masterheroku ps:scale web=1</code></pre><p>按照命令行输出的URL就可以访问你的应用了。    </p><p>查看Heroku日志：</p><pre><code>heroku logs --tail</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>前面介绍了Streamlit这数据分析和可视化的利器。 下面说说如何将你的Streamlit应用程序部署到免费的Heroku账号，这样任何人都可以访问你的应用了。</p><p><img src="/images/technology/streamlit/heroku-logo.png" alt></p><a id="more"></a><p>还是以前面介绍的简单程序为例：</p><p>首先创建一个文件夹比如叫做ml，然后进入该文件夹，创建程序文件stats.py，其源码为：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在当前目录下运行如下命令来安装pipreqs包，并创建依赖库的文件:</p><pre><code>pip install pipreqspipreqs .</code></pre><p>可以看到，在当前目录下生成了requirements.txt，其内容为：</p><pre><code>streamlit==0.58.0pandas==1.0.3</code></pre><p>创建setup.sh:</p><pre><code>mkdir -p ~/.streamlit/echo &quot;\[general]\n\email = \&quot;YOUR_EMAIL_ADDRESS\&quot;\n\&quot; &gt; ~/.streamlit/credentials.tomlecho &quot;\[server]\n\headless = true\n\enableCORS=false\n\port = $PORT\n\&quot; &gt; ~/.streamlit/config.toml    </code></pre><p>创建Procfile：</p><pre><code>web: sh setup.sh &amp;&amp; streamlit run stats.py        </code></pre><p>创建本地git库</p><pre><code>git initgit add --allgit commit -m &quot;init&quot;</code></pre><p>配置并部署到Heroku:</p><pre><code>heroku loginheroku creategit push heroku masterheroku ps:scale web=1</code></pre><p>按照命令行输出的URL就可以访问你的应用了。    </p><p>查看Heroku日志：</p><pre><code>heroku logs --tail</code></pre><p>要想使用自己域名，需要先通过Heroku验证。然后运行：</p><pre><code>heroku domains:add hivecnstats.aafeng.uk</code></pre>]]></content>
     
     <summary type="html">
     
@@ -415,28 +435,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>在线参加年度AWS Summit EU</title>
-    <link href="https://www.aafeng.uk/aws-summit/"/>
-    <id>https://www.aafeng.uk/aws-summit/</id>
-    <published>2020-06-17T15:04:53.448Z</published>
-    <updated>2020-06-17T15:04:53.448Z</updated>
-    
-    <content type="html"><![CDATA[<p>近期单位的IT系统逐步向AWS转型，因此今年的这次AWS在线峰会自然是要参加了。</p><p><img src="/images/technology/aws/summit/1.jpg" alt></p><a id="more"></a><p>整个会议排的很满，从早上9点开始，一直到下午2点左右。共有11个不同的主题，55个分组讨论，其内容涵盖新手区，高级架构，应用程序开发，机器学习，数据处理等。信息量非常大。</p><p><img src="/images/technology/aws/summit/2.jpg" alt></p><p>这次峰会由Amazon的CTO Werner Vogels致开幕词(Keynote)。在Keynote中强调了架构的重要性。系统架构就如同盖房时的地基，对整个软件系统的影响非常大。 在构建系统初期，就要考虑到很多因素，例如： 安全性，可靠性，性能，成本，部署等等。 AWS专门为此构建了一个资料库： <a href="https://aws.amazon.com/builders-library/" rel="external nofollow noopener noreferrer" target="_blank">AWS Builders’ Library</a>。 在这个资料库中由很多关于系统架构方面的讨论，帮助我们如何更好的使用AWS架构软件系统。</p><p>在Keynote中还提供了一组有趣的数据，在整个疫情期间，各行各业对流媒体服务(streaming services)的需求量暴增，比如： 每周播放的流媒体的分钟数达到千亿级。可以设想，如果没有强健的底层架构支撑，很难应对这样的需求。同时还强调了一个重要的设计考虑，整个系统应该有一个内置的机器学习引擎，通过对以往数据的分析，预测将有可能发生的系统负载，提前对系统进行自动扩容，以应对即将到来的峰值访问。</p><p>“ML is no longer an emerging technology”。现在机器学习已经被大幅度应用在IT系统中，影响着众多企业的决策。而且借助AWS这样的平台和其上丰富的服务，开发人员无需过多的ML背景，也可以将ML集成到自己的核心业务之中。这些服务包括：Kendra(数据检索和交互),  CodeGuru(代码审核), Fraud Detector(欺诈监测),  Augmented AI(对基于机器学习的预测进行人工审核)等等。</p><p>总而言之，这次大会上的信息量非常大，我所感受到的重点包括系统架构和人工智能/机器学习。需要一些时间来消化这些信息。</p>]]></content>
-    
-    <summary type="html">
-    
-      在线参加年度AWS Summit EU
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
