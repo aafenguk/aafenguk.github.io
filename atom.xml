@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-04T22:10:33.018Z</updated>
+  <updated>2020-07-05T10:54:43.305Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>尝试在Google Cloud平台创建免费VM</title>
+    <link href="https://www.aafeng.uk/google-cloud-vm/"/>
+    <id>https://www.aafeng.uk/google-cloud-vm/</id>
+    <published>2020-07-05T10:54:43.305Z</published>
+    <updated>2020-07-05T10:54:43.305Z</updated>
+    
+    <content type="html"><![CDATA[<p>可能是由于和Amzon AWS竞争吧，Google的云服务平台对于新建账户提供价值300美元的账户余额，可以用于Google的各种计算资源。最为吸引我的是在Google云平台上，可以创建配置相对较高的VM，直到你的免费余额用完为止。而且在免费余额用完后，不会自动从你的信用卡扣钱。只有人工确认后才会转为收费账户。下面就在Google云平台创建一个1 vCPU, 3.75GB RAM的VM为例介绍一下整个过程。</p><a id="more"></a><p>首先登录这个页面：<a href="https://console.cloud.google.com/freetrial/signup/tos?pli=1" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/freetrial/signup/tos?pli=1</a></p><p><img src="/images/technology/googlecloud/vm1.jpg" alt></p><p>第二步，输入基本信息：</p><p><img src="/images/technology/googlecloud/vm2.jpg" alt></p><p>只不过需要输入信用卡信息。不过在上一页中说的很清楚：试用期满之后，除非你人工确认想要继续付费，否则不会从信用卡扣钱。</p><p><img src="/images/technology/googlecloud/vm3.jpg" alt></p><p>验证成功后，可以看到用户面板：<br><img src alt="image"><br><img src="/images/technology/googlecloud/vm4.jpg" alt></p><p>首先进入“Billing”，可以看到，账户余额转换为英镑后为：243英镑，可以在一年内使用。</p><p><img src="/images/technology/googlecloud/vm5.jpg" alt></p><p>接下来创建一个项目：</p><p><img src="/images/technology/googlecloud/vm6.jpg" alt></p><p>访问：<a href="https://console.cloud.google.com/apis/library/compute.googleapis.com" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/apis/library/compute.googleapis.com</a></p><p>单击“ENABLE”来激活”Compute Engine API”。这个操作比较慢，需要等一小会。</p><p>然后访问：<a href="https://console.cloud.google.com/compute/instances" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/compute/instances</a></p><p><img src="/images/technology/googlecloud/vm7.jpg" alt></p><p>首先是要决定选择什么类型的VM，我只想创建一个在给定的免费余额范围内(243英镑，也就是大约每个月20英镑）配置最高的VM。访问这个页面可以计算各种VM的费用：</p><p><a href="https://cloud.google.com/products/calculator" rel="external nofollow noopener noreferrer" target="_blank">https://cloud.google.com/products/calculator</a></p><p>这里我选择Ubuntu, 1 vCPU, 3.75GB RAM，位于伦敦的VM。如果一周7天，一天24小时都在用的话，每月大约25.31英镑。这样，免费提供的243英镑余额可以用9个多月。</p><p><img src="/images/technology/googlecloud/vm8.jpg" alt></p><p>如果把使用时间降低为每天12个小时，费用明显降了下来。这样Google提供的免费余额可以使用1年：</p><p><img src="/images/technology/googlecloud/vm9.jpg" alt></p><p>既然选好了，下面就开始创建VM了。可以看到，还可以选择Docker image来创建自己的VM。</p><p><img src="/images/technology/googlecloud/vm10.jpg" alt></p><p>都选好之后，单击”Create“按钮，就开始创建VM了，整个过程需要等待一小会。</p><p>创建成功了：</p><p><img src="/images/technology/googlecloud/vm11.jpg" alt></p><p>可以在浏览器中打开SSH窗口：</p><p><img src="/images/technology/googlecloud/vm12.jpg" alt></p><p>至此，VM已经可以使用了。</p>]]></content>
+    
+    <summary type="html">
+    
+      尝试在Google Cloud平台创建免费VM
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>扩建工程记录</title>
+    <link href="https://www.aafeng.uk/house-extension-log/"/>
+    <id>https://www.aafeng.uk/house-extension-log/</id>
+    <published>2020-07-05T07:05:40.343Z</published>
+    <updated>2020-07-05T07:05:40.343Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近家中进行扩建，主要是往花园中新建一间房，和现有厨房，客厅打通，连成一体。 下面把整个过程记录一下。</p><a id="more"></a><h2 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h2><p>房屋扩建从6月8日开始，第一周主要的打了地基，灌浇了混凝土，把影响地基的树墙砍掉了一部分。</p><p>扩建前的样子：<br><img src="/images/life/house-extension/1.jpg" alt></p><p>开始动工了：<br><img src="/images/life/house-extension/2.jpg" alt></p><p>第一周成果：<br><img src="/images/life/house-extension/3.jpg" alt></p><h2 id="第二周"><a href="#第二周" class="headerlink" title="第二周"></a>第二周</h2><p>进一步完成地基部分，把管道重新铺了一下：</p><p><img src="/images/life/house-extension/w2-1.jpg" alt></p><p>开始砌砖，准备保暖层：</p><p><img src="/images/life/house-extension/w2-2.jpg" alt></p><p>在地基上铺满石块，整个扩建出来的区域可以确定了：</p><p><img src="/images/life/house-extension/w2-3.jpg" alt></p><h2 id="第三周"><a href="#第三周" class="headerlink" title="第三周"></a>第三周</h2><p>应该是在做隔湿层，黑塑料布下面，石块上面的是很厚的一层泡沫塑料。</p><p><img src="/images/life/house-extension/w3-1.jpg" alt></p><p>接下来在泡沫塑料上浇筑了一层混凝土。至此，地面高度已经和现在房子的裸地基一样了。</p><p>同时外墙已经增高了不少，一侧已经需要脚手架才能干活了：</p><p><img src="/images/life/house-extension/w3-2.jpg" alt></p><h2 id="第四周"><a href="#第四周" class="headerlink" title="第四周"></a>第四周</h2><p>这周下雨两天，所以只干了三天。主要就是把两边的墙垒高，在两层墙之间假装保暖层。</p><p><img src="/images/life/house-extension/w4.jpg" alt></p><h2 id="第五周"><a href="#第五周" class="headerlink" title="第五周"></a>第五周</h2>]]></content>
+    
+    <summary type="html">
+    
+      扩建工程记录
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>经过了种种教训，我终于彻底相信了，一分价钱一分货</title>
@@ -223,26 +263,6 @@
   </entry>
   
   <entry>
-    <title>扩建工程记录</title>
-    <link href="https://www.aafeng.uk/house-extension-log/"/>
-    <id>https://www.aafeng.uk/house-extension-log/</id>
-    <published>2020-06-27T21:43:33.758Z</published>
-    <updated>2020-06-27T21:43:33.758Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近家中进行扩建，主要是往花园中新建一间房，和现有厨房，客厅打通，连成一体。 下面把整个过程记录一下。</p><a id="more"></a><h2 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h2><p>房屋扩建从6月8日开始，第一周主要的打了地基，灌浇了混凝土，把影响地基的树墙砍掉了一部分。</p><p>扩建前的样子：<br><img src="/images/life/house-extension/1.jpg" alt></p><p>开始动工了：<br><img src="/images/life/house-extension/2.jpg" alt></p><p>第一周成果：<br><img src="/images/life/house-extension/3.jpg" alt></p><h2 id="第二周"><a href="#第二周" class="headerlink" title="第二周"></a>第二周</h2><p>进一步完成地基部分，把管道重新铺了一下：</p><p><img src="/images/life/house-extension/w2-1.jpg" alt></p><p>开始砌砖，准备保暖层：</p><p><img src="/images/life/house-extension/w2-2.jpg" alt></p><p>在地基上铺满石块，整个扩建出来的区域可以确定了：</p><p><img src="/images/life/house-extension/w2-3.jpg" alt></p><h2 id="第三周"><a href="#第三周" class="headerlink" title="第三周"></a>第三周</h2><p>应该是在做隔湿层，黑塑料布下面，石块上面的是很厚的一层泡沫塑料。</p><p><img src="/images/life/house-extension/w3-1.jpg" alt></p><p>接下来在泡沫塑料上浇筑了一层混凝土。至此，地面高度已经和现在房子的裸地基一样了。</p><p>同时外墙已经增高了不少，一侧已经需要脚手架才能干活了：</p><p><img src="/images/life/house-extension/w3-2.jpg" alt></p><h2 id="第四周"><a href="#第四周" class="headerlink" title="第四周"></a>第四周</h2>]]></content>
-    
-    <summary type="html">
-    
-      扩建工程记录
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>使用Scrapy自动获取豆瓣每周热门电影</title>
     <link href="https://www.aafeng.uk/scrapy/"/>
     <id>https://www.aafeng.uk/scrapy/</id>
@@ -413,28 +433,6 @@
     
     
       <category term="音乐剧" scheme="https://www.aafeng.uk/tags/%E9%9F%B3%E4%B9%90%E5%89%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Post COVID-19后疫情时代？</title>
-    <link href="https://www.aafeng.uk/post-covid19/"/>
-    <id>https://www.aafeng.uk/post-covid19/</id>
-    <published>2020-06-20T20:10:36.412Z</published>
-    <updated>2020-06-20T20:10:36.412Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天单位开会，已经在开始考虑疫情过后的战略部署了。可能现在说后疫情时代有点为时过早，但疫情总会过去。疫情对整个世界的影响将会长期存在。各个企业和组织都在思考商业模式的转遍，以及可能出现的机遇。</p><p><img src="/images/life/covid19/post-covid.jpg" alt></p><a id="more"></a><p>首先，是要把自己放在一个国际市场的角度来考虑问题。在疫情期间，由于众多商业活动都转到在线模式，这也使得国界对商业行为的影响越来越小了。很多企业可以跨国挖掘用户，同时也面临着来自国际同行的竞争。可以说，在后疫情时代，企业的思维方式必须向国际化转变。</p><p>由于疫情会使得一些行业遭受重创，但同时也使得一些行业得到高速发展。比如：和在线服务相关的业务，像在线会议系统，在线教育，在线设计等等。同时，各个国家可定会大力扶持一些行业，比如：制药业，生物科技等。</p><p>现在很多单位都应该反思一下，自己的管理组织是否足够”Agile” (敏捷)，能够快速应对类似新冠这样的危机，并快速做出应对。在这个瞬间万变的世界，反应过慢就意味着将被淘汰。同时，企业应该考虑自身的组织结构是否合理，工作流是否过于复杂，无法应对变化？</p><p>不知道在人类发展史上，将如何记录新冠这一页。但毫无疑问，它对整个人类社会的影响将是巨大和深远的。</p>]]></content>
-    
-    <summary type="html">
-    
-      Post COVID-19后疫情时代？
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
