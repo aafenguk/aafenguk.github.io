@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-08T21:46:33.529Z</updated>
+  <updated>2020-07-09T09:40:47.838Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>试用Gitpod在线IDE</title>
+    <link href="https://www.aafeng.uk/gitpod/"/>
+    <id>https://www.aafeng.uk/gitpod/</id>
+    <published>2020-07-09T09:40:47.838Z</published>
+    <updated>2020-07-09T09:40:47.838Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用Github的时候一直感觉其在线代码编辑功能有所欠缺。要使用Github上的源代码，只能clone到本地，用本地IDE编辑后再提交/推送到Github。这就导致我在写代码的时候严重依赖于自己的本地开发环境。在越来越多应用程序网页化的趋势下，有没有一个这样的APP，可以在网页中同时编辑代码，调试，提交呢？答案是肯定的，Gitpod就是这样一个工具。</p><p><img src="/images/technology/gitpod/gitpod.png" alt></p><p>Gitpod可以很智能的根据你提供的源码仓库地址来创建Docker镜像并启动相应的环境。这些运行环境是在基于Google云架构的多个Kubernetes集群中运行的。如果需要的化，你也可以自定义docker镜像。一般只需要等待几秒钟的时间，Gitpod就会把在线开发环境创建好，包括云端的Linux容器和在线IDE。</p><p>Gitpod的智能化还体现在，它可以根据URL来启动Gitpod工作区。比如：从GH issue启动Gitpod将会自动创建分支，从PR启动Gitpod则会自动切换为Code review模式。</p><p>Gitpod对开源软件完全免费，但有每月50个小时的限制。不过这对于自己业余时间的项目是足够用了。如果全职工作想用这个平台，有多种付费选项：</p><p><img src="/images/technology/gitpod/gitpod2.png" alt></p><p>下面看一看如何使用gitpod。</p><p>首先需要通过OAuth在Github授权Gitpod访问你的Github账号。</p><p>对于任何一个Github项目，只需要在前面添加：</p><pre><code>https://gitpod.io#</code></pre><p>就可以在gitpod中打开该项目。比如：在gitpod打开我Fork过来的HiveAccountRecovery工具:</p><pre><code>https://gitpod.io/#https://github.com/aafenguk/HiveAccountRecovery</code></pre><p>如果把Chrome全屏的话，界面和VS Code非常相似：</p><p><img src="/images/technology/gitpod/gitpod3.png" alt></p><p>如果安装了Chrome扩展，当你访问Github项目时，就会看到对应的Gitpod按钮：</p><p><img src="/images/technology/gitpod/gitpod4.png" alt></p><p>如果想要在浏览器中看看这个基于HTML/JS页面的效果，可以在终端窗口运行：</p><pre><code>gp preview file://$GITPOD_REPO_ROOT/index.html</code></pre><p>或者在命令行窗口运行如下命令，则会热加载代码：</p><pre><code>npx browser-sync start -s -w</code></pre><p>也可以创建.gitpod.yml文件，并加入上面的命令：</p><pre><code>tasks:  - init: &apos;echo &quot;TODO: Replace with init/build command&quot;&apos;    command: &apos;npx browser-sync start -s -w&apos;</code></pre><p>这样，在每次加载Gitpod的时候，就会自动运行这个应用。</p><p>这里只是介绍了如何配置/使用一个基于HTML/JS的简单项目。如果需要更多的定制化配置，可以参考Gitpod建议的开发步骤：</p><p><img src="/images/technology/gitpod/gitpod5.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      试用Gitpod在线IDE
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="开发工具" scheme="https://www.aafeng.uk/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>盖房和编码真的是同一工种啊</title>
@@ -405,32 +427,6 @@
     
     
       <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AWS学习资源总结</title>
-    <link href="https://www.aafeng.uk/aws-learning-resources/"/>
-    <id>https://www.aafeng.uk/aws-learning-resources/</id>
-    <published>2020-06-22T09:28:39.515Z</published>
-    <updated>2020-06-22T09:28:39.515Z</updated>
-    
-    <content type="html"><![CDATA[<p>下面把AWS的学习资源总结了一下。这个列表会不断更新。</p><p><img src="/images/technology/aws/aws.png" alt><img src="/images/technology/aws/aws.png" alt></p><a id="more"></a><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><a href="https://www.aws.training/Details/eLearning?id=42594" rel="external nofollow noopener noreferrer" target="_blank">Architecting Serverless Solutions</a></p>]]></content>
-    
-    <summary type="html">
-    
-      AWS学习资源总结
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-      <category term="Lambda" scheme="https://www.aafeng.uk/tags/Lambda/"/>
     
   </entry>
   
