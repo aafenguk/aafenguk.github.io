@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/scratch/</loc>
+    
+    <lastmod>2020-07-09T19:55:56.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/gitpod/</loc>
     
-    <lastmod>2020-07-09T09:40:47.838Z</lastmod>
+    <lastmod>2020-07-09T11:04:35.467Z</lastmod>
     
   </url>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-09T09:40:47.838Z</updated>
+  <updated>2020-07-09T19:55:56.745Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>少儿Scratch编程</title>
+    <link href="https://www.aafeng.uk/scratch/"/>
+    <id>https://www.aafeng.uk/scratch/</id>
+    <published>2020-07-09T19:55:56.745Z</published>
+    <updated>2020-07-09T19:55:56.745Z</updated>
+    
+    <content type="html"><![CDATA[<p>前一段时间开始教两个孩子学习Python编程。但在学习的过程中，感觉老大学的还不错，但老二似乎年龄有些小，5岁学Python确实有些难为她了。搞得每次上课的时候只能按照老大的进度来，女儿彻底成了打酱油的了。想了想，为了不浇灭孩子学习编程的热情，决定再为女儿开启一门课程，Scratch编程。</p><p><img src="/images/kids/scratch.png" alt><br><a id="more"></a></p><p>当初考虑学习Python的原因很明确：反正孩子迟早要学的，还不如一步到位。但现在意识到这个问题。学习是一个循序渐进的过程，路要一步一步的走，饭要一口一口的吃。先通过Scratch建立起基本的编程概念来也不错。等到女儿年龄再大些，学Python的时候就会事半功倍。</p><p>最早对Scratch有些偏见，感觉Scratch有些幼稚，只适合低龄儿童学，但真正带着孩子学习后，才发现，Scratch如今这么流行，还是有其特点的。它不仅适合孩子学习编程，而且适合成年人设计一些简单的游戏。单位今年的Staff Festival中有一项活动就是使用Scratch编写一个游戏。</p><p>从我的角度来看，Scratch编程有以下优点：</p><ul><li>统一的编程环境。不像其他语言，需要安装配置软件运行环境，Scratch完全可以在网页中进行。只要有浏览器，能上网，就能编程。</li><li>直观易懂。由于Scratch完全通过图形化的各种积木来拼装程序，无需了解编程语句，非常简洁易懂，适合小朋友。</li><li>内置的各种角色，背景，道具等非常吸引眼球。尤其是小朋友们，把Scratch当成了一种游戏，在游戏中就掌握了编程的概念。</li></ul><p>女儿自从开始接触Scratch之后，非常感兴趣。每天都追着我问是否可以上编程课。同时还和她的好朋友们分享她编写的小游戏。其实就算对于年龄大一些的小朋友，照样可以尝试用Scratch编写一些更为复杂些的游戏。</p>]]></content>
+    
+    <summary type="html">
+    
+      少儿Scratch编程
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>试用Gitpod在线IDE</title>
     <link href="https://www.aafeng.uk/gitpod/"/>
     <id>https://www.aafeng.uk/gitpod/</id>
-    <published>2020-07-09T09:40:47.838Z</published>
-    <updated>2020-07-09T09:40:47.838Z</updated>
+    <published>2020-07-09T11:04:35.467Z</published>
+    <updated>2020-07-09T11:04:35.467Z</updated>
     
-    <content type="html"><![CDATA[<p>在使用Github的时候一直感觉其在线代码编辑功能有所欠缺。要使用Github上的源代码，只能clone到本地，用本地IDE编辑后再提交/推送到Github。这就导致我在写代码的时候严重依赖于自己的本地开发环境。在越来越多应用程序网页化的趋势下，有没有一个这样的APP，可以在网页中同时编辑代码，调试，提交呢？答案是肯定的，Gitpod就是这样一个工具。</p><p><img src="/images/technology/gitpod/gitpod.png" alt></p><p>Gitpod可以很智能的根据你提供的源码仓库地址来创建Docker镜像并启动相应的环境。这些运行环境是在基于Google云架构的多个Kubernetes集群中运行的。如果需要的化，你也可以自定义docker镜像。一般只需要等待几秒钟的时间，Gitpod就会把在线开发环境创建好，包括云端的Linux容器和在线IDE。</p><p>Gitpod的智能化还体现在，它可以根据URL来启动Gitpod工作区。比如：从GH issue启动Gitpod将会自动创建分支，从PR启动Gitpod则会自动切换为Code review模式。</p><p>Gitpod对开源软件完全免费，但有每月50个小时的限制。不过这对于自己业余时间的项目是足够用了。如果全职工作想用这个平台，有多种付费选项：</p><p><img src="/images/technology/gitpod/gitpod2.png" alt></p><p>下面看一看如何使用gitpod。</p><p>首先需要通过OAuth在Github授权Gitpod访问你的Github账号。</p><p>对于任何一个Github项目，只需要在前面添加：</p><pre><code>https://gitpod.io#</code></pre><p>就可以在gitpod中打开该项目。比如：在gitpod打开我Fork过来的HiveAccountRecovery工具:</p><pre><code>https://gitpod.io/#https://github.com/aafenguk/HiveAccountRecovery</code></pre><p>如果把Chrome全屏的话，界面和VS Code非常相似：</p><p><img src="/images/technology/gitpod/gitpod3.png" alt></p><p>如果安装了Chrome扩展，当你访问Github项目时，就会看到对应的Gitpod按钮：</p><p><img src="/images/technology/gitpod/gitpod4.png" alt></p><p>如果想要在浏览器中看看这个基于HTML/JS页面的效果，可以在终端窗口运行：</p><pre><code>gp preview file://$GITPOD_REPO_ROOT/index.html</code></pre><p>或者在命令行窗口运行如下命令，则会热加载代码：</p><pre><code>npx browser-sync start -s -w</code></pre><p>也可以创建.gitpod.yml文件，并加入上面的命令：</p><pre><code>tasks:  - init: &apos;echo &quot;TODO: Replace with init/build command&quot;&apos;    command: &apos;npx browser-sync start -s -w&apos;</code></pre><p>这样，在每次加载Gitpod的时候，就会自动运行这个应用。</p><p>这里只是介绍了如何配置/使用一个基于HTML/JS的简单项目。如果需要更多的定制化配置，可以参考Gitpod建议的开发步骤：</p><p><img src="/images/technology/gitpod/gitpod5.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>在使用Github的时候一直感觉其在线代码编辑功能有所欠缺。要使用Github上的源代码，只能clone到本地，用本地IDE编辑后再提交/推送到Github。这就导致我在写代码的时候严重依赖于自己的本地开发环境。在越来越多应用程序网页化的趋势下，有没有一个这样的APP，可以在网页中同时编辑代码，调试，提交呢？答案是肯定的，Gitpod就是这样一个工具。</p><p><img src="/images/technology/gitpod/gitpod.png" alt></p><a id="more"></a><p>Gitpod可以很智能的根据你提供的源码仓库地址来创建Docker镜像并启动相应的环境。这些运行环境是在基于Google云架构的多个Kubernetes集群中运行的。如果需要的化，你也可以自定义docker镜像。一般只需要等待几秒钟的时间，Gitpod就会把在线开发环境创建好，包括云端的Linux容器和在线IDE。</p><p>Gitpod的智能化还体现在，它可以根据URL来启动Gitpod工作区。比如：从GH issue启动Gitpod将会自动创建分支，从PR启动Gitpod则会自动切换为Code review模式。</p><p>Gitpod对开源软件完全免费，但有每月50个小时的限制。不过这对于自己业余时间的项目是足够用了。如果全职工作想用这个平台，有多种付费选项：</p><p><img src="/images/technology/gitpod/gitpod2.png" alt></p><p>下面看一看如何使用gitpod。</p><p>首先需要通过OAuth在Github授权Gitpod访问你的Github账号。</p><p>对于任何一个Github项目，只需要在前面添加：</p><pre><code>https://gitpod.io#</code></pre><p>就可以在gitpod中打开该项目。比如：在gitpod打开我Fork过来的HiveAccountRecovery工具:</p><pre><code>https://gitpod.io/#https://github.com/aafenguk/HiveAccountRecovery</code></pre><p>如果把Chrome全屏的话，界面和VS Code非常相似：</p><p><img src="/images/technology/gitpod/gitpod3.png" alt></p><p>如果安装了Chrome扩展，当你访问Github项目时，就会看到对应的Gitpod按钮：</p><p><img src="/images/technology/gitpod/gitpod4.png" alt></p><p>如果想要在浏览器中看看这个基于HTML/JS页面的效果，可以在终端窗口运行：</p><pre><code>gp preview file://$GITPOD_REPO_ROOT/index.html</code></pre><p>或者在命令行窗口运行如下命令，则会热加载代码：</p><pre><code>npx browser-sync start -s -w</code></pre><p>也可以创建.gitpod.yml文件，并加入上面的命令：</p><pre><code>tasks:  - init: &apos;echo &quot;TODO: Replace with init/build command&quot;&apos;    command: &apos;npx browser-sync start -s -w&apos;</code></pre><p>这样，在每次加载Gitpod的时候，就会自动运行这个应用。</p><p>这里只是介绍了如何配置/使用一个基于HTML/JS的简单项目。如果需要更多的定制化配置，可以参考Gitpod建议的开发步骤：</p><p><img src="/images/technology/gitpod/gitpod5.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -405,28 +425,6 @@
     
     
       <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>魔幻的操作-英国即将全面解封</title>
-    <link href="https://www.aafeng.uk/ease-lockdown/"/>
-    <id>https://www.aafeng.uk/ease-lockdown/</id>
-    <published>2020-06-23T22:03:46.415Z</published>
-    <updated>2020-06-23T22:03:46.415Z</updated>
-    
-    <content type="html"><![CDATA[<p>就在全球都在为第二波疫情担心的时候，英国政府公布了一系列的政策，人们将在7月4日“重获自由”。这些政策包括：博物馆，艺术画廊，电影院，酒吧，餐厅，酒店等将于7月4日开张；社交距离降低为1米+；从7月4日起，两个家庭之间可以聚会，但仍需保持社交距离。</p><p>英国的主流媒体似乎也在一边倒的支持着这些政策：</p><p><img src="/images/life/covid19/reopen-1.jpg" alt></p><a id="more"></a><p><img src="/images/life/covid19/reopen-2.jpg" alt></p><p>这一系列的政策似乎在民众中很受欢迎。目前我们周边已经有好几家朋友似乎都已经按捺不住，透漏出在7月4日后想要一起聚会的想法。同时在英国的好几个华人家长群的民意调查中，家长们也是一边倒的把(EY和Y1两个年级的)孩子送回了学校，或者计划把孩子送回学校。</p><p>真的不是很理解这一系列政策的依据是什么。现在的疫情数据是比前一段时间的要好看很多。但这正是前一段时间大家纷纷宅在家中的结果啊。感觉缓慢的解封是可以理解的。但这步跨的似乎有点大，真的很担心会扯着了。</p><p>不过话说回来，女儿是符合返校条件的（Y1）。最初我很坚决的反对返校。但她班中的小朋友们纷纷返校，已经过了一周，似乎情况都很正常。我也有些动摇了，已经向学校提出申请，如果一切正常，下周可能会尝试返校。</p><p>哎，无论怎样，生活还要继续。今天晚饭后全家出门散步。沿途看到了很多动物。没有了人类的过多打扰，它们似乎生活的更自在了。</p><p>天鹅在距离岸边不远的地方孵化雏鸟。让我第一次有机会这么近距离的观赏这只高冷的大鸟。</p><p><img src="/images/life/covid19/reopen-3.jpg" alt></p><p>就连平时胆小的兔子似乎也变得不怎么怕人了。</p><p><img src="/images/life/covid19/reopen-4.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      魔幻的操作-英国即将全面解封
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="疫情" scheme="https://www.aafeng.uk/tags/%E7%96%AB%E6%83%85/"/>
     
   </entry>
   
