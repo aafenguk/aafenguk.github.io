@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-09T19:55:56.745Z</updated>
+  <updated>2020-07-11T15:21:49.568Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英国的学徒制apprenticeship</title>
+    <link href="https://www.aafeng.uk/apprenticeship/"/>
+    <id>https://www.aafeng.uk/apprenticeship/</id>
+    <published>2020-07-11T15:21:49.568Z</published>
+    <updated>2020-07-11T15:21:49.568Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在家中干活的建筑工人是一个很小的团队，也是英国这里众多建筑工人普遍采用的一个经典组合：一位经验丰富的老师傅带着两位学徒：一个是有些经验的小伙子，另一个学徒则是只有16岁的少年。</p><p><img src="/images/life/apprenticeship.jpg" alt></p><a id="more"></a><p>这三个人的分工是这样的。老师傅所有的活都会参与。尤其是一些关键步骤，比如：房子的边边角角，一般都是由老师傅来亲手操作。同时，老师傅还兼任项目经理的角色，负责和水暖工，电工等的沟通，和我们协商建房细节，同时还负责采购建材等。另外一个有些经验的小伙子除了一些最关键的部分之外，几乎可以干所有的活。而那位16岁的少年则只能充当小工的角色，只是打打下手。</p><p>其实学徒制在英国，甚至欧洲各国的历史都非常悠久。在英国，学徒制源于中世纪，后来经过立法规定了学徒的工作条件，工作环境，学徒休息时间等，保障了学徒的基本权益。就这样一直发展到19世纪末期，英国的学徒制由早期的艺术工匠发展到了各种行业，比如水暖工，电工，建筑工人，甚至造船师和各种其他工程师。</p><p>自从1997年开始，英国的学徒制慢慢走向了所谓的现代学徒制。参与学习的学徒不仅需要跟着有经验的师傅学习实践技能，同时还需要学习理论知识。这样通过学徒制学习的各种学徒们的整体水平不断提高，也成为很多高中毕业生的选择。</p><p>很多英国的高中生在毕业后并不是很想继续读大学，而是选择通过这种学徒制培训直接边工作边学习。他们做出这种选择的原因也比较现实。毕竟，很多工种，比如水暖工，电工的收入非常高，通过学徒制在这些行业就业，照样能够获得不错的收入，享受生活，为什么还要去读大学呢？</p><p>英国的学徒制有点类似于国内的职业教育，但又不尽相同。在英国，主导学徒制的不是政府和学校，而是各家企业。很多大型企业都提供各种学徒制的岗位，比如：奔驰，雀巢，BBC，Sky，空客等在英国甚至欧洲都提供学徒制的工作机会。</p><p>其实，客观的讲，这种学徒制还是有其优势的，毕竟，有着经验丰富的老师傅在旁边指点，还能能够很快入行的。尤其对于那些实践性很强的行业，这些经验往往比书本上学到的知识更难得。</p>]]></content>
+    
+    <summary type="html">
+    
+      英国的学徒制apprenticeship
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>少儿Scratch编程</title>
@@ -403,28 +423,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>使用AWS Step Functions定制工作流</title>
-    <link href="https://www.aafeng.uk/aws-step-functions/"/>
-    <id>https://www.aafeng.uk/aws-step-functions/</id>
-    <published>2020-06-24T15:57:52.775Z</published>
-    <updated>2020-06-24T15:57:52.775Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近看上了<a href="https://www.lenovo.com/gb/en/laptops/thinkpad/thinkpad-x1/X1-Carbon-Gen-8-/p/22TP2X1X1C8" rel="external nofollow noopener noreferrer" target="_blank">一款Thinkpad的笔记本</a>，但钱包不够鼓。于是想等价格降下来再考虑。难道去天天刷网页看价格吗？似乎不是一个程序猿该有的思维。最简单的方式就是写一个程序，检查该页面中的价格，然后设定为cron job，每天检查一下，给自己发邮件/短信通知。但这种方式实现起来一点刺激都没有，于是想到了AWS中的Step Functions。于是把整个过程用AWS实现了一下，通过一种无服务器的方式来实现这个功能。</p><p><img src="/images/technology/aws/step-functions-1.jpg" alt></p><a id="more"></a><p>首先做一个对比：</p><p><strong>流程控制</strong>：在传统方式中，通过编码来实现。在AWS中，通过Step functions实现。<br><strong>检查价格</strong>：在传统方式中，通过Python抓取网页并分析网页获得。当然，如果有API可用就更简单了。在AWS中，将这个步骤封装到Lambda。<br><strong>消息通知</strong>：这里可以调用一些第三方库来实现。在AWS中，这部分都已经做好了，直接使用SNS就可以。<br><strong>定时运行程序</strong>：在传统方式中，可以设定一个cron job。在AWS中，可以通过使用Eventbridge (过去叫做Cloudwatch)来实现。</p><p>可以看到，相对于传统方式，AWS栈的最大优势就是无需管理自己的服务器。安全补丁，系统升级等等都无需考虑。下面看看如何来实现这个功能把。</p><h2 id="第一步：创建主题和订阅-Topic-subscription"><a href="#第一步：创建主题和订阅-Topic-subscription" class="headerlink" title="第一步：创建主题和订阅(Topic/subscription)"></a>第一步：创建主题和订阅(Topic/subscription)</h2><p>在AWS中创建一个Topic，比如：ThinkpadPriceAlert</p><p><img src="/images/technology/aws/step-functions-2.jpg" alt></p><p>针对这个Topic，添加一个订阅者。这里选择邮件订阅方式。</p><p><img src="/images/technology/aws/step-functions-3.jpg" alt></p><p>需要去邮箱中确认这个订阅。</p><h2 id="第二步：创建Lambda"><a href="#第二步：创建Lambda" class="headerlink" title="第二步：创建Lambda"></a>第二步：创建Lambda</h2><p>接下来创建Lambda，去读取最新价格。这里直接读取网页，然后使用正则表达式提取价格，再以json方式返回价格：</p><pre><code>import jsonimport refrom urllib import requestdef lambda_handler(event, context):    req = request.Request(&apos;https://www.lenovo.com/gb/en/laptops/thinkpad/thinkpad-x1/X1-Carbon-Gen-8-/p/22TP2X1X1C8&apos;)    req.add_header(&apos;User-Agent&apos;, &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0&apos;)    response = request.urlopen(req)    html = response.read().decode(&apos;utf-8&apos;)    price = float(re.search(&apos;&lt;dd itemprop=\&quot;price\&quot;&gt;(.*)&lt;\/dd&gt;&apos;, html).group(1).replace(&apos;£&apos;, &apos;&apos;).replace(&apos;,&apos;,&apos;&apos;))    return {        &apos;statusCode&apos;: 200,        &apos;price&apos;: json.dumps(price)    }</code></pre><h2 id="第三步：使用Step-function创建价格查询流程"><a href="#第三步：使用Step-function创建价格查询流程" class="headerlink" title="第三步：使用Step function创建价格查询流程"></a>第三步：使用Step function创建价格查询流程</h2><p>定义如下的Step functions：</p><pre><code>{  &quot;Comment&quot;: &quot;Thinkpad laptop price checker&quot;,  &quot;StartAt&quot;: &quot;Check Thinkpad Price&quot;,  &quot;States&quot;: {    &quot;Check Thinkpad Price&quot;: {      &quot;Type&quot;: &quot;Task&quot;,      &quot;Resource&quot;: &quot;arn:aws:states:::lambda:invoke&quot;,      &quot;Parameters&quot;: {        &quot;FunctionName&quot;: &quot;arn:aws:lambda:eu-west-1:xxxxxxxxxxxx:function:ThinkpadPriceChecker:$LATEST&quot;      },      &quot;Next&quot;: &quot;Notify Me&quot;    },    &quot;Notify Me&quot;: {      &quot;Type&quot;: &quot;Task&quot;,      &quot;Resource&quot;: &quot;arn:aws:states:::sns:publish&quot;,      &quot;Parameters&quot;: {        &quot;Message.$&quot;: &quot;$.Payload.price&quot;,        &quot;TopicArn&quot;: &quot;arn:aws:sns:eu-west-1:xxxxxxxxxxxx:ThinkpadPriceAlert&quot;      },      &quot;End&quot;: true    }  }}</code></pre><p>需要注意，上面的$.Payload.<strong>price</strong>需要和前面Lambda中的返回值相匹配。至此，就可以运行这个Step Functions了，运行的结果就是收到一封包含最新价格的邮件。</p><h2 id="第四步：创建EventBridge-Rule来定期调用Step-Functions。"><a href="#第四步：创建EventBridge-Rule来定期调用Step-Functions。" class="headerlink" title="第四步：创建EventBridge Rule来定期调用Step Functions。"></a>第四步：创建EventBridge Rule来定期调用Step Functions。</h2><p>类似于Cronjob，可以设定事件被调用的频率，还有在指定时间需要调用的目标，比如一个Lambda，我们这里可以选择前面创建的Step Functions。</p><p><img src="/images/technology/aws/step-functions-4.jpg" alt></p><p><img src="/images/technology/aws/step-functions-5.jpg" alt></p><p>至此整个程序就做好了，每天在邮件中都会收到价格提示。当然，Step Functions中可发掘的功能还有很多，比如：条件选择，并发执行，容错处理等等。讲了这么多，回到主题，希望哪天价格真降下来。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      使用AWS Step Functions定制工作流
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
