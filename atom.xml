@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-13T21:58:56.083Z</updated>
+  <updated>2020-07-14T21:42:25.102Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>智能家居时代？</title>
+    <link href="https://www.aafeng.uk/smart-home/"/>
+    <id>https://www.aafeng.uk/smart-home/</id>
+    <published>2020-07-14T21:42:25.102Z</published>
+    <updated>2020-07-14T21:42:25.102Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近由于打算更换家中的热水器，听朋友说他家的热水器是用Google的Nest来控制的。于是考虑，现在真的有必要把家中的电器都连上网，变得智能吗？</p><p><img src="/images/life/smart-home.jpg" alt><br>图源：Pixabay</p><p>&lt;!– more -&gt;&gt;</p><p>首先说说今年儿子生日给他买的Google Home Hub。这应该是Google智能产品系列中的入门级产品吧。最初开始使用时，确实感觉非常便利。一旦有什么问题，可以立刻问Google，绝大多数情况下都能立刻得到准确的答案。但儿子似乎对它有些上瘾。每天只要有时间就会一直在Google Home Hub旁边，同时也由早期问各种问题，变成了在Youtube上看各种视频。我们不得不对他的使用时间做出限制。</p><p>目前最为吸引我的是通过语音对灯光的控制。如果可以避免去开关处就能控制灯光，会方便很多。同时，如果外出度假时，还可以远程控制家中的灯光，达到一种主人在家的感觉。这样会更加安全。如果要想实现这样的功能，可以购买智能开关，也可以购买智能灯泡。只不过似乎旧的电路不能支持智能开关，需要重新走线才可以。相对而言，购买智能灯泡就会简单的多。</p><p>接下来是对家中Boiler的控制。我比较看重的是其智能温度控制和远程控制功能。如果在度假的时候，自动把家中的暖气关掉，应该会省不少电/气吧。如果在快要度假回来的时候自动打开暖气，也就不会在度假结束后家中还是冷冰冰的了。要实现这样的功能，可以选择Google Nest，同时在热水器上要配有智能开关才行。</p><p>前一段在朋友家冰箱上看到了一个比较”智能“的功能。冰箱可以根据目前的”库存量“来自动提示主人家中是否缺某种食材。这种功能貌似很有用。但前提是每次购物回来后需要把买入的食材名称，到期日输入冰箱配套的电脑中才可以。看样子这并没有那么智能啊。</p><p>因此，整体感觉现在智能家居似乎还没有到普及的阶段。看样子我只需要买几个智能开关就应该足够了。</p>]]></content>
+    
+    <summary type="html">
+    
+      智能家居时代？
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>生活中的仪式感</title>
@@ -400,26 +420,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>一直在用utf8编码，可utf8mb4编码又是什么鬼？</title>
-    <link href="https://www.aafeng.uk/utf8mb4/"/>
-    <id>https://www.aafeng.uk/utf8mb4/</id>
-    <published>2020-06-27T22:32:59.613Z</published>
-    <updated>2020-06-27T22:32:59.613Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近打算把中文区的文章信息保存到数据库中，然后分析一下这些数据。本来想这应该是一个非常简单的程序。但在实现的过程中遭遇了这个utf8mb4编码的问题。下面把整个排错过程记录一下。</p><p><img src="/images/technology/db/encoding.jpg" alt></p><a id="more"></a><h2 id="问题的出现"><a href="#问题的出现" class="headerlink" title="问题的出现"></a>问题的出现</h2><p>程序很简单，就是读取中文区中的最新N条文章，然后保存到数据库中。对于一般的文章，没有任何问题。但对于个别的文章，比如 ace108 前辈的一篇文章，</p><p>📷Flirting with Silver I | 追求银I😎</p><p>保存的时候出错了：</p><pre><code>mysql.connector.errors.DatabaseError: 1366 (HY000): Incorrect string value: &apos;\xF0\x9F\x93\xB7#M...&apos; for column &apos;title&apos; at row 1</code></pre><p>仔细查看了一下，似乎是因为文章标题中出现了表情符号所致的。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在网上查找了一下，很多人都遇到过类似的问题，似乎我的初步判断是正确的。问题在于：在默认设置下，不支持表情字符的编码。</p><p><img src="/images/technology/db/utf8.jpg" alt></p><p>那么，什么是utf8mb4字符集呢？查阅了一下MySQL的<a href="https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a>：</p><blockquote><p>utf8mb4 is a superset of utf8mb3. The utfmb4 character set requires a maximum of four bytes per multibyte character.</p></blockquote><p>我们平时用的 utf8 其似乎就是MySQL中的  utf8mb3。而 utf8mb4 是我们常见的 utf8 的父集，以4个字节来保存多字节字符。不难想象，utf8mb4 能够表示的字符范围更广。在MySQL中建议使用 utf8mb4，它是完全兼容 utf8mb3的。</p><p>知道了原因，解决方法就很简单了。</p><p>首先，更改表的字符集：</p><pre><code>ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</code></pre><p>接下来，更改 “title” 这一列的字符集</p><pre><code>ALTER TABLE hive.posts MODIFY COLUMN title VARCHAR(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL;</code></pre><p>在Python程序中创建数据库连接的时候，指定“utf8mb4”字符集：</p><pre><code>hivedb = mysql.connector.connect(    …...    charset = &apos;utf8mb4&apos;)</code></pre><p>至此问题成功解决，表情符号也能保存到数据库中了。</p>]]></content>
-    
-    <summary type="html">
-    
-      一直在用utf8编码，可utf8mb4编码又是什么鬼？
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
