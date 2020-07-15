@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-14T21:57:10.731Z</updated>
+  <updated>2020-07-15T19:56:34.790Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>试用RunKit</title>
+    <link href="https://www.aafeng.uk/runkit/"/>
+    <id>https://www.aafeng.uk/runkit/</id>
+    <published>2020-07-15T19:56:34.790Z</published>
+    <updated>2020-07-15T19:56:34.790Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先来说说RunKit是什么。首先，Runkit可以让你在浏览器中运行Node.js的代码。在Runkit中，可以很方便的调用众多的npm模块。这就有点像Node.js版的Jupyter Notebook。同时，Runkit还可以提供一个免费的HTTP服务器而无需任何的服务器安装和配置。这在开发手机APP的服务器端，以及微服务的时候尤其有用。当然，实现无服务器的选择很多，比如AWS的Lambda+API Gateway，但RunKit的最大优势就是完全免费的，这在开发软件原型的时候就更为方便了。</p><a id="more"></a><p>下面分别来看看这两项功能。</p><p>打开页面：<a href="https://runkit.com/home" rel="external nofollow noopener noreferrer" target="_blank">https://runkit.com/home</a></p><p>可以通过Github授权登录：</p><p><img src="/images/technology/runkit/1.png" alt></p><p>登录成功后可以看到：</p><p><img src="/images/technology/runkit/2.png" alt></p><p>点击运行按钮后就可以在页面中看到运行结果：</p><p><img src="/images/technology/runkit/3.png" alt></p><p>在Runkit的页面中可以像正常的Node.js环境一样运行各种JS语句。比如，运行如下的简单代码获取Hive中文区的最新文章：</p><p><img src="/images/technology/runkit/4.png" alt></p><p>可以看到返回的结果：</p><p><img src="/images/technology/runkit/5.png" alt></p><p>再来看看我最喜欢的Runkit功能：提供简单的API endpoint。</p><p>非常简单的源码：</p><pre><code>exports.endpoint = function(request, response) {  response.end(&quot;API endpoint test&quot;);}</code></pre><p>单击“publish”进行发布：</p><p><img src="/images/technology/runkit/6.png" alt></p><p>发布后单击“endpoint”就会打开对应的API URL：</p><p><img src="/images/technology/runkit/7.png" alt></p><p>比如说，我这里的就是：</p><p><a href="https://api-jdcmj9qsmxmb.runkit.sh/" rel="external nofollow noopener noreferrer" target="_blank">https://api-jdcmj9qsmxmb.runkit.sh/</a></p><p>可以看到，无需配置/运行服务器，就可以有自己的API可用，又是serverless，同时还免费，是不是很爽？</p>]]></content>
+    
+    <summary type="html">
+    
+      试用RunKit
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>智能家居时代？</title>
@@ -396,26 +416,6 @@
     <summary type="html">
     
       泡泡小组 - 孩子们重返校园
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>英中文化差异 - 开放式厨房</title>
-    <link href="https://www.aafeng.uk/open-plan-kitchen/"/>
-    <id>https://www.aafeng.uk/open-plan-kitchen/</id>
-    <published>2020-06-29T16:25:37.809Z</published>
-    <updated>2020-06-29T16:25:37.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>在家中的扩建工程中，最近开始考虑新厨房和客厅的布局了。在现有的布局中，厨房和客厅是分开的。但在新厨房和客厅的设计中，我们遵循了英国这里的主流设计理念：将厨房和客厅彻底打通，形成一个整体的活动区域(Open Plan)。</p><p><img src="/images/life/kitchen.jpg" alt></p><p>图源：Pixabay</p><a id="more"></a><p>记得在国内的时候，似乎不论房子大小，能够分配给厨房的空间都不会很大。因为大家觉得厨房就是做饭的地方，而客厅才是主要的活动空间。因此应该把主要空间留给客厅。有的人家甚至把厨房挪到了阳台上，以节省出更多的空间来。记得在扩建工程还没有启动的时候，曾经咨询过一个曾经做过设计师的朋友，他强烈建议我们不要Open Plan，而是把厨房的空间缩小，增大客厅空间。</p><p>和国内不同，英国这里的主流观念是更喜欢厨房客厅一体化的设计，也叫做Open Plan Kitchen。关于这点，和英国这里的设计师咨询过，应该是因为英国这边的家庭观念似乎更强。而在全家的活动空间中，厨房和客厅同样重要，使用率也同样高。这也是为什么主流设计理念中，基本上都是开放式厨房。</p><p>我想另外一个原因可能和英国人的烹饪习惯有关吧。毕竟他们在做饭的时候以烤箱和煮锅为主，很少炒菜。至于大火爆炒，更是闻所未闻。因此他们不需要考虑油烟的问题。</p><p>我们在英国生活多年，烹饪习惯也改变了不少。虽然仍爱吃中餐，但从不大火爆炒，应该不会产生大量的油烟。选择这种一体式厨房应该没有问题。所以最终也决定选择这种Open Plan的设计。不过话说回来，有时候在看国内电视剧的时候，似乎有很多剧中的厨房都是开放式的厨房！</p>]]></content>
-    
-    <summary type="html">
-    
-      英中文化差异 - 开放式厨房
     
     </summary>
     
