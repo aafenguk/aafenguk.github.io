@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-17T21:17:34.226Z</updated>
+  <updated>2020-07-18T18:38:21.717Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>略感失望的学期报告</title>
+    <link href="https://www.aafeng.uk/school-term-report/"/>
+    <id>https://www.aafeng.uk/school-term-report/</id>
+    <published>2020-07-18T18:38:21.717Z</published>
+    <updated>2020-07-18T18:38:21.717Z</updated>
+    
+    <content type="html"><![CDATA[<p>孩子们学校放假了，也带回了学校的年终报告。看了一下儿子的报告，有些小失望。我感觉儿子学的最好的科目，比如数学，计算机，都只是”expected”，而不是我期待的”exceeding”。</p><p><img src="/images/kids/term-report.jpg" alt></p><a id="more"></a><p>先来说说成绩报告中三个级别。其中最好的级别就是“exceeding”，也就说超出了预期的学习效果。“expected”就是刚好达标的意思，也就是达到了老师期待的效果。而另外一项叫做“working towards”，也就是说距离老师预期的效果还有差距，还需努力。在我的印象中，儿子的数学和计算机都应该是“exceeding”才对，而不是成绩单上的“expected”。</p><p>在学校学习的数学主要包括运算和应用两大部分。儿子的运算能力超强，不需要我的任何帮助。但他的应用题做的并不是很好。他最大的问题就是不知道怎样把一个实际的问题转化为数学公式，最终求出结果。</p><p>儿子在做应用题遇到问题问我的时候，我并不会直接告诉他答案，而是给出一些提示，诱导他自己找到答案。如果他实在做不出来，我自己一步步的还是把答案告诉他。在遇到一些比较难的题的时候。当时就在想，英国人的数学普遍比较烂，儿子同学如果遇到数学问题，他们的家长应该没法辅导吧。在数学上如果拼爹的话，英国人应该会完败给这些中国家长吧。</p><p>儿子家庭作业中所有涉及数学，IT，还有科学的科目，基本上都是我负责。一般当他遇到问题的时候，我都会帮他解决。每次做报告的时候，也是我帮助他设计PPT。因此他的绝大多数作业的分数都是最好的级别：GG (Golden Grade)。这让我有一种感觉，现在看应该是一种错觉：他的数学，IT，还有科学都学得很好。</p><p>现在从这个成绩单上来看，在我的帮助下儿子完成了他的作业，并不代表他真正掌握了所学的知识。可能我对儿子的帮助有些过了。反倒影响了他自己对知识的掌握。</p><p>我想这可能是很多家长的通病吧。总把孩子当成温室中的小花，过于呵护，恨不得替孩子做很多本该他们自己做的事情。这其实是剥夺了孩子们独立学习的机会。他们毕竟总有一天要自己经历风雨的，现在就应该让他们多加锻炼，将来才能自己面对一切。看来以后对孩子的教育方式要好好的反思一下，尽量授之以渔，让他们自己掌握思维方法。</p>]]></content>
+    
+    <summary type="html">
+    
+      略感失望的学期报告
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>扩建工程记录</title>
@@ -401,26 +421,6 @@
       <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
     
       <category term="Streamlit" scheme="https://www.aafeng.uk/tags/Streamlit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive Dapp介绍 - rewarding.app</title>
-    <link href="https://www.aafeng.uk/rewarding-app/"/>
-    <id>https://www.aafeng.uk/rewarding-app/</id>
-    <published>2020-06-30T21:18:33.624Z</published>
-    <updated>2020-06-30T21:18:33.624Z</updated>
-    
-    <content type="html"><![CDATA[<p>试用了一下<a href="https://rewarding.app/" rel="external nofollow noopener noreferrer" target="_blank">rewarding.app</a>这个dapp，感觉其功能还是非常强大的。简而言之，这个dapp可以非常灵活的定义各种点赞规则，之后这个dapp就会按照你定义的规则来进行点赞。</p><a id="more"></a><p>登录后可以看到如下界面：</p><p><img src="/images/blockchain/hive/rewarding.app.1.png" alt></p><p>首先需要使用hivesigner对其进行授权。授权成功后，在hiveblocks上可以看到rewarding这个dapp出现在你的Posting授权列表中：</p><p><img src="/images/blockchain/hive/rewarding.app.2.png" alt></p><p>接下来就可以定义点赞规则了。首先看一下第一组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.3.png" alt></p><p>比如：给哪个作者点赞，点赞比例，点赞时段（比如：5分钟到120分钟之间）。</p><p>再来看一下第二组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.4.png" alt></p><p>首先是vote_sbd，这个选项只有在vote_weight为0的时候，rewarding.app会自动换算，比如你想给作者点赞的价值为$0.1，这个dapp会自动帮你计算你需要的点赞比例。接下来的每天最大点赞数，每周最大点赞数，以及最小的VP值等。</p><p>再来看第三组参数：</p><p><img src="/images/blockchain/hive/rewarding.app.5.png" alt></p><p>比如，文章中必须包含某个标记，或者必须不包含某个标记，以及文章中最小的字数。</p><p>至此，感觉这些参数已经足够灵活了，可以定义各种点赞规则。其实除此之外，还有好多参数可以选择。都定义完之后保存规则，会看到这样的一个规则列表：</p><p><img src="/images/blockchain/hive/rewarding.app.6.png" alt></p><p>这界面，实在是太需要改进了。。。</p><p>不过不得不说，这个dapp的功能还是非常强大的，除了自动点赞规则的设计，还有跟赞，跟踩的功能。个人感觉，如果能够适应它的界面，这个工具还是有其可取之处的。</p>]]></content>
-    
-    <summary type="html">
-    
-      Hive Dapp介绍 - rewarding.app
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
     
   </entry>
   
