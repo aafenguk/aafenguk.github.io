@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-18T18:38:21.717Z</updated>
+  <updated>2020-07-20T16:19:01.420Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>热水与冰水</title>
+    <link href="https://www.aafeng.uk/hot-water/"/>
+    <id>https://www.aafeng.uk/hot-water/</id>
+    <published>2020-07-20T16:19:01.420Z</published>
+    <updated>2020-07-20T16:19:01.420Z</updated>
+    
+    <content type="html"><![CDATA[<p>在英国居住念头久了，感受到很多文化差异。有的差异非常有意思。比如：中国人爱喝热水，英国人则偏爱冰水。</p><p><img src="/images/life/hot-cold-water.jpg" alt><br>图源：Pixabay<br><a id="more"></a></p><p>在英国餐厅吃饭的时候，无论是中餐还是西餐，经常会见到一些中国客人会和服务员要热水喝。早些年有些餐厅还不是很适应，当遇到这种要求的时候，经常给端上一杯温吞吞的水，因为这就是他们概念中的热水。实际上这些客人想要的是开水。但这几年来随着中国游客的增加，很多餐厅都为客人提供真正大家想要的开水。</p><p>在英国生活了很多年，有些生活习惯发生了变化。但就喝热水这条，并没有变。即使在有些地方没有热水，喝上一杯热茶，或者热咖啡也是好的。即使是两个孩子，也喜欢喝温水。以至于因为在学校中提供的免费牛奶是凉的，他们都不喜欢喝。</p><p>记得媳妇当年刚生完孩子，在医院中，护士直接就把一杯冰水端了上来。面对护士热情的服务，媳妇不好意思直接拒绝，只能放在桌上，事后偷偷倒掉了。之后再要求提供热水。慢慢的，医院护士们就都知道了中国人的这个习惯。</p><p>在国内刚生完孩子一定要坐月子。但这边根本就没法理解为什么要坐月子。很多刚生完小孩的过上一两天就带着孩子到处跑了。后来身边的一些朋友家也就没太重视这个习惯，很多年过去了，身体上似乎也没有任何不适。</p><p>在英国这里，如果孩子发烧了，医生建议的方式就是物理降温，把孩子的衣服都脱掉，光着小身子，以方便散热。每当和家里人聊天时，他们都会抨击这边的做法。</p><p>诸如此类的文化冲突还有很多，很多中式做法和西式做法是背道而驰的。其实很难说哪种做法绝对正确。深处这种文化冲突漩涡的海外华人可能更多的是要多思考，多求证，才能做出最为正确的选择。</p>]]></content>
+    
+    <summary type="html">
+    
+      热水与冰水
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>略感失望的学期报告</title>
@@ -397,30 +417,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>试用Streamlit进行数据可视化</title>
-    <link href="https://www.aafeng.uk/streamlit/"/>
-    <id>https://www.aafeng.uk/streamlit/</id>
-    <published>2020-07-01T15:53:46.557Z</published>
-    <updated>2020-07-01T15:53:46.557Z</updated>
-    
-    <content type="html"><![CDATA[<p>早就听说Streamlit是数据分析和机器学习的利器，但一直没有机会尝试。最近花了些时间试用了一下，还真的非常好用！最主要的是其设计思路非常独特：开发者只需要关注于数据及服务器端编码就可以了，那些复杂的客户端交互，响应式设计等等全部由Streamlit这个框架来搞定！这让我想起了过去曾经用过的一个框架：GWT (Google Web Toolkit)，其设计思路可以说和Streamlit是完全一样啊！不同之处是GWT中没有对数据分析和机器学习的支持。</p><a id="more"></a><p>下面通过一个简单的程序来演示Streamlit是如何工作的。</p><p>首先需要安装streamlit及下面需要的pandas:</p><pre><code>pip install streamlitpip install pandas</code></pre><p>接下来写一个对下载数据可视化的程序：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在上面程序中，演示了Streamlit的几个特点：</p><p><strong>对Markdown的支持</strong>：在st.write中，可以直接使用markdown的语法。<br><strong>客户端统计图形的生成</strong>: 可以看到，这里只需要调用line_chart和bar_chart方法，而无需担心如何将数据传送到客户端，客户端又是如何渲染这些统计图的。</p><p>其运行后的界面如下图所示：</p><p><img src="/images/technology/streamlit/demo.jpg" alt></p><p>可以看到，Streamlit还帮我们生成了保存为PNG, SVG等功能。</p>]]></content>
-    
-    <summary type="html">
-    
-      试用Streamlit进行数据可视化
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-      <category term="Streamlit" scheme="https://www.aafeng.uk/tags/Streamlit/"/>
     
   </entry>
   
