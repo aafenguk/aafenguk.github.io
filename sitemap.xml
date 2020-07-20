@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/kids-programming/</loc>
+    
+    <lastmod>2020-07-20T07:00:09.627Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/school-term-report/</loc>
     
     <lastmod>2020-07-18T18:38:21.717Z</lastmod>
@@ -670,13 +677,6 @@
     <loc>https://www.aafeng.uk/serverless-requirements/</loc>
     
     <lastmod>2020-04-28T11:06:03.114Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aafeng.uk/kids-programming/</loc>
-    
-    <lastmod>2020-04-28T06:49:42.176Z</lastmod>
     
   </url>
   
