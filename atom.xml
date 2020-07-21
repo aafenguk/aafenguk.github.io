@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-20T22:21:47.282Z</updated>
+  <updated>2020-07-21T21:45:20.756Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>卓越客服Customer Service Excellence</title>
+    <link href="https://www.aafeng.uk/customer-service-excellence/"/>
+    <id>https://www.aafeng.uk/customer-service-excellence/</id>
+    <published>2020-07-21T21:45:20.756Z</published>
+    <updated>2020-07-21T21:45:20.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近一次网购的时候订了一些做冰激凌用的专用巧克力。由于超市工作人员在选择商品的时候没有找到我们想要的品牌，就用其他品牌做了替换。但媳妇只钟爱一个品牌的巧克力，于是在东西收到后给超市客服打电话，说我们对他们所做的替换不是很满意。超市那边非常痛快的给我们退了款，那种我们不喜欢的巧克力也不要了，随便我们怎么处理。</p><p><img src="/images/life/customer.jpg" alt><br>图源：Pixabay<br><!-- pixabay --></p><p>类似这样的事情遇到过几次，无一例外的都是无条件退货/款。以至于在购物的时候从没有考虑过如果不满意的话，退款时会遇到任何麻烦。一般商家都会指定一个期限，比如：购物后28天内无条件退款。其实，在有些商家，即使过了这个期限，还是有可能退货/退款的。</p><p>其实，这些行为的背后是一种客户至上的理念。只有把客户都服务的满意了，企业才能从客户身上获取更大的利益。</p><p>说到客服，就不得不说这里非常流行的一个标准：Customer Service Excellence卓越客服。Customer Service Excellence是英国这里的一个众多大企业/组织都推崇的标准。很多单位都以获得其认证为荣。我所在的单位还专门成立了一个团队，负责不断改进客服。</p><p>Customer Service Excellence是这样定义的：</p><blockquote><p>Providing excellent customer service means going the extra mile in making sure a customer is happy and satisfied with a company’s products or services. It also involves providing service to a customer in a timely, pleasant manner.</p></blockquote><p>其最核心的要素就是让客户满意。也就是以令人愉悦的方式提供服务，让客户对公司的产品和服务满意。</p><p>说起来，做好客服似乎需要更多的时间和精力。甚至需要专人来负责这件事情。而且，要“going extra mile”。但这有这样，不断提高自己的服务质量，获得客户认可，企业才能生存和发展。其实做什么事情都是这样，差距就在于你是否能够做到那个”extra mile”。 </p>]]></content>
+    
+    <summary type="html">
+    
+      卓越客服Customer Service Excellence
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>告别网购，重返超市购物</title>
@@ -395,28 +415,6 @@
     
       <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何将Streamlit应用免费部署到Heroku</title>
-    <link href="https://www.aafeng.uk/streamlit-to-heroku/"/>
-    <id>https://www.aafeng.uk/streamlit-to-heroku/</id>
-    <published>2020-07-04T09:30:08.706Z</published>
-    <updated>2020-07-04T09:30:08.706Z</updated>
-    
-    <content type="html"><![CDATA[<p>前面介绍了Streamlit这数据分析和可视化的利器。 下面说说如何将你的Streamlit应用程序部署到免费的Heroku账号，这样任何人都可以访问你的应用了。</p><p><img src="/images/technology/streamlit/heroku-logo.png" alt></p><a id="more"></a><p>还是以前面介绍的简单程序为例：</p><p>首先创建一个文件夹比如叫做ml，然后进入该文件夹，创建程序文件stats.py，其源码为：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在当前目录下运行如下命令来安装pipreqs包，并创建依赖库的文件:</p><pre><code>pip install pipreqspipreqs .</code></pre><p>可以看到，在当前目录下生成了requirements.txt，其内容为：</p><pre><code>streamlit==0.58.0pandas==1.0.3</code></pre><p>创建setup.sh:</p><pre><code>mkdir -p ~/.streamlit/echo &quot;\[general]\n\email = \&quot;YOUR_EMAIL_ADDRESS\&quot;\n\&quot; &gt; ~/.streamlit/credentials.tomlecho &quot;\[server]\n\headless = true\n\enableCORS=false\n\port = $PORT\n\&quot; &gt; ~/.streamlit/config.toml    </code></pre><p>创建Procfile：</p><pre><code>web: sh setup.sh &amp;&amp; streamlit run stats.py        </code></pre><p>创建本地git库</p><pre><code>git initgit add --allgit commit -m &quot;init&quot;</code></pre><p>配置并部署到Heroku:</p><pre><code>heroku loginheroku creategit push heroku masterheroku ps:scale web=1</code></pre><p>按照命令行输出的URL就可以访问你的应用了。    </p><p>查看Heroku日志：</p><pre><code>heroku logs --tail</code></pre><p>要想使用自己域名，需要先通过Heroku验证。然后运行：</p><pre><code>heroku domains:add hivecnstats.aafeng.uk</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      如何将Streamlit程序免费部署到Heroku
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Heroku" scheme="https://www.aafeng.uk/tags/Heroku/"/>
     
   </entry>
   
