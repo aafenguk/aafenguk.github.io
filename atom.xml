@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-24T21:58:53.487Z</updated>
+  <updated>2020-07-24T22:43:46.504Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>少儿翻译计划</title>
+    <link href="https://www.aafeng.uk/kids-translation-project/"/>
+    <id>https://www.aafeng.uk/kids-translation-project/</id>
+    <published>2020-07-24T22:43:46.504Z</published>
+    <updated>2020-07-24T22:43:46.504Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近看到朋友圈有人转发一个少儿翻译计划，看了一下感觉非常有意义，就给家中的两个小朋友报了个名。不过这个项目毕竟是要和国外知名出版社合作，对翻译的质量要求又非常苛刻，估计接下来的竞争会非常激烈，所以也没抱太大希望。</p><p><img src="/images/kids/translation.jpg" alt></p><a id="more"></a><p>项目本身选材非常好，翻译的图书系列讲述的是各种动物的生命历程，比如：蝴蝶，鸭子，海归，熊猫，熊等等。这些书本身就非常适合小朋友们作为科普读物来读。</p><p>在翻译这套图书的过程中，小朋友们不仅需要精读书中的内容，学习书中的知识，还要用中文把意思清晰无误的表述出来。</p><p>归纳一下其优势：</p><ul><li>学习知识</li><li>锻炼英语精读</li><li>锻炼中文表述</li><li>培养对事情的计划性</li><li>培养孩子顽强的品质：可以预期，翻译过程不会轻松，这样就更需要坚持才能完成这项工作。</li></ul><p>其实我个人一直就很喜欢翻译。当初在S链上曾经风光一时的项目Utopian中，我也曾经作为译者和审核员参与了一些开源项目的翻译。感觉收获还是很大的。毕竟，在翻译的过程中，能够强迫自己学习很多有用的开源项目。但很遗憾的是，Utopian最终还是没能坚持下来。希望在Hive上还能有类似的项目。</p><p>现在已经报好名，静静的等待通知，希望能够顺利进入下一轮的面试。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      少儿翻译计划
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>扩建工程记录</title>
@@ -394,26 +414,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>尝试在Google Cloud平台创建免费VM</title>
-    <link href="https://www.aafeng.uk/google-cloud-vm/"/>
-    <id>https://www.aafeng.uk/google-cloud-vm/</id>
-    <published>2020-07-07T08:13:15.519Z</published>
-    <updated>2020-07-07T08:13:15.519Z</updated>
-    
-    <content type="html"><![CDATA[<p>可能是由于和Amzon AWS竞争吧，Google的云服务平台对于新建账户提供价值300美元的账户余额，可以用于Google的各种计算资源。最为吸引我的是在Google云平台上，可以创建配置相对较高的VM，直到你的免费余额用完为止。而且在免费余额用完后，不会自动从你的信用卡扣钱。只有人工确认后才会转为收费账户。下面就在Google云平台创建一个1 vCPU, 3.75GB RAM的VM为例介绍一下整个过程。</p><a id="more"></a><p>首先登录这个页面：<a href="https://console.cloud.google.com/freetrial/signup/tos?pli=1" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/freetrial/signup/tos?pli=1</a></p><p><img src="/images/technology/googlecloud/vm1.jpg" alt></p><p>第二步，输入基本信息：</p><p><img src="/images/technology/googlecloud/vm2.jpg" alt></p><p>只不过需要输入信用卡信息。不过在上一页中说的很清楚：试用期满之后，除非你人工确认想要继续付费，否则不会从信用卡扣钱。</p><p><img src="/images/technology/googlecloud/vm3.jpg" alt></p><p>验证成功后，可以看到用户面板：</p><p><img src="/images/technology/googlecloud/vm4.jpg" alt></p><p>首先进入“Billing”，可以看到，账户余额转换为英镑后为：243英镑，可以在一年内使用。</p><p><img src="/images/technology/googlecloud/vm5.jpg" alt></p><p>接下来创建一个项目：</p><p><img src="/images/technology/googlecloud/vm6.jpg" alt></p><p>访问：<a href="https://console.cloud.google.com/apis/library/compute.googleapis.com" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/apis/library/compute.googleapis.com</a></p><p>单击“ENABLE”来激活”Compute Engine API”。这个操作比较慢，需要等一小会。</p><p>然后访问：<a href="https://console.cloud.google.com/compute/instances" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/compute/instances</a></p><p><img src="/images/technology/googlecloud/vm7.jpg" alt></p><p>首先是要决定选择什么类型的VM，我只想创建一个在给定的免费余额范围内(243英镑，也就是大约每个月20英镑）配置最高的VM。访问这个页面可以计算各种VM的费用：</p><p><a href="https://cloud.google.com/products/calculator" rel="external nofollow noopener noreferrer" target="_blank">https://cloud.google.com/products/calculator</a></p><p>这里我选择Ubuntu, 1 vCPU, 3.75GB RAM，位于伦敦的VM。如果一周7天，一天24小时都在用的话，每月大约25.31英镑。这样，免费提供的243英镑余额可以用9个多月。</p><p><img src="/images/technology/googlecloud/vm8.jpg" alt></p><p>如果把使用时间降低为每天12个小时，费用明显降了下来。这样Google提供的免费余额可以使用1年：</p><p><img src="/images/technology/googlecloud/vm9.jpg" alt></p><p>既然选好了，下面就开始创建VM了。可以看到，还可以选择Docker image来创建自己的VM。</p><p><img src="/images/technology/googlecloud/vm10.jpg" alt></p><p>都选好之后，单击”Create“按钮，就开始创建VM了，整个过程需要等待一小会。</p><p>创建成功了：</p><p><img src="/images/technology/googlecloud/vm11.jpg" alt></p><p>可以在浏览器中打开SSH窗口：</p><p><img src="/images/technology/googlecloud/vm12.jpg" alt></p><p>如果不能sudo，需要在以下页面中添加你的SSH KEY就可以了：</p><p><a href="https://console.cloud.google.com/compute/metadata/sshKeys" rel="external nofollow noopener noreferrer" target="_blank">https://console.cloud.google.com/compute/metadata/sshKeys</a></p><p><img src="/images/technology/googlecloud/vm13.jpg" alt></p><p>至此，VM已经可以使用了。</p>]]></content>
-    
-    <summary type="html">
-    
-      尝试在Google Cloud平台创建免费VM
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
