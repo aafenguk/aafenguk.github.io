@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-24T22:43:46.504Z</updated>
+  <updated>2020-07-25T22:05:46.259Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>instantbox - 让你随便折腾的Linux box</title>
+    <link href="https://www.aafeng.uk/instantbox/"/>
+    <id>https://www.aafeng.uk/instantbox/</id>
+    <published>2020-07-25T22:05:46.259Z</published>
+    <updated>2020-07-25T22:05:46.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>经常会遇到这样的情况，在自己的工作Linux VM中需要试用一些软件包。这些软件包都会有一些安装程序。在安装这些软件包的时候可能会对自己的工作环境进行改变，比如，底层的模块版本会被新安装的软件包升级，从而导致自己的工作环境被破坏。尽管有一些方式，比如：使用系统快照(snapshot)，在出现问题的时候通过快照恢复工作环境。或者把要使用的软件包封装到一个Docker镜像中。但这些方法都有些笨拙。</p><p><img src="/images/technology/linux.jpg" alt><br><a id="more"></a></p><p>而instantbox这个项目就是专为这种需求而生的。它可以在几秒钟内创建一个主流的Linux虚拟机，可以通过webshell访问。目前支持：Ubuntu, CentOS, Arch Linux, Debian, Fedora 和 Alpine。在这个临时的虚拟机中，你可以随便折腾。折腾完毕后随用随扔。因此它特别适合进行演示，测试等场合。</p><p>就像其宣传词中所说：</p><blockquote><p>Get a clean, ready-to-go Linux box in seconds.</p></blockquote><p>下面看看如何使用instantbox。</p><p>首先运行如下命令安装instantbox：</p><pre><code>mkdir instantbox &amp;&amp; cd $_bash &lt;(curl -sSL https://raw.githubusercontent.com/instantbox/instantbox/master/init.sh)</code></pre><p>安装完毕后，启动docker镜像：</p><pre><code>docker-compose up -d</code></pre><p>接下来就可以通过访问本地8888端口来使用instantbox了：</p><p><img src="https://images.hive.blog/DQmexxsbmCDnC1kyM7Ae4gCbR3geHCPcCkAxh7KG1vhCzZM/image.png" alt="image.png"></p><p>选择一款你想用的Linux的版本：</p><p><img src="https://images.hive.blog/DQmVgkZm4dYdM9J2r6dSTbWWa4evuLnGvSuJRknGGho98Wi/image.png" alt="image.png"></p><p>选择端口号，CPU，内存，以及临时VM的时长：</p><p><img src="https://images.hive.blog/DQmXswCNEfx1q3va634RQWYD4WHpaGJLxizZPHCcUGWyNXx/image.png" alt="image.png"></p><p>几秒钟后VM就已经被成功创建了：<br><img src="https://images.hive.blog/DQmUAJMyLzGye39Q4kN2Z2LBSJZZCvWqfHRdTNtG2uRwDxX/image.png" alt="image.png"></p><p>打开webshell：</p><p><img src="https://images.hive.blog/DQmdYScyT9yyXm5QT9pCvLUcB8FdCY3wD6TDg84gcdyqSfd/image.png" alt="image.png"></p><p>在这个虚拟环境中你就可以随便折腾了。它只需要占用你所分配的系统资源，而不会对系统安装性造成负面影响。</p>]]></content>
+    
+    <summary type="html">
+    
+      instantbox - 让你随便折腾的Linux box
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="软件工具" scheme="https://www.aafeng.uk/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>少儿翻译计划</title>
@@ -390,26 +412,6 @@
     <summary type="html">
     
       盖房和编码真的是同一工种啊
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在英国没有酒吧的日子真的不能忍，终于酒吧开张了，然后。。。</title>
-    <link href="https://www.aafeng.uk/pub-reopening/"/>
-    <id>https://www.aafeng.uk/pub-reopening/</id>
-    <published>2020-07-08T21:13:44.618Z</published>
-    <updated>2020-07-08T21:13:44.618Z</updated>
-    
-    <content type="html"><![CDATA[<p>上个周六，是英国举国欢腾的日子，因为众多酒吧，餐厅重新开业了！宅家多日的人们终于可以走出家门，重新造访酒吧。于是各个酒吧人满为患。尽管酒吧门口都提示注意社交距离，开始时人们也还比较注意，但喝嗨了之后就不不记得社交距离这回事了。</p><p><img src="/images/life/pub.jpg" alt><br>图源：Pixabay</p><a id="more"></a><p>可以说是乐极生悲吧，转过来的这周新冠人数暴增，很多去酒吧的人都被检测出新冠。于是多家酒吧被迫再次关闭。</p><p>酒吧可以说是英国文化的精髓之一，几乎人人都喜欢酒吧，这就像中国人的聚会吃饭一样，没有了酒吧似乎没法活。我的英国同事们也是如此，新同事来了，有同事离职了，圣诞了，过生日了，周五了，等等各种场合都要去酒吧喝上几杯。</p><p>和同事们去酒吧次数多了之后，也慢慢了解他们的习惯了。一般要一起出去吃饭的话，肯定在饭前先找上一家酒吧去喝上几杯开开胃，在正式吃饭的时候酒照样不能少。饭后还会再选一家酒吧继续喝。如果没有喝尽兴的话，还有可能会换酒吧。更有甚者，在和大家见面之前，先去超市买些酒自己喝上一些，预热一下，毕竟超市的酒要比酒吧的便宜不少。。。</p><p>之所以这么喜欢到酒吧喝酒，主要是因为酒吧是一种社交场所，到了这里，人们就会非常放松，哪怕在排队买酒的时候也能和周边的人聊上几句。聊天的话题往往离不开足球，时政等。</p><p>我的同事们酒量一般都很大，但喝到最后经常会喝高。记得有一位同事说过一个笑话，喝高后打车找到家，但进家后说什么也找不到床，于是就在地板上睡了一夜。其实这还算好的。如果晚些时候去市中心的酒吧区，经常会看到一些喝高的人在马路边倒头就睡的。</p><p>希望疫情早日过去，大家能够真正的到酒吧彻底放松一下。</p>]]></content>
-    
-    <summary type="html">
-    
-      在英国没有酒吧的日子真的不能忍，终于酒吧开张了，然后。。。
     
     </summary>
     
