@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-25T22:05:46.259Z</updated>
+  <updated>2020-07-27T14:51:39.590Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>孩子编写的第一个Scratch Game</title>
+    <link href="https://www.aafeng.uk/first-scratch-game/"/>
+    <id>https://www.aafeng.uk/first-scratch-game/</id>
+    <published>2020-07-27T14:51:39.590Z</published>
+    <updated>2020-07-27T14:51:39.590Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从女儿开始学习Scratch编程以来，对其表现出了极大的兴趣。这也难怪，在Scratch中有着各种小女孩喜欢的公主，精灵，还有小动物的角色造型，还有各种背景，音乐等，确实是非常吸引小朋友们。</p><p>没学多久，女儿就编出了一个小游戏：藏猫猫。目前还不是完全独立完成的，基本上在网上看了一遍教程之后，她就把游戏编了出来。</p><p><img src="/images/kids/scratch/game-1.jpg" alt></p><p>游戏很简单，就是在屏幕上的一个随机位置，显示一只小猫，玩家需要迅速用鼠标点击这只小猫，如果点中了，小猫就会叫一声，同时自动加一分。</p><p>由于完全是图形化的编程，整个游戏非常容易理解。</p><p>首先是针对背景的编程：</p><p><img src="/images/kids/scratch/game-2.jpg" alt></p><p>可以看到，这里把变量及其赋值，循环结构等使用上了。</p><p>而对于小猫的编程，则要分成两个部分。</p><p>首先是当程序开始运行后，使用一个循环来不断的在随机位置显示小猫。显示一秒后再隐藏。</p><p><img src="/images/kids/scratch/game-3.jpg" alt></p><p>同时还需要当小猫被点击后所做的处理：喵一声，同时加分：</p><p><img src="/images/kids/scratch/game-4.jpg" alt></p><p>整个程序孩子只需要半个小时就可以做出来。现在孩子对编程的兴趣高涨，期待着编出更多好玩的游戏来。看来对于低龄儿童的编程教育，Scratch的确是首选。</p>]]></content>
+    
+    <summary type="html">
+    
+      孩子编写的第一个Scratch Game
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+      <category term="少儿编程" scheme="https://www.aafeng.uk/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>instantbox - 让你随便折腾的Linux box</title>
@@ -397,26 +419,6 @@
     
     
       <category term="开发工具" scheme="https://www.aafeng.uk/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>盖房和编码真的是同一工种啊</title>
-    <link href="https://www.aafeng.uk/coding-vs-building/"/>
-    <id>https://www.aafeng.uk/coding-vs-building/</id>
-    <published>2020-07-08T21:46:33.529Z</published>
-    <updated>2020-07-08T21:46:33.529Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近尽管一直独自在家工作，但丝毫不感觉寂寞。因为家中房屋扩建的原因，室外的建筑工人在一砖一瓦的搭建房屋，室内的我在一行一行的堆代码。这是一种很奇妙的感觉。让我不禁在想，这分明就是同一个工种啊！</p><p><img src="/images/life/builder2.jpg" alt><br>图源：Pixabay</p><a id="more"></a><p>先来说说房屋扩建工程。由于现有房屋不能满足我的需求，因此在现有基础上需要扩建。这不就像极了软件系统中添加的新功能吗？当一个软件系统无法满足用户的某些需求的时候，程序员需要做的就是在现有软件中添加新的功能，再和现有软件有机的结合在一起。两个工种完美匹配！</p><p>在扩建工程初期，需要打下坚实的地基。建筑工人花费了好几天的时间，用挖掘机掘地三尺，然后浇筑了水泥。同时还有防潮层，第二层的混凝土等。这样做的目的就是为后续的房屋搭建一个坚实的基础。在软件开发的工程中，也是如此啊！在真正的写代码之前，对系统架构的设计，底层存储层，数据通讯协议，采用的软件框架等等，都要先于软件的实现。这正是一个软件系统的地基啊。再次匹配！</p><p>在施工的过程中，建筑工人在一砖一瓦的搭建房屋，在搭建的过程中，他们会不断的用水平尺等工具检验自己搭建的一砖一瓦是否正确无误。而在软件开发的过程中，我们不也是这样吗？在写完代码之后，我们需要进行测试以保证代码的正确性。完美匹配！</p><p>在修建房屋的工程中，工头需要不断的和我们沟通，比如：门窗的尺寸和位置如何选择，暖气的位置，选择地板的种类等等。而在软件开发的过程中，我们同样需要和客户不断沟通，以避免误解了用户需求。匹配！</p><p>在房屋最终交付后，如果出现任何的问题，我们都需要和施工方沟通，协商解决。而在软件开发过程中，同样存在维护阶段。在该阶段中，用户如果发现问题，需要和程序员沟通，协商解决。匹配！</p><p>鉴定完毕：程序员真的和建筑工人是一个工种！</p>]]></content>
-    
-    <summary type="html">
-    
-      盖房和编码真的是同一工种啊
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   
