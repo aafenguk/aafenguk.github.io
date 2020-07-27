@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-27T14:51:39.590Z</updated>
+  <updated>2020-07-27T16:05:08.018Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2020年的第一次出游</title>
+    <link href="https://www.aafeng.uk/allerthorpe-park/"/>
+    <id>https://www.aafeng.uk/allerthorpe-park/</id>
+    <published>2020-07-27T16:05:08.018Z</published>
+    <updated>2020-07-27T16:05:08.018Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于疫情原因，2020年一直在家中宅着。最近英国疫情形势有所缓解，政府也公布了一系列解封政策。于是这个周末和两家朋友一起约好，去周边的Allerthorpe Lakeland Park水上乐园去玩了一天。</p><p><img src="/images/travel/allerthorpe/allerthorpe-1.jpg" alt></p><a id="more"></a><p>这个水上乐园目前还没有全面开放，一些水上项目将会在下周正式开启。不过即使这样，这里也不失为一个休闲的好去处。毕竟这里地广人稀，周边是大片的绿地，还有湖水，空气也非常好。即使在这里散散步，晒晒太阳，也很不错。</p><p><img src="/images/travel/allerthorpe/allerthorpe-2.jpg" alt></p><p>来这里的人还真不少，感觉不少人其实也不参加什么项目，一家人在这里野餐，聊天，放松而已。</p><p><img src="/images/travel/allerthorpe/allerthorpe-3.jpg" alt></p><p>这里也是专门的房车宿营地，很多家庭会开着房车，停在这里，并在这里住上几天。</p><p><img src="/images/travel/allerthorpe/allerthorpe-4.jpg" alt></p><p>这里的项目都是水上的。目前包括：单人皮划艇，四人/八人划船，脚踏船，划桨冲浪等项目。</p><p><img src="/images/travel/allerthorpe/allerthorpe-5.jpg" alt></p><p>这个Paddleboarding看起来有些吓人，感觉搞不好就会掉在水中。但其实没有那么可怕，只要站稳了，划水的时候不要用力过猛，还是很稳的。有些人感觉不是很有把握，索性跪在上面划水。如果划累了，可以趴在上面歇一会。</p><p><img src="/images/travel/allerthorpe/allerthorpe-6.jpg" alt></p><p>单人皮划艇是最为轻便的了，也很好划。很多小朋友都可以轻松掌控，玩的非常溜：</p><p><img src="/images/travel/allerthorpe/allerthorpe-7.jpg" alt></p><p>感觉这个水上乐园非常好玩，希望还能再来。但现在疫情还没有彻底好的时候人就已经不少了。希望下次来的时候人不要太多就好。</p>]]></content>
+    
+    <summary type="html">
+    
+      2020年的第一次出游
+    
+    </summary>
+    
+      <category term="游记" scheme="https://www.aafeng.uk/categories/%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>孩子编写的第一个Scratch Game</title>
     <link href="https://www.aafeng.uk/first-scratch-game/"/>
     <id>https://www.aafeng.uk/first-scratch-game/</id>
-    <published>2020-07-27T14:51:39.590Z</published>
-    <updated>2020-07-27T14:51:39.590Z</updated>
+    <published>2020-07-27T15:19:45.116Z</published>
+    <updated>2020-07-27T15:19:45.116Z</updated>
     
-    <content type="html"><![CDATA[<p>自从女儿开始学习Scratch编程以来，对其表现出了极大的兴趣。这也难怪，在Scratch中有着各种小女孩喜欢的公主，精灵，还有小动物的角色造型，还有各种背景，音乐等，确实是非常吸引小朋友们。</p><p>没学多久，女儿就编出了一个小游戏：藏猫猫。目前还不是完全独立完成的，基本上在网上看了一遍教程之后，她就把游戏编了出来。</p><p><img src="/images/kids/scratch/game-1.jpg" alt></p><p>游戏很简单，就是在屏幕上的一个随机位置，显示一只小猫，玩家需要迅速用鼠标点击这只小猫，如果点中了，小猫就会叫一声，同时自动加一分。</p><p>由于完全是图形化的编程，整个游戏非常容易理解。</p><p>首先是针对背景的编程：</p><p><img src="/images/kids/scratch/game-2.jpg" alt></p><p>可以看到，这里把变量及其赋值，循环结构等使用上了。</p><p>而对于小猫的编程，则要分成两个部分。</p><p>首先是当程序开始运行后，使用一个循环来不断的在随机位置显示小猫。显示一秒后再隐藏。</p><p><img src="/images/kids/scratch/game-3.jpg" alt></p><p>同时还需要当小猫被点击后所做的处理：喵一声，同时加分：</p><p><img src="/images/kids/scratch/game-4.jpg" alt></p><p>整个程序孩子只需要半个小时就可以做出来。现在孩子对编程的兴趣高涨，期待着编出更多好玩的游戏来。看来对于低龄儿童的编程教育，Scratch的确是首选。</p>]]></content>
+    <content type="html"><![CDATA[<p>自从女儿开始学习Scratch编程以来，对其表现出了极大的兴趣。这也难怪，在Scratch中有着各种小女孩喜欢的公主，精灵，还有小动物的角色造型，还有各种背景，音乐等，确实是非常吸引小朋友们。</p><p>没学多久，女儿就编出了一个小游戏：藏猫猫。目前还不是完全独立完成的，基本上在网上看了一遍教程之后，她就把游戏编了出来。</p><p><img src="/images/kids/scratch/game-1.jpg" alt></p><a id="more"></a><p>游戏很简单，就是在屏幕上的一个随机位置，显示一只小猫，玩家需要迅速用鼠标点击这只小猫，如果点中了，小猫就会叫一声，同时自动加一分。</p><p>由于完全是图形化的编程，整个游戏非常容易理解。</p><p>首先是针对背景的编程：</p><p><img src="/images/kids/scratch/game-2.jpg" alt></p><p>可以看到，这里把变量及其赋值，循环结构等使用上了。</p><p>而对于小猫的编程，则要分成两个部分。</p><p>首先是当程序开始运行后，使用一个循环来不断的在随机位置显示小猫。显示一秒后再隐藏。</p><p><img src="/images/kids/scratch/game-3.jpg" alt></p><p>同时还需要当小猫被点击后所做的处理：喵一声，同时加分：</p><p><img src="/images/kids/scratch/game-4.jpg" alt></p><p>整个程序孩子只需要半个小时就可以做出来。现在孩子对编程的兴趣高涨，期待着编出更多好玩的游戏来。看来对于低龄儿童的编程教育，Scratch的确是首选。</p>]]></content>
     
     <summary type="html">
     
@@ -397,28 +417,6 @@
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>试用Gitpod在线IDE</title>
-    <link href="https://www.aafeng.uk/gitpod/"/>
-    <id>https://www.aafeng.uk/gitpod/</id>
-    <published>2020-07-09T11:04:35.467Z</published>
-    <updated>2020-07-09T11:04:35.467Z</updated>
-    
-    <content type="html"><![CDATA[<p>在使用Github的时候一直感觉其在线代码编辑功能有所欠缺。要使用Github上的源代码，只能clone到本地，用本地IDE编辑后再提交/推送到Github。这就导致我在写代码的时候严重依赖于自己的本地开发环境。在越来越多应用程序网页化的趋势下，有没有一个这样的APP，可以在网页中同时编辑代码，调试，提交呢？答案是肯定的，Gitpod就是这样一个工具。</p><p><img src="/images/technology/gitpod/gitpod.png" alt></p><a id="more"></a><p>Gitpod可以很智能的根据你提供的源码仓库地址来创建Docker镜像并启动相应的环境。这些运行环境是在基于Google云架构的多个Kubernetes集群中运行的。如果需要的化，你也可以自定义docker镜像。一般只需要等待几秒钟的时间，Gitpod就会把在线开发环境创建好，包括云端的Linux容器和在线IDE。</p><p>Gitpod的智能化还体现在，它可以根据URL来启动Gitpod工作区。比如：从GH issue启动Gitpod将会自动创建分支，从PR启动Gitpod则会自动切换为Code review模式。</p><p>Gitpod对开源软件完全免费，但有每月50个小时的限制。不过这对于自己业余时间的项目是足够用了。如果全职工作想用这个平台，有多种付费选项：</p><p><img src="/images/technology/gitpod/gitpod2.png" alt></p><p>下面看一看如何使用gitpod。</p><p>首先需要通过OAuth在Github授权Gitpod访问你的Github账号。</p><p>对于任何一个Github项目，只需要在前面添加：</p><pre><code>https://gitpod.io#</code></pre><p>就可以在gitpod中打开该项目。比如：在gitpod打开我Fork过来的HiveAccountRecovery工具:</p><pre><code>https://gitpod.io/#https://github.com/aafenguk/HiveAccountRecovery</code></pre><p>如果把Chrome全屏的话，界面和VS Code非常相似：</p><p><img src="/images/technology/gitpod/gitpod3.png" alt></p><p>如果安装了Chrome扩展，当你访问Github项目时，就会看到对应的Gitpod按钮：</p><p><img src="/images/technology/gitpod/gitpod4.png" alt></p><p>如果想要在浏览器中看看这个基于HTML/JS页面的效果，可以在终端窗口运行：</p><pre><code>gp preview file://$GITPOD_REPO_ROOT/index.html</code></pre><p>或者在命令行窗口运行如下命令，则会热加载代码：</p><pre><code>npx browser-sync start -s -w</code></pre><p>也可以创建.gitpod.yml文件，并加入上面的命令：</p><pre><code>tasks:  - init: &apos;echo &quot;TODO: Replace with init/build command&quot;&apos;    command: &apos;npx browser-sync start -s -w&apos;</code></pre><p>这样，在每次加载Gitpod的时候，就会自动运行这个应用。</p><p>这里只是介绍了如何配置/使用一个基于HTML/JS的简单项目。如果需要更多的定制化配置，可以参考Gitpod建议的开发步骤：</p><p><img src="/images/technology/gitpod/gitpod5.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      试用Gitpod在线IDE
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="开发工具" scheme="https://www.aafeng.uk/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
