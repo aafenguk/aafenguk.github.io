@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-07-28T21:32:34.596Z</updated>
+  <updated>2020-07-29T16:25:07.967Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>偷梁换柱</title>
+    <link href="https://www.aafeng.uk/steel-beam/"/>
+    <id>https://www.aafeng.uk/steel-beam/</id>
+    <published>2020-07-29T16:25:07.967Z</published>
+    <updated>2020-07-29T16:25:07.967Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周到了扩建工程最关键的一周：把两座承重墙打掉，替换成钢梁。这样，新的厨房区，餐厅区，还有客厅区，以及学习区就彻底打通了。其实，“偷梁换柱”这个成语似乎并不能恰当的表达这个操作所带来的效果，因为至少对我来说，换完之后的效果是更好，而不是更坏了。但当初语文似乎学的并不是很好，也找不到更合适的标题了，就它了。</p><p><img src="/images/life/house-extension/beam-1.jpg" alt><br>图源：Pixabay<br><a id="more"></a></p><p>其实在房屋设计初期，曾经犹豫过是否要打掉两座承重墙。毕竟心理感觉还是承重墙更为结实。但咨询过周边的朋友后，大家一边倒的赞成要打掉承重墙，否则我们肯定会后悔。在最后咨询了一位工程师朋友后，知道这种钢梁是绝对靠谱的，最终决定，就是它了！</p><p>这种操作可能在国内并不是很常见。至少我当年在国内的时候就没太听说过。但英国这里以老房居多，房屋扩建时打掉承重墙，以钢梁来支撑，就变得非常普遍了。</p><p>我家的建筑工人非常有经验。在周五就把各种准备工作都做好了。首先是把承重墙的两侧上方都搭上支架。</p><p><img src="/images/life/house-extension/beam-2.jpg" alt></p><p><img src="/images/life/house-extension/beam-3.jpg" alt></p><p>这样做的目的很明显，在拆除承重墙的时候，墙体不会崩塌。在和builder聊天时知道，他从来都是事先把准备工作做足，整个拆除墙体和搭建钢梁的过程都是在一天内完成的，这样就可以最大程度的保证对整个房屋造成的损伤最小。</p><p>由于总共需要搭建两座钢梁，周一先做的是最主要的钢梁。</p><p><img src="/images/life/house-extension/beam-4.jpg" alt></p><p>搭建的时候使用了一架小型起重机把钢梁放置到它的位置上去。同时在等待24小时后，待水泥彻底凝固后才撤掉起重机和支架。</p><p>接下来的第二天，架设了第二根钢梁，至此，厨房和客厅就彻底打通了。</p><p><img src="/images/life/house-extension/beam-5.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      偷梁换柱
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>扩建工程记录</title>
@@ -396,26 +416,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>少儿Scratch编程</title>
-    <link href="https://www.aafeng.uk/scratch/"/>
-    <id>https://www.aafeng.uk/scratch/</id>
-    <published>2020-07-09T19:55:56.745Z</published>
-    <updated>2020-07-09T19:55:56.745Z</updated>
-    
-    <content type="html"><![CDATA[<p>前一段时间开始教两个孩子学习Python编程。但在学习的过程中，感觉老大学的还不错，但老二似乎年龄有些小，5岁学Python确实有些难为她了。搞得每次上课的时候只能按照老大的进度来，女儿彻底成了打酱油的了。想了想，为了不浇灭孩子学习编程的热情，决定再为女儿开启一门课程，Scratch编程。</p><p><img src="/images/kids/scratch.png" alt><br><a id="more"></a></p><p>当初考虑学习Python的原因很明确：反正孩子迟早要学的，还不如一步到位。但现在意识到这个问题。学习是一个循序渐进的过程，路要一步一步的走，饭要一口一口的吃。先通过Scratch建立起基本的编程概念来也不错。等到女儿年龄再大些，学Python的时候就会事半功倍。</p><p>最早对Scratch有些偏见，感觉Scratch有些幼稚，只适合低龄儿童学，但真正带着孩子学习后，才发现，Scratch如今这么流行，还是有其特点的。它不仅适合孩子学习编程，而且适合成年人设计一些简单的游戏。单位今年的Staff Festival中有一项活动就是使用Scratch编写一个游戏。</p><p>从我的角度来看，Scratch编程有以下优点：</p><ul><li>统一的编程环境。不像其他语言，需要安装配置软件运行环境，Scratch完全可以在网页中进行。只要有浏览器，能上网，就能编程。</li><li>直观易懂。由于Scratch完全通过图形化的各种积木来拼装程序，无需了解编程语句，非常简洁易懂，适合小朋友。</li><li>内置的各种角色，背景，道具等非常吸引眼球。尤其是小朋友们，把Scratch当成了一种游戏，在游戏中就掌握了编程的概念。</li></ul><p>女儿自从开始接触Scratch之后，非常感兴趣。每天都追着我问是否可以上编程课。同时还和她的好朋友们分享她编写的小游戏。其实就算对于年龄大一些的小朋友，照样可以尝试用Scratch编写一些更为复杂些的游戏。</p>]]></content>
-    
-    <summary type="html">
-    
-      少儿Scratch编程
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
     
   </entry>
