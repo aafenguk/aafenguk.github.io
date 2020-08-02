@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-08-01T23:16:25.134Z</updated>
+  <updated>2020-08-02T21:13:44.657Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Moorlands Nature Reserve徒步之旅</title>
+    <link href="https://www.aafeng.uk/moorlands/"/>
+    <id>https://www.aafeng.uk/moorlands/</id>
+    <published>2020-08-02T21:13:44.657Z</published>
+    <updated>2020-08-02T21:13:44.657Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天和朋友家约好，一同去Moorlands Nature Reserve森林公园去徒步。</p><p><img src="/images/travel/moorlands/1.jpg" alt></p><a id="more"></a><p>这座公园并不大，占地只有7公顷左右，也就是大约8个足球场那么大。公园始建于爱德华7世，在公园中种有很多月见草，水仙，和风信子。周边还有马术培训。</p><p><img src="/images/travel/moorlands/2.jpg" alt></p><p><img src="/images/travel/moorlands/3.jpg" alt></p><p>途径一个小树屋。孩子们一看到这个树屋，立刻冲了上去。</p><p><img src="/images/travel/moorlands/4.jpg" alt></p><p>毕竟是森林公园，可以就地取材，可以看到各种树雕随处都是：</p><p><img src="/images/travel/moorlands/5.jpg" alt></p><p><img src="/images/travel/moorlands/6.jpg" alt></p><p>各种奇形怪状的树，不知道是天然形成的，还是有人刻意为之？</p><p><img src="/images/travel/moorlands/7.jpg" alt></p><p><img src="/images/travel/moorlands/8.jpg" alt></p><p>途径树林中的小木屋，可能是工作人员的办公室吧，但似乎已经多年未用了：</p><p><img src="/images/travel/moorlands/9.jpg" alt></p><p>可能是因为刚刚下过雨的原因，地上长出了不少蘑菇：</p><p><img src="/images/travel/moorlands/10.jpg" alt></p><p>为小鸟搭建的房子：</p><p><img src="/images/travel/moorlands/11.jpg" alt></p><p>整个公园很小，但我们边走边玩，只走了整个公园的1/3，不知不觉中已经过了三个小时。下次再来的时候，希望把整个公园都走上一遍。</p>]]></content>
+    
+    <summary type="html">
+    
+      Moorlands Nature Reserve徒步之旅
+    
+    </summary>
+    
+      <category term="游记" scheme="https://www.aafeng.uk/categories/%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>扩建工程记录</title>
@@ -396,26 +416,6 @@
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>智能家居时代？</title>
-    <link href="https://www.aafeng.uk/smart-home/"/>
-    <id>https://www.aafeng.uk/smart-home/</id>
-    <published>2020-07-14T21:57:10.731Z</published>
-    <updated>2020-07-14T21:57:10.731Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近由于打算更换家中的热水器，听朋友说他家的热水器是用Google的Nest来控制的。于是考虑，现在真的有必要把家中的电器都连上网，变得智能吗？</p><p><img src="/images/life/smart-home.jpg" alt><br>图源：Pixabay</p><a id="more"></a><p>首先说说今年儿子生日给他买的Google Home Hub。这应该是Google智能产品系列中的入门级产品吧。最初开始使用时，确实感觉非常便利。一旦有什么问题，可以立刻问Google，绝大多数情况下都能立刻得到准确的答案。但儿子似乎对它有些上瘾。每天只要有时间就会一直在Google Home Hub旁边，同时也由早期问各种问题，变成了在Youtube上看各种视频。我们不得不对他的使用时间做出限制。</p><p>目前最为吸引我的是通过语音对灯光的控制。如果可以避免去开关处就能控制灯光，会方便很多。同时，如果外出度假时，还可以远程控制家中的灯光，达到一种主人在家的感觉。这样会更加安全。如果要想实现这样的功能，可以购买智能开关，也可以购买智能灯泡。只不过似乎旧的电路不能支持智能开关，需要重新走线才可以。相对而言，购买智能灯泡就会简单的多。</p><p>接下来是对家中Boiler的控制。我比较看重的是其智能温度控制和远程控制功能。如果在度假的时候，自动把家中的暖气关掉，应该会省不少电/气吧。如果在快要度假回来的时候自动打开暖气，也就不会在度假结束后家中还是冷冰冰的了。要实现这样的功能，可以选择Google Nest，同时在热水器上要配有智能开关才行。</p><p>前一段在朋友家冰箱上看到了一个比较”智能“的功能。冰箱可以根据目前的”库存量“来自动提示主人家中是否缺某种食材。这种功能貌似很有用。但前提是每次购物回来后需要把买入的食材名称，到期日输入冰箱配套的电脑中才可以。看样子这并没有那么智能啊。</p><p>因此，整体感觉现在智能家居似乎还没有到普及的阶段。看样子我只需要买几个智能开关就应该足够了。</p>]]></content>
-    
-    <summary type="html">
-    
-      智能家居时代？
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
