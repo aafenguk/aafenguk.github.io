@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-08-02T21:13:44.657Z</updated>
+  <updated>2020-08-03T22:00:30.021Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>准备客串油漆工</title>
+    <link href="https://www.aafeng.uk/get-ready-for-painting/"/>
+    <id>https://www.aafeng.uk/get-ready-for-painting/</id>
+    <published>2020-08-03T22:00:30.021Z</published>
+    <updated>2020-08-03T22:00:30.021Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近随着扩建项目的进展，建筑工人已经开始在砖墙上订Plasterboard，订好后再抹上一层水泥后就可以给墙上刷漆了。由于我很喜欢刷漆这个活，又能省下将近两千英镑，因此决定买套工具自己来刷。</p><p><img src="/images/life/painting-1.jpg" alt></p><a id="more"></a><p>之所以喜欢刷墙漆，是因为感觉这个活非常有成就感。想象一下，把一面水泥墙按照自己喜欢的颜色，及组合刷成自己喜欢的样子，真的是一个很好玩的过程。曾经带着孩子们一起刷过，他们也非常喜欢。</p><p>当然，在刷的时候，也有一些比较麻烦的地方。比如：如果天花板和四面的墙刷的是不同颜色的话，其接壤处就需要特殊的处理，否则两种颜色的边界不清晰的话，就很难看了。因此这绝对是一个细活，也是非常耗费时间的。另外，由于房子有的地方的高度超过三米，需要高空作业，也就会大大增加操作难度。</p><p>关于墙漆的选择，目前主要有三种质感的漆：Matt，Silk，和High Gloss。其中的High Gloss就是高光墙漆，刷出来墙面非常光滑。除此之外的Matt和Silk两种都属于亚光的，也是目前最为流行的选择。因为家具选择的都是亚光的，因此墙漆肯定也要选择亚光的了。</p><p>除了质感之外，就是颜色的选择。首先可以选择市面上已经配好颜色的各种墙漆。当然，这些已经配好的墙漆只有最为常见的颜色。</p><p><img src="/images/life/painting-2.jpg" alt></p><p>现在更受欢迎的一种方式则是先选择色卡，色卡的名字也非常有趣，像”gentle kiss”, “little angel”等。选好色卡后，工作人员会给专用机器中输入相关参数，现场就会把漆配好装桶。这种方式能够确保颜色的一致性，同时还能避免过多库存而造成的浪费。</p><p>现在已经把刷子，滚筒，墙漆等都准备好，只等一切就绪后开刷！</p>]]></content>
+    
+    <summary type="html">
+    
+      准备客串油漆工
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Moorlands Nature Reserve徒步之旅</title>
@@ -396,26 +416,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>试用RunKit</title>
-    <link href="https://www.aafeng.uk/runkit/"/>
-    <id>https://www.aafeng.uk/runkit/</id>
-    <published>2020-07-15T19:56:34.790Z</published>
-    <updated>2020-07-15T19:56:34.790Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先来说说RunKit是什么。首先，Runkit可以让你在浏览器中运行Node.js的代码。在Runkit中，可以很方便的调用众多的npm模块。这就有点像Node.js版的Jupyter Notebook。同时，Runkit还可以提供一个免费的HTTP服务器而无需任何的服务器安装和配置。这在开发手机APP的服务器端，以及微服务的时候尤其有用。当然，实现无服务器的选择很多，比如AWS的Lambda+API Gateway，但RunKit的最大优势就是完全免费的，这在开发软件原型的时候就更为方便了。</p><a id="more"></a><p>下面分别来看看这两项功能。</p><p>打开页面：<a href="https://runkit.com/home" rel="external nofollow noopener noreferrer" target="_blank">https://runkit.com/home</a></p><p>可以通过Github授权登录：</p><p><img src="/images/technology/runkit/1.png" alt></p><p>登录成功后可以看到：</p><p><img src="/images/technology/runkit/2.png" alt></p><p>点击运行按钮后就可以在页面中看到运行结果：</p><p><img src="/images/technology/runkit/3.png" alt></p><p>在Runkit的页面中可以像正常的Node.js环境一样运行各种JS语句。比如，运行如下的简单代码获取Hive中文区的最新文章：</p><p><img src="/images/technology/runkit/4.png" alt></p><p>可以看到返回的结果：</p><p><img src="/images/technology/runkit/5.png" alt></p><p>再来看看我最喜欢的Runkit功能：提供简单的API endpoint。</p><p>非常简单的源码：</p><pre><code>exports.endpoint = function(request, response) {  response.end(&quot;API endpoint test&quot;);}</code></pre><p>单击“publish”进行发布：</p><p><img src="/images/technology/runkit/6.png" alt></p><p>发布后单击“endpoint”就会打开对应的API URL：</p><p><img src="/images/technology/runkit/7.png" alt></p><p>比如说，我这里的就是：</p><p><a href="https://api-jdcmj9qsmxmb.runkit.sh/" rel="external nofollow noopener noreferrer" target="_blank">https://api-jdcmj9qsmxmb.runkit.sh/</a></p><p>可以看到，无需配置/运行服务器，就可以有自己的API可用，又是serverless，同时还免费，是不是很爽？</p>]]></content>
-    
-    <summary type="html">
-    
-      试用RunKit
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
