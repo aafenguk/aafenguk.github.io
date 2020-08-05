@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-08-04T22:20:37.028Z</updated>
+  <updated>2020-08-05T11:28:40.889Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>程序员的专属字体 - Fira Code</title>
+    <link href="https://www.aafeng.uk/firacode/"/>
+    <id>https://www.aafeng.uk/firacode/</id>
+    <published>2020-08-05T11:28:40.889Z</published>
+    <updated>2020-08-05T11:28:40.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近开始使用<a href="https://github.com/tonsky/FiraCode" rel="external nofollow noopener noreferrer" target="_blank">Fira Code</a>，感觉非常好用。有了Fira Code之后，代码的可读性大大提高。那么首先来说说，什么是Fira Code。在编程中会有很多多个字符表示的符号，比如：&gt;=, &lt;=, =&gt;等，其实在数学或者人的大脑中，这些组合符号根本上就是一个单一的符号。那么，为什么不用人脑中更为熟悉的方式来显示这些符号呢？</p><p><img src="/images/technology/firacode/fira-code.png" alt><br><a id="more"></a></p><p>Fira Code就是为了解决整个问题而开发的。其官方介绍如下：</p><blockquote><p>Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations. This is just a font rendering feature: underlying code remains ASCII-compatible. This helps to read and understand code faster.</p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从其<a href="https://github.com/tonsky/FiraCode" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>下载文件并解压：</p><p><img src="/images/technology/firacode/fira-code2.png" alt></p><p>这里以Windows 10为例，进入’ttf’目录，选中所有字库文件后，单击右键进行安装。</p><p><img src="/images/technology/firacode/fira-code3.png" alt></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>以VS Code为例，进入”Settings” -&gt; “Commonly Used”,  更改字体属性：</p><p><img src="/images/technology/firacode/fira-code4.png" alt></p><p>关于编程中连字特性的设置：</p><p><img src="/images/technology/firacode/fira-code5.png" alt></p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>进入VS Code后，尝试一段JavaScript代码：</p><pre><code>function test(a, b, c) {    if (a != b) {        console.log(&apos;a != b&apos;);    }    for (var i = 0; i &lt;= 10; i++) {        console.log(i);    }    if (c === undefined) {        console.log(&apos;c is undefined&apos;);    }}</code></pre><p>可以看到在VS Code中看到的效果：</p><p><img src="/images/technology/firacode/fira-code6.png" alt></p><p>其实严格意义上讲，Fira Code和编程语言无关。它只是添加了系统字体，并在编辑器中显示该字体而已。因此对于主流编程语言，都能够支持。</p><p>最后总结一下，Fira Code不会改变你的源码，但会以更加友好的方式进行显示，从而提高代码的可读性。这对于眼神不好的码农们来说，确实非常有用。</p>]]></content>
+    
+    <summary type="html">
+    
+      程序员的专属字体 - Fira Code
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="软件工具" scheme="https://www.aafeng.uk/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>物以类聚，人以群分</title>
@@ -396,26 +418,6 @@
     </summary>
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>曲折的厨房预订经历，超级拼的英国销售人员</title>
-    <link href="https://www.aafeng.uk/kitchen-sales/"/>
-    <id>https://www.aafeng.uk/kitchen-sales/</id>
-    <published>2020-07-17T20:53:31.818Z</published>
-    <updated>2020-07-17T20:53:31.818Z</updated>
-    
-    <content type="html"><![CDATA[<p>原来一直以为英国人比较古板。一是一，二是二，不太会变通。如果想要讨价还价，几乎没有可能。一家公司如果有折扣，都会写在明面，即使客户主动要求进一步的折扣，一般也不会有结果。但这次家中整体厨房的购买过程中，彻底颠覆了我的观念。</p><p><img src="/images/life/kitchen3.jpg" alt><br><a id="more"></a></p><p>为了讲清楚这个故事，先来说说故事中的几个主角：</p><p>M公司：我家现在的厨房就用的是这家公司的。他家的产品质量非常好。而且在用户反馈网站上显示，他家的客服也是评分最高的。但他家的整体价格偏贵。</p><p>在我所住的小城，M公司就有好几家展示厅，可以直接看到厨房的效果。作为厨房界的一哥，他家的样板间做的非常漂亮。我们去参观后一眼就喜欢上了他家的厨房。不过他家的销售似乎感觉人不是很实在，一直在忽悠。让我们感觉不是很好。另外他家的价格要高不少，因此在初期就把他家排除在外了。</p><p>W公司：这是一家后起之秀，据他们的销售人员说他家的销量非常大。他家的质量也是非常棒的，但客服一直是他家的诟病，因此影响了他家的整体排名。</p><p>W公司也是朋友推荐的。对他家厨房的质量，大家都是非常赞赏的。他家的展示厅是最大的，同时他家的销售人数也是最多的。但和我们打交道的销售似乎有些迷糊，和他沟通的时候有些费劲。但他家的质量靠谱，价格给力。唯一的一点担心就是他家的售后服务。</p><p>H公司：这是建筑工人推荐的公司，也有朋友选用了他家的厨房。个人感觉他家的产品和服务都不错，但整体用户评分介于M和W之间。不过他家的销售的服务态度最好，感觉也是最专业的，整体感觉相处的最舒服。</p><p>第一轮结果：经过综合考虑，主要是产品质量和价格，我们初步选定了W公司。</p><p>在接下来的接触中，首先是H公司许诺可以和W公司进行Price Match。同时由于对W公司销售不是很满意。感觉有点倾向于H公司了。不知道是不是W公司的销售策略，在这个阶段他们又主动让利了，价格完胜H公司。</p><p>最出乎我们意料的是M公司。在沉寂了几周后，突然给我们打电话，说可以和W公司进行Price Match。鉴于M公司的用户综合评分最高，我们有些动摇了，但去他家的样板间看了一下后，感觉有些失望了。他家的销售仍然在忽悠，拿自家的低端产品和W家的高端产品进行Price Match。</p><p>感觉第二轮仍然倾向W公司。</p><p>但M公司的销售似乎并不死心。电话中说要用他家的高端产品和W家的高端产品进行匹配。不知道他说这话的时候自己信不信，反正我是不信。他家的综合评价高于W，类似产品的价格应该高于W才对。</p><p>不管怎么说，他们越是这样，对我越有利。我们现在只需要继续观望，把好关，选好自己喜欢的厨房，保证他们选择产品的质量上不要打折扣就好。不知道是不是疫情后，各家公司急需现金流，因此现在拼了血本打价格战？</p>]]></content>
-    
-    <summary type="html">
-    
-      曲折的厨房预订经历，超级拼的英国销售人员
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
