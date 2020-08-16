@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-08-14T20:52:34.910Z</updated>
+  <updated>2020-08-16T21:23:50.309Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>业余油漆工</title>
+    <link href="https://www.aafeng.uk/painting/"/>
+    <id>https://www.aafeng.uk/painting/</id>
+    <published>2020-08-16T21:23:50.309Z</published>
+    <updated>2020-08-16T21:23:50.309Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近房屋扩建进展速度非常快，上周plaster把水泥抹好后，现在基本上已经晾干了，我这个业余的油漆工要上场了。</p><p><img src="/images/life/paint-3.jpg" alt></p><a id="more"></a><p>虽然喜欢刷漆这个活，但还是把最困难的活，包括门厅，楼道，还有所有木漆留给了专业的油漆工，自己只负责一个最好刷的空荡荡的大厅。</p><p>所谓“工欲善其事，必先利其器”，早早就把刷漆的各种工具订好了：各种各样的刷子，滚筒，梯子，砂纸，小铲子等等。</p><p><img src="/images/life/paint-3.jpg" alt></p><p>至于漆的选择，房顶选择的的Brilliant White，质地选择的是Matt。在这点上是没有任何争议的。但在墙漆的选择上，一直都在犹豫。目前周边朋友选择的似乎都是淡灰色系的，但即使是灰色系，还存在很多细微的差别，最终选定了一款叫做“French Grey”的颜色。</p><p>根据Builder的推荐，首先选择了一种合适新水泥墙的底漆，据他说使用这种漆后，墙不容易裂缝，第二/三层的漆更容易附着。实践证明，听老司机的推荐绝对没跑，这种漆的覆盖性非常好，房顶只刷了一遍，很多地方几乎已经好了。</p><p>按照我的估算，在一天内我应该可以把房顶和墙总共刷其中的3/4，但实际干起来的话，速度远远没有我想象得那么快。最主要得原因在于，对于那些边边角角，需要用胶带把需要保护得地方贴起来，然后再刷，刷完后再撕掉。这种准备和善后工作非常耗时。这样一天下来，只刷了整个房子的一半。</p><p>但无论如何，看到房子在自己的手中越来越有样子了，心中还是很有成就感的。</p>]]></content>
+    
+    <summary type="html">
+    
+      业余油漆工
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>脑洞大的段子手绝对是个好司机</title>
@@ -401,28 +421,6 @@
     
     
       <category term="少儿编程" scheme="https://www.aafeng.uk/tags/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>instantbox - 让你随便折腾的Linux box</title>
-    <link href="https://www.aafeng.uk/instantbox/"/>
-    <id>https://www.aafeng.uk/instantbox/</id>
-    <published>2020-07-25T22:05:46.259Z</published>
-    <updated>2020-07-25T22:05:46.259Z</updated>
-    
-    <content type="html"><![CDATA[<p>经常会遇到这样的情况，在自己的工作Linux VM中需要试用一些软件包。这些软件包都会有一些安装程序。在安装这些软件包的时候可能会对自己的工作环境进行改变，比如，底层的模块版本会被新安装的软件包升级，从而导致自己的工作环境被破坏。尽管有一些方式，比如：使用系统快照(snapshot)，在出现问题的时候通过快照恢复工作环境。或者把要使用的软件包封装到一个Docker镜像中。但这些方法都有些笨拙。</p><p><img src="/images/technology/linux.jpg" alt><br><a id="more"></a></p><p>而instantbox这个项目就是专为这种需求而生的。它可以在几秒钟内创建一个主流的Linux虚拟机，可以通过webshell访问。目前支持：Ubuntu, CentOS, Arch Linux, Debian, Fedora 和 Alpine。在这个临时的虚拟机中，你可以随便折腾。折腾完毕后随用随扔。因此它特别适合进行演示，测试等场合。</p><p>就像其宣传词中所说：</p><blockquote><p>Get a clean, ready-to-go Linux box in seconds.</p></blockquote><p>下面看看如何使用instantbox。</p><p>首先运行如下命令安装instantbox：</p><pre><code>mkdir instantbox &amp;&amp; cd $_bash &lt;(curl -sSL https://raw.githubusercontent.com/instantbox/instantbox/master/init.sh)</code></pre><p>安装完毕后，启动docker镜像：</p><pre><code>docker-compose up -d</code></pre><p>接下来就可以通过访问本地8888端口来使用instantbox了：</p><p><img src="https://images.hive.blog/DQmexxsbmCDnC1kyM7Ae4gCbR3geHCPcCkAxh7KG1vhCzZM/image.png" alt="image.png"></p><p>选择一款你想用的Linux的版本：</p><p><img src="https://images.hive.blog/DQmVgkZm4dYdM9J2r6dSTbWWa4evuLnGvSuJRknGGho98Wi/image.png" alt="image.png"></p><p>选择端口号，CPU，内存，以及临时VM的时长：</p><p><img src="https://images.hive.blog/DQmXswCNEfx1q3va634RQWYD4WHpaGJLxizZPHCcUGWyNXx/image.png" alt="image.png"></p><p>几秒钟后VM就已经被成功创建了：<br><img src="https://images.hive.blog/DQmUAJMyLzGye39Q4kN2Z2LBSJZZCvWqfHRdTNtG2uRwDxX/image.png" alt="image.png"></p><p>打开webshell：</p><p><img src="https://images.hive.blog/DQmdYScyT9yyXm5QT9pCvLUcB8FdCY3wD6TDg84gcdyqSfd/image.png" alt="image.png"></p><p>在这个虚拟环境中你就可以随便折腾了。它只需要占用你所分配的系统资源，而不会对系统安装性造成负面影响。</p>]]></content>
-    
-    <summary type="html">
-    
-      instantbox - 让你随便折腾的Linux box
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="软件工具" scheme="https://www.aafeng.uk/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
