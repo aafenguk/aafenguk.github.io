@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-08-25T16:13:25.708Z</updated>
+  <updated>2020-08-26T21:31:00.285Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summer House</title>
+    <link href="https://www.aafeng.uk/summer-house/"/>
+    <id>https://www.aafeng.uk/summer-house/</id>
+    <published>2020-08-26T21:31:00.285Z</published>
+    <updated>2020-08-26T21:31:00.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着单位进一步明确了，今后大多数员工将会永久性转为在家办公。就不得不考虑一下家中的办公环境了。之前想的是临时性在家办公，因此就临时在家中找了一个办公桌将就了一下。但如果转为永久性在家办公，就不得不考虑一个专门的办公室了。</p><p>因此首先想到的就是在花园中建一个Summer House。这种Summer House一般并不是很大，不超过10平米。通常是放置在花园的一角。因此非常轻便。</p><p><img src="/images/life/summer-house.jpg" alt><br><a id="more"></a></p><p>其实这种Summer House在英国还是很普遍的。尤其是在工作强度非常大的伦敦地区，很多人家的花园中都配有Summer House。这样在家办公的时候可以避免被打扰。当然，也有人把这种Summer House当成了储物空间。</p><p>通常这种Summer House都是纯木制的，因此其安装过程也较为简单。只是用各种螺丝钉把木板钉到一起。因此安装费一般都包含在其报价中。</p><p>这些小木屋随着其面积的不同，以及其样式和材料的不同，报价可能相差很大，可以从几百英镑到上万英镑不等。很多Summer House还会做一个小阳台，感觉在春秋十分的时候完全可以住在里面。</p><p>不过有一点是需要自己事先准备好的：那就是需要提前找电工把线布好，同时在搭建Summer House的地方需要事先把地处理好了，通常是铺一些石板。</p><p>现在非常期待早日把这个Summer House搭建好，可以正式搬进去办公。</p>]]></content>
+    
+    <summary type="html">
+    
+      Summer House
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>永久性在家办公</title>
@@ -397,28 +417,6 @@
     
     
       <category term="生日Party" scheme="https://www.aafeng.uk/tags/%E7%94%9F%E6%97%A5Party/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>程序员的专属字体 - Fira Code</title>
-    <link href="https://www.aafeng.uk/firacode/"/>
-    <id>https://www.aafeng.uk/firacode/</id>
-    <published>2020-08-05T11:28:40.889Z</published>
-    <updated>2020-08-05T11:28:40.889Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近开始使用<a href="https://github.com/tonsky/FiraCode" rel="external nofollow noopener noreferrer" target="_blank">Fira Code</a>，感觉非常好用。有了Fira Code之后，代码的可读性大大提高。那么首先来说说，什么是Fira Code。在编程中会有很多多个字符表示的符号，比如：&gt;=, &lt;=, =&gt;等，其实在数学或者人的大脑中，这些组合符号根本上就是一个单一的符号。那么，为什么不用人脑中更为熟悉的方式来显示这些符号呢？</p><p><img src="/images/technology/firacode/fira-code.png" alt><br><a id="more"></a></p><p>Fira Code就是为了解决整个问题而开发的。其官方介绍如下：</p><blockquote><p>Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations. This is just a font rendering feature: underlying code remains ASCII-compatible. This helps to read and understand code faster.</p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从其<a href="https://github.com/tonsky/FiraCode" rel="external nofollow noopener noreferrer" target="_blank">Github页面</a>下载文件并解压：</p><p><img src="/images/technology/firacode/fira-code2.png" alt></p><p>这里以Windows 10为例，进入’ttf’目录，选中所有字库文件后，单击右键进行安装。</p><p><img src="/images/technology/firacode/fira-code3.png" alt></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>以VS Code为例，进入”Settings” -&gt; “Commonly Used”,  更改字体属性：</p><p><img src="/images/technology/firacode/fira-code4.png" alt></p><p>关于编程中连字特性的设置：</p><p><img src="/images/technology/firacode/fira-code5.png" alt></p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>进入VS Code后，尝试一段JavaScript代码：</p><pre><code>function test(a, b, c) {    if (a != b) {        console.log(&apos;a != b&apos;);    }    for (var i = 0; i &lt;= 10; i++) {        console.log(i);    }    if (c === undefined) {        console.log(&apos;c is undefined&apos;);    }}</code></pre><p>可以看到在VS Code中看到的效果：</p><p><img src="/images/technology/firacode/fira-code6.png" alt></p><p>其实严格意义上讲，Fira Code和编程语言无关。它只是添加了系统字体，并在编辑器中显示该字体而已。因此对于主流编程语言，都能够支持。</p><p>最后总结一下，Fira Code不会改变你的源码，但会以更加友好的方式进行显示，从而提高代码的可读性。这对于眼神不好的码农们来说，确实非常有用。</p>]]></content>
-    
-    <summary type="html">
-    
-      程序员的专属字体 - Fira Code
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="软件工具" scheme="https://www.aafeng.uk/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
