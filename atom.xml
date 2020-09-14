@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-09-11T21:35:12.641Z</updated>
+  <updated>2020-09-13T20:59:37.648Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>身份冒用Identity theft</title>
+    <link href="https://www.aafeng.uk/identify-theft/"/>
+    <id>https://www.aafeng.uk/identify-theft/</id>
+    <published>2020-09-13T20:59:37.648Z</published>
+    <updated>2020-09-13T20:59:37.648Z</updated>
+    
+    <content type="html"><![CDATA[<p>前一段时间看到O哥的<a href="/@oflyhigh/identity-theft">身份冒用的文章</a>。其实身份冒用无处不在。今天就分享一个我亲身经历，而且还在发生的身份冒用的例子。</p><p><img src="/images/life/identify-theft.jpg" alt><br><a id="more"></a></p><p>故事是这样的，我搬到现在的家已经快十年了。但大约从一年前开始不断收到很多收件人姓名为Joshua的信件。开始时我们只是觉得有点奇怪。在我们搬入之前的房主名字我们知道，但并不是信件上所说的这个人。我们觉得可能是更早期曾经住在这个地址的人的信吧。</p><p>我们一开始都会在信封上注明，此人不住在这里，并把信退回去。但信还是源源不断的寄送过来。最为夸张的就是有两次警察来敲门，并询问是否有Joshua这个人。和警察解释清楚了之后，警察倒是不再来了。但信件仍然不停的寄过来。</p><p>在此期间我们一直非常困惑，到底是什么原因让一个陌生人的信不断的寄到我家呢？直到前两天才明白了原因。两天前有人敲门，打开门一看，是一个壮硕的小伙，制服上写着“High Court Enforcement”，应该类似于国内的法警吧。他询问了Joshua是否住在这里，并把上门的原因和我们解释了一下：Joshua欠了别人的钱一直不还，因此他来上门讨债。</p><p>据说如果Joshua真的住在我家这个地址，又被法警堵在家中，那么法警有权利拿走他家中所有值钱的东西，以抵他的欠款。这听起来怪吓人的。不过还好，跟我们没有半毛钱的关系。</p><p>后来在网上查了一下，这是一种典型的身份冒用(Identity theft)。罪犯通过某种方式通过银行的地址验证。比如：罪犯在银行注册一个账户，留的是你的地址，然后他会盯着你的信箱。一旦有人来送信，他假装在你家周围，从邮差手中截获你的信件。现在很多邮差只是把信插在邮箱中，这样就很容易从外面把信取走。一旦他通过了银行的地址验证，那么，在使用他的银行账户行骗后，银行只能追踪到你的地址。通过这种方式，罪犯就成功的盗用了你的地址信息。</p><p>想一想各种犯罪手段还真的是防不胜防啊。好在我们已经和法警说清楚了，他要找的人绝对不在这个地址，以后他不会再来敲门了。</p>]]></content>
+    
+    <summary type="html">
+    
+      身份冒用Identity theft
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>财商教育</title>
@@ -388,26 +408,6 @@
     <summary type="html">
     
       永久性在家办公
-    
-    </summary>
-    
-      <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>重返办公室</title>
-    <link href="https://www.aafeng.uk/return-to-office/"/>
-    <id>https://www.aafeng.uk/return-to-office/</id>
-    <published>2020-08-24T21:44:16.134Z</published>
-    <updated>2020-08-24T21:44:16.134Z</updated>
-    
-    <content type="html"><![CDATA[<p>时隔半年，终于再次回到了自己的办公室。只不过，不是去办公，而是按照单位的要求，把自己的私人用品或者带回家，或者锁在抽屉中。因为从此以后，就彻底没有办公室了！自己的办公室将会变成一个公共的办公区域。</p><p><img src="/images/work/office.jpg" alt><br><a id="more"></a></p><p>自此之后，将要彻彻底底的在家办公了。如果需要在单位和同事或者客户见面的话，可以提前预订公共办公区才能使用。只是不知道如果这些公共办公区不够用了该怎么办？</p><p>整个办公室的清理流程也非常清楚，每一个环节都经过了充分论证，能够最大限度的防止病毒的传播。</p><p>首先，为了避免和他人近距离接触，不推荐搭车。</p><p>到了单位后，用员工卡进入办公区后，必须要佩戴口罩。之后要消毒，然后签到，之后再消毒。</p><p>为了保持社交距离，对于多人共享的办公室，划分了多个造访时段，每个时段只能有一个人到场清理自己用品。</p><p>很快就把自己的物品清理好了。这难道是一个时代的结束？自此之后，只能在家打造自己的办公室了？？？</p>]]></content>
-    
-    <summary type="html">
-    
-      重返办公室
     
     </summary>
     
