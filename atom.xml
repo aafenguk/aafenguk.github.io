@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-09-13T20:59:37.648Z</updated>
+  <updated>2020-09-14T16:08:04.308Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在命令行测试XSLT</title>
+    <link href="https://www.aafeng.uk/xalan-cli/"/>
+    <id>https://www.aafeng.uk/xalan-cli/</id>
+    <published>2020-09-14T16:08:04.308Z</published>
+    <updated>2020-09-14T16:08:04.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>在工作中大量使用XSLT进行各种文档的转换。但其调试过程还是比较麻烦的。这里分享一个很好用的命令行工具，可以进行XSLT的调试。以下环境是针对Ubuntu 18.04 LTS的。</p><p><img src="/images/technology/xalan/1.jpg" alt><br><a id="more"></a></p><p>安装</p><pre><code>sudo apt-get install xalan</code></pre><p>检查xalan的版本号：</p><pre><code>xalan -v</code></pre><p>下面来做一个简单的测试。首先创建一个简单的XML文件text.xml：</p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;students&gt;  &lt;student&gt;    &lt;id&gt;91001&lt;/id&gt;    &lt;name&gt;Jim&lt;/name&gt;  &lt;/student&gt;  &lt;student&gt;    &lt;id&gt;91002&lt;/id&gt;    &lt;name&gt;Julie&lt;/name&gt;  &lt;/student&gt;  &lt;student&gt;    &lt;id&gt;91003&lt;/id&gt;    &lt;name&gt;Stuart&lt;/name&gt;  &lt;/student&gt;  &lt;/students&gt;</code></pre><p>创建测试的XSLT文件：test.xsl:</p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;&lt;xsl:template match=&quot;/&quot;&gt;&lt;html&gt; &lt;body&gt;  &lt;h2&gt;Students&lt;/h2&gt;  &lt;table border=&quot;1&quot;&gt;    &lt;tr bgcolor=&quot;#9acd32&quot;&gt;      &lt;th style=&quot;text-align:left&quot;&gt;ID&lt;/th&gt;      &lt;th style=&quot;text-align:left&quot;&gt;Name&lt;/th&gt;    &lt;/tr&gt;    &lt;xsl:for-each select=&quot;students/student&quot;&gt;    &lt;tr&gt;      &lt;td&gt;&lt;xsl:value-of select=&quot;id&quot;/&gt;&lt;/td&gt;      &lt;td&gt;&lt;xsl:value-of select=&quot;name&quot;/&gt;&lt;/td&gt;    &lt;/tr&gt;    &lt;/xsl:for-each&gt;  &lt;/table&gt;&lt;/body&gt;&lt;/html&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</code></pre><p>在命令行运行：</p><pre><code>xalan -in test.xml -xsl test.xsl -out out.html</code></pre><p>可以看到生成的HTML文件：</p><pre><code>&lt;html&gt;&lt;body&gt;&lt;h2&gt;Students&lt;/h2&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr bgcolor=&quot;#9acd32&quot;&gt;&lt;th style=&quot;text-align:left&quot;&gt;ID&lt;/th&gt;&lt;th style=&quot;text-align:left&quot;&gt;Name&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;91001&lt;/td&gt;&lt;td&gt;Jim&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;91002&lt;/td&gt;&lt;td&gt;Julie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;91003&lt;/td&gt;&lt;td&gt;Stuart&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>其实xalan命令行工具还有很多好用的选项。比如运行如下参数：</p><pre><code>xalan -in test.xml -xsl test.xsl -out out.html -tg</code></pre><p>这样就能看到解析过程中每一个具体步骤：</p><p><img src="/images/technology/xalan/2.jpg" alt></p><p>如果想要查看在解析过程中被调用的每一个模板，使用参数tt:</p><pre><code>xslt xalan -in test.xml -xsl test.xsl -out out.html -tt</code></pre><p>如果想要监测在解析过程中对每一个XML元素的选取：</p><pre><code>xalan -in test.xml -xsl test.xsl -out out.html -ts</code></pre><p>其输出类似于：</p><p><img src="/images/technology/xalan/3.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      如何在命令行测试XSLT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>英国最新疫情+溜娃</title>
+    <link href="https://www.aafeng.uk/covid19-sep/"/>
+    <id>https://www.aafeng.uk/covid19-sep/</id>
+    <published>2020-09-14T14:52:03.346Z</published>
+    <updated>2020-09-14T14:52:03.346Z</updated>
+    
+    <content type="html"><![CDATA[<p>伴随着英国小学和中学的开学，部分地区出现了疫情的反扑，很多学校都出现了疫情。为了加强对疫情的控制，英国政府出台了最新的政策：从14日开始，超过两个家庭的聚会，如果人数超过6人，将被禁止。如果违反将会面临罚款。</p><p><img src="/images/life/covid19-202009.jpg" alt><br><a id="more"></a></p><p>其实我个人还是很赞成这个政策的。毕竟和社交需求比起来，人的生命安全更为重要。在孩子学校的家长群中，很多家长都表示了对疫情的担忧。甚至不理解为什么学校不让孩子们戴口罩上学。个别的家长还拒绝把孩子送到学校。</p><p>针对这一政策，我的同事开玩笑说，大家已经半年多没有聚过了，不如找一家酒吧，带露天桌子的那种。我们可以分成不同的组，每组六人，可以选择相邻的两个桌子。期间还可以换人。哈哈哈，有点掩耳盗铃了。不过这也说出了大家心中的无奈。</p><p>不过再怎么说，人还是需要放松的。何况在户外活动，只要保持社交距离，也不算违反规定。于是，和孩子学校同学的两个家庭，去家附近的一个游乐场去溜娃，顺便也享受一下最近以来难得的好天气。</p><p>在英国这里有很多带有社区性质的游乐场。在这里有着大片的草地，同时还配有秋千，滑梯，篮球场，足球场等各种户外健身设施。其实只要孩子们只要在一起，哪怕只是在户外跑跑也会非常开心的。</p><p>朋友还带来了篮球。算一算已经好多年没有摸过篮球了。不过篮球似乎就像骑自行车一样，只要会打了，似乎就很难忘记。手只要一摸球，感觉似乎就回来了。跳投，三步上篮，似乎都还对付。看样子，需要找个时间多约几个人打个半场了。</p><p>尽管在大家心头都有疫情的阴影，但孩子们在蓝天白云下还是玩的非常开心的。以后这种户外活动还是需要经常有的。</p>]]></content>
+    
+    <summary type="html">
+    
+      英国最新疫情+溜娃
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>身份冒用Identity theft</title>
@@ -372,46 +412,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Summer House</title>
-    <link href="https://www.aafeng.uk/summer-house/"/>
-    <id>https://www.aafeng.uk/summer-house/</id>
-    <published>2020-08-26T21:31:00.285Z</published>
-    <updated>2020-08-26T21:31:00.285Z</updated>
-    
-    <content type="html"><![CDATA[<p>随着单位进一步明确了，今后大多数员工将会永久性转为在家办公。就不得不考虑一下家中的办公环境了。之前想的是临时性在家办公，因此就临时在家中找了一个办公桌将就了一下。但如果转为永久性在家办公，就不得不考虑一个专门的办公室了。</p><p>因此首先想到的就是在花园中建一个Summer House。这种Summer House一般并不是很大，不超过10平米。通常是放置在花园的一角。因此非常轻便。</p><p><img src="/images/life/summer-house.jpg" alt><br><a id="more"></a></p><p>其实这种Summer House在英国还是很普遍的。尤其是在工作强度非常大的伦敦地区，很多人家的花园中都配有Summer House。这样在家办公的时候可以避免被打扰。当然，也有人把这种Summer House当成了储物空间。</p><p>通常这种Summer House都是纯木制的，因此其安装过程也较为简单。只是用各种螺丝钉把木板钉到一起。因此安装费一般都包含在其报价中。</p><p>这些小木屋随着其面积的不同，以及其样式和材料的不同，报价可能相差很大，可以从几百英镑到上万英镑不等。很多Summer House还会做一个小阳台，感觉在春秋十分的时候完全可以住在里面。</p><p>不过有一点是需要自己事先准备好的：那就是需要提前找电工把线布好，同时在搭建Summer House的地方需要事先把地处理好了，通常是铺一些石板。</p><p>现在非常期待早日把这个Summer House搭建好，可以正式搬进去办公。</p>]]></content>
-    
-    <summary type="html">
-    
-      Summer House
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>永久性在家办公</title>
-    <link href="https://www.aafeng.uk/wfh-permanently/"/>
-    <id>https://www.aafeng.uk/wfh-permanently/</id>
-    <published>2020-08-25T16:13:25.708Z</published>
-    <updated>2020-08-25T16:13:25.708Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近单位老大做了一个决定，除了那些必须要和客户打交道的同事外，其余人都变成以在家办公为主的模式。而我们这些做IT的，几乎是永久性的在家办公了。当然，如果有事需要面对面沟通或者和客户见面，则需要预订公共办公区。</p><p><img src="/images/work/office2.jpg" alt><br><a id="more"></a></p><p>乍一听，感觉好处似乎很多。比如：能够兼顾工作和家庭，避免浪费在去单位路上的时间等等。但仔细一想，似乎并不全是优点，在家办公也有其缺点。如果彻底转换为在家办公，还是需要做好很多准备的。</p><p>首先，就是办公条件的差别。在办公室工作的时候，有着一张超大的办公桌，电脑上连有三台显示器。单位的网速也是超级快的。同时，办公桌上摆满需要的各种文件和资料，可以随手查阅。</p><p>在家中的话不太可能摆放那么大的办公桌，显示器的话最多也只能摆下两台。同时也不想把家中布置成办公室那样，摆满各种文件和资料。</p><p>其次，就是对人心理的影响。在去办公室的日子里，人的心理上有一个切换。感觉每天早上要去办公室，每天下午下班回到家中。每天在工作/家庭两种环境中不断切换。每天午休的时候我都喜欢出去走走。</p><p>而在家中办公的话，感觉一连几个月都在家中，心中增长的是惰性。午饭后从没有出去散步过。。。</p><p>还有，就是注意力的问题。在家工作的话，毕竟孩子在家，还有各种信件，邮包的签收等等，在兼顾家庭和工作的时候就难免分心。同时家中的条件较为舒适，各种水果零食非常全，干活的时候只要离开办公桌，可能就会被各种事情分心。</p><p>看样子，要想完全切换到在家工作模式，还真的要事先做好方方面面的计划和准备才行啊。</p>]]></content>
-    
-    <summary type="html">
-    
-      永久性在家办公
-    
-    </summary>
-    
-      <category term="工作" scheme="https://www.aafeng.uk/categories/%E5%B7%A5%E4%BD%9C/"/>
     
     
   </entry>
