@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-09-23T20:54:22.731Z</updated>
+  <updated>2020-09-25T16:52:44.484Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在AWS资源中使用tag</title>
+    <link href="https://www.aafeng.uk/aws-tags/"/>
+    <id>https://www.aafeng.uk/aws-tags/</id>
+    <published>2020-09-25T16:52:44.484Z</published>
+    <updated>2020-09-25T16:52:44.484Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天收到AWS的账单，发现按照项目分类的账单明细中，有些项目没有添加特定的标签，以至于相应的费用不是很清楚。比如：不清楚那些“UNTAGGED”的资源都是在哪些项目中创建的。如果费用接近或超出预算，是需要查找原因的。</p><p><img src="/images/technology/aws/tags-1.png" alt><br><a id="more"></a></p><p>相信使用过AWS的人可能都有一个感觉，就是“乱”。在AWS中的各种计算资源太过庞杂。而创建一个服务或者APP所需使用的AWS服务又是各种各样的。因此在开始接触AWS的时候总是不清楚最终费用可能是多少。即使账单出来了，也很难一目了然的看到究竟是哪个项目的运营成本更高。</p><p>AWS的tag（标签）就可以解决上述问题。其实，在AWS中的所有资源都应该添加标签(tag)。这样便于按照标签对资源进行分类和管理。在越来越多的使用AWS资源时，这种方式绝对能够帮我们更好的管理各种资源。</p><p>在AWS种使用tag时，最好事先约定好一个规则。比如：</p><ul><li>tag名称全部用小写字母和下划线</li><li>tag值全部全部用小写字母和下划线</li></ul><p>也可以规定一些必填的tag，比如：</p><ul><li>user: 你的用户名</li><li>team: 定义自己所属的团队</li><li>project: 哪个项目使用这个资源</li><li>status: 这个资源是用于那种环境的，比如：prod, test, 或者dev</li><li>source: AWS资源的创建方式，比如：manual(手工), serverless, cloudformation </li></ul><p>至于tag的创建，就非常简单了。你可以在每种资源中分别定义这些tag。以Lambda为例，我们可以在定义Lambda的时候同时添加tag：</p><p><img src="/images/technology/aws/tags-2.png" alt></p><p>只不过上面这种方式比较麻烦，如果一个一个的资源的添加的话非常耗时。最好的方式还是使用一些框架，比如serverless，在其配置文件中定义这些tag。比如：</p><pre><code>provider:    name: XXX    stackTags:        Tag1: &quot;Tag1 value&quot;        Tag2: &quot;Tag2 value&quot;plugins:  - serverless-plugin-resource-tagging</code></pre><p>有了这些tag，以后在管理AWS资源的时候就事半功倍了。</p>]]></content>
+    
+    <summary type="html">
+    
+      在AWS资源中使用tag
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>英国疫情更新+吐槽</title>
@@ -388,26 +410,6 @@
     <summary type="html">
     
       英式下午茶
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>学校开学,神兽归笼</title>
-    <link href="https://www.aafeng.uk/back-to-school-sep/"/>
-    <id>https://www.aafeng.uk/back-to-school-sep/</id>
-    <published>2020-09-05T21:30:30.651Z</published>
-    <updated>2020-09-05T21:30:30.651Z</updated>
-    
-    <content type="html"><![CDATA[<p>尽管英国疫情仍然不容乐观，多地还有进一步封城的可能。但是，学校仍然如期开学了！众多家长的心情非常复杂，既想尽快开学，把孩子送回学校，自己可以集中精力工作。但同时又担心疫情和学校的防护措施是否到位。。。</p><p><img src="/images/life/student.jpg" alt><br><a id="more"></a></p><p>孩子们，尤其是那些年龄较小的孩子们在家期间，很多家长一边工作，一边看娃，其内心是近乎崩溃的。一些朋友不得不在晚上加班，把落后的进度不回来。因此很多家长都梦想着开学的这一天，能够专心的工作。这也是政府在目前疫情仍不乐观的情况下坚持开学的原因吧。</p><p>对于孩子们来说，这是一个难得的大假期。每天睡到自然醒，功课，作业也不像在学校那样有老师全天监督。如果家长抓的紧的话，孩子还能按时完成作业，查缺补漏，甚至弯道超车。而对于那些工作忙的家长，很多孩子就彻底在家放羊了。因此很多孩子对开学的反应是抵触的。。。</p><p>对于我个人而言，还是赞成开学的。毕竟长时间宅在家中，缺少和同龄人的交互，对孩子的心理健康不利。在有效疫苗被开发出来之前，人类是需要学会和病毒共存的。生活要继续，上学，上班，购物等必要的活动都不可少。</p><p>在学校给家长的信中，提到了很多新的措施，比如：每个孩子只能带自己的午餐，课间零食，和水瓶。其余的文具，书包等都不能带到学校；只是班级之内的同学可以一起玩，和其他班级的同学没有接触；家长只能把孩子送到学校门口，不能进入；每天中老师会监督所有小朋友多次洗手并消毒；使用公共设施后需要对其消毒；取消所有校内集会；所有午餐地点将由学校餐厅改为教室中。</p><p>感觉学校的各项措施已经非常到位了。希望孩子们返校后能在学校度过快乐，健康，安全的新学期！</p>]]></content>
-    
-    <summary type="html">
-    
-      学校开学,神兽归笼
     
     </summary>
     
