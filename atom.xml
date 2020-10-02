@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-09-30T20:19:09.419Z</updated>
+  <updated>2020-10-01T11:05:18.642Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AWS学习资源总结</title>
+    <link href="https://www.aafeng.uk/aws-learning-resources/"/>
+    <id>https://www.aafeng.uk/aws-learning-resources/</id>
+    <published>2020-10-01T11:05:18.642Z</published>
+    <updated>2020-10-01T11:05:18.642Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面把AWS的学习资源总结了一下。这个列表会不断更新。</p><p><img src="/images/technology/aws/aws.png" alt><img src="/images/technology/aws/aws.png" alt></p><a id="more"></a><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><a href="https://www.aws.training/Details/eLearning?id=42594" rel="external nofollow noopener noreferrer" target="_blank">Architecting Serverless Solutions</a></p><h2 id="Dynamodb"><a href="#Dynamodb" class="headerlink" title="Dynamodb"></a>Dynamodb</h2><p><a href="https://www.dynamodbguide.com/what-is-dynamo-db" rel="external nofollow noopener noreferrer" target="_blank">https://www.dynamodbguide.com/what-is-dynamo-db</a></p>]]></content>
+    
+    <summary type="html">
+    
+      AWS学习资源总结
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+      <category term="Lambda" scheme="https://www.aafeng.uk/tags/Lambda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在AWS资源中使用tag</title>
+    <link href="https://www.aafeng.uk/aws-tags/"/>
+    <id>https://www.aafeng.uk/aws-tags/</id>
+    <published>2020-10-01T09:32:45.573Z</published>
+    <updated>2020-10-01T09:32:45.573Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天收到AWS的账单，发现按照项目分类的账单明细中，有些项目没有添加特定的标签，以至于相应的费用不是很清楚。比如：不清楚那些“UNTAGGED”的资源都是在哪些项目中创建的。如果费用接近或超出预算，是需要查找原因的。</p><p><img src="/images/technology/aws/tags-1.png" alt><br><a id="more"></a></p><p>相信使用过AWS的人可能都有一个感觉，就是“乱”。在AWS中的各种计算资源太过庞杂。而创建一个服务或者APP所需使用的AWS服务又是各种各样的。因此在开始接触AWS的时候总是不清楚最终费用可能是多少。即使账单出来了，也很难一目了然的看到究竟是哪个项目的运营成本更高。</p><p>AWS的tag（标签）就可以解决上述问题。其实，在AWS中的所有资源都应该添加标签(tag)。这样便于按照标签对资源进行分类和管理。在越来越多的使用AWS资源时，这种方式绝对能够帮我们更好的管理各种资源。</p><p>在AWS种使用tag时，最好事先约定好一个规则。比如：</p><ul><li>tag名称全部用小写字母和下划线</li><li>tag值全部全部用小写字母和下划线</li></ul><p>也可以规定一些必填的tag，比如：</p><ul><li>user: 你的用户名</li><li>team: 定义自己所属的团队</li><li>project: 哪个项目使用这个资源</li><li>status: 这个资源是用于那种环境的，比如：prod, test, 或者dev</li><li>source: AWS资源的创建方式，比如：manual(手工), serverless, cloudformation </li></ul><p>至于tag的创建，就非常简单了。你可以在每种资源中分别定义这些tag。以Lambda为例，我们可以在定义Lambda的时候同时添加tag：</p><p><img src="/images/technology/aws/tags-2.png" alt></p><p>只不过上面这种方式比较麻烦，如果一个一个的资源的添加的话非常耗时。最好的方式还是使用一些框架，比如serverless，在其配置文件中定义这些tag。比如：</p><pre><code>provider:    name: XXX    tags:      project: your_project      group: your_group      team: your_team</code></pre><p>上面的tags是全局性的，如果只想针对某个资源定义tag：</p><pre><code>functions:  myFunction:    name: myFunction    handler: myFunction.handler    tags:      tag1: value1      tag2: value2</code></pre><p>有了这些tag，以后在管理AWS资源的时候就事半功倍了。</p>]]></content>
+    
+    <summary type="html">
+    
+      在AWS资源中使用tag
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>心理暗示</title>
@@ -113,28 +161,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>在AWS资源中使用tag</title>
-    <link href="https://www.aafeng.uk/aws-tags/"/>
-    <id>https://www.aafeng.uk/aws-tags/</id>
-    <published>2020-09-25T16:52:44.484Z</published>
-    <updated>2020-09-25T16:52:44.484Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天收到AWS的账单，发现按照项目分类的账单明细中，有些项目没有添加特定的标签，以至于相应的费用不是很清楚。比如：不清楚那些“UNTAGGED”的资源都是在哪些项目中创建的。如果费用接近或超出预算，是需要查找原因的。</p><p><img src="/images/technology/aws/tags-1.png" alt><br><a id="more"></a></p><p>相信使用过AWS的人可能都有一个感觉，就是“乱”。在AWS中的各种计算资源太过庞杂。而创建一个服务或者APP所需使用的AWS服务又是各种各样的。因此在开始接触AWS的时候总是不清楚最终费用可能是多少。即使账单出来了，也很难一目了然的看到究竟是哪个项目的运营成本更高。</p><p>AWS的tag（标签）就可以解决上述问题。其实，在AWS中的所有资源都应该添加标签(tag)。这样便于按照标签对资源进行分类和管理。在越来越多的使用AWS资源时，这种方式绝对能够帮我们更好的管理各种资源。</p><p>在AWS种使用tag时，最好事先约定好一个规则。比如：</p><ul><li>tag名称全部用小写字母和下划线</li><li>tag值全部全部用小写字母和下划线</li></ul><p>也可以规定一些必填的tag，比如：</p><ul><li>user: 你的用户名</li><li>team: 定义自己所属的团队</li><li>project: 哪个项目使用这个资源</li><li>status: 这个资源是用于那种环境的，比如：prod, test, 或者dev</li><li>source: AWS资源的创建方式，比如：manual(手工), serverless, cloudformation </li></ul><p>至于tag的创建，就非常简单了。你可以在每种资源中分别定义这些tag。以Lambda为例，我们可以在定义Lambda的时候同时添加tag：</p><p><img src="/images/technology/aws/tags-2.png" alt></p><p>只不过上面这种方式比较麻烦，如果一个一个的资源的添加的话非常耗时。最好的方式还是使用一些框架，比如serverless，在其配置文件中定义这些tag。比如：</p><pre><code>provider:    name: XXX    stackTags:        Tag1: &quot;Tag1 value&quot;        Tag2: &quot;Tag2 value&quot;plugins:  - serverless-plugin-resource-tagging</code></pre><p>有了这些tag，以后在管理AWS资源的时候就事半功倍了。</p>]]></content>
-    
-    <summary type="html">
-    
-      在AWS资源中使用tag
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
@@ -394,26 +420,6 @@
     </summary>
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>理解</title>
-    <link href="https://www.aafeng.uk/understanding/"/>
-    <id>https://www.aafeng.uk/understanding/</id>
-    <published>2020-09-10T20:33:57.000Z</published>
-    <updated>2020-09-11T09:11:56.292Z</updated>
-    
-    <content type="html"><![CDATA[<p>很多同事的邮件签名前后都会加上一句话：“I work flexibly - so whilst it suits me to email now, I do not expect a response or action outside of your own working hours.” 其大意就是说，我的工作方式非常灵活，因此尽管现在这个时间适合我来发送邮件，但我不希望在您自己的工作时间之外答复我或采取任何行动。</p><p><img src="/images/life/understanding.jpg" alt><br><a id="more"></a></p><p>这其中体现了几个意思：首先，你现在看到邮件，可以不回复，也可以不采取行动。第二，尽管我现在在工作，但我理解现在可能并不是你的工作时间，因此你可能并不能立即看到我的邮件。</p><p>其实，这其中体现了一个重要的原则：每个人都是不同的个体，因此每个人的生活方式，工作方式，对事情的看法都是不尽相同的。要善于站在对方的角度来思考问题，这样人和人之间才能没有隔阂，有效沟通。</p><p>最近遇到了不少正反两方面的例子。首先是给我家干活的一个Builder。和他联系的时候，他即使当时不能够接电话，但过一会总会把电话打回来。和他聊起这件事的时候，他也说有些时候他给别人打电话的时候，别人可能也不接。他完全能够站在对方的角度来考虑问题，对方可能手头有活，不方便接电话。只要最终对方打回来，能够正常沟通，就没有任何问题。</p><p>一个反面的例子就是我的一位大学同学。其实关系一直还不错。前一段时间他有件事情和我咨询。当天我的会议一个接一个，一直没有机会给他回复。结果到了晚上给他详细的回复了他的所有问题，并问了一些更近一步的信息。但然后，就没有然后了。老同学似乎和我生气了，可能是怪我没有即时回复吧。</p><p>我在不停的思考，我做错了什么吗？让我的老同学对我有看法？难道在会议中也要立刻给他回复一下，我在开会，稍后回复吗？我承认在会议间歇中有去去卫生间，喝口水的时间，但他的问题并不紧急啊。我在之后的回复中他肯定能看到我是在认认真真的回复的。难道多年的老同学，连这点默契都没有吗？多年的职场老手，连这点基本的理解都没有吗？</p><p>哎，真的想说一句，理解万岁！</p>]]></content>
-    
-    <summary type="html">
-    
-      理解
-    
-    </summary>
-    
-      <category term="思考" scheme="https://www.aafeng.uk/categories/%E6%80%9D%E8%80%83/"/>
     
     
   </entry>
