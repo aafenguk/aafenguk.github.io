@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/murphy-law/</loc>
+    
+    <lastmod>2020-11-07T23:15:15.993Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/run-beem-application-on-aws-lambda/</loc>
     
     <lastmod>2020-11-04T22:51:20.491Z</lastmod>
