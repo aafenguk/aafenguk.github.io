@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-11-08T22:25:36.454Z</updated>
+  <updated>2020-11-09T10:36:02.519Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何在Ruby中读写Excel Spreadsheet</title>
+    <link href="https://www.aafeng.uk/manipulate-spreadsheet-in-ruby/"/>
+    <id>https://www.aafeng.uk/manipulate-spreadsheet-in-ruby/</id>
+    <published>2020-11-09T10:36:02.519Z</published>
+    <updated>2020-11-09T10:36:02.519Z</updated>
+    
+    <content type="html"><![CDATA[<p>在很多系统中生成报表时，都需要使用Excel格式的文件。在这种情况下，推荐使用roo进行Excel的读取，使用caxlsx进行Excel的写入。</p><p><img src="https://user-images.githubusercontent.com/63479035/98529325-61aa4980-2275-11eb-9a2d-bd6eb6122003.png" alt="image"></p><a id="more"></a><h2 id="写入操作"><a href="#写入操作" class="headerlink" title="写入操作"></a>写入操作</h2><pre><code>require &apos;axlsx&apos;p = Axlsx::Package.newwb = p.workbookwb.add_worksheet(name: &apos;Worksheet1&apos;) do |sheet|  sheet.add_row [&apos;R1C1&apos;, &apos;R1C2&apos;, &apos;R1C3&apos;]  sheet.add_row [1, 2, 3]endp.serialize &apos;test.xlsx&apos;</code></pre><h2 id="读取操作"><a href="#读取操作" class="headerlink" title="读取操作"></a>读取操作</h2><pre><code>require &apos;roo&apos;rows = Roo::Spreadsheet.open(&apos;test.xlsx&apos;)rows.each_with_index { |row, index|  puts &quot;#{row[0]}, #{row[1]}, #{row[2]}&quot;}    </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      如何在Ruby中读写Excel Spreadsheet
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://www.aafeng.uk/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Just dance</title>
     <link href="https://www.aafeng.uk/justdance/"/>
     <id>https://www.aafeng.uk/justdance/</id>
-    <published>2020-11-08T22:25:36.454Z</published>
-    <updated>2020-11-08T22:25:36.454Z</updated>
+    <published>2020-11-09T10:03:00.932Z</published>
+    <updated>2020-11-09T10:03:00.932Z</updated>
     
-    <content type="html"><![CDATA[<p>最近家中新买了一个XBox上的健身游戏：Just dance。于是全家都有了一个共同爱好，跳舞。。。</p><p><img src="https://user-images.githubusercontent.com/63479035/98472218-8d7fed80-21e9-11eb-91af-dfd2fee4476c.png" alt="image"></p><p><img src="https://user-images.githubusercontent.com/63479035/98472227-9d97cd00-21e9-11eb-8717-d1e0dbaf1756.png" alt="image"></p><p>最早的时候无论大人还是孩子，都是跟着“PE with Joe”做各种健身操的。可以说“PE with Joe”还是很专业的，只要照着做，不仅能够健身，还能减肥。但对于孩子来说，PE with Joe的吸引力还不够。</p><p>但在一个偶然的机会看到朋友圈中有人推荐Just dance这个游戏。这个游戏最大的亮点就是把趣味性和健身结合到了一起。尤其对于孩子，就在游戏当中达到了健身的目的。</p><p>最早在Youtube上跟着一些免费视频跳。但是这些视频其实都是别人在跳的时候录制的。屏幕上显示的分数都是别人的。因此缺少了互动性。孩子们也有些失望，毕竟无论跳的好坏，最后的得分都是一样的。</p><p>后来看到孩子们这么喜欢这个游戏，又是就购买了一个付费版本的游戏。在这个游戏中，可以通过智能手机上的客户端连接到Justdance的服务器。在每个游戏中可以根据参与者的表现来打分。</p><p>同时游戏的趣味性大大增加，比如可以选择各种流行歌曲，也可以选择各种主题，比如：Frozen冰雪奇缘，万圣节，圣诞节等等。这样，孩子们就可以和自己喜欢的角色一同跳舞。游戏中还有一个最为吸引人的部分就是可以和世界各地的游戏玩家PK，在每支舞中看看谁的得分最高，排名如何。让参与者感觉是和其他的真人在同台竞技。</p><p>感觉自从疫情开始后，这种类似的虚拟网络游戏应该要火爆很多吧。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近家中新买了一个XBox上的健身游戏：Just dance。于是全家都有了一个共同爱好，跳舞。。。</p><p><img src="https://user-images.githubusercontent.com/63479035/98472218-8d7fed80-21e9-11eb-91af-dfd2fee4476c.png" alt="image"></p><a id="more"></a><p><img src="https://user-images.githubusercontent.com/63479035/98472227-9d97cd00-21e9-11eb-8717-d1e0dbaf1756.png" alt="image"></p><p>最早的时候无论大人还是孩子，都是跟着“PE with Joe”做各种健身操的。可以说“PE with Joe”还是很专业的，只要照着做，不仅能够健身，还能减肥。但对于孩子来说，PE with Joe的吸引力还不够。</p><p>但在一个偶然的机会看到朋友圈中有人推荐Just dance这个游戏。这个游戏最大的亮点就是把趣味性和健身结合到了一起。尤其对于孩子，就在游戏当中达到了健身的目的。</p><p>最早在Youtube上跟着一些免费视频跳。但是这些视频其实都是别人在跳的时候录制的。屏幕上显示的分数都是别人的。因此缺少了互动性。孩子们也有些失望，毕竟无论跳的好坏，最后的得分都是一样的。</p><p>后来看到孩子们这么喜欢这个游戏，又是就购买了一个付费版本的游戏。在这个游戏中，可以通过智能手机上的客户端连接到Justdance的服务器。在每个游戏中可以根据参与者的表现来打分。</p><p>同时游戏的趣味性大大增加，比如可以选择各种流行歌曲，也可以选择各种主题，比如：Frozen冰雪奇缘，万圣节，圣诞节等等。这样，孩子们就可以和自己喜欢的角色一同跳舞。游戏中还有一个最为吸引人的部分就是可以和世界各地的游戏玩家PK，在每支舞中看看谁的得分最高，排名如何。让参与者感觉是和其他的真人在同台竞技。</p><p>感觉自从疫情开始后，这种类似的虚拟网络游戏应该要火爆很多吧。</p>]]></content>
     
     <summary type="html">
     
@@ -398,26 +420,6 @@
     <summary type="html">
     
       选择
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>丰收</title>
-    <link href="https://www.aafeng.uk/harvest/"/>
-    <id>https://www.aafeng.uk/harvest/</id>
-    <published>2020-09-27T11:27:52.794Z</published>
-    <updated>2020-09-27T11:27:52.794Z</updated>
-    
-    <content type="html"><![CDATA[<p>秋天到了，家中苹果树上的苹果已经开始陆续成熟，掉在了地上。收获季节开始了，可以开始不断收获家中自己种植的苹果和梨了。</p><p><img src="/images/life/harvest1.jpg" alt></p><p><img src="/images/life/harvest2.jpg" alt></p><p>自从搬到现在的House之后，由于后花园很大，因此专门开辟出一块菜地，基本上每年都会种一些蔬菜。同时也栽种了苹果，梨，李子等果树。</p><p>说起来很有意思。当地英国人更喜欢种花种草，把自己的花园装扮的更加漂亮。而我接触到的很多留英华人家庭则更倾向于种植各种蔬菜水果，自给自足。还有一些超级喜欢种菜的人，甚至可以从政府租赁一块菜地，叫做allotment。这种allotment经常需要排队很长时间才能轮到。</p><p>说到蔬菜品种的选择，其实很多华人都是颇费心思的，不远万里的从国内带来了各种菜籽。我也曾经带过来一些菜籽，但后来也就习惯从英国这里直接购买了。</p><p>我个人更喜欢种一些不太需要打理的蔬菜，比如：小葱，韭菜，西红柿，角瓜，四季豆等。尤其是韭菜，尽管在英国当地的华人超市中可以买到，但其价格较贵。因此很多人选择在自己家中种植。我自家的韭菜，基本上每年也就施施肥，浇浇水就可以吃到韭菜盒子和韭菜馅饺子了。也种过角瓜，扁豆等菜，但往往虫子的速度总比我快，菜长好后往往先被虫子吃了。</p><p>除了家中的苹果树，梨树，还种了草莓，黑莓，覆盆子，和蓝莓。对于前三种水果，其生长速度是惊人的，其根茎经常会疯狂侵占周边的空地。因此反倒是要想办法限制它们的生长。</p><p>自从今年疫情开始，有了更多时间在家，打算专门再开辟几块菜地，多体验一下丰收的快乐。</p>]]></content>
-    
-    <summary type="html">
-    
-      丰收
     
     </summary>
     
