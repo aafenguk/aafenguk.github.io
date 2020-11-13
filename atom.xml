@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-11-12T14:41:33.240Z</updated>
+  <updated>2020-11-13T10:03:25.464Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>由VPS到无服务器的迁移之旅-计划</title>
+    <link href="https://www.aafeng.uk/from-vps-to-serverless-planning/"/>
+    <id>https://www.aafeng.uk/from-vps-to-serverless-planning/</id>
+    <published>2020-11-13T10:03:25.464Z</published>
+    <updated>2020-11-13T10:03:25.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>算算自己租赁VPS的时间已经有好多年了。在VPS上主要做两类事情，一类是跑一些cron job，这个需要一个不间断运行的服务器。另一类是测试一些自己感兴趣的技术，和一些side projects。但自从越来越多的接触无服务器架构后，感觉似乎没有必要再继续使用VPS了。</p><p><img src="https://user-images.githubusercontent.com/63479035/99056896-e4434980-2592-11eb-9be8-856e26cd5d74.png" alt="image"></p><p>首先来说说使用VPS的缺点。</p><p>第一点就是需要不停的维护VPS上的各种软件，比如升级版本，安全补丁。最为头疼的就是当操作系统的版本需要升级了，需要把VPS彻底重新升级一下，再把原来就操作系统上的应用全部安装，配置一遍。在这个过程中可能面临各种版本冲突。。。反正我每次升级操作系统，就没有顺利过。。。</p><p>第二点就是费用。VPS的费用可以说是从几美元，到几十，甚至上百美元每月的都有。自己选择了一个不是特别贵，但也不便宜的VPS。月付之后，感觉利用率并不高。也就是说性价比很低。</p><p>还有就是性能问题。毕竟是和别人共享主机资源。如果遇到了一个比较“忙”的邻居，你的VPS性能就会急剧下降。在我的VPS就曾经出现过两三次，登陆后键入一个ls命令之后要等上几秒钟才有反应。。。</p><p>那么，升级到无服务器架构有什么优势呢？</p><p>首先，也是我最为喜欢的，就是再也不用担心操作系统版本升级的问题了，也不用考虑各种安全补丁了。。。这些维护工作都有提供商负责了。对于最终用户，既然无服务器，自然就没有任何需要维护的了。YEAH！</p><p>关于费用问题，我在使用了一段时间的AWS之后，感觉费用还是很低的。我这里说的不是那些EC2，而是AWS中的诸多微服务，比如Lambda, APIGateway之类的。</p><p>接下来就要开始这个迁移了。希望一切顺利，在目前使用的VPS操作系统被迫升级之前全部搞完。</p>]]></content>
+    
+    <summary type="html">
+    
+      由VPS到无服务器的迁移之旅-计划
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>最近尝试的菜谱</title>
@@ -400,26 +422,6 @@
     <summary type="html">
     
       苹果
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>幸运</title>
-    <link href="https://www.aafeng.uk/lucky/"/>
-    <id>https://www.aafeng.uk/lucky/</id>
-    <published>2020-09-28T20:12:44.428Z</published>
-    <updated>2020-09-28T20:12:44.428Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在给孩子讲睡前故事的时候，讲到了一个“亨利爷爷找幸运“的故事。这也让我在想，我自己是不是也足够幸运呢？</p><p><img src="/images/life/lucky.jpg" alt><br><a id="more"></a></p><p>在故事中，亨利爷爷习惯每天晚上给孙子艾米讲睡前故事，也会回答孙子的各种问题。无论艾米问出如何奇怪的问题来，亨利爷爷都能给出一个满意的答案。</p><p>但在一天晚上，艾米问了爷爷一个问题：什么是幸运？亨利爷爷一下子不知道该怎么解释了。他想了许久都没有想出答案。在第二天的时候，亨利爷爷去图书馆翻看了很多书，也没能找到答案。</p><p>在回家的路上，亨利爷爷突然豁然开朗了，对于不同的人来说，幸运的定义是不一样的。对于热恋中的情侣来说，能和对方相守，就是最大的幸运。对于一个孩子来说，能够有亲人的照顾就是最大的幸运。对于一位商人来说，能够把商品销售给客户就是幸运。对于一个流浪汉来说，能够在饥肠辘辘的时候收到亨利爷爷送给他的苹果馅饼就是幸运。正在想着，亨利爷爷穿过马路的时候闯了红灯，还好，在路上行驶的汽车司机踩了急刹车把车停下了，没有撞到亨利爷爷。亨利爷爷不禁在想，我真的是太幸运了。</p><p>其实正像故事中所说的，每个人对于幸运的定义都是不一样的。甚至对于同一个人，在不同时候对于幸运的定义也是不一样的。</p><p>就拿我家的房屋扩建工程来说，我感觉我是十分幸运的。在英国疫情被初步控制的时候，我家的扩建工程正式开始动工。整个工程持续了14周，在上周正式结束，而现在又出现了疫情反扑。我家相当于正好在两拨疫情的间隙把扩建工程做完了。从整个角度来说，我确实是非常幸运的。</p><p>在目前的大形势下，可能很多人期待的最幸运的事就是能够全家人都平平安安的工作，生活，和学习。真心希望大家都能够幸运，岁月静好。</p>]]></content>
-    
-    <summary type="html">
-    
-      幸运
     
     </summary>
     
