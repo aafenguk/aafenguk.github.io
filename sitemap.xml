@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/dynamodb-joins/</loc>
+    
+    <lastmod>2020-11-20T23:41:36.821Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/recipes/</loc>
     
-    <lastmod>2020-11-20T17:30:43.573Z</lastmod>
+    <lastmod>2020-11-20T23:18:45.841Z</lastmod>
     
   </url>
   
