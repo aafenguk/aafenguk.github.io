@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-11-22T10:35:08.403Z</updated>
+  <updated>2020-11-23T12:06:27.146Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于DynamoDB的一个误解 - 多表查询</title>
+    <link href="https://www.aafeng.uk/dynamodb-joins/"/>
+    <id>https://www.aafeng.uk/dynamodb-joins/</id>
+    <published>2020-11-23T12:06:27.146Z</published>
+    <updated>2020-11-23T12:06:27.146Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚开始接触到DynamoDB的时候，对它有一种误解：和传统的关系型数据库相比，使用DynamoDB无法有效的进行多表查询。</p><p><img src="https://user-images.githubusercontent.com/63479035/99859907-721dc680-2b89-11eb-8af7-91f5a4c28e35.png" alt="image"></p><a id="more"></a><p>但随着学习的深入，慢慢明白了，其实DynamoDB和传统关系型数据库可以说是各有所长。DynamoDB如果设计上没有问题，可以进行类似的多表查询，而且效率奇高。但对于超级复杂的多表查询，DyanmoDB并不擅长，这是关系型数据库最为擅长的。</p><p>其实，说到DynamoDB，其最大的优点包括：</p><ul><li>由于基于键/值对的设计，其查询效率超高</li><li>基于AWS serverless，无维护成本</li><li>可以auto-scaling，可扩展性好</li></ul><p>在传统的关系型数据库中，要进行多表查询，往往会把不同表中的数据通过外键关联之后再进行查询。这样就可以组合出非常灵活的查询条件来。</p><p>在NoSQL数据库中，其设计思路从根本上是不同的。因此如果用传统的关系型数据库设计思路来理解，就会很难理解。比如在DynamoDB中，可以把在关系型数据库中的多个表放入在DynamoDB的一个表中，再通过Partition Key, Sort Key以及Global Secondary Index进行”多表“查询。</p><p>可以这么说吧，如果DynamoDB在设计时考虑到了这种组合查询的话，在后期进行开发的时候是没有问题的。由于DynamoDB是完全基于键/值进行存储的，因此其查询速度超快。但对于设计时没有考虑到的字段，就无法进行这种查询了。</p><p>因此，总结一下：如果有大量多表之间的复杂查询，选择关系型数据库。如果只是简单的”多表“查询，则应该选择NoSQL。可以这么说，90%左右的数据库选用NoSQL更为适合。只有10%左右的用例更适合选择关系型数据库。</p>]]></content>
+    
+    <summary type="html">
+    
+      关于DynamoDB的一个误解 - 多表查询
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>放过烂人烂事，其实就是放过自己</title>
     <link href="https://www.aafeng.uk/forgive-yourself/"/>
     <id>https://www.aafeng.uk/forgive-yourself/</id>
-    <published>2020-11-22T10:35:08.403Z</published>
-    <updated>2020-11-22T10:35:08.403Z</updated>
+    <published>2020-11-23T12:06:17.514Z</published>
+    <updated>2020-11-23T12:06:17.514Z</updated>
     
-    <content type="html"><![CDATA[<p>前一段提到过，在更换家中户门的时候，遭遇了一个奇葩的人。和他面对面交流的时候，感觉人很好也很靠谱。但和他打电话预约装门时间的时候，却连续放了我三次鸽子。这两天终于下定决心，不再和这个烂人纠缠。哪怕再找一个更贵一些的公司，也认了。</p><p><img src="https://user-images.githubusercontent.com/63479035/99901303-ae4a4780-2cad-11eb-8eea-74b702cbeb96.png" alt="image"><br>Source: Pixabay</p><p>最开始的时候，还想过要投诉他。毕竟像他这样对客户的，我到了英国这么多年还是头一次见过。但给他公司打电话之后才知道他就是老板。当然，在英国这里还有很多行业的监管机构，但却费时费力，到底要不要投诉？</p><p>后来慢慢想通了，我的时间有限，该做的事情又不少，干嘛把时间和经历浪费在这种人身上呢？就算真的去投诉他。要花费自己不少时间和精力，同时还影响自己的心情。</p><p>其实，在生活中难免会遇到各种各样不顺心的事情。这个时候就有两个选择：花时间和精力去较真，或者不与之纠缠，把精力集中到自己该做的事情上。</p><p>在这个时候就需要仔细考虑了，当前的烦心事真的需要花费时间和精力去做吗？自己是不是还有更重要的事情去做？有个成语叫做：退一步海阔天空。现在随着年龄的增长，慢慢体会到了它的含义。有的时候，退一步并不代表委曲求全，而是不要把精力和时间浪费到不该浪费的事情上。</p><p>举个最简单的例子：如果在街上有一只狗冲你叫了几声，在经历过短暂的惊吓之后，难道你要和它计较吗？</p><p>还曾经听过一个更为极端的例子。有位男士生活非常美满，事业有成，家庭幸福。但有一次在行车的时候自己的车被另外一个人刮蹭了一下。他觉得过错100%在于对方，于是下车理论，两人越吵越厉害，最后动起了手。这位男士受伤后被送到医院，最终不治身亡，留下了伤心欲绝的妻儿。</p><p>我想，如果这位男士能够重新选择的话，应该不会再犯同样的错误了吧？他和一个烂人争执，最终受害的是自己和家人。如果当时退一步的话，自己还有大把的美好人生和自己心爱的人一起度过，难道不好吗？</p><p>慢慢的，我明白了这个道理，如果遇到了一些烦心事，可以考虑退一步，毕竟放过那些烂人烂事，就是放过自己。</p>]]></content>
+    <content type="html"><![CDATA[<p>前一段提到过，在更换家中户门的时候，遭遇了一个奇葩的人。和他面对面交流的时候，感觉人很好也很靠谱。但和他打电话预约装门时间的时候，却连续放了我三次鸽子。这两天终于下定决心，不再和这个烂人纠缠。哪怕再找一个更贵一些的公司，也认了。</p><p><img src="https://user-images.githubusercontent.com/63479035/99901303-ae4a4780-2cad-11eb-8eea-74b702cbeb96.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>最开始的时候，还想过要投诉他。毕竟像他这样对客户的，我到了英国这么多年还是头一次见过。但给他公司打电话之后才知道他就是老板。当然，在英国这里还有很多行业的监管机构，但却费时费力，到底要不要投诉？</p><p>后来慢慢想通了，我的时间有限，该做的事情又不少，干嘛把时间和经历浪费在这种人身上呢？就算真的去投诉他。要花费自己不少时间和精力，同时还影响自己的心情。</p><p>其实，在生活中难免会遇到各种各样不顺心的事情。这个时候就有两个选择：花时间和精力去较真，或者不与之纠缠，把精力集中到自己该做的事情上。</p><p>在这个时候就需要仔细考虑了，当前的烦心事真的需要花费时间和精力去做吗？自己是不是还有更重要的事情去做？有个成语叫做：退一步海阔天空。现在随着年龄的增长，慢慢体会到了它的含义。有的时候，退一步并不代表委曲求全，而是不要把精力和时间浪费到不该浪费的事情上。</p><p>举个最简单的例子：如果在街上有一只狗冲你叫了几声，在经历过短暂的惊吓之后，难道你要和它计较吗？</p><p>还曾经听过一个更为极端的例子。有位男士生活非常美满，事业有成，家庭幸福。但有一次在行车的时候自己的车被另外一个人刮蹭了一下。他觉得过错100%在于对方，于是下车理论，两人越吵越厉害，最后动起了手。这位男士受伤后被送到医院，最终不治身亡，留下了伤心欲绝的妻儿。</p><p>我想，如果这位男士能够重新选择的话，应该不会再犯同样的错误了吧？他和一个烂人争执，最终受害的是自己和家人。如果当时退一步的话，自己还有大把的美好人生和自己心爱的人一起度过，难道不好吗？</p><p>慢慢的，我明白了这个道理，如果遇到了一些烦心事，可以考虑退一步，毕竟放过那些烂人烂事，就是放过自己。</p>]]></content>
     
     <summary type="html">
     
@@ -37,24 +59,22 @@
   </entry>
   
   <entry>
-    <title>关于DynamoDB的一个误解 - 多表查询</title>
-    <link href="https://www.aafeng.uk/dynamodb-joins/"/>
-    <id>https://www.aafeng.uk/dynamodb-joins/</id>
-    <published>2020-11-20T23:41:36.821Z</published>
-    <updated>2020-11-20T23:41:36.821Z</updated>
+    <title>如何在Ruby on Rails的项目中使用React</title>
+    <link href="https://www.aafeng.uk/how-to-add-react-to-ror/"/>
+    <id>https://www.aafeng.uk/how-to-add-react-to-ror/</id>
+    <published>2020-11-23T12:06:05.586Z</published>
+    <updated>2020-11-23T12:06:05.586Z</updated>
     
-    <content type="html"><![CDATA[<p>刚开始接触到DynamoDB的时候，对它有一种误解：和传统的关系型数据库相比，使用DynamoDB无法有效的进行多表查询。</p><p><img src="https://user-images.githubusercontent.com/63479035/99859907-721dc680-2b89-11eb-8af7-91f5a4c28e35.png" alt="image"></p><p>但随着学习的深入，慢慢明白了，其实DynamoDB和传统关系型数据库可以说是各有所长。DynamoDB如果设计上没有问题，可以进行类似的多表查询，而且效率奇高。但对于超级复杂的多表查询，DyanmoDB并不擅长，这是关系型数据库最为擅长的。</p><p>其实，说到DynamoDB，其最大的优点包括：</p><ul><li>由于基于键/值对的设计，其查询效率超高</li><li>基于AWS serverless，无维护成本</li><li>可以auto-scaling，可扩展性好</li></ul><p>在传统的关系型数据库中，要进行多表查询，往往会把不同表中的数据通过外键关联之后再进行查询。这样就可以组合出非常灵活的查询条件来。</p><p>在NoSQL数据库中，其设计思路从根本上是不同的。因此如果用传统的关系型数据库设计思路来理解，就会很难理解。比如在DynamoDB中，可以把在关系型数据库中的多个表放入在DynamoDB的一个表中，再通过Partition Key, Sort Key以及Global Secondary Index进行”多表“查询。</p><p>可以这么说吧，如果DynamoDB在设计时考虑到了这种组合查询的话，在后期进行开发的时候是没有问题的。由于DynamoDB是完全基于键/值进行存储的，因此其查询速度超快。但对于设计时没有考虑到的字段，就无法进行这种查询了。</p><p>因此，总结一下：如果有大量多表之间的复杂查询，选择关系型数据库。如果只是简单的”多表“查询，则应该选择NoSQL。可以这么说，90%左右的数据库选用NoSQL更为适合。只有10%左右的用例更适合选择关系型数据库。</p>]]></content>
+    <content type="html"><![CDATA[<p>下面总结一下如何在一个Ruby on Rails的项目中通过<a href="https://github.com/reactjs/react-rails" rel="external nofollow noopener noreferrer" target="_blank">react-rails</a>添加对React的支持。</p><p><img src="https://user-images.githubusercontent.com/63479035/99960108-208d5b80-2d84-11eb-8eff-4275ef44bb5e.png" alt="image"></p><a id="more"></a><p>首先在Gemfile中添加：</p><pre><code>gem &apos;webpacker&apos;gem &apos;react-rails&apos;</code></pre><p>接下来运行：</p><pre><code>bundle install</code></pre><p>运行：<br>    rails webpacker:install      </p><p>如果提示Node版本过低的话，更新至最新版本：</p><pre><code>nvm install v14.15.1</code></pre><p>再重新运行：</p><pre><code>rails webpacker:install  </code></pre><p>运行:</p><pre><code>rails webpacker:install:react rails generate react:install</code></pre><p>如果在运行最后一条命令的时候遇到错误：<br>    Running via Spring preloader in process 4175<br>    Could not find generator ‘react:install’. Maybe you meant ‘qa:install’, ‘rspec:install’ or      ‘devise:install’<br>    Run <code>rails generate --help</code> for more options.</p><p>可以运行如下命令来修复：<br>    spring stop</p><p>接下来就可以尝试创建一个组件：<br>    rails g react:component HelloWorld greeting:string</p><p>创建成功后如果需要在.erb文件中使用React组件：</p><pre><code>&lt;%= javascript_pack_tag &apos;application&apos; %&gt;&lt;%= react_component(&quot;HelloWorld&quot;, { greeting: &quot;Hello from react-rails.&quot; }) %&gt;</code></pre>]]></content>
     
     <summary type="html">
     
-      关于DynamoDB的一个误解 - 多表查询
+      如何在Ruby on Rails的项目中使用React
     
     </summary>
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
@@ -407,28 +427,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>在AWS资源中使用tag</title>
-    <link href="https://www.aafeng.uk/aws-tags/"/>
-    <id>https://www.aafeng.uk/aws-tags/</id>
-    <published>2020-10-01T09:32:45.573Z</published>
-    <updated>2020-10-01T09:32:45.573Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天收到AWS的账单，发现按照项目分类的账单明细中，有些项目没有添加特定的标签，以至于相应的费用不是很清楚。比如：不清楚那些“UNTAGGED”的资源都是在哪些项目中创建的。如果费用接近或超出预算，是需要查找原因的。</p><p><img src="/images/technology/aws/tags-1.png" alt><br><a id="more"></a></p><p>相信使用过AWS的人可能都有一个感觉，就是“乱”。在AWS中的各种计算资源太过庞杂。而创建一个服务或者APP所需使用的AWS服务又是各种各样的。因此在开始接触AWS的时候总是不清楚最终费用可能是多少。即使账单出来了，也很难一目了然的看到究竟是哪个项目的运营成本更高。</p><p>AWS的tag（标签）就可以解决上述问题。其实，在AWS中的所有资源都应该添加标签(tag)。这样便于按照标签对资源进行分类和管理。在越来越多的使用AWS资源时，这种方式绝对能够帮我们更好的管理各种资源。</p><p>在AWS种使用tag时，最好事先约定好一个规则。比如：</p><ul><li>tag名称全部用小写字母和下划线</li><li>tag值全部全部用小写字母和下划线</li></ul><p>也可以规定一些必填的tag，比如：</p><ul><li>user: 你的用户名</li><li>team: 定义自己所属的团队</li><li>project: 哪个项目使用这个资源</li><li>status: 这个资源是用于那种环境的，比如：prod, test, 或者dev</li><li>source: AWS资源的创建方式，比如：manual(手工), serverless, cloudformation </li></ul><p>至于tag的创建，就非常简单了。你可以在每种资源中分别定义这些tag。以Lambda为例，我们可以在定义Lambda的时候同时添加tag：</p><p><img src="/images/technology/aws/tags-2.png" alt></p><p>只不过上面这种方式比较麻烦，如果一个一个的资源的添加的话非常耗时。最好的方式还是使用一些框架，比如serverless，在其配置文件中定义这些tag。比如：</p><pre><code>provider:    name: XXX    tags:      project: your_project      group: your_group      team: your_team</code></pre><p>上面的tags是全局性的，如果只想针对某个资源定义tag：</p><pre><code>functions:  myFunction:    name: myFunction    handler: myFunction.handler    tags:      tag1: value1      tag2: value2</code></pre><p>有了这些tag，以后在管理AWS资源的时候就事半功倍了。</p>]]></content>
-    
-    <summary type="html">
-    
-      在AWS资源中使用tag
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
