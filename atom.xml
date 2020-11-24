@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-11-23T15:09:06.048Z</updated>
+  <updated>2020-11-23T16:11:26.228Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AWS学习资源总结</title>
+    <link href="https://www.aafeng.uk/aws-learning-resources/"/>
+    <id>https://www.aafeng.uk/aws-learning-resources/</id>
+    <published>2020-11-23T16:11:26.228Z</published>
+    <updated>2020-11-23T16:11:26.228Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面把AWS的学习资源总结了一下。这个列表会不断更新。</p><p><img src="/images/technology/aws/aws.png" alt><img src="/images/technology/aws/aws.png" alt></p><a id="more"></a><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><a href="https://www.aws.training/Details/eLearning?id=42594" rel="external nofollow noopener noreferrer" target="_blank">Architecting Serverless Solutions</a></p><h2 id="Dynamodb"><a href="#Dynamodb" class="headerlink" title="Dynamodb"></a>Dynamodb</h2><p><a href="https://www.dynamodbguide.com/what-is-dynamo-db" rel="external nofollow noopener noreferrer" target="_blank">https://www.dynamodbguide.com/what-is-dynamo-db</a><br><a href="https://www.dynamodbguide.com/" rel="external nofollow noopener noreferrer" target="_blank">https://www.dynamodbguide.com/</a><br><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html" rel="external nofollow noopener noreferrer" target="_blank">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html</a><br><a href="https://hub.docker.com/r/amazon/dynamodb-local/" rel="external nofollow noopener noreferrer" target="_blank">https://hub.docker.com/r/amazon/dynamodb-local/</a><br><a href="https://www.youtube.com/watch?v=HaEPXoXVf2k&amp;ab_channel=AmazonWebServices" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=HaEPXoXVf2k&amp;ab_channel=AmazonWebServices</a><br><a href="https://www.youtube.com/watch?v=lh7q5hCrCSU&amp;list=PL6oNLEZTnXshgy4iHFULjYvcwbeMTotJp" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=lh7q5hCrCSU&amp;list=PL6oNLEZTnXshgy4iHFULjYvcwbeMTotJp</a><br><a href="https://www.youtube.com/watch?v=BnDKD_Zv0og" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=BnDKD_Zv0og</a></p><h2 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h2><p><a href="https://github.com/mthenw/awesome-layers" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mthenw/awesome-layers</a></p>]]></content>
+    
+    <summary type="html">
+    
+      AWS学习资源总结
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
+    
+      <category term="Lambda" scheme="https://www.aafeng.uk/tags/Lambda/"/>
+    
+  </entry>
   
   <entry>
     <title>最近尝试的菜谱</title>
@@ -95,32 +121,6 @@
     
       <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>AWS学习资源总结</title>
-    <link href="https://www.aafeng.uk/aws-learning-resources/"/>
-    <id>https://www.aafeng.uk/aws-learning-resources/</id>
-    <published>2020-11-20T17:05:41.406Z</published>
-    <updated>2020-11-20T17:05:41.406Z</updated>
-    
-    <content type="html"><![CDATA[<p>下面把AWS的学习资源总结了一下。这个列表会不断更新。</p><p><img src="/images/technology/aws/aws.png" alt><img src="/images/technology/aws/aws.png" alt></p><a id="more"></a><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><a href="https://www.aws.training/Details/eLearning?id=42594" rel="external nofollow noopener noreferrer" target="_blank">Architecting Serverless Solutions</a></p><h2 id="Dynamodb"><a href="#Dynamodb" class="headerlink" title="Dynamodb"></a>Dynamodb</h2><p><a href="https://www.dynamodbguide.com/what-is-dynamo-db" rel="external nofollow noopener noreferrer" target="_blank">https://www.dynamodbguide.com/what-is-dynamo-db</a><br><a href="https://www.dynamodbguide.com/" rel="external nofollow noopener noreferrer" target="_blank">https://www.dynamodbguide.com/</a><br><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html" rel="external nofollow noopener noreferrer" target="_blank">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html</a><br><a href="https://hub.docker.com/r/amazon/dynamodb-local/" rel="external nofollow noopener noreferrer" target="_blank">https://hub.docker.com/r/amazon/dynamodb-local/</a><br><a href="https://www.youtube.com/watch?v=HaEPXoXVf2k&amp;ab_channel=AmazonWebServices" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=HaEPXoXVf2k&amp;ab_channel=AmazonWebServices</a><br><a href="https://www.youtube.com/watch?v=lh7q5hCrCSU&amp;list=PL6oNLEZTnXshgy4iHFULjYvcwbeMTotJp" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=lh7q5hCrCSU&amp;list=PL6oNLEZTnXshgy4iHFULjYvcwbeMTotJp</a></p><h2 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h2><p><a href="https://github.com/mthenw/awesome-layers" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mthenw/awesome-layers</a></p>]]></content>
-    
-    <summary type="html">
-    
-      AWS学习资源总结
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-      <category term="Lambda" scheme="https://www.aafeng.uk/tags/Lambda/"/>
     
   </entry>
   

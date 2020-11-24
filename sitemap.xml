@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/aws-learning-resources/</loc>
+    
+    <lastmod>2020-11-23T16:11:26.228Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/recipes/</loc>
     
     <lastmod>2020-11-23T15:09:06.048Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://www.aafeng.uk/how-to-add-react-to-ror/</loc>
     
     <lastmod>2020-11-23T12:06:05.586Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aafeng.uk/aws-learning-resources/</loc>
-    
-    <lastmod>2020-11-20T17:05:41.406Z</lastmod>
     
   </url>
   
