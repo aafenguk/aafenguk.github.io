@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-12-09T17:48:57.900Z</updated>
+  <updated>2020-12-11T17:54:12.688Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在DynamoDB中使用GSI</title>
+    <link href="https://www.aafeng.uk/dynamodb-gsi/"/>
+    <id>https://www.aafeng.uk/dynamodb-gsi/</id>
+    <published>2020-12-11T17:54:12.688Z</published>
+    <updated>2020-12-11T17:54:12.688Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于DynamoDB是一个基于键/值方式存储的数据库，因此其性能卓越，能够快速返回待查询的信息。不过，当要进行稍微复杂查询的时候，就要在设计初期考虑清楚，其Partition Key(PK)，Sort Key(SK)，以及Global Secondary Index(GSI)的设计了。</p><p><img src="/images/technology/aws/DynamoDB.png" alt><br><a id="more"></a></p><p>下面举一个例子来说明：</p><p>首先创建一个表：students<br>Partition key: StudentId<br>Sort key: RegistrationDate<br>普通字段：OriginCountry</p><p>这个例子主要是说明GSI是如何使用的。因此不要在数据库设计上较真。</p><p>之所以这么说，是因为在DynamoDB的数据库设计中，尤其是其PK和SK的命名尽量要保证能够描述所有即将保存的数据。这点和传统的关系型数据库不同。在关系型数据库中，把不同的信息保存在不同表中，再建立表和表之间的关系。但在DyanmoDB中，可以把很多不同种类的信息放入同一个表中。比如：学生的基本信息，考试成绩可以放在同一个表中。这里的PK描述的是“这是关于谁的信息”，而SK描述的是这个信息是关于什么的。这也是为什么PK叫做Partition Key的原因了，如果用DynamoDB存储海量数据，那么不同PK值对应的数据可能存储在不同的分区中，在同一个分区中，则可以使用SK快速定位数据。</p><h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><p>添加如下的记录到上面的表中：</p><p><img src="https://user-images.githubusercontent.com/63479035/101931726-bb35c900-3bd1-11eb-8e44-3f2fb8c280d7.png" alt="image"></p><p>可以使用AWS DynamoDB控制台来手动添加数据，也可以通过编码方式来实现。比如，在Node.js中通过编码方式实现数据的添加：</p><p>首先，将KEY/SECRET添加到.env文件中。其文件内容为：</p><pre><code>KEY=XXXXSECRET=XXXX</code></pre><p>运行如下Node代码添加一条记录：</p><pre><code>const AWS = require(&apos;aws-sdk&apos;)require(&apos;dotenv&apos;).config({path: &apos;.env&apos;})const dynamoDb = new AWS.DynamoDB.DocumentClient({  region: &apos;eu-west-1&apos;,  credentials: {    accessKeyId: process.env.KEY,    secretAccessKey: process.env.SECRET  }})const addItem = async data =&gt; {  const params = {    TableName: &apos;test&apos;,    Item: {      StudentId: &apos;20200106&apos;,      RegistrationDate: &apos;2020-01-02 09:08:30&apos;,      OriginCountry: &apos;China&apos;    }  }  await dynamoDb.put(params).promise()}addItem()</code></pre><h2 id="通过get查询单一数据"><a href="#通过get查询单一数据" class="headerlink" title="通过get查询单一数据"></a>通过get查询单一数据</h2><pre><code>const AWS = require(&apos;aws-sdk&apos;)require(&apos;dotenv&apos;).config({path: &apos;.env&apos;})const dynamoDb = new AWS.DynamoDB.DocumentClient({  region: &apos;eu-west-1&apos;,  credentials: {    accessKeyId: process.env.KEY,    secretAccessKey: process.env.SECRET  }})const getItem = async data =&gt; {    const params = {      TableName: &quot;students&quot;,      Key: {        StudentId: &apos;20200101&apos;,        RegistrationDate: &apos;2020-01-02 09:01:00&apos;      }    }    const result = await dynamoDb.get(params).promise()    return result.Item}getItem().then(x =&gt; {    console.log(x)})</code></pre><p>运行后返回结果：</p><p>{ RegistrationDate: ‘2020-01-02 09:01:00’,<br>  OriginCountry: ‘UK’,<br>  StudentId: ‘20200101’ }</p><h2 id="使用GSI进行多维度查询"><a href="#使用GSI进行多维度查询" class="headerlink" title="使用GSI进行多维度查询"></a>使用GSI进行多维度查询</h2><p>现在问题来了，如果我们想要查询所有来自于“UK”的学生，怎么办？目前只有一个笨办法：Scan。也就是一条一条记录的读取比较。可以想象，如果数据量比较大的时候，这种方式是不可行的。</p><p>如果要想高效查询的话，需要建立GSI。</p><p><img src="https://user-images.githubusercontent.com/63479035/101935369-e2db6000-3bd6-11eb-9528-2d6ddb1260ae.png" alt="image"></p><p>接下来就可以通过GSI进行查询了。</p><pre><code>const AWS = require(&apos;aws-sdk&apos;)require(&apos;dotenv&apos;).config({path: &apos;.env&apos;})const dynamoDb = new AWS.DynamoDB.DocumentClient({  region: &apos;eu-west-1&apos;,  credentials: {    accessKeyId: process.env.KEY,    secretAccessKey: process.env.SECRET  }})const getAllItems = async data =&gt; {  const params = {    TableName: &apos;test&apos;,    IndexName: &apos;GSI1&apos;,    KeyConditionExpression: &apos;OriginCountry = :country AND begins_with(RegistrationDate, :date)&apos;,    ExpressionAttributeValues: {      &apos;:country&apos;: &apos;UK&apos;,      &apos;:date&apos;: &apos;2020&apos;    }  }  const result = await dynamoDb.query(params).promise()  return result.Items}getAllItems().then(x =&gt; {  console.log(x)})</code></pre><p>可以看到返回了多条记录：</p><pre><code>[ { RegistrationDate: &apos;2020-01-02 09:01:00&apos;,    OriginCountry: &apos;UK&apos;,    StudentId: &apos;20200101&apos; },  { RegistrationDate: &apos;2020-01-02 09:05:00&apos;,    OriginCountry: &apos;UK&apos;,    StudentId: &apos;20200102&apos; },  { RegistrationDate: &apos;2020-01-02 09:07:00&apos;,    OriginCountry: &apos;UK&apos;,    StudentId: &apos;20200104&apos; } ]</code></pre><p>总结一下，GSI其实就像是从另一个角度来建立PK。一旦建立了GSI，就可以像PK+SK一样，使用GSI+SK来快速检索数据。</p>]]></content>
+    
+    <summary type="html">
+    
+      在DynamoDB中使用GSI
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>英国圣诞传统饮品-Mulled Wine</title>
@@ -402,26 +424,6 @@
     <summary type="html">
     
       Conference pear
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>择校</title>
-    <link href="https://www.aafeng.uk/choose-school/"/>
-    <id>https://www.aafeng.uk/choose-school/</id>
-    <published>2020-10-05T19:58:54.489Z</published>
-    <updated>2020-10-05T19:58:54.489Z</updated>
-    
-    <content type="html"><![CDATA[<p>儿子马上要升中学了，作为家长，马上就要面临择校的问题了。究竟是选择公立学校还是私立学校？选择相对而言学术性较强的学校，还是注重培养孩子综合能力的学校，这真的是一个不太容易决断的问题。</p><p><img src="/images/life/school.jpg" alt><br><a id="more"></a></p><p>首先需要考虑的是学校是否有位置以及申请难度。英国的一些顶级公学需要提前很长时间进行申请。同时，很多私立学校都会组织自己命题的入学考试，因此更是需要提前很长时间开始准备。</p><p>如果是公立学校的话，英国这里基本上是按照住址进行分配。很幸运的是，我们当初选择当前住址的时候就考虑到这个因素，因此选择了一个非常好的学区房。我们按片分的初中就是一个非常好的公立中学，每年都会有一些考上牛津剑桥大学的学生，整体排名在全英国表现都不错。但公立学校的一个问题就是，学生太多了，老师再好，可能也不能照顾的面面俱到。</p><p>如果是私立学校的话，其老师和学生的比例相对更好一些。每个学生都能得到充分的照顾，进而挖掘出其潜力来。其组织的各种活动也很丰富。但我们周边的私立学校只能说还可以，并没有特别出色的私校。</p><p>在选择学校的时候还需要仔细看看学校的年度报告，看看每年学校的GCSE以及A Level成绩如何。这一点很能说明问题。同时还要看看学校是否每年都能有上顶级大学的学生，这也很能反映学校的教学质量。</p><p>当然，学校的师资力量也是要必须考虑的因素之一。而了解学校师资的最好方式就是参加学校的Open Day，和老师面对面的交流，直接问老师一些问题。现在由于疫情，大多数学校都改为虚拟的Open Day了，这就增加了了解老师的难度。</p><p>同时，一所学校的校长绝对是学校的灵魂。如果校长有一个非常高的视角，秉承一个好的办学理念，那么，这所学校才有可能办好。关于校长对学校的影响，可以说对于正反两方面的例子，我都曾经见到过。</p><p>总而言之，学校的选择，需要考虑的因素太多了。到现在为止我还没有一个明显的倾向。</p>]]></content>
-    
-    <summary type="html">
-    
-      择校
     
     </summary>
     
