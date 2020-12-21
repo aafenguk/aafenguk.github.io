@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2020-12-11T17:54:12.688Z</updated>
+  <updated>2020-12-21T08:03:49.580Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>放风 - 冷清的圣诞集市</title>
+    <link href="https://www.aafeng.uk/xmas-market/"/>
+    <id>https://www.aafeng.uk/xmas-market/</id>
+    <published>2020-12-21T08:03:49.580Z</published>
+    <updated>2020-12-21T08:03:49.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>算算已经好长时间没有带孩子出门了。听朋友说小城中心的灯光布置的非常漂亮，圣诞集市也开了，很有圣诞感觉。于是决定带孩子们去看看。</p><p><img src="https://user-images.githubusercontent.com/63479035/102750613-07b19f00-435e-11eb-9cd3-bffae1db2bee.png" alt="image"><br><a id="more"></a></p><p>其实做这个决定的时候也有些犹豫。后来想了想，圣诞灯光/集市是户外的，而且目前的人流远不如往年那么拥挤，如果带好口罩，注意防护，应该还行吧。毕竟长时间憋在家中，人都会憋坏的。</p><p>路过了几家酒店，和往年热闹的气氛相比，这些酒店门口都没有看到任何客人。甚至有的酒店大厅都黑着灯。今年的疫情给了旅游行业重创，希望这些酒店能够撑住这个行业的严冬。。。</p><p><img src="https://user-images.githubusercontent.com/63479035/102751733-3466b600-4360-11eb-8725-35205baff3d0.png" alt="image"></p><p>市中心最热闹的就那么几条步行街，很自然的就走到了圣诞集市。圣诞集市的摊贩似乎没有太大变化，卖食品，尤其是各种甜食的都还在，卖装饰品，家居用品的等等都还在。但那些卖新鲜肉的，鱼类的摊贩都没有了，可能是疫情导致的吧。</p><p>往年的圣诞集市可以说是熙熙攘攘，人挨着人，有的摊位前挤满了人，要想近前得话只能排队等。但今年的圣诞集市可以说是太冷清了。很多摊位前都没有人。极个别摊位前会有一两个人。我真的担心这些摊主们还能支撑下去吗？</p><p>在街边有好几家贩卖圣诞食物的摊位，主要就是各种饮品，包括Mulled Wine。往年我都会买上一杯，但今年想想还是算了吧。这边另外一种冬季特有的美食就是烤栗子。哎，也算了吧。</p><p>市中心唯一热闹的地方就是这个旋转木马。可以看到排队的人群都保持着社交距离，木马之间的距离应该也是安全的。同时每批人结束后，摊主都会进行消毒。从孩子们的眼神中能看到他们的渴望。但我还是说，这个还是算了吧，等疫情过去，再补回来。</p><p><img src="https://user-images.githubusercontent.com/63479035/102752592-af7c9c00-4361-11eb-9bf5-a98f81bd183a.png" alt="image"></p><p>尽管多了很多限制，但孩子们玩的还是非常开心的。毕竟对于他们而言，只要能出门，就已经很不错了。</p>]]></content>
+    
+    <summary type="html">
+    
+      放风 - 冷清的圣诞集市
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在DynamoDB中使用GSI</title>
@@ -404,26 +424,6 @@
     <summary type="html">
     
       与手机说再见
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Conference pear</title>
-    <link href="https://www.aafeng.uk/conference-pear/"/>
-    <id>https://www.aafeng.uk/conference-pear/</id>
-    <published>2020-10-05T20:00:58.840Z</published>
-    <updated>2020-10-05T20:00:58.840Z</updated>
-    
-    <content type="html"><![CDATA[<p>现在正好到了英国当地蔬果成熟的季节，除了前面提到过的各种苹果外，还有李子，无花果，和一种叫做Conference pear的梨。尤其是最后这种梨，是我全家最爱吃的水果之一。</p><p><img src="/images/life/pear.jpg" alt><br><a id="more"></a></p><p>当年父母来英国小住的时候，本地的食物，像Cheese，各种pie，英国国菜炸鱼薯条等，没有一样能让他们喜欢的。唯有这个Conference pear，过了很多年了仍然让他们念念不忘。</p><p>其实在国内的时候也吃过很多品种的梨，比如：(赵县？)雪花梨，新疆库尔勒香梨等。感觉除了雪花梨外，其他的梨都需要软了才好吃。</p><p>说到Conference Pear，很多人都会非常奇怪，为什么有这么一个怪异的名字？会议梨？其实这个梨的名字确实和会议有关。它的名字源于在1885年的时候，这种梨在伦敦的British Pear Conference（英国梨会议）中获奖从而获得了”Conference Pear”这个名字。</p><p>这种梨的果实是绿色和褐色相间的，彻底成熟后，果皮会泛黄。它在没有彻底成熟的时候就可以吃。那个时候是脆甜的。等到彻底成熟后，果汁绵软，甜蜜多汁，让然欲罢不能。而且，这种梨还有一个特点就是，梨核非常小，有时甚至都看不到种子。因此有些懒人直接把梨洗洗就全部吃下肚了。</p><p>由于成熟后的Conference Pear非常甜，因此也非常适合做冰糖梨水。如果偶尔咳嗽嗓子疼，多喝些熬制的冰糖梨水的话效果也是不错的。</p><p>俗话说”一方水土养一方人“。在英国生活多年，慢慢也适应了这边的饮食习惯，尤其是这种Conference Pear，偶尔回国住的时间长一些的时候，还会想起它来。</p>]]></content>
-    
-    <summary type="html">
-    
-      Conference pear
     
     </summary>
     
