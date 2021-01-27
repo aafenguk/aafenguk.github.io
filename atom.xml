@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-01-17T10:44:57.347Z</updated>
+  <updated>2021-01-26T23:07:35.445Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>说说英国的Quaker学校及其教育理念</title>
+    <link href="https://www.aafeng.uk/quaker/"/>
+    <id>https://www.aafeng.uk/quaker/</id>
+    <published>2021-01-26T23:07:35.445Z</published>
+    <updated>2021-01-26T23:07:35.445Z</updated>
+    
+    <content type="html"><![CDATA[<p>儿子申请的几所中学中有一所是Quaker学校。在这之前只是听过这个名字，没有太多印象。但这次不同了，仔细看了下学校的介绍，深深被其背后的理念所吸引。</p><p><img src="https://user-images.githubusercontent.com/63479035/105917705-a2229380-602a-11eb-92bf-71e8da2f93ce.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>在全世界范围内有很多所大学和学校都是Quaker学校，也叫贵格学校。Quaker这个名字主要源于成立于17世纪的贵格会（Quakers）/兄弟会（Friends）。这个教派倡导平等自由，主张人人之间不论信仰，性别，年龄，家庭背景如何，都应当像兄弟一样平等，反对任何形式的暴力。</p><p>其实Quaker学校在美国应该更多，甚至费城都被叫做“Quaker City”。在英国也有一些quaker学校，不是很多，大约是10所左右。</p><p>Quaker学校有着非常一致的教育理念：教育除了要赋予人知识和技能，更为可贵的是对人格和精神的培养。也就是要Academic Excellence（学业优异），同时还要培养其Spiritual Depth（精神深度）。</p><p>因此，在Quaker学校中更注重对学生品格的培养。Quaker学校的目标就是要把学生培养成为具备阳光乐观的态度，优异的学术成绩，和优秀的人格魅力的人。</p><p>同时，Quaker学校更为注重学生的个性化发展。他们会针对每个学生的特点，以兴趣为导向，进行针对性的培养。这也是我非常看重的一点。客观的讲，儿子似乎有些偏科，有的科目学的非常好，甚至超前，有些科目却有些滞后。因此，希望在这样的学校中能够在专业老师的帮助下，把他的潜力挖掘出来。</p><p>非常欣赏美国著名的Quaker大学宾夕法尼亚大学的创始人，美国国父本杰明·富兰克林曾经说过一句话：“Do well by doing good.” 也希望自己的孩子今后的学校生活中能够培养出一个优秀的品格。</p>]]></content>
+    
+    <summary type="html">
+    
+      英国的Quaker学校及其教育理念
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>最近尝试的菜谱</title>
@@ -409,28 +429,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何将Beem程序在AWS Lambda上运行</title>
-    <link href="https://www.aafeng.uk/run-beem-application-on-aws-lambda/"/>
-    <id>https://www.aafeng.uk/run-beem-application-on-aws-lambda/</id>
-    <published>2020-11-04T22:51:20.491Z</published>
-    <updated>2020-11-04T22:51:20.491Z</updated>
-    
-    <content type="html"><![CDATA[<p>大约两，三年前就开始在VPS上跑Steem的程序了，后来有了Hive链，也开始跑Hive的程序。其实Steem/Hive的Python库还是很好用的。于是就有了几个Cronjob，点点赞，领取一些收益之类的。但近期随着对AWS服务了解的越来越多。感觉再在VPS跑Cronjob似乎有点Out了。于是开始考虑把一系列的Cronjob都搬到AWS上来，这样做最大的优势就是避免了以后服务器的维护成本。不用再考虑升级Ubuntu的各个版本/打各种安全补丁了。同时，也能节省一些银子。相信我，AWS的一系列Serverless服务真正用起来之后，在这些服务上的花费真的比想象中的要低不少。</p><p><img src="https://user-images.githubusercontent.com/63479035/98176051-b6556980-1eef-11eb-898d-13066c63fa35.png" alt="image"></p><a id="more"></a><p>下面就以一个最简单的Beem/Hive程序为例来说明。假设我们想把下面这个Python程序挪到AWS Lambda中去：</p><pre><code>from beem.vote import Votevote = Vote(u&quot;@aafeng/bolton-abbey|abit&quot;)print(vote.json())</code></pre><p>上面这个程序非常简单，只是返回一个包含A神对我的一篇文章的点赞数据。</p><p>下面来说说如何在AWS Lambda中运行这个程序。整个过程中遇到了两个坑，下面会详细说。</p><p>这里有一个前提条件，就是已经安装了serverless框架。如果没有安装，请先自行安装，并配置好AWS的账号信息(~/.aws/credentials)。</p><h2 id="创建Lambda依赖库（layer）"><a href="#创建Lambda依赖库（layer）" class="headerlink" title="创建Lambda依赖库（layer）"></a>创建Lambda依赖库（layer）</h2><p><strong>这一步需要在一个AWS Linux的EC2中运行</strong>，后面说到第一个坑的时候会详细介绍。当然，在网上也看到有人说可以创建一个AWS Linux的docker镜像，然后在docker镜像中运行pip来安装Python依赖库。但我并没有尝试。应该也可以吧。</p><p>如果我们想要写一系列的Beem/Hive程序，肯定不想把依赖库打包到每一个Lambda中。因此这里可以创建一个AWS中共享的依赖库(Layer)。</p><p>运行：</p><pre><code>sls create --template aws-python3 --name beem-layer --path beem-layer</code></pre><p>这就会创建如下目录和文件：</p><pre><code>beem-layer├── handler.py└── serverless.yml</code></pre><p>接下来创建目录：</p><pre><code>cd beem-layermkdir libstouch libs/requirements.txt</code></pre><p>目录结构如下：</p><pre><code>→  beem-layer tree ..├── handler.py├── libs│   └── requirements.txt└── serverless.yml</code></pre><p>requirements.txt内容如下：</p><pre><code>beem</code></pre><p>安装依赖库：</p><pre><code>cd libspip install -t python/lib/python3.8/site-packages -r requirements.txt</code></pre><p>修改serverless.yml文件如下：</p><pre><code>service: my-layersframeworkVersion: &apos;2&apos;provider:  name: aws  runtime: python3.8  region: eu-west-1layers:  beem-dependencies:    path: libs    compatibleRuntimes:      - python3.8    description: &quot;Python beem dependencies&quot;</code></pre><p>在上面并没有定义Lambda函数，只是定义了layer，因此无需修改默认的handler.py，因为根本不会用到这个文件。</p><p>部署：</p><pre><code>sls deploy</code></pre><p>可以看到，很容易就在AWS中创建了一个layer。</p><p>注意：<strong>这里有第一个坑!</strong> 在后面的应用中使用这个layer的时候，总是提示找不到.so库。花了不少时间才搞清楚其原因在于：在安装Python依赖库时候的环境是Ubuntu 18，而在运行Lambda时候的环境则是Amazon Linux。两者不匹配自然就找不到所有的依赖库了。</p><p>因此最为简单的办法就是在Amazon EC2 (with Amazon Linux)中安装Python的依赖库。这样就保持了开发/部署环境和运行环境的一致。</p><h2 id="创建Lambda"><a href="#创建Lambda" class="headerlink" title="创建Lambda"></a>创建Lambda</h2><p>首先运行如下命令创建serverless APP:</p><pre><code>sls create --template aws-python3 --name beem-app --path beem-app</code></pre><p>接下来修改serverless.yml:</p><pre><code>service: beem-appframeworkVersion: &apos;2&apos;provider:  name: aws  runtime: python3.8  region: eu-west-1functions:  hello:    handler: handler.hello    layers:      - &quot;YOUR_LAYER_ARN&quot;</code></pre><p>修改handler.py:</p><pre><code>import jsonfrom beem.vote import Votedef hello(event, context):    vote = Vote(u&quot;@aafeng/bolton-abbey|abit&quot;)    response = {        &quot;statusCode&quot;: 200,        &quot;body&quot;: vote.json()    }    return response</code></pre><p>部署：</p><pre><code>sls deploy</code></pre><p>运行</p><pre><code>sls invoke -f hello</code></pre><p>结果，遇到了第二个坑。提示错误信息如下：</p><pre><code>{    &quot;errorMessage&quot;: &quot;[Errno 30] Read-only file system: &apos;/home/sbx_user1051&apos;&quot;,    &quot;errorType&quot;: &quot;OSError&quot;,    &quot;stackTrace&quot;: [        &quot;  File \&quot;/var/task/handler.py\&quot;, line 6, in hello\n    vote = Vote(u\&quot;@aafeng/bolton-abbey|abit\&quot;)\n&quot;,        &quot;  File \&quot;/opt/python/lib/python3.8/site-packages/beem/vote.py\&quot;, line 52, in __init__\n    self.blockchain = blockchain_instance or shared_blockchain_instance()\n&quot;,        &quot;  File \&quot;/opt/python/lib/python3.8/site-packages/beem/instance.py\&quot;, line 29, in shared_blockchain_instance\n    default_chain = get_default_config_store()[\&quot;default_chain\&quot;]\n&quot;,        &quot;  File \&quot;/opt/python/lib/python3.8/site-packages/beem/storage.py\&quot;, line 46, in get_default_config_store\n    return generate_config_store(SqliteConfigurationStore, blockchain=\&quot;hive\&quot;)(*args, **kwargs)\n&quot;,        &quot;  File \&quot;/opt/python/lib/python3.8/site-packages/beemstorage/sqlite.py\&quot;, line 200, in __init__\n    SQLiteFile.__init__(self, *args, **kwargs)\n&quot;,        &quot;  File \&quot;/opt/python/lib/python3.8/site-packages/beemstorage/sqlite.py\&quot;, line 61, in __init__\n    os.makedirs(self.data_dir)\n&quot;,        &quot;  File \&quot;/var/lang/lib/python3.8/os.py\&quot;, line 213, in makedirs\n    makedirs(head, exist_ok=exist_ok)\n&quot;,        &quot;  File \&quot;/var/lang/lib/python3.8/os.py\&quot;, line 213, in makedirs\n    makedirs(head, exist_ok=exist_ok)\n&quot;,        &quot;  File \&quot;/var/lang/lib/python3.8/os.py\&quot;, line 213, in makedirs\n    makedirs(head, exist_ok=exist_ok)\n&quot;,        &quot;  File \&quot;/var/lang/lib/python3.8/os.py\&quot;, line 223, in makedirs\n    mkdir(name, mode)\n&quot;    ]}</code></pre><p>仔细读一下，原来是beem在运行的时候会尝试装载其配置文件，这个文件为~/.local/share/beem/beem.sqlite，如果该文件不存在，beem会尝试创建这个文件。而Lambda运行时只有对”/tmp“目录有写入权限的。因此出现了访问权限问题。</p><p>最快捷的解决方法就是直接修改文件：python/lib/python3.8/site-packages/beemstorage/sqlite.py</p><pre><code>#self.sqlite_file = os.path.join(self.data_dir, self.storageDatabase)self.data_dir = &quot;/tmp/&quot;self.sqlite_file = &quot;/tmp/beem.sqlite&quot;</code></pre><p>然后回到Amazon Linux，重新部署依赖库。</p><p>然后再调用Lambda：</p><pre><code>sls invoke -f hello</code></pre><p>返回结果为：</p><pre><code>{    &quot;statusCode&quot;: 200,    &quot;body&quot;: {        &quot;percent&quot;: 5000,        &quot;reputation&quot;: &quot;119989167017696&quot;,        &quot;rshares&quot;: &quot;13053196760301&quot;,        &quot;time&quot;: &quot;2020-10-27T11:27:18&quot;,        &quot;voter&quot;: &quot;abit&quot;,        &quot;weight&quot;: 1202589,        &quot;authorpermvoter&quot;: &quot;@aafeng/bolton-abbey|abit&quot;    }}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      如何将Beem / Hive程序在AWS Lambda上运行
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="AWS" scheme="https://www.aafeng.uk/tags/AWS/"/>
     
   </entry>
   
