@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-01-28T16:03:46.577Z</updated>
+  <updated>2021-02-01T17:01:48.585Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>户外活动 - Tree Trail</title>
+    <link href="https://www.aafeng.uk/tree-trail/"/>
+    <id>https://www.aafeng.uk/tree-trail/</id>
+    <published>2021-02-01T17:00:58.629Z</published>
+    <updated>2021-02-01T17:01:48.585Z</updated>
+    
+    <content type="html"><![CDATA[<p>孩子学校老师给发了一封邮件，推荐一个户外活动：Tree Trail。其实就是给了一份地图，在地图上标注了将近30课树，每颗树的名字和介绍也都给提供好了。孩子们的任务就是按照地图去找到每一颗树。</p><a id="more"></a><p>这种活动可以说是好处非常多的。</p><p>首先，鼓励孩子们多去户外活动。在当前疫情下，很多孩子都被迫宅在家中，整天面对电脑，平板，手机。这就让我非常担心他们的视力会受到影响。何况，孩子们的天性就爱玩，让他们多亲近自然，肯定是好的。</p><p>其次，在整个活动中，孩子们通过类似游戏的方式，可以学习很多树木的知识。这是在课本中学不到的。</p><p>还有，这也是一个非常不错的亲子活动和团队活动。一家人一同出去，为了共同的目标，彼此配合，可以增进彼此间的感情和默契。</p><p>尽管现在是冬天，有些树的叶子都掉光了。估计这个活动在夏天去更为合适。但仍然决定要带孩子们出去透透气，于是，出发！</p><p><img src="https://user-images.githubusercontent.com/63479035/106490772-138c9700-64ae-11eb-9c6b-f6a23810bca8.png" alt="image"></p><p><img src="https://user-images.githubusercontent.com/63479035/106490959-459df900-64ae-11eb-989e-662c31c3a2e1.png" alt="image"></p><p><img src="https://user-images.githubusercontent.com/63479035/106491192-839b1d00-64ae-11eb-85d3-ea13d83a71f3.png" alt="image"></p><p>小心，刺猬出没！<br><img src="https://user-images.githubusercontent.com/63479035/106491023-55b5d880-64ae-11eb-8b66-54773abbffaf.png" alt="image"></p><p>整个一圈走下来，将近两个多小时，这让我在微信运动朋友圈中难得的登上了榜首，回家后感觉浑身好舒畅！</p>]]></content>
+    
+    <summary type="html">
+    
+      户外活动 - Tree Trail
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>周末影院 - Soul</title>
@@ -398,26 +418,6 @@
     </summary>
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Web Accessibility的重要性</title>
-    <link href="https://www.aafeng.uk/web-accessibility/"/>
-    <id>https://www.aafeng.uk/web-accessibility/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实以前在做项目的时候或多或少的接触了一些Web Accessibility（Web无障碍访问）的标准，但并没有留意其重要性。最近在一个项目中才真正意识到了在一个Web项目中，Accessibility是如此重要。如果不符合Web Accessibility的标准，可能会对有些用户造成极大的不便。</p><p><img src="/images/technology/web-accessibility.jpg" alt="Web Accessibility"><br>图源：w3.org</p><a id="more"></a><p>事情起源是这样的：按照用户要求，实现了一个对用户数据的统计功能，并以在Web页面中以饼图，柱状图等图形化的方式展示统计好的数据。在实现了该功能以后，发给了客户寻求反馈意见。结果用户的意见是：“我根本看不清你做的柱状图，能否调整配色方案？”。嗯，这是怎么回事？在我这里明明是很清楚的啊？于是要求客户发了一个截屏过来，和我在本机看到的是一样啊。突然意识到了，每个人的视力，对颜色的敏感度都不一样。在我这里很清楚，并不代表在别人眼中看到的也很清楚啊！于是按照相应的标准更改了配色，客户终于满意了。</p><p>记得互联网的发明人Tim Berners-Lee曾经说过一句很经典的话：</p><blockquote><p>The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.</p></blockquote><p>简单翻译一下：Web的力量在于其普遍性。其基本要素在于：每个人无论残疾与否都能够访问它。</p><p>再来看看Web Accessibility的官方定义：</p><blockquote><p>Web Accessibility（Web无障碍访问）旨在使得行动不便或者残障人士能够使用Web，即可以在Web上获取信息、理解信息、查找信息，以及网络交互。通常情况下，仅仅是确保每个网页的所有内容都有对应的文本（Text）信息，以及所有的交互都可以通过键盘来完成，就可以实现Web的无障碍访问。无障碍访问可以体现在一个单独的规范（例如WAI-ARIA）、指南（例如WCAG），或者某个规范中的一个部分（例如HTML5）。</p></blockquote><p>在设计一个Web应用的时候，应该充分采用适当的设计和编码，使得残疾人或者有各种障碍的人也可以访问该应用。在英国就有近1400万【<a href="https://www.scope.org.uk/media/disability-facts-figures/" rel="external nofollow noopener noreferrer" target="_blank">数据来源</a>】的残疾人士，约为英国总人口的22%。因此，在设计Web应用的时候，绝对不能忽视这么大的一个群体。在美国，可以<a href="https://www.disabilityscoop.com/2019/10/08/supreme-court-allows-sue-web-accessibility/27269/" rel="external nofollow noopener noreferrer" target="_blank">起诉不遵循Web Accessibility规范的零售商</a>。在欧盟也有相应的<a href="https://europa.eu/european-union/abouteuropa/accessibility_en" rel="external nofollow noopener noreferrer" target="_blank">规定</a>。</p><p>在实现Web Accessibility时，可以参考W3C的<a href="https://www.w3.org/WAI/WCAG21/Understanding/intro#understanding-the-four-principles-of-accessibility" rel="external nofollow noopener noreferrer" target="_blank">Web Content Accessibility Guidelines</a>。在这个Web Accessibilty指南中，有四大基本原则：Perceivable(可感知)，Operable (可操作)，Understandable (可理解)，Robust (健壮性)。其实就是强调对于不同的用户，在不同的终端中，用户可以和Web应用无障碍的交互。</p><p>在进行Web Accessibility测试的时候，有很多相关的工具，比如：测试网页配色对比度的。有相应的Screen Reader测试工具/插件。</p>]]></content>
-    
-    <summary type="html">
-    
-      Web Accessibility的重要性
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
