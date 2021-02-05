@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-02-02T23:16:00.662Z</updated>
+  <updated>2021-02-04T17:35:53.272Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>年味</title>
+    <link href="https://www.aafeng.uk/taste-of-chinese-new-year/"/>
+    <id>https://www.aafeng.uk/taste-of-chinese-new-year/</id>
+    <published>2021-02-04T21:00:00.000Z</published>
+    <updated>2021-02-04T17:35:53.272Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在本地的华人微信群里，各个超市的促销活动如火如荼，为了迎接中国春节，推出了各种年货。而大家又纷纷积极响应，很多东西订晚了就订不上了，好一副热闹景象。尽管疫情期间没法和朋友们聚会，但已经透过手机，感受到了越来越浓的年味了。</p><p><img src="https://user-images.githubusercontent.com/63479035/106931817-e68aef00-670e-11eb-8afd-98ffb57247b3.png" alt="image"></p><a id="more"></a><p>近些年来，每逢春节，国内的亲友们都会说现在的年味已经越来越淡了。过去物质条件匮乏的时候，有些东西只有过年才能体验到的，而现在任何时候都可以买到了，这反倒冲淡了年的味道。</p><p>不过，与之相反的是，在国外过年，反倒是更能体会到年的味道。可能是海外的华人思乡心切，到了春节，反倒是更需要一些仪式感吧。</p><p>首先是在很多城市，像伦敦，曼城，利兹等，每逢春节，华人社团都会组织各种活动，在华人的聚集区-中国城，更是有舞龙舞狮等活动。如果在春节期间到一些中餐馆去就餐，有些餐厅中也会请人来表演中国特色的节目。</p><p>以往每年春节的时候，我们都会带着孩子参加一些春节的庆祝活动。在这些活动上，不仅有众多的中国美食，还会有各种有趣的活动体验中国文化，比如：中国书法，剪纸，写对联，猜灯谜等具有中国特色的活动。还有各种具有中国特色的游戏。孩子们每年都玩的非常嗨，每次活动结束后都直接期待着下一年的活动。</p><p>今年由于疫情原因，这些庆祝活动被迫都取消了，也有一些活动转到了网上进行。最近给孩子们报名参加了几个活动，期待中。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      年味
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>电动踏板车</title>
@@ -398,26 +418,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>一直在用utf8编码，可utf8mb4编码又是什么鬼？</title>
-    <link href="https://www.aafeng.uk/utf8mb4/"/>
-    <id>https://www.aafeng.uk/utf8mb4/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近打算把中文区的文章信息保存到数据库中，然后分析一下这些数据。本来想这应该是一个非常简单的程序。但在实现的过程中遭遇了这个utf8mb4编码的问题。下面把整个排错过程记录一下。</p><p><img src="/images/technology/db/encoding.jpg" alt></p><a id="more"></a><h2 id="问题的出现"><a href="#问题的出现" class="headerlink" title="问题的出现"></a>问题的出现</h2><p>程序很简单，就是读取中文区中的最新N条文章，然后保存到数据库中。对于一般的文章，没有任何问题。但对于个别的文章，比如 ace108 前辈的一篇文章，</p><p>📷Flirting with Silver I | 追求银I😎</p><p>保存的时候出错了：</p><pre><code>mysql.connector.errors.DatabaseError: 1366 (HY000): Incorrect string value: &apos;\xF0\x9F\x93\xB7#M...&apos; for column &apos;title&apos; at row 1</code></pre><p>仔细查看了一下，似乎是因为文章标题中出现了表情符号所致的。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在网上查找了一下，很多人都遇到过类似的问题，似乎我的初步判断是正确的。问题在于：在默认设置下，不支持表情字符的编码。</p><p><img src="/images/technology/db/utf8.jpg" alt></p><p>那么，什么是utf8mb4字符集呢？查阅了一下MySQL的<a href="https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a>：</p><blockquote><p>utf8mb4 is a superset of utf8mb3. The utfmb4 character set requires a maximum of four bytes per multibyte character.</p></blockquote><p>我们平时用的 utf8 其似乎就是MySQL中的  utf8mb3。而 utf8mb4 是我们常见的 utf8 的父集，以4个字节来保存多字节字符。不难想象，utf8mb4 能够表示的字符范围更广。在MySQL中建议使用 utf8mb4，它是完全兼容 utf8mb3的。</p><p>知道了原因，解决方法就很简单了。</p><p>首先，更改表的字符集：</p><pre><code>ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</code></pre><p>接下来，更改 “title” 这一列的字符集</p><pre><code>ALTER TABLE hive.posts MODIFY COLUMN title VARCHAR(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL;</code></pre><p>在Python程序中创建数据库连接的时候，指定“utf8mb4”字符集：</p><pre><code>hivedb = mysql.connector.connect(    …...    charset = &apos;utf8mb4&apos;)</code></pre><p>至此问题成功解决，表情符号也能保存到数据库中了。</p>]]></content>
-    
-    <summary type="html">
-    
-      一直在用utf8编码，可utf8mb4编码又是什么鬼？
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
