@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-02-17T14:05:31.660Z</updated>
+  <updated>2021-02-19T11:58:05.480Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>东西没坏就别去修它</title>
+    <link href="https://www.aafeng.uk/dontfix-if-not-broken/"/>
+    <id>https://www.aafeng.uk/dontfix-if-not-broken/</id>
+    <published>2021-02-18T21:00:00.000Z</published>
+    <updated>2021-02-19T11:58:05.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间媳妇和我提到她用的台式机噪音稍微有些大，但正常使用没有任何问题。正好赶上我有时间，想想应该是灰大导致的，该清洁一下了。</p><p><img src="https://user-images.githubusercontent.com/63479035/108501390-1eff0100-72a9-11eb-8fba-3a7a86a1675b.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>于是立刻拆箱清理。把机箱内的灰尘都吸出来之后，其实应该收工了。但当时手贱，心想和CPU相连的风扇中似乎灰尘也不少，但风扇和CPU粘的很紧，于是想到不如把CPU一起取下来，这样就方便清理了。清理完毕，却发现在取的过程中似乎CPU的一些针脚歪了。于是找来钳子想把那些针脚摆正了，但可能是<del>自己手笨</del>工具不得力，总有一些针脚是歪的。</p><p>忙了半天，总算把CPU装回去了，但开机后彻底黑屏了，又把CPU取下来检查针脚，这样反复折腾了好几次一直黑屏，我最终决定放弃了。</p><p>这时候早就听过的一句话映入我的脑海：</p><blockquote><p>If it ain’t broke, don’t fix it (东西没坏，就不要去修它)</p></blockquote><p>这句话说白了就是，没事手别贱，自己给自己找事。这似乎说的就是我啊？？？</p><p>很多时候就是这样的，如果东西能够正常工作，就别去折腾它，可能越折腾事情越多。尤其对于那些特别忙的人来说，更是如此了。</p><p>不过话也不能说的太绝对了。尤其对于工作中的事，有另一种截然相反的观点，就是： “Continuous improvement” （持续改进）。</p><p>也就是说，在工作中就算有些东西能够正常工作，也要不断想办法进行改进，这样才能让自己的企业具备竞争优势，在残酷的竞争环境中生存。</p><p>不过如论如何，在生活中我还是要吸取教训，以后绝对不能给自己没事找事了。</p>]]></content>
+    
+    <summary type="html">
+    
+      东西没坏就别去修它
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>拒绝负债</title>
@@ -394,26 +414,6 @@
     <summary type="html">
     
       在家练球模式开启
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>团队聚餐，可以吗？</title>
-    <link href="https://www.aafeng.uk/team-meetup/"/>
-    <id>https://www.aafeng.uk/team-meetup/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近有个同事提议，团队成员是不是可以见个面？甚至，是否可以把因为疫情而耽搁的复活节聚餐重新补回来？</p><p><img src="/images/life/team.jpg" alt><br><a id="more"></a><br>图源：Pixabay</p><p>对于他的这个提议。大家一致表示赞成，但又纷纷表示了各种担忧。首先，本来关系非常好的同事们，憋在家中，已经半年没有见面了。大家都有这种社交需求，因此都很想见上一面。但由于英国政府最近新出台的规定，超过6人的团体不能聚会，除非来自同一个家庭。再者最近英国疫情数据不容乐观，甚至部分地区濒临被再次lockdown的边缘。</p><p>关于聚会方式，大家也想了一些不同的地点和方式。</p><p>首先是选择一个大家都方便到达的餐厅。现在英国很多餐厅把一些餐桌都放到了户外。毕竟户外的空气更加流通，被感染的机率相对更低。同时，就餐餐桌之间的距离都远大于正常时的距离。同时餐厅会做好各种消毒工作。可以说这是一种可以接受的方式。</p><p>第二种方式就是在单位附近找一个适合的地方，大家一起散步聊天。当然，口罩必须要戴上，同时大家也需要注意社交距离。这种方式相对更为安全些，不过这种聚会的方式会感觉略有些奇怪。毕竟如果能够坐在一个桌子上的话，大家可以一起聊天。现在如果每两个人之间都间隔两米，肯定不太方便群聊了。</p><p>还有一种方式就是预订单位的一个公共办公区。在办公区中，彼此之间的距离都是安全的。同时，还有各种消毒用具，这种方式应该也是很安全的。</p><p>大家虽然讨论的很热闹，但要真正付诸实施，似乎还有不少的顾虑。聚，还是不聚，这真的是个问题。</p>]]></content>
-    
-    <summary type="html">
-    
-      团队聚餐，可以吗？
     
     </summary>
     
