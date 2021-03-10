@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-03-10T17:07:07.155Z</updated>
+  <updated>2021-03-10T22:52:35.911Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英国人口普查Census</title>
+    <link href="https://www.aafeng.uk/census/"/>
+    <id>https://www.aafeng.uk/census/</id>
+    <published>2021-03-10T21:30:00.000Z</published>
+    <updated>2021-03-10T22:52:35.911Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近所有的英国住址都收到了一封来自政府的信。信中的主要内容只有一项：英国10年一次的人口普查census开始了！</p><p><img src="https://user-images.githubusercontent.com/63479035/110708652-e771dd80-81f2-11eb-8563-959574bc6200.png" alt="image"><br>Source：pixabay</p><a id="more"></a><p>在信中强调了人口普查的重要性。如果没有按照要求填写相应信息的话，对于持有短期签证的人来说可能会影响签证续签；对于已经获得绿卡的人来说则有可能面临最高1000英镑的罚款。</p><p>其实不用强调，大家也都明白人口普查的重要性。只有了解了所有住址的准确人口信息，政府才能为该地区配置合适的资源，更好的为大家服务。</p><p>既然如此重要，那么就按照要求填写一下所有信息吧。原来以为只有在3月21日那天才能填写。但进入网站之后才发现现在就可以填写了。只不过要填写的是在3月21日那天你住址中居住人口的信息。</p><p>登陆网站后，首先需要输入信中提供的一个接入码，应该是能够通过这个接入码来绑定住址的吧。</p><p>接下来填的信息包括两大块：住址和人。</p><p>首先是住址的基本信息，比如，你所居住的是House还是公寓；是自己拥有的房产，还是租住的；是否在这个住址长期居住等信息。</p><p>接下来是家中所有人的信息。其中包括每个人的姓名，生日，国籍，种族，健康状况，所受教育信息，从事的工作等等。</p><p>整个过程还是非常简单的。大约20分钟左右就都填完了。</p><p><img src="https://user-images.githubusercontent.com/63479035/110703390-a0ccb500-81eb-11eb-8a37-6c819ba88085.png" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      英国人口普查Census
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>英国哪里买米最便宜？货比三家</title>
@@ -393,28 +413,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何将Streamlit应用免费部署到Heroku</title>
-    <link href="https://www.aafeng.uk/streamlit-to-heroku/"/>
-    <id>https://www.aafeng.uk/streamlit-to-heroku/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>前面介绍了Streamlit这数据分析和可视化的利器。 下面说说如何将你的Streamlit应用程序部署到免费的Heroku账号，这样任何人都可以访问你的应用了。</p><p><img src="/images/technology/streamlit/heroku-logo.png" alt></p><a id="more"></a><p>还是以前面介绍的简单程序为例：</p><p>首先创建一个文件夹比如叫做ml，然后进入该文件夹，创建程序文件stats.py，其源码为：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在当前目录下运行如下命令来安装pipreqs包，并创建依赖库的文件:</p><pre><code>pip install pipreqspipreqs .</code></pre><p>可以看到，在当前目录下生成了requirements.txt，其内容为：</p><pre><code>streamlit==0.58.0pandas==1.0.3</code></pre><p>创建setup.sh:</p><pre><code>mkdir -p ~/.streamlit/echo &quot;\[general]\n\email = \&quot;YOUR_EMAIL_ADDRESS\&quot;\n\&quot; &gt; ~/.streamlit/credentials.tomlecho &quot;\[server]\n\headless = true\n\enableCORS=false\n\port = $PORT\n\&quot; &gt; ~/.streamlit/config.toml    </code></pre><p>创建Procfile：</p><pre><code>web: sh setup.sh &amp;&amp; streamlit run stats.py        </code></pre><p>创建本地git库</p><pre><code>git initgit add --allgit commit -m &quot;init&quot;</code></pre><p>配置并部署到Heroku:</p><pre><code>heroku loginheroku creategit push heroku masterheroku ps:scale web=1</code></pre><p>按照命令行输出的URL就可以访问你的应用了。    </p><p>查看Heroku日志：</p><pre><code>heroku logs --tail</code></pre><p>要想使用自己域名，需要先通过Heroku验证。然后运行：</p><pre><code>heroku domains:add hivecnstats.aafeng.uk</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      如何将Streamlit程序免费部署到Heroku
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Heroku" scheme="https://www.aafeng.uk/tags/Heroku/"/>
     
   </entry>
   
