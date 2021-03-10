@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-03-07T10:23:27.912Z</updated>
+  <updated>2021-03-10T17:07:07.155Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英国哪里买米最便宜？货比三家</title>
+    <link href="https://www.aafeng.uk/price-match/"/>
+    <id>https://www.aafeng.uk/price-match/</id>
+    <published>2021-03-09T21:30:00.000Z</published>
+    <updated>2021-03-10T17:07:07.155Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在中国超市网购的时候，忽然想到有人提到过从亚马逊上买米的话会更便宜。于是在亚马逊上搜了一下，没有想到中超的米价竟然比亚马逊高出了30%。</p><p><img src="https://user-images.githubusercontent.com/63479035/110665913-bb3d6900-81c0-11eb-8dbe-59e8d79ee0fe.png" alt="image"></p><a id="more"></a><p>真的可以说是不比不知道，于是就想，那从亚马逊上查查看，是不是所有的东西都比中超便宜。其实整体而言，还是本地的中超更便宜。有些调料品在亚马逊的价格甚至是本地中超的两倍。</p><p>记得原来听人说过，很多超市都会通过一些低价商品吸引顾客，等顾客上门了之后再靠一些定价较高的商品把钱赚回来。</p><p>毕竟作为消费者，不可能在购物时把每件商品的价格都在不同家超市做对比。也就是说消费者在很多时候并不知道在一家超时中，哪些商品的价格比较优惠，哪些商品的价格定价过高。在这种情况下，就直接购买了。</p><p>其实说白了，商家和消费者之间的信息是不对称的，这就导致了很多人在购物的时候多花了不少钱。可能对于商家来说，这也是无可厚非的，毕竟商家赚的就是差价。</p><p>不过从消费者的角度来看这个问题的话，如果能货比三家的话，肯定能够省下些钱来的。</p><p>在英国这里的很多超市中都有一个叫做“Price Match”的活动。也就是说，如果同样的商品，你在别的超市看到了更低的价格，那么超市就会以同样的价格把商品卖给你。不过估计绝大多数消费者就像我一样，从没想过真的去比较不同超市的价格。</p><p>还有一种比价网站我经常使用，主要是在花钱较多的时候会进行比价。比如：在预订假期，订机票，买保险的时候会在比价网站上进行比较，选择一个最合适的产品进行购买。</p>]]></content>
+    
+    <summary type="html">
+    
+      英国哪里买米最便宜？亚马逊！
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Couch to 5K</title>
@@ -395,30 +415,6 @@
     
     
       <category term="Heroku" scheme="https://www.aafeng.uk/tags/Heroku/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>试用Streamlit进行数据可视化</title>
-    <link href="https://www.aafeng.uk/streamlit/"/>
-    <id>https://www.aafeng.uk/streamlit/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>早就听说Streamlit是数据分析和机器学习的利器，但一直没有机会尝试。最近花了些时间试用了一下，还真的非常好用！最主要的是其设计思路非常独特：开发者只需要关注于数据及服务器端编码就可以了，那些复杂的客户端交互，响应式设计等等全部由Streamlit这个框架来搞定！这让我想起了过去曾经用过的一个框架：GWT (Google Web Toolkit)，其设计思路可以说和Streamlit是完全一样啊！不同之处是GWT中没有对数据分析和机器学习的支持。</p><a id="more"></a><p>下面通过一个简单的程序来演示Streamlit是如何工作的。</p><p>首先需要安装streamlit及下面需要的pandas:</p><pre><code>pip install streamlitpip install pandas</code></pre><p>接下来写一个对下载数据可视化的程序：</p><pre><code>import streamlit as stimport pandas as pd st.write(&quot;&quot;&quot;## Download statistics### Line chart&quot;&quot;&quot;)# select DATE_FORMAT(date, &apos;%Y-%m-%d&apos;) as d, count(id) as count from posts group by d;dictionary = {&apos;2020-06-25&apos;:34, &apos;2020-06-26&apos;: 39, &apos;2020-06-27&apos;: 40, &apos;2020-06-28&apos;: 40, &apos;2020-06-29&apos;: 42, &apos;2020-06-30&apos;: 36}series = pd.Series(dictionary)st.line_chart(series)st.write(&quot;&quot;&quot;### Bar chart&quot;&quot;&quot;)st.bar_chart(series)</code></pre><p>在上面程序中，演示了Streamlit的几个特点：</p><p><strong>对Markdown的支持</strong>：在st.write中，可以直接使用markdown的语法。<br><strong>客户端统计图形的生成</strong>: 可以看到，这里只需要调用line_chart和bar_chart方法，而无需担心如何将数据传送到客户端，客户端又是如何渲染这些统计图的。</p><p>其运行后的界面如下图所示：</p><p><img src="/images/technology/streamlit/demo.jpg" alt></p><p>可以看到，Streamlit还帮我们生成了保存为PNG, SVG等功能。</p>]]></content>
-    
-    <summary type="html">
-    
-      试用Streamlit进行数据可视化
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Python" scheme="https://www.aafeng.uk/tags/Python/"/>
-    
-      <category term="Streamlit" scheme="https://www.aafeng.uk/tags/Streamlit/"/>
     
   </entry>
   
