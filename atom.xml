@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-03-11T21:57:04.396Z</updated>
+  <updated>2021-03-14T10:00:13.096Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>家庭版烤鱼</title>
+    <link href="https://www.aafeng.uk/roasted-fish/"/>
+    <id>https://www.aafeng.uk/roasted-fish/</id>
+    <published>2021-03-14T09:57:50.650Z</published>
+    <updated>2021-03-14T10:00:13.096Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近家附近新开了一家餐厅，很多朋友都说他家的川菜做的好吃。于是上周订了一份外卖，其中最为期待的是他家的烤鱼。因为朋友们都强烈推荐他家的烤鱼，于是期待值非常高。但可能是由于外卖的原因，整体感觉似乎还可以，但远远没有达到自己的期望值。</p><p>这个周末正好有空，决定自己尝试一下。没有想到居然非常成功，受到全家人的喜欢，给孩子们做的儿童版不辣烤鱼也异常受欢迎。</p><p><img src="https://user-images.githubusercontent.com/63479035/111064337-609b5a00-84ab-11eb-9871-c5d5cea64105.png" alt="image"></p><a id="more"></a><p>鱼选择的是超市中买到的鲈鱼。可惜的是本地超市中的鲈鱼一般都很小，而我家从不吃鱼头，把鱼头剁掉之后就更显小了。只能等待疫情过后周边的海鲜市场重启后再去买更好的鱼了。</p><p>第一步是把鱼洗净后，从中间切开，需要注意用刀背把大鱼骨敲断，这样炸鱼的时候鱼就不会卷起来变形，影响美观。然后用料酒，盐，葱姜将鱼腌制大约半小时左右。</p><p>在腌制的过程中可以准备配菜。腐竹切段，土豆切条，白菜切段，芹菜切条。还可以根据喜好准备一些午餐肉，鱼丸，豆芽，粉条等。</p><p>然后将鱼炸至两边金黄色，盛出后放入盘中待用。</p><p>接下来在锅中放入花椒，干辣椒，豆瓣酱爆香，然后放入约1/3袋的火锅底料炒香。放入适量的水之后放入配菜煮熟。将配菜捞出放到烤盘中，再将鱼放在配菜的上面。将汤汁淋在烤鱼上。</p><p>放入烤箱，选择200度烤制20分钟，出锅！</p><p><img src="https://user-images.githubusercontent.com/63479035/111064300-2336cc80-84ab-11eb-84f9-318178522a17.png" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      英国家庭版烤鱼制作方法
+    
+    </summary>
+    
+      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>沟通的技巧</title>
@@ -392,26 +412,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>锁仓Edgeware</title>
-    <link href="https://www.aafeng.uk/staking-edg/"/>
-    <id>https://www.aafeng.uk/staking-edg/</id>
-    <published>2021-01-28T16:03:46.577Z</published>
-    <updated>2021-01-28T16:03:46.577Z</updated>
-    
-    <content type="html"><![CDATA[<p>去年的时候跟风锁仓了一个ETH，希望额能够得到Edgeware(EDG)空投。至今一年期限已满。按照操作步骤转了0个ETH到相应的合约地址，果真解锁了锁仓的ETH，并得到了价值约为90美金的EDG。 那么，拿着这些EDG做什么？下面分享一下通过继续锁仓的方式赚取更多EDG的方法。</p><a id="more"></a><p><strong>提醒：你的数字资产你自己负责，以下步骤不构成投资建议。</strong></p><p>首先，添加polkadot Chrome扩展：</p><p><a href="https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd/related" rel="external nofollow noopener noreferrer" target="_blank">https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd/related</a></p><p>创建账号：</p><p><img src="/images/blockchain/edgeware/1.jpg" alt></p><p>登录： <a href="https://polkadot.js.org/apps/#/explorer" rel="external nofollow noopener noreferrer" target="_blank">https://polkadot.js.org/apps/#/explorer</a></p><p>确保选择了Edgeware主网：</p><p><img src="/images/blockchain/edgeware/2.jpg" alt></p><p>单击账户名会自动复制地址：</p><p><img src="/images/blockchain/edgeware/3.jpg" alt></p><p>然后从你的钱包转EDG过来。</p><p>为了安全期间，需要创建一个’Controller’账号，其实这就是个普通账户，只不过其名字叫做”Controller”账号。这里的普通账号就类似于冷钱包，’Controller’账号就类似于热钱包。</p><p>从普通账号向’Controller’账号转5-10 EDG，这主要是用来交Gas的。</p><p><img src="/images/blockchain/edgeware/4.jpg" alt></p><p>至此就可以进行锁仓操作了：</p><p><img src="/images/blockchain/edgeware/5.jpg" alt></p><p>锁仓成功：</p><p><img src="/images/blockchain/edgeware/6.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      锁仓Edgeware
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://www.aafeng.uk/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
