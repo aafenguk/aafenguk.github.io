@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-04-15T20:04:48.003Z</updated>
+  <updated>2021-04-16T18:47:20.812Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在命令行下载Youtube，B站等各种网站的视频？</title>
+    <link href="https://www.aafeng.uk/download_videos_in_terminals/"/>
+    <id>https://www.aafeng.uk/download_videos_in_terminals/</id>
+    <published>2021-04-15T21:48:00.000Z</published>
+    <updated>2021-04-16T18:47:20.812Z</updated>
+    
+    <content type="html"><![CDATA[<p>如何在命令行下载Youtube，B站等各种网站的视频？</p><p>最近在项目中用到了一些未接触过的技术，于是从Youtube上找了一些视频。但Youtube上的这些视频有几个问题：</p><p>首先是视频中插入了很多广告，看一会儿就要被迫看广告，让人感觉很不爽。当然，在视频中插入广告本是无可厚非的，但如果没有广告就更完美了。</p><p>其次是在Youtube也好，B站也好，都需要在网上观看。如果在家使用WIFI还好，如果出门在外的话，需要使用手机网络流量。</p><p>因此在想，如果能够把这些视频资源下载下来观看就好了。这样既没有插入的广告，又不用占用网络流量。</p><p><img src="https://user-images.githubusercontent.com/63479035/115069067-ff700780-9eea-11eb-8687-5e18ea2d209e.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>其实，这样的视频下载网站有不少，比如：<a href="https://en.savefrom.net/19/" rel="external nofollow noopener noreferrer" target="_blank">https://en.savefrom.net/19/</a></p><p><img src="https://user-images.githubusercontent.com/63479035/115066320-4956ee80-9ee7-11eb-8425-cf4c36ac38a2.png" alt="image"></p><p>他家支持的视频网站也比较全：<br><img src="https://user-images.githubusercontent.com/63479035/115066566-a2bf1d80-9ee7-11eb-80a2-d431a188c2ec.png" alt="image"></p><p>貌似问题已经解决了？Yes and No。</p><p>对于单个视频，确实可以通过这些在线工具下载。</p><p>但对于网上的很多教程，往往是一个系列，其中包含有几十个甚至上百个视频，这如果一个一个的手动下载，还不把人累死？？？</p><p>其实方法也是有的，我找到一种方法，需要事先安装好Python，然后运行：</p><pre><code>pip install you-get</code></pre><p>然后运行如下命令就可以下载视频了：</p><pre><code>you-get VIDEO_URL</code></pre><p>也可以同时下载多个视频：</p><pre><code>you-get VIDEO_URL1 VIDEO_URL2 VIDEO_URL3</code></pre><p>像Youtube和B站都支持视频列表，那么可以通过如下命令下载视频列表中的所有视频：</p><pre><code>you-get –playlist VIDEO_URL</code></pre><p>官网说不需要-playlist参数，但我试了一下，不加参数只会下载一个视频。</p><p>这个库支持的视频网站很多，对于大多数主流视频网站都没有问题：<br><img src="https://user-images.githubusercontent.com/63479035/115069255-39d9a480-9eeb-11eb-81ea-82b3a731e354.png" alt="image"></p><p>至此，就可以批量下载视频列表中的所有视频了。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何在命令行下载Youtube，B站等各种网站的视频？
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>也说饮食习惯</title>
@@ -392,26 +412,6 @@
     </summary>
     
       <category term="职场" scheme="https://www.aafeng.uk/categories/%E8%81%8C%E5%9C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>下水管道维修记</title>
-    <link href="https://www.aafeng.uk/drainage-problem/"/>
-    <id>https://www.aafeng.uk/drainage-problem/</id>
-    <published>2021-02-08T21:00:00.000Z</published>
-    <updated>2021-02-08T16:46:10.826Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天早上孩子高兴的喊道，下雪了！我兴高采烈的往窗外一看，果然下起了大雪。地上白茫茫，嗯，等等，怎么黄乎乎的一片？立刻反应过来，下水道堵了！</p><p><img src="https://user-images.githubusercontent.com/63479035/107159145-2c052180-6986-11eb-849f-8394cd6e4185.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>立刻走到花园中查看了一下，只见厨房通往下水道的入口处彻底堵了。只要厨房一用水，就直接流到花园的地上。更为糟糕的是，卫生间一冲水的话，脏水也会从厨房的下水道入口处冒出来。。。</p><p>对于这个问题，难不倒我这个老司机。于是迅速去车库把一套工具找了出来。对于这种管道，最好用的工具就是超长的皮搋子，在其一头有和管道匹配的一个橡胶头，在其另外一头则会连有一米多长的塑料棍，塑料棍的一头还有螺丝/螺母可以和另一根连在一起。我买的这个工具加起来有将近8-9米长。</p><p>可是通了半天之后，情况似乎没有任何好转，而且还泛出很多卫生间的脏水来。看样子，并不是厨房下水管道和主管道之间堵了，而是卫生间通往主排水管道的通路堵了。</p><p>于是打开井盖，试图反向通一下，但手中的工具，也就是那个塑料管太硬了，根本无法进入到管道中。该怎么办？</p><p>在网上搜了一下，看有人推荐一种叫做Toilet Snake的工具，要从卫生间的坐便往下通。于是迅速去买了一个回来。但看了说明书之后才知道，这个工具有可能会划坏坐便内壁的瓷砖。于是就尝试着从户外的管道往内通。但感觉其材质过软，根本无法用力。彻底放弃了这种做法。</p><p>至此，已经折腾了近三个小时，看着满地的脏水和那些派不上用场的工具。决定还是找专业人士吧。</p><p>在网上搜了一下，有很多类似的公司提供这种服务。找了一个客户评价最高的公司。很快，一位和蔼的老哥就到了。看了看他的专业工具，再次感叹，这种活一般人DIY是做不了的。他主要使用了一个高压水枪把管道冲开，同时还有一个大功率的吸尘器把沙土吸了出来。</p><p>之所以堵，是因为今年在扩建的时候，以及找人做花园的时候，有很多泥沙进入了下水道，导致管道堵塞。</p><p>无论怎样，尽管花了两百英镑，但管道总算是通了。</p>]]></content>
-    
-    <summary type="html">
-    
-      下水管道维修记
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
