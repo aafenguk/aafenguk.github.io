@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-04-23T20:11:41.733Z</updated>
+  <updated>2021-04-26T16:19:19.939Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科学小试验 - bouncing egg</title>
+    <link href="https://www.aafeng.uk/bouncing-egg/"/>
+    <id>https://www.aafeng.uk/bouncing-egg/</id>
+    <published>2021-04-26T16:18:13.172Z</published>
+    <updated>2021-04-26T16:19:19.939Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周女儿拿回来的家庭作业中有一个题目：做一个科学小试验并写报告记录一下。</p><p>由于并没有设定要实验的内容，因此就在网上仔细查找了一番。当看到这个bouncing egg的试验时，女儿立刻就被吸引住了。好吧，就它了。</p><p><img src="https://user-images.githubusercontent.com/63479035/116113899-d3a20e00-a6b0-11eb-9795-536d256d3c73.png" alt="image"></p><a id="more"></a><p>其实这个试验的步骤还是非常简单，这不过需要一个漫长的等待过程。</p><p>第一步是将一颗生鸡蛋洗干净。</p><p>然后准备一个小容器，正好家中有一个孩子小时候用过的杯子，就它了。</p><p>然后把鸡蛋轻轻的放入杯中，注意不能把鸡蛋磕破，然后往杯中倒入米醋，覆盖整个鸡蛋。如果鸡蛋浮起来，要找一个盖子把鸡蛋全部压入到醋中。</p><p><img src="https://user-images.githubusercontent.com/63479035/116114941-c20d3600-a6b1-11eb-9b45-43b2dcad0aa3.png" alt="image"></p><p>之后要等待24小时，就会看到蛋壳慢慢的融化到米醋中了。如果24小时后部分蛋壳还是硬的，建议倒掉杯中溶液后再更换新的米醋。直到蛋壳全部变软后就好了。</p><p>将软鸡蛋拿出后洗净，就可以试玩了。</p><p>可以看到蛋壳外的钙质已经被米醋彻底溶化了，只剩下内部的软壳。</p><p><img src="https://user-images.githubusercontent.com/63479035/116115427-4bbd0380-a6b2-11eb-93a1-aa841322af35.png" alt="image"></p><p>如果在后面用手电照一下，就更加漂亮了。</p><p><img src="https://user-images.githubusercontent.com/63479035/116113899-d3a20e00-a6b0-11eb-9795-536d256d3c73.png" alt="image"></p><p>把这个软蛋在距离桌面不远的地方松手让其下落，还会不断的反弹。</p><p>很不幸的是，女儿刚玩了一小会，这个蛋就不慎落在地板上了，哎，这个试验以后还是不要再做了。。。</p><p>家有小孩的朋友们，要不要试试bouncing egg？最终结局肯定会搞一地蛋黄蛋清的那种？</p>]]></content>
+    
+    <summary type="html">
+    
+      科学小试验 - bouncing egg
+    
+    </summary>
+    
+      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>适合全家观看的影片推荐</title>
@@ -388,26 +408,6 @@
     <summary type="html">
     
       在Summer House中打造自己的办公室
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>东西没坏就别去修它</title>
-    <link href="https://www.aafeng.uk/dontfix-if-not-broken/"/>
-    <id>https://www.aafeng.uk/dontfix-if-not-broken/</id>
-    <published>2021-02-18T21:00:00.000Z</published>
-    <updated>2021-02-19T11:58:05.480Z</updated>
-    
-    <content type="html"><![CDATA[<p>前段时间媳妇和我提到她用的台式机噪音稍微有些大，但正常使用没有任何问题。正好赶上我有时间，想想应该是灰大导致的，该清洁一下了。</p><p><img src="https://user-images.githubusercontent.com/63479035/108501390-1eff0100-72a9-11eb-8fba-3a7a86a1675b.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>于是立刻拆箱清理。把机箱内的灰尘都吸出来之后，其实应该收工了。但当时手贱，心想和CPU相连的风扇中似乎灰尘也不少，但风扇和CPU粘的很紧，于是想到不如把CPU一起取下来，这样就方便清理了。清理完毕，却发现在取的过程中似乎CPU的一些针脚歪了。于是找来钳子想把那些针脚摆正了，但可能是<del>自己手笨</del>工具不得力，总有一些针脚是歪的。</p><p>忙了半天，总算把CPU装回去了，但开机后彻底黑屏了，又把CPU取下来检查针脚，这样反复折腾了好几次一直黑屏，我最终决定放弃了。</p><p>这时候早就听过的一句话映入我的脑海：</p><blockquote><p>If it ain’t broke, don’t fix it (东西没坏，就不要去修它)</p></blockquote><p>这句话说白了就是，没事手别贱，自己给自己找事。这似乎说的就是我啊？？？</p><p>很多时候就是这样的，如果东西能够正常工作，就别去折腾它，可能越折腾事情越多。尤其对于那些特别忙的人来说，更是如此了。</p><p>不过话也不能说的太绝对了。尤其对于工作中的事，有另一种截然相反的观点，就是： “Continuous improvement” （持续改进）。</p><p>也就是说，在工作中就算有些东西能够正常工作，也要不断想办法进行改进，这样才能让自己的企业具备竞争优势，在残酷的竞争环境中生存。</p><p>不过如论如何，在生活中我还是要吸取教训，以后绝对不能给自己没事找事了。</p>]]></content>
-    
-    <summary type="html">
-    
-      东西没坏就别去修它
     
     </summary>
     
