@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/es6-notes/</loc>
+    
+    <lastmod>2021-05-06T11:13:01.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.aafeng.uk/react-notes/</loc>
+    
+    <lastmod>2021-05-06T08:53:13.322Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/manipulate-spreadsheet-in-ruby/</loc>
     
     <lastmod>2021-05-05T13:20:10.318Z</lastmod>
