@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.aafeng.uk/es6-notes/</loc>
+    <loc>https://www.aafeng.uk/react-notes/</loc>
     
-    <lastmod>2021-05-06T11:13:01.933Z</lastmod>
+    <lastmod>2021-05-07T14:57:20.040Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.aafeng.uk/react-notes/</loc>
+    <loc>https://www.aafeng.uk/javascript-notes/</loc>
     
-    <lastmod>2021-05-06T08:53:13.322Z</lastmod>
+    <lastmod>2021-05-07T14:07:45.855Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.aafeng.uk/es6-notes/</loc>
+    
+    <lastmod>2021-05-07T07:26:11.520Z</lastmod>
     
   </url>
   
