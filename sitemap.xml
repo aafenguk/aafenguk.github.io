@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aafeng.uk/react-notes/</loc>
+    
+    <lastmod>2021-05-10T16:03:42.342Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aafeng.uk/pubsub-js/</loc>
     
     <lastmod>2021-05-09T21:57:16.072Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://www.aafeng.uk/new-bike-assembly/</loc>
     
     <lastmod>2021-05-09T20:49:30.451Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aafeng.uk/react-notes/</loc>
-    
-    <lastmod>2021-05-07T14:57:20.040Z</lastmod>
     
   </url>
   
