@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-05-29T05:44:59.227Z</updated>
+  <updated>2021-05-29T06:15:56.556Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fire运动</title>
+    <link href="https://www.aafeng.uk/fire/"/>
+    <id>https://www.aafeng.uk/fire/</id>
+    <published>2021-05-29T06:15:24.101Z</published>
+    <updated>2021-05-29T06:15:56.556Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚刚读到一篇文章，提到了Fire运动这个概念，觉得这是非常有趣的一种思维/生活方式。</p><p>所谓Fire，就是Financial Independence and Retiring Early的缩写，其核心观点就是要经济独立，提前退休。呵呵，提前退休应该是很多人的梦想。但是，对于绝大多数人来说，这也就是梦想，然后就没有然后了。。。</p><p><img src="https://user-images.githubusercontent.com/63479035/120060029-29b9f680-c04d-11eb-897e-bb90c4f2fdba.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>Fire首先从另外一个角度思考了人们的消费。对于我们的每项消费，不是用钱来衡量的，而是用生命来衡量的。打个比方，如果你每天能挣1000元，那么当你要消费500元购买一件衣服的时候，如果把衣服的价值换为你的生命。也就是说，你愿意用你半天的命去换取一件衣服吗？我相信和一件衣服相比，所有人都会选择半天的命。同样，大家也都会选择“多活”一年，而不会选择一部新车；更不会为了换一栋大房子而“少活”好些年。</p><p>另外一个重要因素就是如何看待自己的工作。如果考虑一个问题：假如财务自由了，你还会坚持现在的工作吗？你还有更想做的事情要做吗？我相信对于众多打工族来说，回答是否定的。毕竟，对于很多人来说，工作是一件费事费力费时间，但又不得不做的事情。</p><p>如果能够这样换位的思考问题的话，那么接下来就好说了。既然这些身外之物如此的不重要，那么，我们为什么不尽量节省开始，节省自己的生命呢？</p><p>从实施角度，Fire提出了一个方案：生活上要奉行极简主义，解决所有不必要的开支，尽快攒够每年生活费的25倍，然后就可以退休了。退休后依靠理财收益的4%生活。也就是说，25倍的存款x4%的理财收益，正好就是每年的生活费。于是，已经有一些人在35岁的时候就真的退休了。</p><p>在Fire中的极简主义，绝对是真的要极简。家中凡是超过一个月没有用过的东西，要全部处理掉。每当要购买新的东西时候，必须扔掉另一件东西。只有这样严格的控制，才能最大限度的控制自己的生活成本，早日存够那生活费的25%。</p><p>不过不得不说的是，每个人的思考角度可能都不一样。比如：对于家中有孩子的人来说，执行这个极简注意似乎就难度不少，成年人能省则省，但对于孩子来说，要做到这点难度似乎大了些。</p><p>但不论怎样，这种思维方式对我的冲击还是非常大的。以后真的需要好好思考一下自己的消费观了。</p>]]></content>
+    
+    <summary type="html">
+    
+      Fire运动
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>双扣</title>
@@ -394,26 +414,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何在命令行下载Youtube，B站等各种网站的视频？</title>
-    <link href="https://www.aafeng.uk/download_videos_in_terminals/"/>
-    <id>https://www.aafeng.uk/download_videos_in_terminals/</id>
-    <published>2021-04-15T21:48:00.000Z</published>
-    <updated>2021-04-16T18:47:20.812Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何在命令行下载Youtube，B站等各种网站的视频？</p><p>最近在项目中用到了一些未接触过的技术，于是从Youtube上找了一些视频。但Youtube上的这些视频有几个问题：</p><p>首先是视频中插入了很多广告，看一会儿就要被迫看广告，让人感觉很不爽。当然，在视频中插入广告本是无可厚非的，但如果没有广告就更完美了。</p><p>其次是在Youtube也好，B站也好，都需要在网上观看。如果在家使用WIFI还好，如果出门在外的话，需要使用手机网络流量。</p><p>因此在想，如果能够把这些视频资源下载下来观看就好了。这样既没有插入的广告，又不用占用网络流量。</p><p><img src="https://user-images.githubusercontent.com/63479035/115069067-ff700780-9eea-11eb-8687-5e18ea2d209e.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>其实，这样的视频下载网站有不少，比如：<a href="https://en.savefrom.net/19/" rel="external nofollow noopener noreferrer" target="_blank">https://en.savefrom.net/19/</a></p><p><img src="https://user-images.githubusercontent.com/63479035/115066320-4956ee80-9ee7-11eb-8425-cf4c36ac38a2.png" alt="image"></p><p>他家支持的视频网站也比较全：<br><img src="https://user-images.githubusercontent.com/63479035/115066566-a2bf1d80-9ee7-11eb-80a2-d431a188c2ec.png" alt="image"></p><p>貌似问题已经解决了？Yes and No。</p><p>对于单个视频，确实可以通过这些在线工具下载。</p><p>但对于网上的很多教程，往往是一个系列，其中包含有几十个甚至上百个视频，这如果一个一个的手动下载，还不把人累死？？？</p><p>其实方法也是有的，我找到一种方法，需要事先安装好Python，然后运行：</p><pre><code>pip install you-get</code></pre><p>然后运行如下命令就可以下载视频了：</p><pre><code>you-get VIDEO_URL</code></pre><p>也可以同时下载多个视频：</p><pre><code>you-get VIDEO_URL1 VIDEO_URL2 VIDEO_URL3</code></pre><p>像Youtube和B站都支持视频列表，那么可以通过如下命令下载视频列表中的所有视频：</p><pre><code>you-get –playlist VIDEO_URL</code></pre><p>官网说不需要-playlist参数，但我试了一下，不加参数只会下载一个视频。</p><p>这个库支持的视频网站很多，对于大多数主流视频网站都没有问题：<br><img src="https://user-images.githubusercontent.com/63479035/115069255-39d9a480-9eeb-11eb-81ea-82b3a731e354.png" alt="image"></p><p>至此，就可以批量下载视频列表中的所有视频了。</p>]]></content>
-    
-    <summary type="html">
-    
-      如何在命令行下载Youtube，B站等各种网站的视频？
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
