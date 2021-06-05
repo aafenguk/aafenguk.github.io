@@ -177,6 +177,28 @@
   </entry>
   
   <entry>
+    <title>React中的表单组件Formik学习笔记</title>
+    <link href="https://www.aafeng.uk/formik-notes/"/>
+    <id>https://www.aafeng.uk/formik-notes/</id>
+    <published>2021-05-20T11:44:06.000Z</published>
+    <updated>2021-06-05T22:00:39.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>以下的学习笔记和代码源于<a href="https://formik.org/docs/tutorial" rel="external nofollow noopener noreferrer" target="_blank">官网</a>，但并不是对官方文档的翻译，而是我自己的理解和记录。</p><a id="more"></a><p>Formik是一组用于创建表单的React组件。它主要是解决以下几个问题的：</p><ul><li>从表单组件状态中获取状态</li><li>表单验证及错误消息</li><li>表单提交</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>yarn add formik</code></pre><h2 id="基本案例"><a href="#基本案例" class="headerlink" title="基本案例"></a>基本案例</h2><p>这是官方提供的一个简单示例：</p><pre><code>import React from &apos;react&apos;;import { useFormik } from &apos;formik&apos;;export default function SignupForm() {    const formik = useFormik({        initialValues: {            email: &apos;&apos;,        },        onSubmit: values =&gt; {            alert(JSON.stringify(values, null, 2));        }    });    return (        &lt;form onSubmit={formik.handleSubmit}&gt;        &lt;label htmlFor=&quot;email&quot;&gt;Email Address&lt;/label&gt;        &lt;input            id=&quot;email&quot;            name=&quot;email&quot;            type=&quot;email&quot;            onChange={formik.handleChange}            value={formik.values.email}        /&gt;        &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;        &lt;/form&gt;    );};</code></pre><p>在上面的例子中，使用了useFormik钩子。在程序中传递给useFormik两个参数：</p><pre><code>* initialValues: 表单中的初始值* onSubmit: 提交表单时的回调函数</code></pre><p>useFormik钩子函数的返回值中包含了：</p><pre><code>* handleSubmit: 表单提交时的处理函数，它会调用我们实现的onSubmit函数* handleChange: 值变更时的处理函数，它会在input,select,textarea等表单字段值变化时被调用* values: 表单所有字段的当前值，可以通过formik.values.email的方式访问</code></pre><p>从上面例子可以看到，我们将表单中的输入字段和props连接到了一起。这样就避免了自己管理所有表单字段以及自定义的事件处理函数。通过useFormik这个钩子把所有的值，及回调函数统一进行管理。</p><p>当表单变得更加复杂的时候，原理也是一样的。比如：再添加两个字段：firstName, lastName的方式也是一样的：</p><pre><code>const formik = useFormik({    initialValues: {        firstName: &apos;&apos;,        lastName: &apos;&apos;,        email: &apos;&apos;,    },    onSubmit: values =&gt; {        alert(JSON.stringify(values, null, 2));    }});</code></pre><p>以及表单部分：</p><pre><code>&lt;label htmlFor=&quot;firstName&quot;&gt;First Name&lt;/label&gt;&lt;input    id=&quot;firstName&quot;    name=&quot;firstName&quot;    type=&quot;text&quot;    onChange={formik.handleChange}    value={formik.values.firstName}/&gt;&lt;br/&gt;&lt;label htmlFor=&quot;lastName&quot;&gt;Last Name&lt;/label&gt;&lt;input    id=&quot;lastName&quot;    name=&quot;lastName&quot;    type=&quot;text&quot;    onChange={formik.handleChange}    value={formik.values.lastName}/&gt;&lt;br/&gt;</code></pre><h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><p>在进行表单验证的时候，可以选择HTML原生的验证方法，比如: required, maxlength等等。但这种验证方式又其限制，比如：</p><ul><li>仅能用于浏览器中，在Reactive Native中不能工作。</li><li>错误提示都是固定的，无法自定义错误提示信息。</li></ul><p>通过Formik，可以管理验证规则及自定义的错误提示信息。首先定义验证规则：</p><pre><code>const validate = values =&gt; {    const errors = {};    if (!values.firstName) {      errors.firstName = &apos;Required&apos;;    } else if (values.firstName.length &gt; 15) {      errors.firstName = &apos;Must be 15 characters or less&apos;;    }    if (!values.lastName) {      errors.lastName = &apos;Required&apos;;    } else if (values.lastName.length &gt; 20) {      errors.lastName = &apos;Must be 20 characters or less&apos;;    }    if (!values.email) {      errors.email = &apos;Required&apos;;    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {      errors.email = &apos;Invalid Email。&apos;;    }    return errors;};</code></pre><p>可以看到，在上面可以灵活的定义各种验证规则，比如：firstName非空，同时必须小于15个字符串。接下来需要将validate传递给useFormik：</p><pre><code>const formik = useFormik({    initialValues: {        firstName: &apos;&apos;,        lastName: &apos;&apos;,        email: &apos;&apos;,    },    validate,    onSubmit: values =&gt; {        alert(JSON.stringify(values, null, 2));    }});</code></pre><p>同时，在React组件中输入项的相关位置，添加错误提示信息：</p><pre><code>{formik.errors.firstName ? &lt;div&gt;{formik.errors.firstName}&lt;/div&gt; : null}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      React中的表单组件Formik学习笔记
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>驯龙高手How to Train Your Dragon剧情介绍</title>
     <link href="https://www.aafeng.uk/how-to-train-your-dragon/"/>
     <id>https://www.aafeng.uk/how-to-train-your-dragon/</id>
@@ -394,26 +416,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>科学小试验 - bouncing egg</title>
-    <link href="https://www.aafeng.uk/bouncing-egg/"/>
-    <id>https://www.aafeng.uk/bouncing-egg/</id>
-    <published>2021-04-26T16:18:13.172Z</published>
-    <updated>2021-04-26T16:19:19.939Z</updated>
-    
-    <content type="html"><![CDATA[<p>这周女儿拿回来的家庭作业中有一个题目：做一个科学小试验并写报告记录一下。</p><p>由于并没有设定要实验的内容，因此就在网上仔细查找了一番。当看到这个bouncing egg的试验时，女儿立刻就被吸引住了。好吧，就它了。</p><p><img src="https://user-images.githubusercontent.com/63479035/116113899-d3a20e00-a6b0-11eb-9795-536d256d3c73.png" alt="image"></p><a id="more"></a><p>其实这个试验的步骤还是非常简单，这不过需要一个漫长的等待过程。</p><p>第一步是将一颗生鸡蛋洗干净。</p><p>然后准备一个小容器，正好家中有一个孩子小时候用过的杯子，就它了。</p><p>然后把鸡蛋轻轻的放入杯中，注意不能把鸡蛋磕破，然后往杯中倒入米醋，覆盖整个鸡蛋。如果鸡蛋浮起来，要找一个盖子把鸡蛋全部压入到醋中。</p><p><img src="https://user-images.githubusercontent.com/63479035/116114941-c20d3600-a6b1-11eb-9b45-43b2dcad0aa3.png" alt="image"></p><p>之后要等待24小时，就会看到蛋壳慢慢的融化到米醋中了。如果24小时后部分蛋壳还是硬的，建议倒掉杯中溶液后再更换新的米醋。直到蛋壳全部变软后就好了。</p><p>将软鸡蛋拿出后洗净，就可以试玩了。</p><p>可以看到蛋壳外的钙质已经被米醋彻底溶化了，只剩下内部的软壳。</p><p><img src="https://user-images.githubusercontent.com/63479035/116115427-4bbd0380-a6b2-11eb-93a1-aa841322af35.png" alt="image"></p><p>如果在后面用手电照一下，就更加漂亮了。</p><p><img src="https://user-images.githubusercontent.com/63479035/116113899-d3a20e00-a6b0-11eb-9795-536d256d3c73.png" alt="image"></p><p>把这个软蛋在距离桌面不远的地方松手让其下落，还会不断的反弹。</p><p>很不幸的是，女儿刚玩了一小会，这个蛋就不慎落在地板上了，哎，这个试验以后还是不要再做了。。。</p><p>家有小孩的朋友们，要不要试试bouncing egg？最终结局肯定会搞一地蛋黄蛋清的那种？</p>]]></content>
-    
-    <summary type="html">
-    
-      科学小试验 - bouncing egg
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
     
   </entry>
