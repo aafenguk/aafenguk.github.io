@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-06-20T21:47:09.935Z</updated>
+  <updated>2021-06-21T18:53:26.249Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>试用Notion笔记软件</title>
+    <link href="https://www.aafeng.uk/notion/"/>
+    <id>https://www.aafeng.uk/notion/</id>
+    <published>2021-06-21T18:52:58.790Z</published>
+    <updated>2021-06-21T18:53:26.249Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近经同事推荐尝试了一下Notion这个软件，感觉还是不错的。</p><p><img src="https://user-images.githubusercontent.com/63479035/122812401-8a91c300-d2c9-11eb-9b75-35f03c9da8da.png" alt="image"></p><p>其实使用Evernote已经好多年了。最早选择它的时候还没有Onenote。后来有了Onenote之后又懒得再换了。这么多年下来，在Evernote上保存了很多笔记。</p><p>对于Evernote，个人感觉这个软件整体做的还不错，但总感觉其中的功能有些让人不是特别满意。比如：免费版本只能在两个设备间同步数据；不支持程序代码的高亮显示。</p><p>在试用了Notion之后，被其强悍的功能所折服。打算下一步正式用一段时间，看看是否真的好用。</p><p>在我看来，Notion具有以下优点。</p><p>首先就是其灵活性。在Notion中，可以管理笔记，进行项目管理，待办事情列表等等。也就是说，在Notion中，针对使用者的约束会更少，让使用者有更大的空间自由发挥。</p><p>其次，就算在笔记这项最为重要的功能中，也有很多亮点。比如，在表格中可以进行统计。这不是把Excel的功能也搞进来了吗？</p><p>还有就是其强大的Markdown支持，对常见编程语言代码的高亮显示等功能。</p><p>当然，版本备份功能也是必不可少的。在Notion中可以查看自己的修改记录。</p><p>还有很多我尚未尝试的功能，比如：gallery，calender，board，数学公式等等。</p><p>不过，自己对Notion的界面不是很喜欢。反倒是Evernote的界面更对我的胃口。其实也讲不出原因，第一眼喜欢就是喜欢，反之亦然。就像我从第一眼看见Netbeans的时候就产生一种排斥感，但对于eclipse就出奇的喜欢。不论怎样，先进一步试用一下吧，毕竟，它所提供的功能更为重要。</p>]]></content>
+    
+    <summary type="html">
+    
+      试用Notion笔记软件
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>安装eufy家用安全摄像头</title>
     <link href="https://www.aafeng.uk/eufy-security-camera/"/>
     <id>https://www.aafeng.uk/eufy-security-camera/</id>
     <published>2021-06-20T21:45:13.701Z</published>
-    <updated>2021-06-20T21:47:09.935Z</updated>
+    <updated>2021-06-21T17:34:39.529Z</updated>
     
-    <content type="html"><![CDATA[<p>最近不断听到伦敦等地出现一些暴力事件，于是就考虑在家安装一组安全摄像头。经朋友推荐，选择了eufyCam家用摄像头。</p><p><img src="https://user-images.githubusercontent.com/63479035/122688729-e8fd6980-d215-11eb-88ac-5eb548406ffb.png" alt="image"></p><a id="more"></a><p>其实，我所在的小城安全系数本来就很高。我所住的街区也从未听说过入室盗窃的事件。不过安装一下毕竟还是有好处的。至少在有人敲门的时候能够看清对方。</p><p>在网上下单后，很快就送到了。官网说的是3-7个工作日，但没有想到第二天就送到了。奇怪的是，竟然是Amazon Prime的包装。可能两家是有合作吧。</p><p>整个安装过程还是非常简单的。</p><p>首先是把主机通过网线和家中的路由器连接在一起，然后进行了初始设置。</p><p>然后从Google Play Store上安装了他家的APP，在APP中根据提示添加了主机，以及两个配套的摄像头。这里需要注意的是，在选择摄像头位置的时候，需要拿着摄像头看看WIFI信号是否足够强。</p><p>接下来就是把摄像头安装到户外了。说明书上提到，一定要避免阳光的直接照射。这主要是因为摄像头内置有电池，在阳光暴晒下可能会有危险。不过话说，安装在户外，又要避免阳光，似乎并不容易。我选择安装在排水管道的下方，肯定会被照到，但应该还好吧。</p><p>安装好之后，只要有人走进，手机APP就会有提示。摄像头还有白天和夜间模式两种。同时，它还有人脸识别功能，能够检测到走进的人。APP内部还有宠物识别功能。但对于我来说，似乎没什么用。</p><p>安装完毕后，倒没有觉得更安全了，但却感觉很好玩。随时可以看到家附近情况的感觉还是很不错的。</p><p>如果喜欢的话，欢迎使用我的<a href="https://bit.ly/3cSjKBW" rel="external nofollow noopener noreferrer" target="_blank">推荐链接</a>，你能获得40英镑的折扣，我则会获得40英镑的Amazon购物券。也算是双赢吧。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近不断听到伦敦等地出现一些暴力事件，于是就考虑在家安装一组安全摄像头。经朋友推荐，选择了eufyCam家用摄像头。</p><p><img src="https://user-images.githubusercontent.com/63479035/122688729-e8fd6980-d215-11eb-88ac-5eb548406ffb.png" alt="image"></p><a id="more"></a><p>其实，我所在的小城安全系数本来就很高。我所住的街区也从未听说过入室盗窃的事件。不过安装一下毕竟还是有好处的。至少在有人敲门的时候能够看清对方。</p><p>在网上下单后，很快就送到了。官网说的是3-7个工作日，但没有想到第二天就送到了。奇怪的是，竟然是Amazon Prime的包装。可能两家是有合作吧。</p><p>整个安装过程还是非常简单的。</p><p>首先是把主机通过网线和家中的路由器连接在一起，然后进行了初始设置。</p><p>然后从Google Play Store上安装了他家的APP，在APP中根据提示添加了主机，以及两个配套的摄像头。这里需要注意的是，在选择摄像头位置的时候，需要拿着摄像头看看WIFI信号是否足够强。</p><p>接下来就是把摄像头安装到户外了。说明书上提到，一定要避免阳光的直接照射。这主要是因为摄像头内置有电池，在阳光暴晒下可能会有危险。不过话说，安装在户外，又要避免阳光，似乎并不容易。我选择安装在排水管道的下方，肯定会被照到，但应该还好吧。</p><p>安装好之后，只要有人走进，手机APP就会有提示。摄像头还有白天和夜间模式两种。同时，它还有人脸识别功能，能够检测到走进的人。APP内部还有宠物识别功能。但对于我来说，似乎没什么用。</p><p>安装完毕后，倒没有觉得更安全了，但却感觉很好玩。随时可以看到家附近情况的感觉还是很不错的。</p><p>如果喜欢的话，欢迎使用我的<a href="https://bit.ly/3cSjKBW" rel="external nofollow noopener noreferrer" target="_blank">推荐链接</a>，你能获得40英镑的折扣（订单超过200英镑，且为原价商品才能获得折扣），我则会获得40英镑的Amazon购物券。也算是双赢吧。</p>]]></content>
     
     <summary type="html">
     
@@ -399,26 +419,6 @@
     
     
       <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Get新技能 - 自行车组装</title>
-    <link href="https://www.aafeng.uk/new-bike-assembly/"/>
-    <id>https://www.aafeng.uk/new-bike-assembly/</id>
-    <published>2021-05-09T20:48:41.520Z</published>
-    <updated>2021-05-09T20:49:30.451Z</updated>
-    
-    <content type="html"><![CDATA[<p>作为儿子的生日礼物，送给了他一辆新自行车。过去都是去Halfords试好，然后请店中的专业人士帮忙装好。但这次选择的是网购，需要自己组装。看了看网上用户的留言，都说组装过程比较简单。好吧，我就不信自己装不起来。</p><a id="more"></a><p>很快就收到了自行车。还好，最为复杂的部分，后轮和主体部分已经装好了。</p><p><img src="https://user-images.githubusercontent.com/63479035/117586131-11ba1b80-b10e-11eb-8f3a-eccc0750fd41.png" alt="image"></p><p>于是把说明书仔细读了一遍，开始组装！</p><p>第一步是把主体部分和自行车把手连到一起。感觉这个部分的设计非常巧妙。通过一个特殊的螺丝就能让把手和车体牢固的连在一起。但这一步的时候一定要特别注意把手一定要和车体垂直，保持90度，否则后面装前轮的时候可能就会出现问题。</p><p>这一步装好之后，就可以安装车座和脚蹬了。这两个部分比较简单。只不过需要注意安装好之后一定要把螺丝拧紧，不要留安全隐患。</p><p>接下来就是一个细活了：安装前轮。这一步中我入了两个坑。首先是前面提到的，车把必须要和车体保持严格的90度，否则到了这部，轮胎的方向会是歪的，自行车就没法骑了。其次是需要注意，在把自行车和车体连接的时候，两边要保持水平，同时和车体上的连接处之间不要留任何空隙，否则后面在调整前闸的时候就会有麻烦。</p><p>前轮一旦装好装正了，后面连接闸线那一步就水到渠成了。通过组装，才知道如何安装闸线，如何调节其灵敏度。以后车闸如果出现问题，对我来说应该就是小问题了。</p><p>最后把轮胎的气打足，试骑了一下，感觉没有任何问题了。再按照说明书做了一次安全性检查，终于大功告成！</p><p>以后自己家的自行车再出现问题，在自己车库中就可以修了！</p>]]></content>
-    
-    <summary type="html">
-    
-      Get新技能 - 自行车组装
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   
