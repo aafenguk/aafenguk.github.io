@@ -37,6 +37,26 @@
   </entry>
   
   <entry>
+    <title>使用Context Provider及useContext管理React中的上下文</title>
+    <link href="https://www.aafeng.uk/usecontext/"/>
+    <id>https://www.aafeng.uk/usecontext/</id>
+    <published>2021-06-20T22:03:57.000Z</published>
+    <updated>2021-06-23T21:50:05.024Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在React中，Context API提供了一种简洁又干净的方法在不同组件中共享状态。 其典型应用场景包括： 用户认证，界面语言，主题等“全局”性的设置。</p><p><img src="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><h2 id="使用Context-Provider"><a href="#使用Context-Provider" class="headerlink" title="使用Context Provider"></a>使用Context Provider</h2><p>要想使用上下文，首先需要创建上下文的提供者： Context Provider。 比如：想要创建一个和用户认证相关的上下文。</p><p>首先，添加src/contexts/LoginContext.js:</p><pre><code>import React, { createContext, useState } from &apos;react&apos;;export const LoginContext = createContext();export default function LoginContextProvider({ children }) {    const [isAuthenticated, setIsAuthenticated] =  useState(false);    const [role, setRole] =  useState(&apos;public&apos;);    const login = () =&gt; {        setIsAuthenticated(true);    }    const logout = () =&gt; {        setIsAuthenticated(false);        setRole(&apos;&apos;);    }    return (        &lt;LoginContext.Provider value={{ isAuthenticated, login, logout, role, setRole }}&gt;            { children }        &lt;/LoginContext.Provider&gt;    )}</code></pre><p>对其进行调用的组件：</p><pre><code>import React, { useContext } from &apos;react&apos;;import {LoginContext} from &apos;../contexts/LoginContext&apos;;export default function LoginTest() {    const loginContext = useContext(LoginContext);    const { isAuthenticated, login, logout, role, setRole } = loginContext;    return (        &lt;div style={{margin: "25px"}}&gt;            You are {isAuthenticated? &quot;logged in.&quot;: &quot;logged out.&quot;}&lt;br/&gt;            Your role: {role}&lt;br/&gt;            &lt;button onClick={isAuthenticated? logout:login}&gt;{isAuthenticated? &quot;Logout&quot;:&quot;Login&quot;}&lt;/button&gt;            &lt;button onClick={() =&gt; setRole(&apos;Admin&apos;)}&gt;Change role to Admin&lt;/button&gt;            &lt;button onClick={() =&gt; setRole(&apos;public&apos;)}&gt;Change role to public&lt;/button&gt;        &lt;/div&gt;    )}</code></pre><p>在App.js中，</p><pre><code>&lt;LoginContextProvider&gt;    &lt;LoginTest/&gt;&lt;/LoginContextProvider&gt;</code></pre><h2 id="使用Context-Provider保存全局数据"><a href="#使用Context-Provider保存全局数据" class="headerlink" title="使用Context Provider保存全局数据"></a>使用Context Provider保存全局数据</h2><p>有些时候甚至可以把数据放到Context Provider中，比如：</p><pre><code>import React, { createContext, useState } from &apos;react&apos;;export const BookContext = createContext();const BookContextProvider = (props) =&gt; {  const [books, setBooks] = useState([    {title: &apos;Java程序设计&apos;, id: 1101},    {title: &apos;Python程序设计&apos;, id: 1102},    {title: &apos;React in Action&apos;, id: 1103},  ]);  return (    &lt;BookContext.Provider value={{books}}&gt;      {props.children}    &lt;/BookContext.Provider&gt;  )}export default BookContextProvider;</code></pre><p>在组件中使用BookContext:</p><pre><code>const { books } = useContext(BookContext);</code></pre><p>这样就可以在不同组件中共享 books 实例。</p>]]></content>
+    
+    <summary type="html">
+    
+      使用Context Provider及useContext管理React中的上下文
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>安装eufy家用安全摄像头</title>
     <link href="https://www.aafeng.uk/eufy-security-camera/"/>
     <id>https://www.aafeng.uk/eufy-security-camera/</id>
@@ -397,28 +417,6 @@
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>pubsub-js</title>
-    <link href="https://www.aafeng.uk/pubsub-js/"/>
-    <id>https://www.aafeng.uk/pubsub-js/</id>
-    <published>2021-05-09T21:56:26.045Z</published>
-    <updated>2021-05-09T21:57:16.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在使用React的时候涉及到了组件之间的通信。尝试了一下pubsub-js这个库，感觉是真的香，下面总结一下。</p><p><img src="https://user-images.githubusercontent.com/63479035/117588121-5bf4ca00-b119-11eb-9e0a-d936b466e85f.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>组件的github官网：<a href="https://github.com/mroderick/PubSubJS" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mroderick/PubSubJS</a></p><p>安装：</p><pre><code>npm install --save pubsub-js</code></pre><p>或者运行：</p><pre><code>yarn add pubsub-js</code></pre><p>其核心概念和所有消息组件没有太大区别，无非就是订阅/发布的过程。</p><p>由于这个库和React没有必然的联系。下面就通过普通的JS来演示如何使用这个库。</p><p>首先是订阅部分：</p><pre><code>import PubSub from &apos;pubsub-js&apos;PubSub.subscribe(&apos;SubmissionMessages&apos;, (msg, data) =&gt; {  // 这里添加收到消息后的处理逻辑}</code></pre><p>如果要发布消息的话，</p><pre><code>import PubSub from &apos;pubsub-js&apos;PubSub.publish(&apos;SubmissionMessages&apos;, data)</code></pre><p>无论是订阅还是发布，这里的data可以是简单的字符串，也可以是一个对象。</p><p>感觉有了这个库之后，对于那种有着复杂结构(多层父子及兄弟）的组件，彼此之间传递消息就会方便很多。只不过需要注意的是，如果要传递到不同的消息队列中，要管理好消息的名字，否则把消息发错队列就不好了。同时，对于不再使用的订阅者，需要取消订阅。</p>]]></content>
-    
-    <summary type="html">
-    
-      pubsub-js
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
     
   </entry>
   
