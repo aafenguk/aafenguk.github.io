@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>使用Context Provider及useContext管理React中的上下文 - aafeng</title><meta description="使用Context Provider及useContext管理React中的上下文"><meta property="og:type" content="blog"><meta property="og:title" content="使用Context Provider及useContext管理React中的上下文"><meta property="og:url" content="https://www.aafeng.uk/"><meta property="og:site_name" content="aafeng"><meta property="og:description" content="使用Context Provider及useContext管理React中的上下文"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png"><meta property="article:published_time" content="2021-06-20T22:03:57.000Z"><meta property="article:modified_time" content="2021-06-23T21:50:05.024Z"><meta property="article:author" content="aafeng"><meta property="article:tag" content="React"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.aafeng.uk/usecontext/"},"headline":"aafeng","image":["https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png"],"datePublished":"2021-06-20T22:03:57.000Z","dateModified":"2021-06-23T21:50:05.024Z","author":{"@type":"Person","name":"aafeng"},"description":"使用Context Provider及useContext管理React中的上下文"}</script><link rel="canonical" href="https://www.aafeng.uk/usecontext/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-163432216-1" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>使用Context Provider及useContext管理React中的上下文 - aafeng</title><meta description="使用Context Provider及useContext管理React中的上下文"><meta property="og:type" content="blog"><meta property="og:title" content="使用Context Provider及useContext管理React中的上下文"><meta property="og:url" content="https://www.aafeng.uk/"><meta property="og:site_name" content="aafeng"><meta property="og:description" content="使用Context Provider及useContext管理React中的上下文"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png"><meta property="og:image" content="https://user-images.githubusercontent.com/63479035/123218024-20447280-d4c3-11eb-8c49-4e668a348c83.png"><meta property="article:published_time" content="2021-06-20T22:03:57.000Z"><meta property="article:modified_time" content="2021-06-24T09:15:16.097Z"><meta property="article:author" content="aafeng"><meta property="article:tag" content="React"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.aafeng.uk/usecontext/"},"headline":"aafeng","image":["https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png","https://user-images.githubusercontent.com/63479035/123218024-20447280-d4c3-11eb-8c49-4e668a348c83.png"],"datePublished":"2021-06-20T22:03:57.000Z","dateModified":"2021-06-24T09:15:16.097Z","author":{"@type":"Person","name":"aafeng"},"description":"使用Context Provider及useContext管理React中的上下文"}</script><link rel="canonical" href="https://www.aafeng.uk/usecontext/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-163432216-1" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
-        gtag('config', 'UA-163432216-1');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logox100.png" alt="aafeng" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Hive" href="https://hive.blog/@aafeng"><i class="fab fa-cubes"></i></a><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="赞赏公民" href="https://liker.land/civic?from=aafenguk"><i class="fab fa-cubes"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" datetime="2021-06-20T22:03:57.000Z" title="2021-06-20T22:03:57.000Z">2021-06-20</time><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">2 分钟 读完 (大约 341 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">使用Context Provider及useContext管理React中的上下文</h1><div class="content"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在React中，Context API提供了一种简洁又干净的方法在不同组件中共享状态。 其典型应用场景包括： 用户认证，界面语言，主题等“全局”性的设置。</p>
+        gtag('config', 'UA-163432216-1');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logox100.png" alt="aafeng" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Hive" href="https://hive.blog/@aafeng"><i class="fab fa-cubes"></i></a><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="赞赏公民" href="https://liker.land/civic?from=aafenguk"><i class="fab fa-cubes"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" datetime="2021-06-20T22:03:57.000Z" title="2021-06-20T22:03:57.000Z">2021-06-20</time><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">5 分钟 读完 (大约 747 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">使用Context Provider及useContext管理React中的上下文</h1><div class="content"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在React中，Context API提供了一种简洁又干净的方法在不同组件中共享状态。 其典型应用场景包括： 用户认证，界面语言，主题等“全局”性的设置。</p>
 <p><img src="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png" alt="image"><br>Source: Pixabay</p>
 <a id="more"></a>
 <h2 id="使用Context-Provider"><a href="#使用Context-Provider" class="headerlink" title="使用Context Provider"></a>使用Context Provider</h2><p>要想使用上下文，首先需要创建上下文的提供者： Context Provider。 比如：想要创建一个和用户认证相关的上下文。</p>
@@ -54,12 +54,13 @@ export default function LoginTest() {
 <pre><code>&lt;LoginContextProvider&gt;
     &lt;LoginTest/&gt;
 &lt;/LoginContextProvider&gt;
-</code></pre><h2 id="使用Context-Provider保存全局数据"><a href="#使用Context-Provider保存全局数据" class="headerlink" title="使用Context Provider保存全局数据"></a>使用Context Provider保存全局数据</h2><p>有些时候甚至可以把数据放到Context Provider中，比如：</p>
+</code></pre><p><img src="https://user-images.githubusercontent.com/63479035/123218024-20447280-d4c3-11eb-8c49-4e668a348c83.png" alt="image"></p>
+<h2 id="使用Context-Provider保存全局数据"><a href="#使用Context-Provider保存全局数据" class="headerlink" title="使用Context Provider保存全局数据"></a>使用Context Provider保存全局数据</h2><p>有些时候甚至可以把数据放到Context Provider中，比如：</p>
 <pre><code>import React, { createContext, useState } from &apos;react&apos;;
 
 export const BookContext = createContext();
 
-const BookContextProvider = (props) =&gt; {
+const BookContextProvider = ({children}) =&gt; {
   const [books, setBooks] = useState([
     {title: &apos;Java程序设计&apos;, id: 1101},
     {title: &apos;Python程序设计&apos;, id: 1102},
@@ -67,7 +68,7 @@ const BookContextProvider = (props) =&gt; {
   ]);
   return (
     &lt;BookContext.Provider value={{books}}&gt;
-      {props.children}
+      {children}
     &lt;/BookContext.Provider&gt;
   )
 }
@@ -76,7 +77,74 @@ export default BookContextProvider;
 </code></pre><p>在组件中使用BookContext:</p>
 <pre><code>const { books } = useContext(BookContext);
 </code></pre><p>这样就可以在不同组件中共享 books 实例。</p>
-</div><div class="sharethis-inline-share-buttons"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e936f708faafedb" defer></script></article></div><!--!--><div class="card"><div class="card-content"><div class="likecoin-embed likecoin-button"><div></div><iframe scrolling="no" frameborder="0" src="https://button.like.co/in/embed/aafenguk/button?referrer=https%3A%2F%2Fwww.aafeng.uk%2Fusecontext%2F"></iframe></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/notion/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">试用Notion笔记软件</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/eufy-security-camera/"><span class="level-item">安装eufy家用安全摄像头</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+<h2 id="使用reducer"><a href="#使用reducer" class="headerlink" title="使用reducer"></a>使用reducer</h2><p>首先，在使用Context Provider的时候，不是必须使用reducer的，但如果使用，可以简化代码。比如，在CustomerContextProvider中，我们可以添加addCustomer, removeCustomer等方法并把它们传递给使用Context的组件中，但这样做对于简单应用还好。对于稍微复杂的应用，就会过于烦琐了。最好的方法是使用reducer将这些方法统一进行管理。</p>
+<h3 id="创建reducer"><a href="#创建reducer" class="headerlink" title="创建reducer"></a>创建reducer</h3><p>首先，需要创建一个Reducer，并将操纵状态的逻辑放在reducer中：</p>
+<pre><code>import uuid from &apos;react-uuid&apos;;
+
+export const customerReducer = (state, action) =&gt; {
+  switch (action.type) {
+    case &apos;ADD_CUSTOMER&apos;:
+      return [...state, {
+        name: action.customer.name, 
+        phone: action.customer.phone, 
+        id: uuid()}
+      ];
+    case &apos;REMOVE_CUSTOMER&apos;:
+      return state.filter(customer =&gt; customer.id !== action.id);
+    case &apos;ADD_DUMMY_CUSTOMERS&apos;:
+      return [
+        {id: uuid(), name: &apos;Stuart&apos;, phone: &apos;07853110066&apos;},
+        {id: uuid(), name: &apos;Lucas&apos;, phone: &apos;07853110067&apos;},
+        {id: uuid(), name: &apos;Andy&apos;, phone: &apos;07853110068&apos;}
+      ];    
+    case &apos;RESET_CUSTOMER&apos;:
+      return [];    
+    default:
+      return state;
+  }
+} 
+</code></pre><h3 id="在ContextProvider中使用reducer"><a href="#在ContextProvider中使用reducer" class="headerlink" title="在ContextProvider中使用reducer"></a>在ContextProvider中使用reducer</h3><p>接下来，在CustomerContext中，就不要使用useState，而是使用useReducer了。因为state的管理已经转移到reducer中了。</p>
+<pre><code>import React, { createContext, useReducer } from &apos;react&apos;;
+import { customerReducer } from &apos;../reducers/customerReducer&apos;;
+
+export const CustomerContext = createContext();
+
+const CustomerContextProvider = (props) =&gt; {
+  const [customers, dispatch] = useReducer(customerReducer, []);
+  return (
+    &lt;CustomerContext.Provider value={{ customers, dispatch }}&gt;
+      {props.children}
+    &lt;/CustomerContext.Provider&gt;
+  );
+}
+
+export default CustomerContextProvider;
+</code></pre><h3 id="在UI组件中使用Context和reducer"><a href="#在UI组件中使用Context和reducer" class="headerlink" title="在UI组件中使用Context和reducer"></a>在UI组件中使用Context和reducer</h3><p>接下来在UI组件中只需要通过传递给dispatch相应的参数就可以调用相应的状态更新方法了：</p>
+<pre><code>import React, { useContext } from &apos;react&apos;;
+import { CustomerContext } from &apos;../contexts/CustomerContext&apos;;
+
+export default function CustomerList() {
+
+    const customerContext = useContext(CustomerContext);
+    const { customers, dispatch } = customerContext;
+
+    return (
+        &lt;div&gt;
+            Current customers (click to delete):
+            &lt;hr/&gt;
+            &lt;ul&gt;
+            {customers.map(customer =&gt; {
+                return ( 
+                    &lt;li key={customer.id} onClick={() =&gt; dispatch({ type: &apos;REMOVE_CUSTOMER&apos;, id: customer.id })}&gt;{customer.name} / {customer.phone}&lt;/li&gt;
+                );
+            })}
+            &lt;/ul&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: &apos;ADD_DUMMY_CUSTOMERS&apos; })}&gt;Add dummy customers&lt;/button&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: &apos;RESET_CUSTOMER&apos; })}&gt;Reset customers&lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><div class="sharethis-inline-share-buttons"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e936f708faafedb" defer></script></article></div><!--!--><div class="card"><div class="card-content"><div class="likecoin-embed likecoin-button"><div></div><iframe scrolling="no" frameborder="0" src="https://button.like.co/in/embed/aafenguk/button?referrer=https%3A%2F%2Fwww.aafeng.uk%2Fusecontext%2F"></iframe></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/notion/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">试用Notion笔记软件</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/eufy-security-camera/"><span class="level-item">安装eufy家用安全摄像头</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
             this.page.url = 'https://www.aafeng.uk/usecontext/';
             this.page.identifier = 'usecontext/';
         };
