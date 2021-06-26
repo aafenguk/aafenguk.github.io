@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-06-21T18:53:26.249Z</updated>
+  <updated>2021-06-25T23:28:29.738Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React开发常用组件总结</title>
+    <link href="https://www.aafeng.uk/react-libraries/"/>
+    <id>https://www.aafeng.uk/react-libraries/</id>
+    <published>2021-06-25T20:27:35.714Z</published>
+    <updated>2021-06-25T23:28:29.738Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>JSON Server:</p><pre><code>json-server --watch data/db.json --port 8000 -H 0.0.0.0</code></pre><h2 id="界面相关"><a href="#界面相关" class="headerlink" title="界面相关"></a>界面相关</h2><p>react-hook-form: <a href="https://github.com/react-hook-form/react-hook-form" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/react-hook-form/react-hook-form</a><br>react-loader-spinner: <a href="https://github.com/mhnpd/react-loader-spinner" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mhnpd/react-loader-spinner</a><br>styled-components: <a href="https://github.com/styled-components/styled-components" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/styled-components/styled-components</a></p>]]></content>
+    
+    <summary type="html">
+    
+      React开发常用组件总结
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="React" scheme="https://www.aafeng.uk/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>试用Notion笔记软件</title>
@@ -396,26 +418,6 @@
     </summary>
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Get新技能 - 草皮的养护</title>
-    <link href="https://www.aafeng.uk/lawn-maintenance/"/>
-    <id>https://www.aafeng.uk/lawn-maintenance/</id>
-    <published>2021-05-11T21:09:49.261Z</published>
-    <updated>2021-05-11T21:10:34.545Z</updated>
-    
-    <content type="html"><![CDATA[<p>去年的时候，有好几个月都有人在家中施工，因此花园中的草地就遭了殃。由于长期被一些建材压在下面，因此好几片草地都变黄了。更为严重的是，有几片草地变秃了。春天已经过去了，可为什么这“野火烧不尽，春风吹又生”的草还是不能恢复生机？</p><p><img src="https://user-images.githubusercontent.com/63479035/117884993-2d0b5f00-b2a5-11eb-868b-656733929d00.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>不过问题总是要解决的。于是再次咨询了一位做园艺设计师的朋友，得到了几个比较专业的建议。</p><p>首先是关于那些比较秃的地方，可以购买一个特殊的工具，在地上扎很多洞，在洞中灌入沙子。这样做的目的是让土质变得更为松软，便于草的生长。然后在地上撒上草籽和新土，再将土和草籽混匀。之后的六周内要每天浇水。这样草皮慢慢的就会长好。</p><p>对于那些变黄的地方，也可以采取类似的方法，只不过只需要针对那些黄了的地方应用这个方法就可以了。</p><p>在草地上还有另外一个问题。每当下雨比较大的时候，有些地方会积水，很长时间水都无法渗入到土中。导致这个问题的原因就是土质过硬。</p><p>如果想要解决这个问题，就需要在这块草地尚挖大约60CM深的一个坑。之后在坑中铺上一层石子，然后是沙子，最后铺土，然后才是草皮。这样就能增加土质的通透性，也就不会再积水了。</p><p>其实，在英国这里专门有人做花园草地的维护。每年请他们来几次，做下维护，应该很快就能把草地给变绿了。毕竟对于专业人士，他们从施工细节，草籽选择，甚至土壤的选择上都更有经验。选择他们应该也不错。</p><p>最近一周一直下雨，打算趁这个机会赶快尝试一下，这样可以避免每天自己都要去浇水。如果还没有效果的话，就只能找专业人士了。</p>]]></content>
-    
-    <summary type="html">
-    
-      Get新技能 - 草皮的养护
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
