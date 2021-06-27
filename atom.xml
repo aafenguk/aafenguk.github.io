@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-06-25T23:28:29.738Z</updated>
+  <updated>2021-06-26T13:29:46.302Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.aafeng.uk/react-libraries/"/>
     <id>https://www.aafeng.uk/react-libraries/</id>
     <published>2021-06-25T20:27:35.714Z</published>
-    <updated>2021-06-25T23:28:29.738Z</updated>
+    <updated>2021-06-26T13:29:46.302Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>JSON Server:</p><pre><code>json-server --watch data/db.json --port 8000 -H 0.0.0.0</code></pre><h2 id="界面相关"><a href="#界面相关" class="headerlink" title="界面相关"></a>界面相关</h2><p>react-hook-form: <a href="https://github.com/react-hook-form/react-hook-form" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/react-hook-form/react-hook-form</a><br>react-loader-spinner: <a href="https://github.com/mhnpd/react-loader-spinner" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mhnpd/react-loader-spinner</a><br>styled-components: <a href="https://github.com/styled-components/styled-components" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/styled-components/styled-components</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="JSON-Server"><a href="#JSON-Server" class="headerlink" title="JSON Server"></a>JSON Server</h3><p>安装：</p><pre><code>npm install -g json-server</code></pre><p>运行：</p><pre><code>json-server --watch data/db.json --port 8000 -H 0.0.0.0</code></pre><h2 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h2><p>react-hook-form: <a href="https://github.com/react-hook-form/react-hook-form" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/react-hook-form/react-hook-form</a><br>react-loader-spinner: <a href="https://github.com/mhnpd/react-loader-spinner" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/mhnpd/react-loader-spinner</a><br>styled-components: <a href="https://github.com/styled-components/styled-components" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/styled-components/styled-components</a></p>]]></content>
     
     <summary type="html">
     
