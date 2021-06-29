@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-06-26T13:29:46.302Z</updated>
+  <updated>2021-06-29T09:21:27.232Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在线开发工具总结</title>
+    <link href="https://www.aafeng.uk/online-devtool/"/>
+    <id>https://www.aafeng.uk/online-devtool/</id>
+    <published>2021-06-29T09:17:45.879Z</published>
+    <updated>2021-06-29T09:21:27.232Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在线测试REST-API工具"><a href="#在线测试REST-API工具" class="headerlink" title="在线测试REST API工具"></a>在线测试REST API工具</h2><h3 id="reqbin"><a href="#reqbin" class="headerlink" title="reqbin"></a>reqbin</h3><p><a href="https://reqbin.com/" rel="external nofollow noopener noreferrer" target="_blank">https://reqbin.com/</a></p><h2 id="在线API-endpoints"><a href="#在线API-endpoints" class="headerlink" title="在线API endpoints"></a>在线API endpoints</h2><h3 id="starwars-API"><a href="#starwars-API" class="headerlink" title="starwars API"></a>starwars API</h3><p><a href="https://swapi.dev/" rel="external nofollow noopener noreferrer" target="_blank">https://swapi.dev/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      在线开发工具总结
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>React开发常用组件总结</title>
@@ -398,26 +418,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Bikeability</title>
-    <link href="https://www.aafeng.uk/bikeability/"/>
-    <id>https://www.aafeng.uk/bikeability/</id>
-    <published>2021-05-11T22:05:19.029Z</published>
-    <updated>2021-05-11T22:05:53.112Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近孩子学校组织了一项活动：bikeability。在接下来的一周中，要求孩子每天都骑自行车上学。同时要求一定带好头盔到学校。</p><p>同时在学校通知的信中，详细的询问了孩子的自行车属于什么水平，比如：是否可以在保持直线骑行的前提下回头，是否可以单手扶把的情况下保持直线行进等。这主要是为接下来的培训做好相应的准备。</p><p>每天孩子到了学校后，学校中会有从市政府专门部门来的人带着孩子们每天上午都骑自行车上路进行“实战”。尽管一个上午的时间都花在自行车上面，但毕竟还是能够学到很多交通知识，安全常识的，因此这个活动我是全力支持的。</p><p><img src="https://user-images.githubusercontent.com/63479035/117883146-f7657680-b2a2-11eb-9763-596a2c2c19fc.png" alt="image"><br>Source: Pixabay</p><p>看了一下Bikeability的官网，有很多有用的信息。比如：在每次上路之前，需要检查：ABC。非常容易记住：</p><p><img src="https://user-images.githubusercontent.com/63479035/117889832-14eb0e00-b2ac-11eb-9493-56620f4fe95d.png" alt="image"></p><p>同时，对于头盔也有明确的要求和说明：<br><img src="https://user-images.githubusercontent.com/63479035/117890041-5da2c700-b2ac-11eb-9509-e53f66f6a912.png" alt="image"></p><p>Bikeability还提供了三个级别的培训，涵盖初学者到熟练使用自行车作为交通工具的系列内容。同时还有一个Bikeability Plus的后续课程。</p><p>其实，在周末的时候，我也经常带着孩子们在家附近骑行，不过我还是尽量避开主路的。希望通过这一周的培训，让孩子的自行车技能更上一层楼。</p>]]></content>
-    
-    <summary type="html">
-    
-      Bikeability
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
     
   </entry>
