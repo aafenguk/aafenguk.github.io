@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-07-02T13:53:28.004Z</updated>
+  <updated>2021-07-03T15:34:23.177Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React Query</title>
+    <link href="https://www.aafeng.uk/react-query/"/>
+    <id>https://www.aafeng.uk/react-query/</id>
+    <published>2021-07-03T15:33:35.594Z</published>
+    <updated>2021-07-03T15:34:23.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近试用了一下React Query，感觉真的很香，在考虑是否在项目中引入这个出色的库。</p><p><img src="https://user-images.githubusercontent.com/63479035/124358737-86df3400-dc19-11eb-9cfc-11dc7a7976af.png" alt="image"><br>图源：官网截图</p><a id="more"></a><p>在React APP中不可避免的要调用很多REST API对数据进行CRUD操作。对于每一个API endpoint，我们都需要考虑状态管理，数据同步，缓存，错误处理等诸多细节。这就会使我们的程序变得非常臃肿。而有了React Query，无需借助全局状态，就能实现这些功能。</p><p>如果不使用React Query，最常见的方式就是使用useState及useEffect来实现状态的管理。比如：使用一个state来管理loading，另一个state来关联error，再找一个state来关联真正的数据。这样，在每一个调用API获取数据的部分都需要将调用API的状态和这些状态变量关联，非常繁琐。</p><p>同时，还会有一些其他的问题，比如：</p><ul><li>如果数据在不同人之间共享，那么当别人更改了你正在读取数据的时候，你的数据其实就已经“过时”了。怎么解决这种问题？</li><li>维护一个本地缓存并在需要的时候使数据过期，并发出新的数据请求</li></ul><p>这时可以通过自定义一个hook来处理数据的获取及各种状态，比如loading，error等。这样就可以在初始获取后缓存数据，在后台重新获取数据等。</p><p>React Query是通过维护一个服务器状态树来管理服务端状态的。同时，在React Query中还有它特有的缓存策略，来进行数据的存储和更新。这样，我们就可以把所有和服务器端相关的状态从其他状态管理库中提取出来，交给React Query。</p><p>目前唯一顾虑的就是React Query不是React官方维护的。这就存在一种潜在的风险，和Redux类似。早期的时候很多项目中都使用了Redux。但现在在最新的React版本中，不使用Redux也能进行全局状态的管理。那么是否在将来，React官方也会把React Query做的事情自己实现了呢？</p>]]></content>
+    
+    <summary type="html">
+    
+      React Query
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在线开发工具总结</title>
@@ -399,26 +419,6 @@
     
     
       <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>驯龙高手How to Train Your Dragon剧情介绍</title>
-    <link href="https://www.aafeng.uk/how-to-train-your-dragon/"/>
-    <id>https://www.aafeng.uk/how-to-train-your-dragon/</id>
-    <published>2021-05-16T09:15:23.399Z</published>
-    <updated>2021-05-16T09:16:45.757Z</updated>
-    
-    <content type="html"><![CDATA[<p>这个周末，女儿选择了一个影片：《How to Train Your Dragon/驯龙高手》。她选择这个电影的原因很简单：在学校种很多小朋友经常谈论这部电影种的角色，她也想了解一下，以后和朋友们就更有的聊了。</p><p><img src="https://user-images.githubusercontent.com/63479035/118392026-43ac1000-b62f-11eb-9ba0-5dad792c9ec6.png" alt="image"><br>Source: Pixabay</p><p>其实，龙这种生物在中西方文化中都频繁出现。只不过在中国文化中，龙是一种尊贵的象征，在过去还是皇家的形象代表。龙总是和水这种元素相关联。而在西方文化中，龙总是一种邪恶的象征，人类总是和龙在不断的斗争。龙的一个必杀技就是：喷火。</p><p>在这部电影中，开头处就是著名的维京人在和龙群的战斗场面。龙群来这里抢夺维京人圈养的牲畜。长相各异的龙在不断的喷火，使得维京人的营地一片火光。彪悍的维京人也毫不示弱，和龙群殊死搏斗。最为凶悍的就是维京人的族长Stoick the vast，和他PK的龙都不是对手。。。</p><p>在传说中，龙群中最为神秘，也最为危险的一种叫做夜煞。他们速度极快，来无影，去无踪，同时也最为聪明，因此从未失过手。所有见过夜煞的人都已经是死人了。</p><p>在部落的另一头，出现了族长的儿子Hiccup。他丝毫没有继承族长的基因，长得非常瘦弱。因此族长根本就不允许他和龙群战斗，只是让Hiccup做了铁匠Gobber的徒弟，和他学习打铁。但Hiccup并不甘于只是蜷缩在铁匠铺中，而是想要出去和其他族人一样和龙群战斗。但他实在是太弱了，铁匠师父根本不允许他出门。</p><p>Hiccup悄悄的溜出了门，同时带上了自己的捕龙器。他坚信自己看到了夜煞，并已经将其捕获了。族人都不相信，纷纷嘲笑他。但他坚信自己的判断。终于，他找到了自己的捕龙器，并看到了一只夜煞。那么，自己是要杀了这只夜煞吗？在一番天人交战后，他决定把这只夜煞放了。同时，他也发现夜煞的尾部受损。</p><p>在Hiccup的帮助下，夜煞的尾部被修好了，他们也成了好朋友。同时，夜煞也有了一个名字：无牙。同时，Hiccup和无牙的配合也越来越好了。在无牙的帮助和指引下，Hiccup的驯龙技巧越来越熟练了。部落中捕获的各种龙在他的手下都乖乖的成了Hello Kitty。</p><p>Hiccup也发现了，其实过去部落中总是把龙族当成敌人的想法是错误的。其实众多恶龙都是被一只巨龙趋势来掠夺人类圈养的牲畜。</p><p>最终，维京人一族知道巨龙老巢，但在和巨龙的战斗中损失惨重。最后在Hiccup和无牙的配合下，终于战胜了巨龙，为维京族人消除了隐患。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      驯龙高手How to Train Your Dragon剧情介绍
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   
