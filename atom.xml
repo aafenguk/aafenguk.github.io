@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-08-28T09:45:02.935Z</updated>
+  <updated>2021-09-12T18:56:09.017Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>局域网文件传输工具 - SHAREit</title>
+    <link href="https://www.aafeng.uk/shareit/"/>
+    <id>https://www.aafeng.uk/shareit/</id>
+    <published>2021-09-12T18:56:09.017Z</published>
+    <updated>2021-09-12T18:56:09.017Z</updated>
+    
+    <content type="html"><![CDATA[<p>很多时候经常需要在局域网内部的不同设备之间传输文件。在此之前曾经用过飞鸽传书但已经有些年不再使用了。对于小文件也用过Telegram直接传。但在有些时候需要传输大文件的时候就需要一个专门的局域网文件传输工具了，这里推荐使用SHAREit。</p><p><img src="https://user-images.githubusercontent.com/63479035/132983511-79d12701-286d-48a7-a335-1a5d31dff4d4.png" alt="image"><br>图源：官网截图</p><a id="more"></a><p>这是一个完全免费的软件，支持Windows，Mac，苹果/安卓/Windows手机。当然，既然免费，在使用过程中偶尔会弹出广告。</p><p>首先从<a href="https://www.ushareit.com/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>下载并安装，之后启动SHAREit会看到这个界面：</p><p><img src="https://user-images.githubusercontent.com/63479035/132998588-a5d66289-9a4d-4b30-9b96-4558d1613615.png" alt="image"></p><p>如果想要和手机端互传文件的话，需要下载并安装手机客户端。之后通过手机端扫描PC端的二维码，就可以看到如下界面：</p><p><img src="https://user-images.githubusercontent.com/63479035/132999019-262d452b-967a-4236-ac87-734ffeb610ef.png" alt="image"></p><p>然后就可以开始传输文件了，无论是自己上传还是拖拽都可以：</p><p><img src="https://user-images.githubusercontent.com/63479035/132999104-7aeb82f4-3c88-4c08-bce7-d2fca0c0c4e1.png" alt="image"></p><p>功能非常单一但是好用。推荐！</p>]]></content>
+    
+    <summary type="html">
+    
+      局域网文件传输工具 - SHAREit
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="工具" scheme="https://www.aafeng.uk/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>好香的定制工作流工具 - Pipedream</title>
@@ -402,26 +424,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>吐槽-英国小学的教科书</title>
-    <link href="https://www.aafeng.uk/school-textbooks/"/>
-    <id>https://www.aafeng.uk/school-textbooks/</id>
-    <published>2021-05-27T22:21:38.389Z</published>
-    <updated>2021-05-27T22:22:56.840Z</updated>
-    
-    <content type="html"><![CDATA[<p>孩子们的Half term又开始了。于是考虑检查一下他们功课的进度，看看是否需要查漏补缺。可是却感觉无从下手：孩子们根本就没有教科书。</p><p><img src="https://user-images.githubusercontent.com/63479035/119903917-5ed92280-bf41-11eb-8228-fd7d27f0f7d3.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>这个问题可以说是由来已久了。孩子们刚入学的时候，总是想看看他们都学习些什么，进度如何，但翻来翻去，他们的书包中没有任何线索。只有在开家长会的时候，直接问老师才能得到想要的信息。</p><p>在英国的教育体系中，分为Key Stage 1/2/3/4/5几个阶段。其中的小学部分包括KS1和KS2，是根本没有教科书的。甚至到了中学的KS3，也是没有教科书的。只有到了GCSE和A Levels，才会有一些经典的教科书和练习册。</p><p>久而久之，也就慢慢习惯了这个事实。所有学校的教学都会遵循相应的大纲。但教材，没有统一规定，完全是由老师们自由发挥。</p><p>因此有些时候如果遇到个别家长，问起了教科书的问题。几乎可以立刻肯定，他们极有可能是刚到英国，对这里的教育制度不是很了解。</p><p>前段lockdown期间，学校给孩子们发了很多练习册。每天老师在zoom上稍微讲一讲，然后孩子们的主要任务就是按照练习册的内容进行练习。当时的感觉真的很好：一册在手，尽在掌控。孩子目前正在学习的知识点，掌握程度等等都一清二楚。</p><p>如果想要给孩子们开小灶的话，或者参加一些课外辅导班，在辅导班中老师会系统的介绍该学习的内容。或者给孩子购买课外辅导书，按照书的进度查漏补缺。</p>]]></content>
-    
-    <summary type="html">
-    
-      吐槽-英国小学的教科书
-    
-    </summary>
-    
-      <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
     
   </entry>
