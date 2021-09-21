@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-09-14T16:31:57.151Z</updated>
+  <updated>2021-09-21T17:19:54.912Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好香的Headless CMS - Strapi</title>
+    <link href="https://www.aafeng.uk/strapi/"/>
+    <id>https://www.aafeng.uk/strapi/</id>
+    <published>2021-09-21T17:19:54.908Z</published>
+    <updated>2021-09-21T17:19:54.912Z</updated>
+    
+    <content type="html"><![CDATA[<p>尝试了一下strapi，感觉真的很香，几分钟就能搭建起后台的REST API服务，同时还支持很多插件，比如graphql插件，这就大大加快了开发的速度。</p><p><img src="https://user-images.githubusercontent.com/63479035/134215437-b400282f-8a92-4bac-8d26-37087fc3e323.png" alt="strapi"></p><a id="more"></a><p>其实，之所以喜欢它，最主要还是它的设计出发点：Headless CMS。也就是说，只提供操作数据的API，而不像Wordpress那样同时提供操作数据的UI。（严格的讲，strapi也提供一个非常简单的数据操作界面）</p><p>一旦安装配置好之后，最重要的一步就是设计各种Content Type了，这就有点像关系型数据库中的表结构。这里共有三种不同类型的Content type: Collection type（针对有多个数据的类型，比如blog, user等）, Single type（针对只出现一次的类型，比如:homepage），以及Component（可反复使用的组件）。在设计时可选的字段类型很丰富：</p><p><img src="https://user-images.githubusercontent.com/63479035/134215681-e138a307-6093-499a-9f64-3920a5d5d2d8.png" alt="image"></p><p>等到这个Content type设计好了之后，strapi就会生成类似于：<a href="http://localhost:1337/reviews" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:1337/reviews</a> 这样的API地址，这样前段就可以非常方便的使用了。</p><p>当然，作为一个CMS，strapi自然支持Authn/Authz。可以将某项内容指定为public，也可以指定其访问权限，用户组等等。</p><p><img src="https://user-images.githubusercontent.com/63479035/134216463-2d89ce4f-9035-47a2-bd34-9304e5073d89.png" alt="image"></p><p>添加了graphql插件的后台就更加好用了：<br><img src="https://user-images.githubusercontent.com/63479035/134217053-dc31a9e2-682e-4549-b213-f5e308f3575b.png" alt="image"></p><p>后台API都搞定了，前台就可以非常愉快的使用Vue/React等玩耍了。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      好香的Headless CMS - Strapi
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>租车</title>
@@ -400,26 +420,6 @@
     <summary type="html">
     
       登高
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Fire运动</title>
-    <link href="https://www.aafeng.uk/fire/"/>
-    <id>https://www.aafeng.uk/fire/</id>
-    <published>2021-05-29T06:15:24.101Z</published>
-    <updated>2021-05-29T06:15:56.556Z</updated>
-    
-    <content type="html"><![CDATA[<p>刚刚读到一篇文章，提到了Fire运动这个概念，觉得这是非常有趣的一种思维/生活方式。</p><p>所谓Fire，就是Financial Independence and Retiring Early的缩写，其核心观点就是要经济独立，提前退休。呵呵，提前退休应该是很多人的梦想。但是，对于绝大多数人来说，这也就是梦想，然后就没有然后了。。。</p><p><img src="https://user-images.githubusercontent.com/63479035/120060029-29b9f680-c04d-11eb-897e-bb90c4f2fdba.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>Fire首先从另外一个角度思考了人们的消费。对于我们的每项消费，不是用钱来衡量的，而是用生命来衡量的。打个比方，如果你每天能挣1000元，那么当你要消费500元购买一件衣服的时候，如果把衣服的价值换为你的生命。也就是说，你愿意用你半天的命去换取一件衣服吗？我相信和一件衣服相比，所有人都会选择半天的命。同样，大家也都会选择“多活”一年，而不会选择一部新车；更不会为了换一栋大房子而“少活”好些年。</p><p>另外一个重要因素就是如何看待自己的工作。如果考虑一个问题：假如财务自由了，你还会坚持现在的工作吗？你还有更想做的事情要做吗？我相信对于众多打工族来说，回答是否定的。毕竟，对于很多人来说，工作是一件费事费力费时间，但又不得不做的事情。</p><p>如果能够这样换位的思考问题的话，那么接下来就好说了。既然这些身外之物如此的不重要，那么，我们为什么不尽量节省开始，节省自己的生命呢？</p><p>从实施角度，Fire提出了一个方案：生活上要奉行极简主义，解决所有不必要的开支，尽快攒够每年生活费的25倍，然后就可以退休了。退休后依靠理财收益的4%生活。也就是说，25倍的存款x4%的理财收益，正好就是每年的生活费。于是，已经有一些人在35岁的时候就真的退休了。</p><p>在Fire中的极简主义，绝对是真的要极简。家中凡是超过一个月没有用过的东西，要全部处理掉。每当要购买新的东西时候，必须扔掉另一件东西。只有这样严格的控制，才能最大限度的控制自己的生活成本，早日存够那生活费的25%。</p><p>不过不得不说的是，每个人的思考角度可能都不一样。比如：对于家中有孩子的人来说，执行这个极简注意似乎就难度不少，成年人能省则省，但对于孩子来说，要做到这点难度似乎大了些。</p><p>但不论怎样，这种思维方式对我的冲击还是非常大的。以后真的需要好好思考一下自己的消费观了。</p>]]></content>
-    
-    <summary type="html">
-    
-      Fire运动
     
     </summary>
     
