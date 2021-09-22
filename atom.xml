@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-09-21T17:19:54.912Z</updated>
+  <updated>2021-09-22T15:40:54.567Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>好香的Headless CMS - Strapi</title>
+    <title>好香的Headless CMS - Strapi介绍</title>
     <link href="https://www.aafeng.uk/strapi/"/>
     <id>https://www.aafeng.uk/strapi/</id>
     <published>2021-09-21T17:19:54.908Z</published>
-    <updated>2021-09-21T17:19:54.912Z</updated>
+    <updated>2021-09-22T15:40:54.567Z</updated>
     
-    <content type="html"><![CDATA[<p>尝试了一下strapi，感觉真的很香，几分钟就能搭建起后台的REST API服务，同时还支持很多插件，比如graphql插件，这就大大加快了开发的速度。</p><p><img src="https://user-images.githubusercontent.com/63479035/134215437-b400282f-8a92-4bac-8d26-37087fc3e323.png" alt="strapi"></p><a id="more"></a><p>其实，之所以喜欢它，最主要还是它的设计出发点：Headless CMS。也就是说，只提供操作数据的API，而不像Wordpress那样同时提供操作数据的UI。（严格的讲，strapi也提供一个非常简单的数据操作界面）</p><p>一旦安装配置好之后，最重要的一步就是设计各种Content Type了，这就有点像关系型数据库中的表结构。这里共有三种不同类型的Content type: Collection type（针对有多个数据的类型，比如blog, user等）, Single type（针对只出现一次的类型，比如:homepage），以及Component（可反复使用的组件）。在设计时可选的字段类型很丰富：</p><p><img src="https://user-images.githubusercontent.com/63479035/134215681-e138a307-6093-499a-9f64-3920a5d5d2d8.png" alt="image"></p><p>等到这个Content type设计好了之后，strapi就会生成类似于：<a href="http://localhost:1337/reviews" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:1337/reviews</a> 这样的API地址，这样前段就可以非常方便的使用了。</p><p>当然，作为一个CMS，strapi自然支持Authn/Authz。可以将某项内容指定为public，也可以指定其访问权限，用户组等等。</p><p><img src="https://user-images.githubusercontent.com/63479035/134216463-2d89ce4f-9035-47a2-bd34-9304e5073d89.png" alt="image"></p><p>添加了graphql插件的后台就更加好用了：<br><img src="https://user-images.githubusercontent.com/63479035/134217053-dc31a9e2-682e-4549-b213-f5e308f3575b.png" alt="image"></p><p>后台API都搞定了，前台就可以非常愉快的使用Vue/React等玩耍了。。。</p>]]></content>
+    <content type="html"><![CDATA[<p>尝试了一下strapi，感觉真的很香，几分钟就能搭建起后台的REST API服务，同时还支持很多插件，比如graphql插件，这就大大加快了开发的速度。</p><p><img src="https://user-images.githubusercontent.com/63479035/134215437-b400282f-8a92-4bac-8d26-37087fc3e323.png" alt="strapi"></p><a id="more"></a><p>其实，之所以喜欢它，最主要还是它的设计出发点：Headless CMS。也就是说，只提供操作数据的API，而不像Wordpress那样同时提供操作数据的UI。（严格的讲，strapi也提供一个非常简单的数据操作界面）</p><h2 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h2><pre><code>mkdir strapi-tutcd strapi-tutnpx create-strapi-app backend</code></pre><p>选择不使用模板。</p><p>安装完毕后访问：<a href="http://localhost:1337/admin" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:1337/admin</a> </p><p><img src="https://user-images.githubusercontent.com/63479035/133749359-a59d35a0-4ddb-458e-b0bc-1d8a0c582ae8.png" alt="image"></p><p>创建管理员用户并登录后会看到如下界面：<br><img src="https://user-images.githubusercontent.com/63479035/133749593-b01eb018-fade-4f30-b1fd-9467cf8b420e.png" alt="image"></p><p>如果停止后下次再重新启动strapi:</p><pre><code>cd backendnpm run develop</code></pre><h2 id="Content-Types"><a href="#Content-Types" class="headerlink" title="Content Types"></a>Content Types</h2><p>一旦安装配置好之后，最重要的一步就是设计各种Content Type了，这就有点像关系型数据库中的表结构。这里共有三种不同类型的Content type: Collection type（针对有多个数据的类型，比如blog, user等）, Single type（针对只出现一次的类型，比如:homepage），以及Component（可反复使用的组件）。在设计时可选的字段类型很丰富：</p><p><img src="https://user-images.githubusercontent.com/63479035/134215681-e138a307-6093-499a-9f64-3920a5d5d2d8.png" alt="image"></p><p>等到这个Content type设计好了之后，strapi就会生成类似于：<a href="http://localhost:1337/reviews" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:1337/reviews</a> 这样的API地址，这样前段就可以非常方便的使用了。</p><h2 id="认证与授权"><a href="#认证与授权" class="headerlink" title="认证与授权"></a>认证与授权</h2><p>当然，作为一个CMS，strapi自然支持Authn/Authz。可以将某项内容指定为public，也可以指定其访问权限，用户组等等。</p><p><img src="https://user-images.githubusercontent.com/63479035/134216463-2d89ce4f-9035-47a2-bd34-9304e5073d89.png" alt="image"></p><p>比如： 允许public访问review的findone / find权限。</p><p><img src="https://user-images.githubusercontent.com/63479035/134375452-af3dab75-514a-4df5-86b5-4dde8075d599.png" alt="image"></p><h2 id="使用Postman进行测试"><a href="#使用Postman进行测试" class="headerlink" title="使用Postman进行测试"></a>使用Postman进行测试</h2><p><strong>推荐在postman中把所有相关测试都保存在一个folder中。</strong></p><h3 id="测试用户登录"><a href="#测试用户登录" class="headerlink" title="测试用户登录"></a>测试用户登录</h3><p><img src="https://user-images.githubusercontent.com/63479035/134375788-c2d17420-d645-4f17-bdce-ea8c6e2bec49.png" alt="image"></p><p>将前面的jwt token复制到Auth -&gt; Type -&gt; Token中，就可以进行Delete/Update/Create操作了。</p><h2 id="对Graphql的支持"><a href="#对Graphql的支持" class="headerlink" title="对Graphql的支持"></a>对Graphql的支持</h2><p>添加了graphql插件的后台就更加好用了：<br><img src="https://user-images.githubusercontent.com/63479035/134217053-dc31a9e2-682e-4549-b213-f5e308f3575b.png" alt="image"></p><p>后台API都搞定了，前台就可以非常愉快的使用Vue/React等玩耍了。。。</p>]]></content>
     
     <summary type="html">
     
