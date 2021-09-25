@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-09-22T15:40:54.567Z</updated>
+  <updated>2021-09-25T20:29:19.174Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>旧物利用 - 三星Galaxy S2刷机过程记录</title>
+    <link href="https://www.aafeng.uk/install-android11-to-samsung-galaxy-s2/"/>
+    <id>https://www.aafeng.uk/install-android11-to-samsung-galaxy-s2/</id>
+    <published>2021-09-25T20:29:19.174Z</published>
+    <updated>2021-09-25T20:29:19.174Z</updated>
+    
+    <content type="html"><![CDATA[<p>在整理车库的时候，发现了好几个不用的手机，有的是近两年的，有的年头比较久了。对于那些近两年的手机还好，只要恢复出厂设置，重新配置一下账号就能正常使用了。那么对于那些年头久远的手机，是不是要扔掉呢？比如：这款近10岁高龄的三星Galaxy S2。</p><p>首先恢复了一下出场设置，在开机后要求配置Google账号。但无论怎么输入，都提示无法连接到Google服务器。在网上查了一下，才发现Google根本不支持Andorid 4以下的版本了。而这款手机还在运行Android 2.3。</p><p>直接扔掉的话感觉有些不甘心。于是在网上找了一下，原来是可以把这款手机刷成Android 11的。既然可以，那就折腾一下看看吧。</p><p>首先需要下载几个文件做好准备：<br><a href="https://androidfilehost.com/?fid=6006931924117917092" rel="external nofollow noopener noreferrer" target="_blank">i9100-LOS-16.0-Emulated-Storage.pit</a><br><a href="https://androidfilehost.com/?fid=6006931924117912732" rel="external nofollow noopener noreferrer" target="_blank">i9100-LOS-16.0-Emulated-Storage-TWRP-3.3.1-1.tar.md5</a><br><a href="https://www.androidfilehost.com/?fid=10763459528675599412" rel="external nofollow noopener noreferrer" target="_blank">lineage-18.0-20201207-unofficial-i9100.zip</a><br><a href="https://odindownloader.com/download/odin3-v3-07" rel="external nofollow noopener noreferrer" target="_blank">Odin3 V3.07</a></p><p>关机后同时按下Home+Volume Down+Power三个键并保持10秒左右，会进入下载模式（Download Mode）。<br>这时需要打开预先安装好的ODIN 3.07，注意一定是这个版本的ODIN。我尝试下载了ODIN 3.14，结果发现界面和3.07很不一样。<br>接下来用USB线把手机连上电脑，这样ODIN应该能够监测到手机。<br>指定PIT/PDA文件。然后单击“Start”开始刷机。<br>刷机完毕后关机，然后按下Home+Volume Up+Power三个键并保持10秒，进入TWRP。</p><p><img src="https://user-images.githubusercontent.com/63479035/134784647-c41d9fed-1b16-4663-8316-873bc126eb47.png" alt="image"></p><p>然后选择：Wipe -&gt; Format Data </p><p>然后进入：Advanced Wipe，进行如下设置后进行清除：</p><p><img src="https://user-images.githubusercontent.com/63479035/134784691-86df9434-7277-4d08-b784-fd827d66e824.png" alt="image"></p><p>清除完毕后安装lineage OS，我这里先尝试着把下载的zip复制到手机Internal storage中，但进入TWRP后找不到这个zip文件，后来改用SD卡后就没有任何问题。这个安装过程非常简单。之后重新启动系统。</p><p>这时就顺利进入Android 11了。不过默认情况下Lineage OS中不含Google套件，因此需要额外安装。我这里下载的是 <a href="https://sourceforge.net/projects/nikgapps/files/Releases/NikGapps-R/" rel="external nofollow noopener noreferrer" target="_blank">NikkGapps</a>，但安装后感觉手机略微有点卡。感觉似乎应该安装更为精简的 <a href="https://forum.xda-developers.com/android/software/custom-bitgapps-android-t4012165" rel="external nofollow noopener noreferrer" target="_blank">BitGapps</a>。不过感觉应该也会卡，毕竟跑起整套Google系统对于10年前的手机来说都应该比较吃力吧。</p><p>至此刷机成功，安装了Gmail, Chrome, Youtube, Whatsapp, 微信等程序后，似乎可以正常使用了。</p><p><img src="https://user-images.githubusercontent.com/63479035/134784927-611cd42d-1db3-48ea-a70a-a76cc07b8f5b.png" alt="image"></p><p>Refs：<br><a href="https://forum.xda-developers.com/t/rom-unofficial-11-0-0-r43-i9100-lineageos-18-1.4199759/" rel="external nofollow noopener noreferrer" target="_blank">https://forum.xda-developers.com/t/rom-unofficial-11-0-0-r43-i9100-lineageos-18-1.4199759/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      旧物利用 - 三星Galaxy S2刷机过程记录
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>好香的Headless CMS - Strapi介绍</title>
@@ -400,26 +420,6 @@
     <summary type="html">
     
       Hodnet Hall Gardens
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>登高</title>
-    <link href="https://www.aafeng.uk/hawkstone-park/"/>
-    <id>https://www.aafeng.uk/hawkstone-park/</id>
-    <published>2021-05-30T07:07:38.027Z</published>
-    <updated>2021-05-30T07:08:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<p>和朋友一家一起来到周边的Hawkstone Park来登山。</p><p>近处的地刚刚被犁过，远处的油菜花任然生气盎然。<br><img src="https://user-images.githubusercontent.com/63479035/120094856-b979a680-c11a-11eb-9c3f-4e972025c8a8.png" alt="image"></p><a id="more"></a><p>参天古树：<br><img src="https://user-images.githubusercontent.com/63479035/120095014-779d3000-c11b-11eb-9d2f-7834b14a89ff.png" alt="image"></p><p>这数上的貌似是鸟窝，但近看又不是，似乎是另一种植物寄生在树上。“鸟窝”中又冒出了丝丝绿意：<br><img src="https://user-images.githubusercontent.com/63479035/120095055-a1565700-c11b-11eb-8916-81b9265872b6.png" alt="image"></p><p>沿着弯弯曲曲的小径开始上山：<br><img src="https://user-images.githubusercontent.com/63479035/120095091-cd71d800-c11b-11eb-95d6-ca0aa6241b5e.png" alt="image"></p><p>在巨石上有无数类似气泡的孔洞，应该是地壳变迁时大自然的杰作？亦或是久经风吹日晒，时间留下的痕迹？<br><img src="https://user-images.githubusercontent.com/63479035/120095145-3d805e00-c11c-11eb-9e4f-438e41dad998.png" alt="image"><br>石质极软，可以在上面刻字：<br><img src="https://user-images.githubusercontent.com/63479035/120095426-d5327c00-c11d-11eb-953d-0c715c3d9b5c.png" alt="image"></p><p>山上到处都是危险的“山精野怪”，时不时的出来恐吓路人：<br><img src="https://user-images.githubusercontent.com/63479035/120095221-a7990300-c11c-11eb-9d3e-42275b4aef10.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095183-715b8380-c11c-11eb-89bb-e77997747080.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095216-9d770480-c11c-11eb-9cac-925ad19bfa5f.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095256-eaf37180-c11c-11eb-851c-cd23bb738272.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095384-a61c0a80-c11d-11eb-9f27-cb236d101f59.png" alt="image"></p><p>就连过桥的时候也要恐吓一番：<br><img src="https://user-images.githubusercontent.com/63479035/120095339-5ccbbb00-c11d-11eb-9d93-cd7e2df74071.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095373-94d2fe00-c11d-11eb-9224-9e5df995086b.png" alt="image"></p><p>这个纪念碑是用来纪念当年在击败拿破仑的滑铁卢之战：<br><img src="https://user-images.githubusercontent.com/63479035/120095237-bc759680-c11c-11eb-9d37-3c198aa8a262.png" alt="image"></p><p>终于登上了山顶：<br><img src="https://user-images.githubusercontent.com/63479035/120095354-77059900-c11d-11eb-9d6d-33dc39a384c6.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095390-b59b5380-c11d-11eb-84df-79a132a8ce53.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120095414-cb107d80-c11d-11eb-8101-2058c1d74749.png" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      登高
     
     </summary>
     
