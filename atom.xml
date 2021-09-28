@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-09-25T20:34:51.402Z</updated>
+  <updated>2021-09-28T09:50:39.699Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gatsby中的图片优化</title>
+    <link href="https://www.aafeng.uk/gatsby-image/"/>
+    <id>https://www.aafeng.uk/gatsby-image/</id>
+    <published>2021-09-28T09:50:39.699Z</published>
+    <updated>2021-09-28T09:50:39.699Z</updated>
+    
+    <content type="html"><![CDATA[<p>Gatsby是现在比较流行的一个静态网站生成框架。通过它，可以快速的生成React网站，同时又解决了React应用SEO不友好的问题。这里主要说一说Gatsby中的图片优化问题。</p><p><img src="https://user-images.githubusercontent.com/63479035/135064099-e2e1247d-a658-484b-8618-a85bfc56ac7a.png" alt="image"><br>Source: Gatsby官网</p><p>在默认情况下，可以把图片放于static目录中，然后在页面中直接引用就可以了：</p><pre><code>&lt;img src=“/banner.jpg&quot; alt=&quot;site banner&quot; /&gt;</code></pre><p>但这种方式的缺点也是非常明显的：</p><ul><li>针对不同的设备，通常可以显示更为适合的图片。比如对于高清的大屏幕，可以显示分辨率最高的图片，但对于尺寸较小的手机，只需要显示分辨率较小的图片就可以了。这样就可以大大提高页面加载速度。</li><li>懒加载。很多网站都实现了这个功能。在开始装载页面的时候，用户看到的是一个分辨率极低，但加载速度很快的模糊图片，随着页面加载的完成，该图片就会被一个高清图片替代。</li></ul><p>通过实现以上的两点，可以大大提高用户体验。</p><p>在Gatsby中，可以通过几个插件来实现这样的功能。因此首先需要在Gatsby项目中安装插件：</p><pre><code>npm install gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp</code></pre><p>其中，gatsby-image的作用是支持在gatsby中使用图片<br>gatsby-transformer-sharp和gatsby-plugin-sharp的作用是处理image并在graphql层中提供相应的额外图片数据。这样就可以在应用中使用由gatsby优化过的图片，而不是固定的静态图片。</p><p>接下来创建src/images目录，并将图片，比如banner.jpg复制到该目录中。</p><p>更新gatsby-config.js配置文件。首先添加对以上插件的声明，同时添加对src/images目录的监视：</p><pre><code>plugins: [  &apos;gatsby-transformer-sharp&apos;,  &apos;gatsby-plugin-sharp&apos;,          ……     {      resolve: `gatsby-source-filesystem`,      options: {        name: `images`,        path: `${__dirname}/src/images`      }   }</code></pre><p>重新启动gatsby：</p><pre><code>gatsby develop</code></pre><p>然后进行如下的graphql查询：</p><pre><code>query MyQuery {  file(relativePath: {eq: &quot;banner.png&quot;}) {    childImageSharp {      fluid {        src        srcSet        sizes      }    }  }}</code></pre><p>上面fluid中的查询也可以简写作：</p><pre><code>fluid {    ...GatsbyImageSharpFluid}</code></pre><p>其返回值为：</p><pre><code>{  &quot;data&quot;: {    &quot;file&quot;: {      &quot;childImageSharp&quot;: {        &quot;fluid&quot;: {          &quot;src&quot;: &quot;/static/fa84b2b0a8b220dca8e981bfb0efac59/de334/banner.png&quot;,          &quot;srcSet&quot;: &quot;/static/fa84b2b0a8b220dca8e981bfb0efac59/69585/banner.png 200w,\n/static/fa84b2b0a8b220dca8e981bfb0efac59/497c6/banner.png 400w,\n/static/fa84b2b0a8b220dca8e981bfb0efac59/de334/banner.png 798w&quot;,          &quot;sizes&quot;: &quot;(max-width: 798px) 100vw, 798px&quot;        }      }    }  },  &quot;extensions&quot;: {}}</code></pre><p>可以看到，gatsby的插件已经对banner.png进行了处理，并在static目录中生成了三个不同尺寸的图片：200px, 400px, 798px。</p><p>接下来就可以在应用中通过这组图片(srcSet)进行自适应了。比如在首页中使用这个banner，首先导入相应的模块：</p><pre><code>import { graphql } from &quot;gatsby&quot;import Img from &apos;gatsby-image&apos;</code></pre><p>然后在文件底部声明graphql查询：</p><pre><code>export const query = graphql`  query Banner {    file(relativePath: {eq: &quot;banner.png&quot;}) {      childImageSharp {        fluid {          ...GatsbyImageSharpFluid        }      }    }  }`</code></pre><p>然后就可以在页面组件中使用这个图片了：</p><pre><code>export default function Home({data}) {    // ...    &lt;Img fluid={data.file.childImageSharp.fluid}/&gt;    // ...}</code></pre><p>可以看到在浏览器中，gatsby已经为我们生成了一个picture标签：</p><p><img src="https://user-images.githubusercontent.com/63479035/135063940-afa487a0-be34-4bae-852f-58cd17170776.png" alt="image"></p><p><strong>注意：在开发的过程中如果发现页面中总有错误提示的话，有可能是gatsby的缓存所致，这时清除.cache / public目录后再重启gatsby一般就可以解决。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      Gatsby中的图片优化
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
+    
+      <category term="Gatsby" scheme="https://www.aafeng.uk/tags/Gatsby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在英国尝试做新疆大盘鸡</title>
+    <link href="https://www.aafeng.uk/xinjiangdapanji/"/>
+    <id>https://www.aafeng.uk/xinjiangdapanji/</id>
+    <published>2021-09-28T09:50:39.699Z</published>
+    <updated>2021-09-28T09:50:39.699Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近由于晚上不吃饭，中午时间又没有时间做饭，感觉已经好长时间没有好好吃饭了。于是这个周末决定给自己改善一下，做一下自己的拿手菜：新疆大盘鸡。</p><p><img src="https://user-images.githubusercontent.com/63479035/134817413-cd593712-c202-4a00-bf61-e02d36c7a3de.png" alt="image"></p><p>原来在国内工作的时候，经常和同事朋友一起去新疆馆子吃饭，拉条子，烤串，大盘鸡都是我们的最爱。但到了英国后就没有这个口福了。后来在一次很偶然的机会和朋友聊起了新疆大盘鸡，于是决定自己尝试一下。记得当时提出这个想法的时候，大家都不相信能自己做出新疆大盘鸡来。但做好上桌的时候，大家的嘴都咧到耳朵根了，效果和新疆馆子的不相上下。</p><p>好吧，这次完全凭着记忆中的菜单来做的，不知道是不是忘记什么调料了。效果整体还可以，但绝对不是最佳状态，可以打80分吧。</p><p>首先将鸡肉切块，然后用生抽，料酒腌好，然后放置半个小时左右。</p><p>然后准备辅料：葱姜蒜，蘑菇切片，青椒切块，洋葱切块，土豆切滚刀块。</p><p>油热后放入葱姜蒜爆香，放入干辣椒，然后放入洋葱，鸡块炒香。</p><p>之后放入青椒，蘑菇，土豆炒香，然后放入八角和少量水，开大火烧开后转中火炖20分钟。</p><p>接下来准备皮带面。把实现准备好的面擀成薄片，然后切成宽面。将面放入锅中煮熟，然后盛到一个容器中。把烧好的鸡肉连汤带菜浇到面上。</p><p>可以开吃了！</p>]]></content>
+    
+    <summary type="html">
+    
+      在英国尝试做新疆大盘鸡
+    
+    </summary>
+    
+      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>旧物利用 - 三星Galaxy S2刷机过程记录</title>
@@ -385,46 +429,6 @@
     
     
       <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英国的Segway电动平衡车</title>
-    <link href="https://www.aafeng.uk/segway/"/>
-    <id>https://www.aafeng.uk/segway/</id>
-    <published>2021-06-01T22:54:07.402Z</published>
-    <updated>2021-06-01T22:55:07.850Z</updated>
-    
-    <content type="html"><![CDATA[<p>这两天孩子们在朋友家试玩了一下Segway电动平衡车，立刻都对其爱不释脚，很快就能够熟练掌握其控制方法，在花园中/僻静的道路上飞奔。。。本来自己也想尝试一下，但考虑到朋友家的是专门针对孩子的版本，不想把Segway压坏了，就算了。</p><p><img src="https://user-images.githubusercontent.com/63479035/120398180-9c6af080-c331-11eb-81b4-0940d464bc36.png" alt="image"><br>图源：<a href="https://amzn.to/3uG8yOZ" rel="external nofollow noopener noreferrer" target="_blank">Amazon产品介绍页面</a></p><a id="more"></a><p>在网上查了一下才知道，Segway这家公司的母公司竟然是小米。其实，Segway最早是由DEKA这家公司发明的，但后来被小米收购后并入其旗下的Ninebot子公司。</p><p>其实，电动平衡车的原理貌似“很简单”，它是基于一种“动态稳定”的原理所设计的。举个例子，如果人的身体前倾而腿固定不动的话，人肯定会摔倒。但如果向前迈步的话，则不会摔倒。而这种电动平衡车就是利用这种原理，当人的身体前倾的时候，平衡车就检测到并驱使车向前移动，这样就相当于通过人体的倾斜来控制平衡车。</p><p>对于这种平衡车，一般人都能通过很短的时间掌握其使用。很多小朋友都能迅速的驾驭它并快速行驶。不过需要小心的就是，如果路面不平，或者有路障的话，就极易“翻车”。</p><p>另外，就是其电池的续航能力。朋友家的充满电后能够行驶20多分钟，不知道最新款的续航能力会有多大提升。如果只是20多分钟/半个小时的话，应该还是不能作为一个交通工具的。</p><p>另外，电动平衡车的位置似乎有些尴尬。如果仅仅是作为一个玩具的话，它似乎有些大材小用了。但如果作为一个交通工具的话，它似乎还具有种种问题。因此，各国对它的态度也不尽相同，绝大多数国家都不允许把它作为一个交通工具上路的。</p><p>不论怎样说，这个小东西已经在我的心底种草，可以考虑先买一个玩玩，就算是锻炼身体也好。</p><p>【<a href="https://amzn.to/3uG8yOZ" rel="external nofollow noopener noreferrer" target="_blank">Amazon上购买页面</a>】</p>]]></content>
-    
-    <summary type="html">
-    
-      英国的Segway电动平衡车
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hodnet Hall Gardens</title>
-    <link href="https://www.aafeng.uk/hodnet-hall-gardens/"/>
-    <id>https://www.aafeng.uk/hodnet-hall-gardens/</id>
-    <published>2021-06-01T07:53:55.450Z</published>
-    <updated>2021-06-01T07:54:37.417Z</updated>
-    
-    <content type="html"><![CDATA[<p>这个银行假日的最后一天，和朋友一家一同驱车去了Hodnet Hall Gardens。这是一家私家花园，主人是Algernon爵士及其夫人Heber-Percy。这家花园的主人已经将其对外开放了逾50年。</p><p>我们来的正是时候，花期在夏季的各种花朵已经陆续开放了，比如：magnolias, camellias, rhododendrons, azaleas, bluebells等等。他家还有英格兰玫瑰，只不过目前还没有开花。其实，一年中的不同时段来的话，都会有不同的惊喜。</p><p>入口处的小池塘，周边长着各种认识的，不认识的植被。水池中还有无数的小蝌蚪在游来游去。<br><img src="https://user-images.githubusercontent.com/63479035/120282294-dbf1f800-c2b1-11eb-8e85-d37824aa32b6.png" alt="image"></p><p>碧水蓝天绿树：<br><img src="https://user-images.githubusercontent.com/63479035/120282577-270c0b00-c2b2-11eb-980b-b2a67368f335.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120282651-3ee38f00-c2b2-11eb-8832-71252c45d6c2.png" alt="image"></p><p>隐藏在远处的小凉亭：<br><img src="https://user-images.githubusercontent.com/63479035/120282513-178cc200-c2b2-11eb-88ed-0d01d157b9e8.png" alt="image"></p><p>绝大多数都分不清/不认识的各类鲜花，如果花/树旁边贴个名字就好了：<br><img src="https://user-images.githubusercontent.com/63479035/120282729-59b60380-c2b2-11eb-9f61-807194a18856.png" alt="image"></p><p>这种花应该叫做Acácia Amarela，原产地似乎是葡萄牙：<br><img src="https://user-images.githubusercontent.com/63479035/120282994-9b46ae80-c2b2-11eb-826a-250e5628dd06.png" alt="image"></p><p>这种花貌似叫做Chinese wisteria：<br><img src="https://user-images.githubusercontent.com/63479035/120283668-5707de00-c2b3-11eb-94b4-818fd7f6ea81.png" alt="image"></p><p>Royal Purple Rhododendron？<br><img src="https://user-images.githubusercontent.com/63479035/120284037-be259280-c2b3-11eb-81fe-93fdc2eca3ad.png" alt="image"></p><p>这种bulbous buttercup的花瓣上就像抹了一层黄油一样，油光光的：<br><img src="https://user-images.githubusercontent.com/63479035/120284252-fd53e380-c2b3-11eb-9061-aaee57df6880.png" alt="image"></p><p>源自巴西的Gunnera manicata：<br><img src="https://user-images.githubusercontent.com/63479035/120284591-4f950480-c2b4-11eb-8b9f-6151f34d41a0.png" alt="image"></p><p>看起来很雍容大气的白花，其气质有些像一位公主。的确，她的名字应该叫做：Rhododendron Yaku Princess<br><img src="https://user-images.githubusercontent.com/63479035/120284810-8f5bec00-c2b4-11eb-997a-361f9c0fed48.png" alt="image"></p><p>这个大家都认识，只是现在略有些早，荷花还没有绽放：<br><img src="https://user-images.githubusercontent.com/63479035/120283467-2162f500-c2b3-11eb-98e2-10726c51e27a.png" alt="image"><br><img src="https://user-images.githubusercontent.com/63479035/120283940-a2ba8780-c2b3-11eb-8906-303138d1817b.png" alt="image"></p><p>让人惊艳的日本红枫：<br><img src="https://user-images.githubusercontent.com/63479035/120285406-1f019a80-c2b5-11eb-99ff-1e98c91a7feb.png" alt="image"></p><p>远处背景处的豪宅就是主人的住所：<br><img src="https://user-images.githubusercontent.com/63479035/120283603-4192b400-c2b3-11eb-9a26-bb4ca0fb12e9.png" alt="image"><br>近照：<br><img src="https://user-images.githubusercontent.com/63479035/120285352-0f825180-c2b5-11eb-94b7-8e13a46a97ac.png" alt="image"></p><p>在整个花园中漫步非常治愈，感觉非常的放松惬意。走累了就坐在草地上小坐，孩子们在周边坐着游戏。花园中也有经典的英式茶屋，可以买杯咖啡。不过这么热的天气，冰淇淋还是更受欢迎。</p>]]></content>
-    
-    <summary type="html">
-    
-      Hodnet Hall Gardens
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   
