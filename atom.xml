@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-09-30T05:54:32.364Z</updated>
+  <updated>2021-09-30T08:41:05.747Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gatsby中的动态页面生成</title>
+    <link href="https://www.aafeng.uk/gatsby-page-generation/"/>
+    <id>https://www.aafeng.uk/gatsby-page-generation/</id>
+    <published>2021-09-30T08:41:05.747Z</published>
+    <updated>2021-09-30T08:41:05.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>Gatsby是目前非常流行的静态页面生成框架。 页面生成是其最核心功能之一。 下面就来说说如何在Gatsby中自动生成文章页面，Category分类页面，以及tags标签页面。</p><p><img src="https://user-images.githubusercontent.com/63479035/135064099-e2e1247d-a658-484b-8618-a85bfc56ac7a.png" alt="image"><br>Source: Gatsby官网</p><a id="more"></a><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="gatsby-config-js中的配置"><a href="#gatsby-config-js中的配置" class="headerlink" title="gatsby-config.js中的配置"></a>gatsby-config.js中的配置</h3><p>首先需要声明对markdown文件的监测，这样gatsby才能获取markdown中的frontmatter信息，比如slug：</p><pre><code>{  resolve: `gatsby-source-filesystem`,  options: {    name: `posts`,    path: `${__dirname}/src/posts`  }}</code></pre><h2 id="动态生成页面文件"><a href="#动态生成页面文件" class="headerlink" title="动态生成页面文件"></a>动态生成页面文件</h2><h3 id="gatsby-node-js"><a href="#gatsby-node-js" class="headerlink" title="gatsby-node.js"></a>gatsby-node.js</h3><p>接下来就可以在gatsby-node.js中通过graphql来获取所有markdown的元数据，也就是frontmatter信息：</p><pre><code>const { data } = await graphql(`    query posts {      allMarkdownRemark {        nodes {          frontmatter {            slug            category            tag          }        }      }    }`)</code></pre><p>通过上面的graphql，就可以获取最为重要的信息，比如slug，这样我们就知道将要生成的文件名了。</p><p>接下来就可以调用actions.createPage来创建页面了：</p><pre><code>data.allMarkdownRemark.nodes.forEach(node =&gt; {    actions.createPage({      path: `/posts/${node.frontmatter.slug}`,      component: path.resolve(&apos;./src/templates/post.js&apos;),      context: { slug: node.frontmatter.slug }    })})</code></pre><p>这里需要的模板文件： ./src/templates/post.js</p><p>首先需要通过传递过来的slug查询相应页面：</p><pre><code>export const query = graphql`  query PageDetails($slug: String) {    markdownRemark(frontmatter: {slug: {eq: $slug}}) {      html      frontmatter {        category        tag        title        thumbnail {          childImageSharp {            fluid {              ...GatsbyImageSharpFluid            }          }        }      }    }  }`</code></pre><p>接下来就可以生成页面了：</p><pre><code>import React from &quot;react&quot;import { graphql } from &apos;gatsby&apos;import Img from &quot;gatsby-image&quot;import Layout from &quot;../components/Layout&quot;import &apos;../styles/post.css&apos;const Post = ({data}) =&gt; {  const { html } = data.markdownRemark  const { title, category, tag, thumbnail } = data.markdownRemark.frontmatter  return (    &lt;Layout&gt;      &lt;div&gt;        &lt;h2&gt;{title}&lt;/h2&gt;        &lt;p&gt;类别: {category}&lt;/p&gt;        &lt;p&gt;标签: {tag}&lt;/p&gt;        &lt;div&gt;          &lt;Img fluid={thumbnail.childImageSharp.fluid} /&gt;        &lt;/div&gt;        &lt;div dangerouslySetInnerHTML={{__html: html}} /&gt;      &lt;/div&gt;    &lt;/Layout&gt;  )}export default Post</code></pre><p>这时重新启动gatsby，就可以访问页面了： /posts/xxxxxx 。 如果运行gatasby build就可以看到在public目录中新生成的页面。</p><h2 id="生成自定义的category-tag页面"><a href="#生成自定义的category-tag页面" class="headerlink" title="生成自定义的category/ tag页面"></a>生成自定义的category/ tag页面</h2><p>在很多博客站点中，都提供针对某一个category / tag的页面，这样可以把同类的文章汇总到一起。</p><p>首先还是在gatsby-node.js中的预处理：</p><pre><code>categories = new Set()tags = new Set() data.allMarkdownRemark.nodes.forEach(node =&gt; {  actions.createPage({    path: `/${node.frontmatter.category}/${node.frontmatter.slug}`,    component: path.resolve(&apos;./src/templates/details.js&apos;),    context: { slug: node.frontmatter.slug }  })  categories.add(node.frontmatter.category);  node.frontmatter.tag.forEach(t =&gt; {    tags.add(t);  })})categories.forEach(category =&gt; {  actions.createPage({    path: `/categories/${category}`,    component: path.resolve(&apos;./src/templates/category.js&apos;),    context: { category: category }  })})tags.forEach(tag =&gt; {  actions.createPage({    path: `/tags/${tag}`,    component: path.resolve(&apos;./src/templates/tag.js&apos;),    context: { tag: tag }  })})</code></pre><p>接下来是在模板文件src/templates/tag.js中的处理：</p><pre><code>import React from &quot;react&quot;import { graphql, Link } from &apos;gatsby&apos;import Img from &quot;gatsby-image&quot;const Tag = ({pageContext, data}) =&gt; {  const { tag } = pageContext;   const posts = data.posts.nodes;  return (    &lt;&gt;      &lt;div&gt;          &lt;h3&gt;标签：{tag}&lt;/h3&gt;          &lt;div&gt;              {posts.map((post) =&gt; {                  const {frontmatter} = post;                  return(                      &lt;div key={post.id}&gt;                          &lt;h3&gt;                              &lt;Link to={`/${post.frontmatter.category}/${post.frontmatter.slug}`}&gt;                                  {frontmatter.title}                              &lt;/Link&gt;                          &lt;/h3&gt;                          &lt;Img fluid={frontmatter.thumbnail.childImageSharp.fluid}/&gt;                          &lt;p&gt;发布日期: {frontmatter.date.substring(0,10)}&lt;/p&gt;                          &lt;p&gt;类别:                            &lt;Link to={`/categories/${frontmatter.category}`}&gt;                              {frontmatter.category}                            &lt;/Link&gt;                            &lt;/p&gt;                          &lt;p&gt;标签：{                          frontmatter.tag.map(t =&gt; {                              return (                                &lt;Link to={`/tags/${t}`}&gt;                                  &lt;span className=&quot;tag&quot;&gt;{t}&lt;/span&gt;                                &lt;/Link&gt;                                )                          })                          }&lt;/p&gt;                      &lt;/div&gt;                      )              })}          &lt;/div&gt;      &lt;/div&gt;    &lt;/&gt;  )}export default Tagexport const query = graphql`  query TagQuery($tag: String) {    posts: allMarkdownRemark(      filter: {frontmatter: {tag: {eq: $tag}}}      sort: {fields: frontmatter___date, order: DESC}    ) {      nodes {        frontmatter {          title          slug          keywords          thumbnail {            childImageSharp {              fluid {                ...GatsbyImageSharpFluid              }            }          }          category          tag          date        }        id      }    }  }`</code></pre><p>catetory页面的实现类似。</p>]]></content>
+    
+    <summary type="html">
+    
+      Gatsby中的动态页面生成
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
+    
+      <category term="Gatsby" scheme="https://www.aafeng.uk/tags/Gatsby/"/>
+    
+  </entry>
   
   <entry>
     <title>Gatsby中的图片优化</title>
@@ -407,28 +431,6 @@
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 20.04LTS开发环境/node14.17/Ruby2.7.3/Python3.8.5/OpenJDK11/Tomcat10/Solr8.8.2</title>
-    <link href="https://www.aafeng.uk/ubuntu20/"/>
-    <id>https://www.aafeng.uk/ubuntu20/</id>
-    <published>2021-06-07T08:54:15.409Z</published>
-    <updated>2021-06-07T08:54:15.409Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近把自己本地的VM重新安装配置了一下，主要是Ubuntu升级到20.04LTS, Node.js 14.17, Ruby 2.7.3, Python 3.8.5, OpenJDK 11, Tomcat 10, Solr 8.8.2。下面记录一下：</p><p><img src="https://user-images.githubusercontent.com/63479035/120987987-0d693880-c776-11eb-95f5-11ea161f12c0.png" alt="image"><br>Source: Pixabay</p><h2 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h2><p>安装好VM后注意在VirtualBox<strong>配置Port forwarding</strong>.</p><p>运行：</p><pre><code>sudo apt-get install -y build-essential libssl-dev libreadline-dev zlib1g-dev</code></pre><h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><pre><code>sudo apt-get install zshsudo usermod -s /bin/zsh $(whoami)</code></pre><p>重新登录后选择2）配置好zsh，然后安装oh-my-zsh:</p><pre><code>sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><h2 id="Node-js-14-17-0"><a href="#Node-js-14-17-0" class="headerlink" title="Node.js 14.17.0"></a>Node.js 14.17.0</h2><pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zshsource .zshrcnvm list-remotenvm install v14.17.0</code></pre><h2 id="Ruby-2-7-3"><a href="#Ruby-2-7-3" class="headerlink" title="Ruby 2.7.3"></a>Ruby 2.7.3</h2><h3 id="rbenv"><a href="#rbenv" class="headerlink" title="rbenv"></a>rbenv</h3><pre><code>  git clone git://github.com/sstephenson/rbenv.git .rbenvecho &apos;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&apos; &gt;&gt; ~/.zshrcecho &apos;eval &quot;$(rbenv init -)&quot;&apos; &gt;&gt; ~/.zshrcgit clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-buildecho &apos;export PATH=&quot;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&quot;&apos; &gt;&gt; ~/.zshrcsource .zshrc</code></pre><h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h3><pre><code>rbenv install -v 2.7.3rbenv global 2.7.3</code></pre><h2 id="Python-3-8-5"><a href="#Python-3-8-5" class="headerlink" title="Python 3.8.5"></a>Python 3.8.5</h2><pre><code>sudo apt install python3-pipsudo apt-get install python3-venvpython3 -m venv myenv</code></pre><p>将如下语句添加到.zshrc:</p><pre><code>source myenv/bin/activate</code></pre><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="OpenJDK-11"><a href="#OpenJDK-11" class="headerlink" title="OpenJDK 11"></a>OpenJDK 11</h3><pre><code>sudo apt install default-jdk sudo nano /etc/environment</code></pre><p>Add:</p><pre><code>JAVA_HOME=&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</code></pre><h3 id="Tomcat-10"><a href="#Tomcat-10" class="headerlink" title="Tomcat 10"></a>Tomcat 10</h3><p>Run:</p><pre><code>sudo groupadd tomcatsudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcatcd /tmpcurl -O https://mirrors.ukfast.co.uk/sites/ftp.apache.org/tomcat/tomcat-10/v10.0.6/bin/apache-tomcat-10.0.6.tar.gzsudo mkdir /opt/tomcatsudo tar xzvf apache-tomcat-10.0.6.tar.gz -C /opt/tomcat --strip-components=1cd /opt/tomcatsudo chgrp -R tomcat /opt/tomcatsudo chmod -R g+r confsudo chmod g+x confsudo chown -R tomcat webapps/ work/ temp/ logs/</code></pre><p>添加tomcat服务：</p><pre><code>sudo nano /etc/systemd/system/tomcat.service</code></pre><p>添加如下内容：</p><pre><code>[Unit]Description=Apache Tomcat Web Application ContainerAfter=network.target[Service]Type=forkingEnvironment=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pidEnvironment=CATALINA_HOME=/opt/tomcatEnvironment=CATALINA_BASE=/opt/tomcatEnvironment=&apos;CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC&apos;Environment=&apos;JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom&apos;ExecStart=/opt/tomcat/bin/startup.shExecStop=/opt/tomcat/bin/shutdown.shUser=tomcatGroup=tomcatUMask=0007RestartSec=10Restart=always[Install]WantedBy=multi-user.target</code></pre><p>Reload system daemon:</p><pre><code>sudo systemctl daemon-reload</code></pre><p>Start Tomcat:</p><pre><code>sudo systemctl start tomcat</code></pre><p>Test if you can access Tomcat via port 8080, then enable this service:</p><pre><code>sudo systemctl enable tomcat</code></pre><p>Configure Tomcat web admin UI:</p><pre><code>sudo nano /opt/tomcat/conf/tomcat-users.xml</code></pre><p>内容如下：</p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tomcat-users xmlns=&quot;http://tomcat.apache.org/xml&quot;              xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;              xsi:schemaLocation=&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot;              version=&quot;1.0&quot;&gt;  &lt;role rolename=&quot;manager-gui&quot;/&gt;  &lt;user username=&quot;tomcat&quot; password=&quot;PASSWORD&quot; roles=&quot;manager-gui&quot;/&gt;  &lt;role rolename=&quot;admin-gui&quot;/&gt;  &lt;user username=&quot;admin&quot; password=&quot;PASSWORD&quot; roles=&quot;admin-gui&quot;/&gt;&lt;/tomcat-users&gt;   </code></pre><p>默认方式下，tomcat针对admin页面添加了IP限制。可以通过以下文件将其注释掉：</p><pre><code>sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml</code></pre><h3 id="Solr8-8-2"><a href="#Solr8-8-2" class="headerlink" title="Solr8.8.2"></a>Solr8.8.2</h3><pre><code>cd /tmpwget https://mirrors.ukfast.co.uk/sites/ftp.apache.org/lucene/solr/8.8.2/solr-8.8.2.tgztar xvf solr-8.8.2.tgzcd solr-8.8.2/binsudo ./install_solr_service.sh ../../solr-8.8.2.tgz</code></pre><p>创建一个core：</p><pre><code>sudo su - solr -c &quot;/opt/solr/bin/solr create -c your_core -n data_driven_schema_configs&quot;</code></pre><p>测试Solr：</p><pre><code>sudo service solr status</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      Ubuntu 20.04LTS开发环境/node14.17/Ruby2.7.3/Python3.8.5/OpenJDK11/Tomcat10/Solr8.8.2
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Linux" scheme="https://www.aafeng.uk/tags/Linux/"/>
     
   </entry>
   
