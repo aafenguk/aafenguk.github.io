@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-10-02T12:33:54.207Z</updated>
+  <updated>2021-10-02T22:35:08.414Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <title>手机定位软件Family360</title>
     <link href="https://www.aafeng.uk/mobile-phone-locator/"/>
     <id>https://www.aafeng.uk/mobile-phone-locator/</id>
-    <published>2021-10-02T12:33:54.207Z</published>
-    <updated>2021-10-02T12:33:54.207Z</updated>
+    <published>2021-10-02T22:35:08.414Z</published>
+    <updated>2021-10-02T22:35:08.414Z</updated>
     
-    <content type="html"><![CDATA[<p>自从儿子上初中后，发现他的大多数同学都是自己做公交车回家的。于是也打算尝试一下。但作为家长，最为担心的就是孩子的安全问题。这就非常需要一个手机定位的APP，能够随时看到孩子的位置。</p><p><img src="https://user-images.githubusercontent.com/63479035/135529905-4e8be364-9eef-4f6c-a8d7-46bc9d642c24.png" alt="image"><br>Source: 软件Google Play Store截屏</p><p>其实，曾经从国内买过小米的智能手表，可以随时定位。但手表的功能有限。而现在中学的小朋友们彼此之间也需要使用各种APP沟通交流，于是智能手表就有些不够用了。</p><p>于是开始选择这种GPS定位软件。在网上查了一下，类似的软件非常多。包括很多需要付费的，可见这种需求还是很大的。这里选择了Family 360。</p><p>这个APP中的首要功能是定义自己的圈子（circle），然后可以把所有家庭成员加入到这个圈子中，后面就可以监测家庭成员的位置信息了。</p><p><img src="https://user-images.githubusercontent.com/63479035/135716146-875a1335-36fc-49b1-b018-f3a588df300f.png" alt="image"></p><p>接下来可以定义几个范围（免费版本可以定义两个范围）。在定义范围的时候，首先需要选择一个地址，然后定义一个半径，那么只要成员超过这个圆所覆盖的范围，就会发出自动提醒。感觉这个功能对监测孩子的位置还是非常有用的。</p><p>APP中还能定义一个超速的限制，这在以后孩子大些刚开始开车的时候应该很有用吧。如果超速就会提示。</p><p><img src="https://user-images.githubusercontent.com/63479035/135716074-3b830245-5f95-4a9d-b660-aa682dfb1abd.png" alt="image"></p><p>整体感觉这个软件非常简单，功能很单一。貌似也很好用。需要试试看它的定位是不是很精确。</p>]]></content>
+    <content type="html"><![CDATA[<p>自从儿子上初中后，发现他的大多数同学都是自己做公交车回家的。于是也打算尝试一下。但作为家长，最为担心的就是孩子的安全问题。这就非常需要一个手机定位的APP，能够随时看到孩子的位置。</p><p><img src="https://user-images.githubusercontent.com/63479035/135529905-4e8be364-9eef-4f6c-a8d7-46bc9d642c24.png" alt="image"><br>Source: 软件Google Play Store截屏</p><a id="more"></a><p>其实，曾经从国内买过小米的智能手表，可以随时定位。但手表的功能有限。而现在中学的小朋友们彼此之间也需要使用各种APP沟通交流，于是智能手表就有些不够用了。</p><p>于是开始选择这种GPS定位软件。在网上查了一下，类似的软件非常多。包括很多需要付费的，可见这种需求还是很大的。这里选择了Family 360。</p><p>这个APP中的首要功能是定义自己的圈子（circle），然后可以把所有家庭成员加入到这个圈子中，后面就可以监测家庭成员的位置信息了。</p><p><img src="https://user-images.githubusercontent.com/63479035/135716146-875a1335-36fc-49b1-b018-f3a588df300f.png" alt="image"></p><p>接下来可以定义几个范围（免费版本可以定义两个范围）。在定义范围的时候，首先需要选择一个地址，然后定义一个半径，那么只要成员超过这个圆所覆盖的范围，就会发出自动提醒。感觉这个功能对监测孩子的位置还是非常有用的。</p><p>APP中还能定义一个超速的限制，这在以后孩子大些刚开始开车的时候应该很有用吧。如果超速就会提示。</p><p><img src="https://user-images.githubusercontent.com/63479035/135716074-3b830245-5f95-4a9d-b660-aa682dfb1abd.png" alt="image"></p><p>整体感觉这个软件非常简单，功能很单一。貌似也很好用。需要试试看它的定位是不是很精确。</p>]]></content>
     
     <summary type="html">
     
@@ -33,6 +33,30 @@
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>如何在Gatsby中实现分页</title>
+    <link href="https://www.aafeng.uk/gatsby-pagination/"/>
+    <id>https://www.aafeng.uk/gatsby-pagination/</id>
+    <published>2021-10-02T22:35:08.414Z</published>
+    <updated>2021-10-02T22:35:08.414Z</updated>
+    
+    <content type="html"><![CDATA[<p>在前面介绍的<a href="/gatsby-page-generation/">Gatsby中的页面生成</a>中，我们已经可以生成category/tag对应的文件。但是当每个category/tag中文章数目较多的时候，肯定就需要分页了。下面介绍一下如何在Gatsby中实现分页控制，从而让Gatsby在生成页面时自动进行分页处理。</p><p><img src="https://user-images.githubusercontent.com/63479035/135064099-e2e1247d-a658-484b-8618-a85bfc56ac7a.png" alt="image"><br>Source: Gatsby官网</p><a id="more"></a><h2 id="更改gatsby-node-js"><a href="#更改gatsby-node-js" class="headerlink" title="更改gatsby-node.js"></a>更改gatsby-node.js</h2><p>首先需要定义每页文章数，并据此计算出总页面数：</p><pre><code>const postsPerPage = 12const numPages = Math.ceil(data.allMarkdownRemark.nodes.length / postsPerPage)</code></pre><p>接下来需要在生成页面的时候，定义相应的规则。以标签页面的生成为例：</p><pre><code>tags.forEach(tag =&gt; {    Array.from({ length: numPages }).forEach((_, i) =&gt; {      actions.createPage({        path: i === 0 ? `/tags/${tag}` : `/tags/${tag}/${i + 1}`,        component: path.resolve(&apos;./src/templates/tag.js&apos;),        context: {          tag: tag,          currentPage: i+1,          totalPage: numPages,          limit: postsPerPage,          skip: i * postsPerPage,        },      })    })})</code></pre><p>这样就会定义：</p><ul><li>不同页对应的文件路径，比如第一页为：tags/video；第二页为：tags/video/2</li><li>相应的参数：currentPage, totalPage, limit, skip。这些参数将通过pageContext传递给生成页面的模板。</li></ul><p>接下来时对相应页面生成模板的定义：<br>    import React from “react”<br>    import { graphql, Link } from ‘gatsby’<br>    import Layout from “../components/Layout”<br>    import PostSummary from ‘../components/PostSummary’<br>    import ‘../styles/global.css’<br>    import ‘../styles/video.css’</p><pre><code>const TagPage = ({pageContext, data}) =&gt; {  const { tag, totalPage, currentPage } = pageContext;   const posts = data.posts.nodes;  return (    &lt;Layout&gt;      &lt;div className=&quot;videos-title&quot;&gt;          &lt;h3&gt;标签：{tag}&lt;/h3&gt;          &lt;div className=&quot;videotutorials&quot;&gt;              {posts.map((post) =&gt; {                  return(                    &lt;PostSummary post={post}/&gt;                     )              })}          &lt;/div&gt;      &lt;/div&gt;      &lt;div&gt;        {currentPage - 1 &gt; 0 &amp;&amp; (          &lt;Link            to={`/tags/${tag}/` + (currentPage - 1 === 1 ? &apos;&apos; : currentPage - 1)}            rel=&quot;prev&quot;          &gt;            ← 上一页          &lt;/Link&gt;        )}        {currentPage + 1 &lt;= totalPage &amp;&amp; (          &lt;Link to={`/tags/${tag}/` + (currentPage + 1)} rel=&quot;next&quot;&gt;            下一页 →          &lt;/Link&gt;        )}      &lt;/div&gt;    &lt;/Layout&gt;  )}export default TagPageexport const query = graphql`  query TagQuery($tag: String, $skip: Int!, $limit: Int!) {    posts: allMarkdownRemark(      filter: {frontmatter: {tag: {eq: $tag}}}      sort: {fields: frontmatter___date, order: DESC}      limit: $limit      skip: $skip    ) {      nodes {        frontmatter {          title          slug          keywords          thumbnail {            childImageSharp {              fluid {                ...GatsbyImageSharpFluid              }            }          }          category          tag          date        }        id      }    }  }`</code></pre><p>至此，在使用gatsby build时就会在标签下生成对应的子文件夹，比如在/tags/video/下还会生成1/，2/，3/等子目录及其中的index.html。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何在Gatsby中实现分页
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
+    
+      <category term="Gatsby" scheme="https://www.aafeng.uk/tags/Gatsby/"/>
     
   </entry>
   
@@ -410,26 +434,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在英国体验自嗨锅</title>
-    <link href="https://www.aafeng.uk/self-service-hot-pot/"/>
-    <id>https://www.aafeng.uk/self-service-hot-pot/</id>
-    <published>2021-06-08T21:13:30.095Z</published>
-    <updated>2021-06-08T21:13:30.095Z</updated>
-    
-    <content type="html"><![CDATA[<p>火锅一直是我最喜欢的美食之一。有句话说的好，“没有什么是一顿火锅不能解决的”。记得疫情之前，每次去伦敦都不忘记预定好海底捞的餐位去享受一下他家的美食和服务。</p><p>现在不太可能去伦敦了，而且近一两年应该也会尽量避免去。那么，想吃火锅了怎么解决？当然可以自己在家吃，但似乎和餐厅里的味道还是不太一样。</p><p>看到朋友圈有人发了自嗨锅的照片，感觉不错。这两天买了几个自嗨锅尝试一下。</p><a id="more"></a><p>首先选则了海底捞的素食锅，之所以选择素食锅，是因为肉类的选择似乎太少了。可能是英国这边的种类没法和国内相比吧。<br><img src="https://user-images.githubusercontent.com/63479035/121250634-dbeb8c80-c89d-11eb-8906-ea6672c7ad42.png" alt="image"></p><p>拆开包装后，里面的货还不少。<br><img src="https://user-images.githubusercontent.com/63479035/121250868-23721880-c89e-11eb-9634-e95910caa563.png" alt="image"></p><p>按照说明把食材放入白色的碗中再加水拌匀：<br><img src="https://user-images.githubusercontent.com/63479035/121251284-9bd8d980-c89e-11eb-8c66-80fa32bf1016.png" alt="image"></p><p>同时还尝试了另一个叫做鲜锋品牌的牛肉火锅：<br><img src="https://user-images.githubusercontent.com/63479035/121250746-00dfff80-c89e-11eb-8dba-8f8ef5f13fe5.png" alt="image"></p><p>将加热包放入黑色的大碗中加热15-20分钟左右，就可以食用了。</p><p><img src="https://user-images.githubusercontent.com/63479035/121250442-a181ef80-c89d-11eb-8d31-9e73adf78205.png" alt="image"><br>Source: Pixabay</p><p>整体而言，感觉还是不错的。不过，对于海底捞的素食锅略感失望，其味道和我预期的差距较大。反倒是原先不知道的品牌鲜锋倒是给了我一个大大的惊喜。味道很浓郁，同时汤料中没有过多的花椒，吃起来比较容易。</p><p>下次出门玩的话，尤其是在野外露营，带几个自嗨锅，省时，环保，美味，似乎全占了。。。</p><p><a href="https://amzn.to/2TbA2Pk" rel="external nofollow noopener noreferrer" target="_blank">英国亚马逊上似乎就有卖的</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      在英国体验自嗨锅
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
     
   </entry>
