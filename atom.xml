@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-10-02T22:35:08.414Z</updated>
+  <updated>2021-10-19T22:07:18.186Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在Gatsby中实现分页</title>
+    <link href="https://www.aafeng.uk/gatsby-pagination/"/>
+    <id>https://www.aafeng.uk/gatsby-pagination/</id>
+    <published>2021-10-19T22:07:18.186Z</published>
+    <updated>2021-10-19T22:07:18.186Z</updated>
+    
+    <content type="html"><![CDATA[<p>在前面介绍的<a href="/gatsby-page-generation/">Gatsby中的页面生成</a>中，我们已经可以生成category/tag对应的文件。但是当每个category/tag中文章数目较多的时候，肯定就需要分页了。下面介绍一下如何在Gatsby中实现分页控制，从而让Gatsby在生成页面时自动进行分页处理。</p><p><img src="https://user-images.githubusercontent.com/63479035/135064099-e2e1247d-a658-484b-8618-a85bfc56ac7a.png" alt="image"><br>Source: Gatsby官网</p><a id="more"></a><h2 id="更改gatsby-node-js"><a href="#更改gatsby-node-js" class="headerlink" title="更改gatsby-node.js"></a>更改gatsby-node.js</h2><p>首先需要定义每页文章数，并据此计算出总页面数：</p><pre><code>const postsPerPage = 12const numPages = Math.ceil(data.allMarkdownRemark.nodes.length / postsPerPage)</code></pre><p>接下来需要在生成页面的时候，定义相应的规则。以标签页面的生成为例：</p><pre><code>tags.forEach(tag =&gt; {    Array.from({ length: numPages }).forEach((_, i) =&gt; {      actions.createPage({        path: i === 0 ? `/tags/${tag}` : `/tags/${tag}/${i + 1}`,        component: path.resolve(&apos;./src/templates/tag.js&apos;),        context: {          tag: tag,          currentPage: i+1,          totalPage: numPages,          limit: postsPerPage,          skip: i * postsPerPage,        },      })    })})</code></pre><p>这样就会定义：</p><ul><li>不同页对应的文件路径，比如第一页为：tags/video；第二页为：tags/video/2</li><li>相应的参数：currentPage, totalPage, limit, skip。这些参数将通过pageContext传递给生成页面的模板。</li></ul><p>接下来时对相应页面生成模板的定义：</p><pre><code>import React from &quot;react&quot;import { graphql, Link } from &apos;gatsby&apos;import Layout from &quot;../components/Layout&quot;import PostSummary from &apos;../components/PostSummary&apos;import &apos;../styles/global.css&apos;import &apos;../styles/video.css&apos;const TagPage = ({pageContext, data}) =&gt; {  const { tag, totalPage, currentPage } = pageContext;   const posts = data.posts.nodes;  return (    &lt;Layout&gt;      &lt;div className=&quot;videos-title&quot;&gt;          &lt;h3&gt;标签：{tag}&lt;/h3&gt;          &lt;div className=&quot;videotutorials&quot;&gt;              {posts.map((post) =&gt; {                  return(                    &lt;PostSummary post={post}/&gt;                     )              })}          &lt;/div&gt;      &lt;/div&gt;      &lt;div&gt;        {currentPage - 1 &gt; 0 &amp;&amp; (          &lt;Link            to={`/tags/${tag}/` + (currentPage - 1 === 1 ? &apos;&apos; : currentPage - 1)}            rel=&quot;prev&quot;          &gt;            ← 上一页          &lt;/Link&gt;        )}        {currentPage + 1 &lt;= totalPage &amp;&amp; (          &lt;Link to={`/tags/${tag}/` + (currentPage + 1)} rel=&quot;next&quot;&gt;            下一页 →          &lt;/Link&gt;        )}      &lt;/div&gt;    &lt;/Layout&gt;  )}export default TagPageexport const query = graphql`  query TagQuery($tag: String, $skip: Int!, $limit: Int!) {    posts: allMarkdownRemark(      filter: {frontmatter: {tag: {eq: $tag}}}      sort: {fields: frontmatter___date, order: DESC}      limit: $limit      skip: $skip    ) {      nodes {        frontmatter {          title          slug          keywords          thumbnail {            childImageSharp {              fluid {                ...GatsbyImageSharpFluid              }            }          }          category          tag          date        }        id      }    }  }`</code></pre><p>至此，在使用gatsby build时就会在标签下生成对应的子文件夹，比如在/tags/video/下还会生成1/，2/，3/等子目录及其中的index.html。</p>]]></content>
+    
+    <summary type="html">
+    
+      如何在Gatsby中实现分页
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
+    
+      <category term="Gatsby" scheme="https://www.aafeng.uk/tags/Gatsby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>秋天的味道</title>
+    <link href="https://www.aafeng.uk/taste-of-autumn/"/>
+    <id>https://www.aafeng.uk/taste-of-autumn/</id>
+    <published>2021-10-19T22:07:18.186Z</published>
+    <updated>2021-10-19T22:07:18.186Z</updated>
+    
+    <content type="html"><![CDATA[<p>女儿的作业又下来了，这次让用纯天然的材料做一个小工艺品。哎，又要拼爹了。。。</p><p>既然是纯天然的，那只能去周边转转，看看有没有什么好的材料。女儿还特别认真：老师说的，只能从地上捡，不从从树上摘，嗯，好吧。。。</p><p>现在应该是栗子成熟的季节，于是先去了每年都去的栗子数附近，捡了一些栗子回来。但敲开壳之后才发现，似乎还差些时候，但做手工制品没有问题。</p><p>另外还有一种马栗，长得和栗子有些像。不能食用，但可以用来喂牲畜。它和栗子的区别还是很明显的：马栗的外壳虽然也有尖刺，但并不是特别密集，也不是特别扎手。而食用栗子的外壳长满了又尖又密的小刺，根本没法用手抓。同时其果实上还有“毛发”。</p><p>除了马栗和栗子，还捡到了一些落叶及野果。想想素材应该是足够了。于是打道回府，开始第二阶段的工作。</p><p>首先是计划，和女儿商量好了，打算由她画一幅秋天的风景作为背景，我负责制作两个小人，然后把两者结合起来。</p><p>说干就干，先用电钻在马栗上钻了几个小孔，然后用牙签为其装上了手脚和头部。很快，女儿的画也画好了。都拼在一起的感觉似乎还是很不错的：</p><p><img src="https://user-images.githubusercontent.com/63479035/137996822-416abdae-faa8-417c-8d5b-053070210e17.png" alt="女儿的Homework"><br>摄于2021.10.19</p>]]></content>
+    
+    <summary type="html">
+    
+      秋天的味道
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>手机定位软件Family360</title>
@@ -33,30 +77,6 @@
     
       <category term="育儿" scheme="https://www.aafeng.uk/categories/%E8%82%B2%E5%84%BF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何在Gatsby中实现分页</title>
-    <link href="https://www.aafeng.uk/gatsby-pagination/"/>
-    <id>https://www.aafeng.uk/gatsby-pagination/</id>
-    <published>2021-10-02T22:35:08.414Z</published>
-    <updated>2021-10-02T22:35:08.414Z</updated>
-    
-    <content type="html"><![CDATA[<p>在前面介绍的<a href="/gatsby-page-generation/">Gatsby中的页面生成</a>中，我们已经可以生成category/tag对应的文件。但是当每个category/tag中文章数目较多的时候，肯定就需要分页了。下面介绍一下如何在Gatsby中实现分页控制，从而让Gatsby在生成页面时自动进行分页处理。</p><p><img src="https://user-images.githubusercontent.com/63479035/135064099-e2e1247d-a658-484b-8618-a85bfc56ac7a.png" alt="image"><br>Source: Gatsby官网</p><a id="more"></a><h2 id="更改gatsby-node-js"><a href="#更改gatsby-node-js" class="headerlink" title="更改gatsby-node.js"></a>更改gatsby-node.js</h2><p>首先需要定义每页文章数，并据此计算出总页面数：</p><pre><code>const postsPerPage = 12const numPages = Math.ceil(data.allMarkdownRemark.nodes.length / postsPerPage)</code></pre><p>接下来需要在生成页面的时候，定义相应的规则。以标签页面的生成为例：</p><pre><code>tags.forEach(tag =&gt; {    Array.from({ length: numPages }).forEach((_, i) =&gt; {      actions.createPage({        path: i === 0 ? `/tags/${tag}` : `/tags/${tag}/${i + 1}`,        component: path.resolve(&apos;./src/templates/tag.js&apos;),        context: {          tag: tag,          currentPage: i+1,          totalPage: numPages,          limit: postsPerPage,          skip: i * postsPerPage,        },      })    })})</code></pre><p>这样就会定义：</p><ul><li>不同页对应的文件路径，比如第一页为：tags/video；第二页为：tags/video/2</li><li>相应的参数：currentPage, totalPage, limit, skip。这些参数将通过pageContext传递给生成页面的模板。</li></ul><p>接下来时对相应页面生成模板的定义：<br>    import React from “react”<br>    import { graphql, Link } from ‘gatsby’<br>    import Layout from “../components/Layout”<br>    import PostSummary from ‘../components/PostSummary’<br>    import ‘../styles/global.css’<br>    import ‘../styles/video.css’</p><pre><code>const TagPage = ({pageContext, data}) =&gt; {  const { tag, totalPage, currentPage } = pageContext;   const posts = data.posts.nodes;  return (    &lt;Layout&gt;      &lt;div className=&quot;videos-title&quot;&gt;          &lt;h3&gt;标签：{tag}&lt;/h3&gt;          &lt;div className=&quot;videotutorials&quot;&gt;              {posts.map((post) =&gt; {                  return(                    &lt;PostSummary post={post}/&gt;                     )              })}          &lt;/div&gt;      &lt;/div&gt;      &lt;div&gt;        {currentPage - 1 &gt; 0 &amp;&amp; (          &lt;Link            to={`/tags/${tag}/` + (currentPage - 1 === 1 ? &apos;&apos; : currentPage - 1)}            rel=&quot;prev&quot;          &gt;            ← 上一页          &lt;/Link&gt;        )}        {currentPage + 1 &lt;= totalPage &amp;&amp; (          &lt;Link to={`/tags/${tag}/` + (currentPage + 1)} rel=&quot;next&quot;&gt;            下一页 →          &lt;/Link&gt;        )}      &lt;/div&gt;    &lt;/Layout&gt;  )}export default TagPageexport const query = graphql`  query TagQuery($tag: String, $skip: Int!, $limit: Int!) {    posts: allMarkdownRemark(      filter: {frontmatter: {tag: {eq: $tag}}}      sort: {fields: frontmatter___date, order: DESC}      limit: $limit      skip: $skip    ) {      nodes {        frontmatter {          title          slug          keywords          thumbnail {            childImageSharp {              fluid {                ...GatsbyImageSharpFluid              }            }          }          category          tag          date        }        id      }    }  }`</code></pre><p>至此，在使用gatsby build时就会在标签下生成对应的子文件夹，比如在/tags/video/下还会生成1/，2/，3/等子目录及其中的index.html。</p>]]></content>
-    
-    <summary type="html">
-    
-      如何在Gatsby中实现分页
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://www.aafeng.uk/tags/JavaScript/"/>
-    
-      <category term="Gatsby" scheme="https://www.aafeng.uk/tags/Gatsby/"/>
     
   </entry>
   
@@ -414,26 +434,6 @@
     </summary>
     
       <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>说说转行</title>
-    <link href="https://www.aafeng.uk/change-career/"/>
-    <id>https://www.aafeng.uk/change-career/</id>
-    <published>2021-06-10T16:49:55.329Z</published>
-    <updated>2021-06-10T16:50:31.120Z</updated>
-    
-    <content type="html"><![CDATA[<p>前面聊到了职业选择的问题。这就涉及了一个相关的问题：如果选择了一个自己喜欢的职业还好，可以一直做下去。但如果选择了一个自己不喜欢的职业，该转行吗？怎么转？</p><p><img src="https://user-images.githubusercontent.com/63479035/121564884-d021d680-ca13-11eb-8919-1770f1638cae.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><p>说到转行，其实每个人的考虑都不尽相同。每个人也都有自己的故事。</p><p>到了英国之后，周边有些朋友原来学的专业是英语。可到了英国之后，就相当于没有了专业。于是，被迫转行。有的人选择做会计，从头学起的那种，可以说学的很辛苦。也有的原来在国内就是英语老师，到了英国后，转行做了中文老师。毕竟都是老师，转行的相对要容易的多。这种转行可以说是为生活所迫，选择了一个适合自己的行业。</p><p>记得原来在国内的时候，认识一位女士，在一家大银行做会计。按照当时的收入，应该算是稳定的金领一族。但她对自己的工作越来越没有兴趣，于是报名参加了一个IT相关的培训班。一开始学习，她就知道这才是自己真心喜欢的职业。的确，她在程序设计上的确很有天赋，毕业后很快就拿到了一份满意的IT工作。可以说她是非常幸运的，也有非常有魄力的，自己改变了自己的职业，也改变了自己的命运。</p><p>其实，要想转行成功，我个人感觉最好选择一个就近的行业。而不是来个180度的大转弯。这样搞不好就把自己整坑里了。</p><p>比如：原来做IT相关工作的。如果不想再做技术方面的工作了，可以考虑做针对IT行业的招聘专员/猎头。这样就可以充分利用自己原来的经验。或者，如果表达能力不错的，可以转行做IT培训，把自己的开发经验传授给别人。</p><p>周边朋友既有转行做相关行业的，也有转行从事一个彻底陌生行业的。不知道再过些年自己会不会动转行的念头？</p>]]></content>
-    
-    <summary type="html">
-    
-      说说转行
-    
-    </summary>
-    
-      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
