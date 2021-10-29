@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-10-19T22:07:18.186Z</updated>
+  <updated>2021-10-28T19:34:12.249Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐-精准定位软件What3words</title>
+    <link href="https://www.aafeng.uk/what-three-words/"/>
+    <id>https://www.aafeng.uk/what-three-words/</id>
+    <published>2021-10-28T19:34:12.249Z</published>
+    <updated>2021-10-28T19:34:12.249Z</updated>
+    
+    <content type="html"><![CDATA[<p>这次出去玩时住宿选的是一家民宿，房东非常热心，不仅把“正常”的地址和邮编发送过来，同时也提醒说，如果想要精准定位的话，建议安装What3words这个软件。于是果断安装了一下，在导航的时候使用这个APP提供的定位，可以说真的是太准确了！👍</p><p><img src="https://images.hive.blog/DQmSntPhaVVntKaGbs5dJJqoD3i9yVc3wapxWLKtGjR2d34/image.png" alt="精准定位软件What3words"></p><p>原来使用Google或其他APP导航的时候，经常会遇到定位不准的问题，毕竟设定的邮编范围有些过大，一旦进入该邮编，导航软件就提示已经到达，至于是否能够准确的找到自己想要的地址，那就靠司机了。。。</p><p>而What3words这个APP就能够彻底解决这个问题，它把底图分成了3x3米的很多格子，而每一个格子都能通过三个英文单词来精确定位，也就是说，通过提供某个地址的三个英文单词，What3words就能提供一个准确的地址坐标，然后再用导航软件按照坐标来导航，误差就不会超过三米。</p><p>在APP中可以输入想要定位的地址，地名等，然后可以切换到卫星模式，直到在地图上找到了你想要去的地方为止，然后单击对应的格子，就能看到对应的三个单词。然后就可以把单词1.单词2.单词3发送给他人，别人只要安装了同样的APP，就能输入同样的三个单词，进行精准定位。</p><p>这个APP对自己功能的定位非常清晰：只负责精确地址和三个单词之间的映射，并提供相关的功能。至于，导航，那是导航软件做的事情。但这个APP可以把精确定位的坐标发送给各种导航软件。</p><p>同时，在这个APP中还能保存自己感兴趣的地址，通过各种方式分享地址，将某个地址和对应照片进行映射，对三个单词进行语音识别等各种辅助的功能。</p><p>本来对这个软件只是抱着试试看的态度，没想到如此好用，看来以后要常驻我的手机了👍</p>]]></content>
+    
+    <summary type="html">
+    
+      推荐-精准定位软件What3words
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>如何在Gatsby中实现分页</title>
@@ -414,26 +434,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>英国的茴香</title>
-    <link href="https://www.aafeng.uk/fennel/"/>
-    <id>https://www.aafeng.uk/fennel/</id>
-    <published>2021-06-12T20:15:09.937Z</published>
-    <updated>2021-06-12T20:15:46.032Z</updated>
-    
-    <content type="html"><![CDATA[<p>今年英国的天气很古怪。5月份之前一直气温很低。第一批育好的苗种到外面后因为低温基本上都挂了。但最近的温度一直居高不下，有了夏天的感觉。第二批苗长势良好。</p><p>西红柿和蚕豆已经开花了。豆角也即将爬上架子了，角瓜似乎正在酝酿力量，准备爆发。尤其是茴香的长势非常好，家人看到照片后提醒，如果再不吃就要老了。<br><img src="https://user-images.githubusercontent.com/63479035/121783619-8c5fd600-cba7-11eb-8d1d-b0e362b5f12b.png" alt="image"></p><a id="more"></a><p>奇怪的是，在英国超市中也能买到茴香，但确实和国内的很不相同：根部很大，几乎没有叶子。用英国这种茴香做馅，几乎就吃不出茴香味道。。。<br><img src="https://user-images.githubusercontent.com/63479035/121787974-7232f180-cbc1-11eb-9678-862d871d3c16.png" alt="image"><br>Source: Pixabay</p><p>对于我家这株疯长的茴香，我想既然在英国，那么根部一定非常巨大了。那么好吧，我就连根带叶子一起吃了。</p><p>于是满怀期待的连根拔起：<br><img src="https://user-images.githubusercontent.com/63479035/121783673-e5c80500-cba7-11eb-8936-d58e2608f5cb.png" alt="image"></p><p>嗯？根怎么是这样的？？？无论如何，这多么大一株茴香，用来做馅应该是足够了。</p><p>很快，猪肉茴香馅的馅饼，啊不，茴香盒子：<br><img src="https://user-images.githubusercontent.com/63479035/121783699-0a23e180-cba8-11eb-8b61-70c362681378.png" alt="image"></p><p>看来这种茴香才是我记忆中的茴香，记忆中的味道。以后必须要继续种这种茴香了。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      英国的茴香
-    
-    </summary>
-    
-      <category term="美食" scheme="https://www.aafeng.uk/categories/%E7%BE%8E%E9%A3%9F/"/>
     
     
   </entry>
