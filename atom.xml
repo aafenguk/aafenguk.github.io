@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.aafeng.uk/"/>
-  <updated>2021-10-28T19:34:12.249Z</updated>
+  <updated>2021-11-08T19:42:12.385Z</updated>
   <id>https://www.aafeng.uk/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>也来说说敏捷开发中的Story point</title>
+    <link href="https://www.aafeng.uk/story-point/"/>
+    <id>https://www.aafeng.uk/story-point/</id>
+    <published>2021-11-08T19:42:12.385Z</published>
+    <updated>2021-11-08T19:42:12.385Z</updated>
+    
+    <content type="html"><![CDATA[<p>自己团队在接触敏捷开发的初始，大家对于其中的Story Point还是有一定抵触心理的。但伴随着对其了解的深入，慢慢的都能接受这个概念了。同时也会使用一些在线工具来进行评估。下面来说说自己的体会。</p><p><img src="https://user-images.githubusercontent.com/63479035/140806755-c995d36e-843b-4a07-b659-298ebe12329b.png" alt="image"><br>Source: Pixabay<br><a id="more"></a></p><p>在软件开发过程中，经常需要估算某项任务所需花费的时间。在传统方式中，一般使用小时，天，周等时间单位来进行估算。但在敏捷开发中，最为推荐的方式却是时间点（Story point）。</p><p>所谓时间点，就是把某项任务的难易程度进行划分并赋予不同的时间点。比如：1,2,3,5,8,13,21等等。其实这些时间点的数值是按照斐波那契数列，也就是兔子数列来分布的。当然，也可以不选择兔子数列，但其基本出发点都是一样的。</p><p>对于刚刚转入敏捷开发的人来说，似乎都不能理解，能用最为直观的常见时间度量单位来估算，干嘛还要用这些时间点呢？</p><p>说到根源，主要是在开发之前进行估算通常是件非常困难的事。毕竟开发还没有开始，这就相当于根据现有经验预测未来。通常估算的时间和实际花费时间之间会存在巨大差异。如果想要进行精确的估算，必然需要花费时间把细节了解清楚才行。但花费在估算上的时间的边界效益通常都是递减的。也就是说，如果花费太多时间进行估算，往往就会造成过高的时间成本，这和敏捷开发是背道而驰的。</p><p>因此在敏捷开发中引入了故事点Story Point这个概念。在这里，通过综合每一个User Story的复杂度，工作量，持续时间等因素，给出一个估算。同时这种估算通常是基于团队的，而不是基于个人的，因此综合团队的估算结果，其最终结果往往会更准确。</p><p>若干年前，我们团队不仅使用过扑克牌，还有乐高进行估算。但现在通常都是使用在线工具了，比如：<a href="https://www.scrumpoker-online.org/en/" rel="external nofollow noopener noreferrer" target="_blank">https://www.scrumpoker-online.org/en/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      也来说说敏捷开发中的Story point
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>推荐-精准定位软件What3words</title>
@@ -414,26 +434,6 @@
     </summary>
     
       <category term="生活" scheme="https://www.aafeng.uk/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>useContext+reducers+local storage</title>
-    <link href="https://www.aafeng.uk/usecontext/"/>
-    <id>https://www.aafeng.uk/usecontext/</id>
-    <published>2021-06-20T22:03:57.000Z</published>
-    <updated>2021-06-24T09:56:35.443Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在React中，Context API提供了一种简洁又干净的方法在不同组件中共享状态。 其典型应用场景包括： 用户认证，界面语言，主题等“全局”性的设置。</p><p><img src="https://user-images.githubusercontent.com/63479035/123172610-47745300-d475-11eb-93b9-f8e06387ac02.png" alt="image"><br>Source: Pixabay</p><a id="more"></a><h2 id="使用Context-Provider"><a href="#使用Context-Provider" class="headerlink" title="使用Context Provider"></a>使用Context Provider</h2><p>要想使用上下文，首先需要创建上下文的提供者： Context Provider。 比如：想要创建一个和用户认证相关的上下文。</p><p>首先，添加src/contexts/LoginContext.js:</p><pre><code>import React, { createContext, useState } from &apos;react&apos;;export const LoginContext = createContext();export default function LoginContextProvider({ children }) {    const [isAuthenticated, setIsAuthenticated] =  useState(false);    const [role, setRole] =  useState(&apos;public&apos;);    const login = () =&gt; {        setIsAuthenticated(true);    }    const logout = () =&gt; {        setIsAuthenticated(false);        setRole(&apos;&apos;);    }    return (        &lt;LoginContext.Provider value={{ isAuthenticated, login, logout, role, setRole }}&gt;            { children }        &lt;/LoginContext.Provider&gt;    )}</code></pre><p>对其进行调用的组件：</p><pre><code>import React, { useContext } from &apos;react&apos;;import {LoginContext} from &apos;../contexts/LoginContext&apos;;export default function LoginTest() {    const loginContext = useContext(LoginContext);    const { isAuthenticated, login, logout, role, setRole } = loginContext;    return (        &lt;div style={{margin: "25px"}}&gt;            You are {isAuthenticated? &quot;logged in.&quot;: &quot;logged out.&quot;}&lt;br/&gt;            Your role: {role}&lt;br/&gt;            &lt;button onClick={isAuthenticated? logout:login}&gt;{isAuthenticated? &quot;Logout&quot;:&quot;Login&quot;}&lt;/button&gt;            &lt;button onClick={() =&gt; setRole(&apos;Admin&apos;)}&gt;Change role to Admin&lt;/button&gt;            &lt;button onClick={() =&gt; setRole(&apos;public&apos;)}&gt;Change role to public&lt;/button&gt;        &lt;/div&gt;    )}</code></pre><p>在App.js中，</p><pre><code>&lt;LoginContextProvider&gt;    &lt;LoginTest/&gt;&lt;/LoginContextProvider&gt;</code></pre><p><img src="https://user-images.githubusercontent.com/63479035/123218024-20447280-d4c3-11eb-8c49-4e668a348c83.png" alt="image"></p><h2 id="使用Context-Provider保存全局数据"><a href="#使用Context-Provider保存全局数据" class="headerlink" title="使用Context Provider保存全局数据"></a>使用Context Provider保存全局数据</h2><p>有些时候甚至可以把数据放到Context Provider中，比如：</p><pre><code>import React, { createContext, useState } from &apos;react&apos;;export const BookContext = createContext();const BookContextProvider = ({children}) =&gt; {  const [books, setBooks] = useState([    {title: &apos;Java程序设计&apos;, id: 1101},    {title: &apos;Python程序设计&apos;, id: 1102},    {title: &apos;React in Action&apos;, id: 1103},  ]);  return (    &lt;BookContext.Provider value={{books}}&gt;      {children}    &lt;/BookContext.Provider&gt;  )}export default BookContextProvider;</code></pre><p>在组件中使用BookContext:</p><pre><code>const { books } = useContext(BookContext);</code></pre><p>这样就可以在不同组件中共享 books 实例。</p><h2 id="使用reducer"><a href="#使用reducer" class="headerlink" title="使用reducer"></a>使用reducer</h2><p>首先，在使用Context Provider的时候，不是必须使用reducer的，但如果使用，可以简化代码。比如，在CustomerContextProvider中，我们可以添加addCustomer, removeCustomer等方法并把它们传递给使用Context的组件中，但这样做对于简单应用还好。对于稍微复杂的应用，就会过于烦琐了。最好的方法是使用reducer将这些方法统一进行管理。</p><h3 id="创建reducer"><a href="#创建reducer" class="headerlink" title="创建reducer"></a>创建reducer</h3><p>首先，需要创建一个Reducer，并将操纵状态的逻辑放在reducer中：</p><pre><code>import uuid from &apos;react-uuid&apos;;export const customerReducer = (state, action) =&gt; {  switch (action.type) {    case &apos;ADD_CUSTOMER&apos;:      return [...state, {        name: action.customer.name,         phone: action.customer.phone,         id: uuid()}      ];    case &apos;REMOVE_CUSTOMER&apos;:      return state.filter(customer =&gt; customer.id !== action.id);    case &apos;ADD_DUMMY_CUSTOMERS&apos;:      return [        {id: uuid(), name: &apos;Stuart&apos;, phone: &apos;07853110066&apos;},        {id: uuid(), name: &apos;Lucas&apos;, phone: &apos;07853110067&apos;},        {id: uuid(), name: &apos;Andy&apos;, phone: &apos;07853110068&apos;}      ];        case &apos;RESET_CUSTOMER&apos;:      return [];        default:      return state;  }} </code></pre><h3 id="在ContextProvider中使用reducer"><a href="#在ContextProvider中使用reducer" class="headerlink" title="在ContextProvider中使用reducer"></a>在ContextProvider中使用reducer</h3><p>接下来，在CustomerContext中，就不要使用useState，而是使用useReducer了。因为state的管理已经转移到reducer中了。</p><pre><code>import React, { createContext, useReducer } from &apos;react&apos;;import { customerReducer } from &apos;../reducers/customerReducer&apos;;export const CustomerContext = createContext();const CustomerContextProvider = (props) =&gt; {  const [customers, dispatch] = useReducer(customerReducer, []);  return (    &lt;CustomerContext.Provider value={{ customers, dispatch }}&gt;      {props.children}    &lt;/CustomerContext.Provider&gt;  );}export default CustomerContextProvider;</code></pre><h3 id="在UI组件中使用Context和reducer"><a href="#在UI组件中使用Context和reducer" class="headerlink" title="在UI组件中使用Context和reducer"></a>在UI组件中使用Context和reducer</h3><p>接下来在UI组件中只需要通过传递给dispatch相应的参数就可以调用相应的状态更新方法了：</p><pre><code>import React, { useContext } from &apos;react&apos;;import { CustomerContext } from &apos;../contexts/CustomerContext&apos;;export default function CustomerList() {    const customerContext = useContext(CustomerContext);    const { customers, dispatch } = customerContext;    return (        &lt;div&gt;            Current customers (click to delete):            &lt;hr/&gt;            &lt;ul&gt;            {customers.map(customer =&gt; {                return (                     &lt;li key={customer.id} onClick={() =&gt; dispatch({ type: &apos;REMOVE_CUSTOMER&apos;, id: customer.id })}&gt;{customer.name} / {customer.phone}&lt;/li&gt;                );            })}            &lt;/ul&gt;            &lt;button onClick={() =&gt; dispatch({ type: &apos;ADD_DUMMY_CUSTOMERS&apos; })}&gt;Add dummy customers&lt;/button&gt;            &lt;button onClick={() =&gt; dispatch({ type: &apos;RESET_CUSTOMER&apos; })}&gt;Reset customers&lt;/button&gt;        &lt;/div&gt;    )}</code></pre><h2 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h2><p>key value pairs</p><p>值必须为字符串类型。</p><p>需要将JSON转换为字符串后才能够保存到local storage。<br>customer = {“name”:”George”,”phone”:”07882223333”}<br>localStorage.setItem(‘c1’, JSON.stringify(customer))</p><p>因此在读取后需要再次转换为JSON：<br>george = JSON.parse(localStorage.getItem(‘c1’))</p><p>如果想要使用local storage，在CustomerContext.js中：</p><pre><code>const [customers, dispatch] = useReducer(customerReducer, [], () =&gt; {    const localData = localStorage.getItem(&apos;customers&apos;);    return localData ? JSON.parse(localData) : [];});useEffect(() =&gt; {    localStorage.setItem(&apos;customers&apos;, JSON.stringify(customers));}, [customers]);</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      使用Context Provider及useContext管理React中的上下文, 使用reducer，local storage
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.aafeng.uk/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
